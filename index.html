@@ -960,11 +960,6 @@ h2.section-title em{font-style:italic}
 
 <!-- FLOATING BUTTONS -->
 <div class="float-group">
-  <button type="button" onclick="openCalModal()" class="cal-btn">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-    <span>Prendre RDV</span>
-  </button>
-  <!-- WhatsApp : renseignez WHATSAPP_NUMBER dans le JS en bas de page pour activer -->
   <button type="button" id="waFloatBtn" class="wa-btn wa-pulse" onclick="handleWaClick()">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.122 1.524 5.858L.057 23.22a.75.75 0 00.91.91l5.363-1.467A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.716 9.716 0 01-4.95-1.355l-.354-.21-3.682 1.007 1.006-3.682-.21-.354A9.716 9.716 0 012.25 12C2.25 6.616 6.616 2.25 12 2.25S21.75 6.616 21.75 12 17.384 21.75 12 21.75z"/></svg>
     <span id="waFloatLabel">WhatsApp</span>
@@ -1120,7 +1115,7 @@ h2.section-title em{font-style:italic}
       <h2 class="founder-name" id="heading-founder">Paul PIOT</h2>
       <p class="founder-role">Fondateur de POLOW Agency</p>
       <p class="founder-bio">Passionné par le web et par les professionnels qui font vivre leur activité, j'ai créé POLOW Agency avec un objectif clair : <strong>donner aux indépendants et petites entreprises les outils digitaux qu'ils méritent</strong>, sans complexité et sans budget démesuré.</p>
-      <p class="founder-bio">J'accompagne mes clients <strong>partout en France</strong>, entièrement à distance. Chaque projet est traité personnellement — <strong>pas de sous-traitance, pas d'intermédiaire</strong>.</p>
+      <p class="founder-bio">J'accompagne mes clients <strong>partout en France</strong>, entièrement à distance. Chaque projet est traité personnellement <strong>pas de sous-traitance, pas d'intermédiaire</strong>.</p>
       <a href="https://wa.me/33781754719?text=Bonjour%20Paul%2C%20je%20souhaite%20un%20devis%20pour%20mon%20site%20web." target="_blank" rel="noopener" class="founder-contact founder-contact--wa">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.122 1.524 5.858L.057 23.22a.75.75 0 00.91.91l5.363-1.467A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.716 9.716 0 01-4.95-1.355l-.354-.21-3.682 1.007 1.006-3.682-.21-.354A9.716 9.716 0 012.25 12C2.25 6.616 6.616 2.25 12 2.25S21.75 6.616 21.75 12 17.384 21.75 12 21.75z"/></svg>
         Écrire à Paul sur WhatsApp →
@@ -1236,7 +1231,7 @@ h2.section-title em{font-style:italic}
         </div>
       </div>
       <h3 class="srv-title">Maintenance & support</h3>
-      <p class="srv-benefit">Je m'occupe de votre site pendant que vous faites votre métier. Mises à jour, sauvegardes, modifications. Toujours Paul, toujours disponible.</p>
+      <p class="srv-benefit">Je m'occupe de votre site pendant que vous faites votre métier. Mises à jour, sauvegardes, modifications — toujours Paul, toujours disponible.</p>
       <ul class="srv-list">
         <li>Mises à jour régulières & sauvegardes</li>
         <li>Petites modifications comprises</li>
@@ -1286,7 +1281,7 @@ h2.section-title em{font-style:italic}
   <div style="max-width:680px;margin:0 auto;text-align:center">
     <span class="section-label reveal">Réalisations</span>
     <h2 class="section-title reveal d1" id="heading-realisations" style="font-size:clamp(2.2rem,5vw,4rem)">Des projets<br><em>bientôt ici.</em></h2>
-    <p class="section-sub reveal d2" style="margin:0 auto 3rem;max-width:480px">Les premiers projets clients sont en cours. Les réalisations seront publiées ici dès leur lancement — avec l'accord des clients.</p>
+    <p class="section-sub reveal d2" style="margin:0 auto 3rem;max-width:480px">Les premiers projets clients sont en cours. Les réalisations seront publiées ici dès leur lancement "avec l'accord des clients".</p>
 
     <!-- Teaser cards -->
     <div class="cs-cards reveal d2">
@@ -1479,11 +1474,6 @@ h2.section-title em{font-style:italic}
       <span class="contact-option-action" id="waContactAction">Bientôt disponible</span>
       <span class="wa-soon" id="waContactNote">Numéro pro en cours</span>
     </div>
-    <button type="button" onclick="openCalModal()" class="contact-option">
-      <span class="contact-option-icon">📅</span>
-      <span class="contact-option-label">Appel ou visio de 20 min</span>
-      <span class="contact-option-action">Réserver →</span>
-    </button>
     <a href="mailto:contact@polowagency.fr" class="contact-option">
       <span class="contact-option-icon">✉️</span>
       <span class="contact-option-label">Par email</span>
@@ -1500,11 +1490,12 @@ h2.section-title em{font-style:italic}
     <input type="tel" name="telephone" placeholder="Votre téléphone (optionnel)" autocomplete="tel">
     <select name="besoin">
       <option value="" disabled selected>Quel est votre besoin ?</option>
-      <option value="express">Site Express</option>
-      <option value="vitrine">Site Vitrine</option>
-      <option value="resa">Site + Réservation en ligne</option>
+      <option value="vitrine">Site vitrine</option>
+      <option value="resa">Site + réservation en ligne</option>
+      <option value="gestion">Site + gestion complète</option>
       <option value="refonte">Refonte de site</option>
       <option value="maintenance">Maintenance & support</option>
+      <option value="mesure">Projet sur mesure</option>
       <option value="other">Je ne sais pas encore</option>
     </select>
     <input type="text" name="ville" placeholder="Votre ville (Paris, Lyon, Bordeaux, Douai…)">
