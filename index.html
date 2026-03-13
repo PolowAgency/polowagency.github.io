@@ -190,7 +190,13 @@ h1 em{font-style:italic}
 .hero-bg-line,.hero-dots,.hero-badge,.badge-dot,.hero-local-mention,.hero-reassurance,.hero-right,.hero-cible-card,.cible-icon,.cible-text{display:none!important}
 
 .page--hero .page__inner{display:flex;flex-direction:column;}
-.page--hero #hero{min-height:0;}
+.page--hero #hero{min-height:0;flex:1;}
+@media(max-width:768px){
+  .page--hero #hero{
+    justify-content:flex-start;
+    padding-top:2rem;
+  }
+}
 /* SECTIONS in page system */
 section{padding:3rem 4rem 5.5rem}
 .section-label{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.9rem;padding-bottom:.3rem;border-bottom:1px solid var(--border-strong)}
@@ -566,12 +572,50 @@ h2.section-title em{font-style:italic}
   .footer-available-dot{width:5px;height:5px}
 
   /* ── Hero mobile ── */
-  #hero{padding:3rem 1.5rem 0;justify-content:center}
-  h1{font-size:clamp(3rem,13vw,5rem);margin-bottom:1rem}
-  .hero-sub{font-size:1.1rem;margin-bottom:2rem}
-  .hero-stats{gap:1.5rem;padding:1.25rem 0}
-  .stat-num{font-size:1.5rem}
-  .stat-label{font-size:.6rem}
+  /* ── Hero mobile ── */
+  #hero{
+    padding:2rem 1.5rem 1.5rem;
+    justify-content:center;
+    text-align:center;
+    min-height:0;
+  }
+  .hero-body{
+    justify-content:center;
+    gap:0;
+    padding-bottom:.5rem;
+  }
+  h1{
+    font-size:clamp(2.6rem,11vw,4.2rem);
+    margin-bottom:.85rem;
+    line-height:1.05;
+    letter-spacing:-.03em;
+  }
+  .hero-sub{
+    font-size:1rem;
+    margin-bottom:1.75rem;
+    line-height:1.5;
+    max-width:100%;
+  }
+  .hero-sub br{display:none}
+  .hero-actions{
+    gap:.6rem;
+    margin-bottom:2rem;
+    flex-direction:column;
+    align-items:center;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary{
+    width:100%;
+    max-width:320px;
+    justify-content:center;
+    padding:.85rem 1.5rem;
+  }
+  .hero-stats{
+    gap:1.25rem;
+    padding:1.1rem 0;
+  }
+  .stat-num{font-size:1.4rem}
+  .stat-label{font-size:.58rem;letter-spacing:.1em}
 
   /* ── Pourquoi : scroll horizontal sur mobile ── */
   #why{padding:2.75rem 0}
@@ -707,7 +751,8 @@ h2.section-title em{font-style:italic}
   .page__inner{padding-top:58px}
 }
 @media(max-width:420px){
-  h1{font-size:2.1rem}
+  h1{font-size:clamp(2.2rem,10vw,3rem)}
+  .hero-sub{font-size:.95rem}
   .why-grid{grid-template-columns:repeat(6,85vw)}
   .services-grid{grid-template-columns:repeat(4,88vw)}
   .realisations-grid{grid-template-columns:repeat(4,90vw)}
@@ -1096,7 +1141,7 @@ h2.section-title em{font-style:italic}
         <h3>Où que vous soyez en France…</h3>
         <p>Un appel de 20 min suffit pour démarrer. Gratuit, sans engagement.</p>
       </div>
-      <button type="button" onclick="openCalModal()" class="btn-outline-dark">Réserver un échange →</button>
+      <a href="mailto:contact@polowagency.fr" class="btn-outline-dark">Écrire un email →</a>
     </div>
   </div>
 </section>
@@ -1474,10 +1519,10 @@ h2.section-title em{font-style:italic}
       <span class="contact-option-action" id="waContactAction">Bientôt disponible</span>
       <span class="wa-soon" id="waContactNote">Numéro pro en cours</span>
     </div>
-    <a href="mailto:contact@polowagency.fr" class="contact-option">
+    <a href="/cdn-cgi/l/email-protection#385b57564c595b4c78485754574f595f5d565b41165e4a" class="contact-option">
       <span class="contact-option-icon">✉️</span>
       <span class="contact-option-label">Par email</span>
-      <span class="contact-option-action">contact@polowagency.fr</span>
+      <span class="contact-option-action"><span class="__cf_email__" data-cfemail="284b47465c494b5c68584744475f494f4d464b51064e5a">[email&#160;protected]</span></span>
     </a>
   </div>
   <p style="color:var(--text-dim);font-size:.8rem;margin-bottom:1.5rem;position:relative;z-index:1">— ou remplissez le formulaire —</p>
@@ -1536,7 +1581,7 @@ h2.section-title em{font-style:italic}
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ═══════════════════════════════════════════
    CONFIGURATION WHATSAPP
    → Renseignez votre numéro au format international sans le "+"
@@ -1696,15 +1741,8 @@ function closeBlogModal(e) {
 }
 
 /* ─── Cal modal ─────────────────────────────── */
-function openCalModal() {
-  document.getElementById('calModal').classList.add('is-open');
-  document.body.style.overflow = 'hidden';
-}
-function closeCalModal(e) {
-  if (e && e.target !== document.getElementById('calModal') && !e.target.classList.contains('cal-modal-close')) return;
-  document.getElementById('calModal').classList.remove('is-open');
-  document.body.style.overflow = '';
-}
+function openCalModal() { showSection('contact'); }
+function closeCalModal() {}
 
 // BLOG ARTICLES DATA
 const ARTICLES = [
@@ -1836,8 +1874,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // Blog modal
     closeBlogModal({ target: document.getElementById('blogModal') });
-    // Cal modal
-    closeCalModal({ target: document.getElementById('calModal') });
   });
 
   /* ── Formulaire contact (Formspree) ── */
@@ -2028,35 +2064,6 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </div>
 
-<!-- GOOGLE CALENDAR MODAL -->
-<div id="calModal" class="cal-modal" onclick="closeCalModal(event)" role="dialog" aria-modal="true" aria-label="Prendre rendez-vous">
-  <div class="cal-modal-inner">
-    <div class="cal-modal-header">
-      <div class="cal-modal-title-wrap">
-        <span class="cal-modal-icon">📅</span>
-        <div>
-          <h3 class="cal-modal-title">Réserver un appel découverte</h3>
-          <p class="cal-modal-sub">30 min · Gratuit · Sans engagement</p>
-        </div>
-      </div>
-      <button type="button" class="cal-modal-close" onclick="closeCalModal()" aria-label="Fermer">✕</button>
-    </div>
-    <div class="cal-modal-body">
-      <div class="cal-loading" id="calLoading">
-        <div class="cal-spinner"></div>
-        <p>Chargement du calendrier…</p>
-      </div>
-      <iframe
-        id="calIframe"
-        src="GOOGLE_CALENDAR_URL_PLACEHOLDER"
-        style="display:none"
-        onload="document.getElementById('calLoading').style.display='none';this.style.display='block';"
-        title="Réservation Google Calendar"
-      ></iframe>
-    </div>
-  </div>
-</div>
-
 <style>
 .cal-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:2000;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(10px)}
 .cal-modal.is-open{display:flex}
@@ -2067,6 +2074,4 @@ document.addEventListener('DOMContentLoaded', function () {
 .cal-modal-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:#f0ede8;margin:0}
 .cal-modal-sub{font-size:.78rem;color:rgba(240,237,232,.45);margin:.2rem 0 0}
 .cal-modal-close{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(240,237,232,.6);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:color .2s,border-color .2s;flex-shrink:0}
-.cal-modal-close:hover{color:#f0ede8;border-color:rgba(255,255,255,.3)}
-.cal-modal-body{flex:1;overflow:hidden;min-height:480px;position:relative;display:flex;flex-direction:column}
-.cal-loading{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cal-modal-close:hover{
