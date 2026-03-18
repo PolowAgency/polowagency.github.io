@@ -800,7 +800,7 @@ h2.section-title em{font-style:italic}
 .srv-delay{font-size:.72rem;font-family:'DM Sans',sans-serif;color:var(--text-soft)}
 .srv-cta{background:transparent;border:1px solid rgba(242,240,235,.15);color:var(--text);font-family:'DM Sans',sans-serif;font-size:.78rem;padding:.55rem 1rem;border-radius:8px;cursor:pointer;transition:all .2s;width:100%;text-align:center}
 .srv-cta:hover{background:var(--text);color:#0a0a0b;border-color:var(--text)}
-/* Featured — mobile base */
+/* Featured — mobile */
 .srv-card.srv-featured{border-color:rgba(201,169,110,.28);padding:0;display:flex;flex-direction:column;overflow:hidden}
 .srv-card.srv-featured::before{background:radial-gradient(ellipse at 20% 0%,rgba(201,169,110,.09),transparent 60%)}
 .srv-card.srv-featured:hover{border-color:rgba(201,169,110,.5);box-shadow:0 12px 50px rgba(0,0,0,.4)}
@@ -825,7 +825,7 @@ h2.section-title em{font-style:italic}
 .srv-diff-icon{width:32px;height:32px;background:rgba(201,169,110,.07);border:1px solid rgba(201,169,110,.14);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;margin-top:.05rem}
 .srv-diff-title{font-size:.84rem;font-weight:500;color:var(--text);margin-bottom:.15rem;line-height:1.3}
 .srv-diff-desc{font-size:.77rem;color:var(--text-soft);line-height:1.5}
-/* Maintenance — mobile base */
+/* Maintenance — mobile */
 .srv-card.srv-horizontal{flex-direction:column;align-items:flex-start;gap:1.1rem;padding:1.5rem}
 .srv-card.srv-horizontal::before{background:none}
 .srv-horizontal-left{display:flex;align-items:flex-start;gap:1rem;width:100%}
@@ -839,7 +839,7 @@ h2.section-title em{font-style:italic}
 .srv-horizontal-tag::before{content:'✦';position:absolute;left:0;font-size:.4rem;color:rgba(201,169,110,.5);top:.42em}
 .srv-horizontal-right{display:flex;flex-direction:row;align-items:center;gap:.75rem;flex-wrap:wrap;width:100%}
 .srv-horizontal-delay{font-size:.72rem;font-family:'DM Sans',sans-serif;color:var(--text-soft)}
-/* Bannière sur-mesure — mobile base */
+/* Bannière — mobile */
 .srv-custom-banner{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;padding:1.2rem 1.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:14px}
 .srv-custom-banner p{font-size:.855rem;color:var(--text-soft);margin:0;line-height:1.5}
 .srv-custom-banner strong{color:var(--text);font-weight:500}
@@ -889,6 +889,14 @@ h2.section-title em{font-style:italic}
   .section-title{font-size:clamp(2rem,9vw,3.2rem);line-height:1.1}
   .section-sub{font-size:.9rem;line-height:1.7;margin-bottom:1.75rem}
   p{line-height:1.75}
+
+  /* Services mobile : cartes empilées */
+  .srv-grid{grid-template-columns:1fr;gap:1rem}
+  .srv-card{padding:1.5rem 1.5rem 1.25rem}
+  
+  .srv-title{font-size:1.35rem}
+  .srv-footer{flex-direction:column;align-items:flex-start;gap:.75rem}
+  .srv-cta{width:100%;text-align:center;padding:.7rem}
 
   /* Pages légales mobile */
   .legal-section{padding:3rem 1.25rem 2rem}
@@ -1646,7 +1654,7 @@ const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
 /* ═══════════════════════════════════════════
    ROUTEUR : navigation type "pages" par hash
 ═══════════════════════════════════════════ */
-const SECTIONS = ['hero','why','for-who','about','founder','services','realisations','comparison','process','blog','testimonials','faq','contact','mentions-legales','confidentialite'];
+const SECTIONS = ['hero','why','for-who','about','founder','services','realisations','comparison','process','blog','testimonials','faq','contact','mentions-legales','confidentialite','cgv'];
 const DEFAULT_SECTION = 'hero';
 
 let _current = null;
@@ -2090,6 +2098,72 @@ document.addEventListener('DOMContentLoaded', function () {
     </section>
 </div><!-- /.page__inner --></div><!-- /.page -->
 
+<!-- CGV -->
+<div id="page-cgv" class="page" data-section="cgv" tabindex="-1" role="main" aria-label="Conditions Générales de Vente">
+  <div class="page__inner">
+    <section id="cgv" class="legal-section">
+      <span class="section-label">Contractuel</span>
+      <h1 class="section-title">Conditions Générales de Vente</h1>
+      <p class="section-sub" style="margin-bottom:2.5rem">Version du 18/03/2026 — POLOW Agency, Paul PIOT</p>
+      <div class="legal-content">
+        <div class="legal-block">
+          <h2>Article 1 — Objet</h2>
+          <p>Les présentes CGV régissent l'ensemble des prestations proposées par POLOW Agency (Paul PIOT, auto-entrepreneur) à ses clients. Toute commande implique l'acceptation sans réserve des présentes CGV.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 2 — Prestations</h2>
+          <p>Création de sites web vitrines, sites avec réservation en ligne, intégration d'outils tiers (Planity, Fresha, Calendly, Doctolib), développement de logiciels SaaS, maintenance, hébergement et modifications.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 3 — Devis et commande</h2>
+          <p>Tout devis est valable <strong>15 jours</strong>. Le devis signé ou l'accord écrit par email vaut bon de commande. Aucun travail ne démarre sans accord écrit.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 4 — Tarifs</h2>
+          <p>Prix en euros TTC. TVA non applicable, article 293B du CGI. Les tarifs du devis accepté sont fermes et définitifs.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 5 — Paiement</h2>
+          <p><strong>Acompte :</strong> 50 % à la signature, avant démarrage. <strong>Solde :</strong> 50 % à la livraison, avant mise en ligne. <strong>Abonnements :</strong> facturés mensuellement à compter de la livraison. <strong>Retard :</strong> pénalités au taux légal + indemnité forfaitaire de 40 €.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 6 — Délais de livraison</h2>
+          <p>Les délais courent à compter de la réception de l'acompte ET des éléments fournis par le client. Tout retard imputable au client suspend le délai. Sans retour client sous <strong>30 jours</strong>, la prestation est validée et le solde exigible.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 7 — Obligations du client</h2>
+          <p>Fournir les contenus dans les délais convenus. Donner ses retours sous <strong>5 jours ouvrés</strong>. S'assurer que les contenus fournis ne violent aucun droit de propriété intellectuelle.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 8 — Propriété intellectuelle</h2>
+          <p>Les éléments créés restent propriété de POLOW Agency jusqu'au paiement intégral. Après règlement, le client devient propriétaire du code et des visuels livrés. POLOW Agency se réserve le droit de mentionner la réalisation dans son portfolio, sauf opposition écrite.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 9 — Hébergement et abonnement</h2>
+          <p>L'abonnement mensuel couvre : hébergement, sauvegardes automatiques, mises à jour techniques, 1 modification mineure/mois (&lt; 30 min). <strong>Résiliation :</strong> préavis d'un mois par email. Les fichiers sont transmis sous 15 jours. Le site est mis hors ligne à l'issue du préavis. <strong>Non-paiement :</strong> suspension possible après 15 jours sans régularisation.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 10 — Modifications hors abonnement</h2>
+          <p>Petite modification : 60 € — Modification moyenne : 120 € — Ajout de page : 200 € — Taux horaire : 60 €/h — Intervention urgente : 90 €/h.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 11 — Responsabilité</h2>
+          <p>POLOW Agency n'est pas responsable des interruptions dues aux hébergeurs tiers, des dommages indirects, ni des contenus fournis par le client. La responsabilité est limitée au montant de la prestation.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 12 — Confidentialité et RGPD</h2>
+          <p>Toutes les informations transmises sont confidentielles. Les données personnelles sont traitées conformément au RGPD.</p>
+        </div>
+        <div class="legal-block">
+          <h2>Article 13 — Litiges</h2>
+          <p>Solution amiable en priorité. À défaut, tribunaux du ressort de Douai (59) — droit français applicable.</p>
+        </div>
+      </div>
+      <button type="button" class="btn-secondary" onclick="history.back()" style="margin-top:2.5rem">← Retour</button>
+    </section>
+  </div>
+</div><!-- /.page -->
+
 <!-- BARRE LÉGALE FIXE -->
 <div class="legal-bar" id="legalBar">
   <span class="legal-bar-copy">© 2026 POLOW Agency</span>
@@ -2097,6 +2171,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <a href="#mentions-legales" onclick="showSection('mentions-legales');return false">Mentions légales</a>
     <span class="legal-bar-sep">·</span>
     <a href="#confidentialite" onclick="showSection('confidentialite');return false">Confidentialité</a>
+    <span class="legal-bar-sep">·</span>
+    <a href="#cgv" onclick="showSection('cgv');return false">CGV</a>
   </div>
   <span class="legal-bar-avail"><span class="legal-bar-dot"></span>Disponible</span>
 </div>
