@@ -1246,7 +1246,7 @@ h2.section-title em{font-style:italic}
           <span class="srv-f-proof"><span class="srv-f-proof-dot"></span>+30 % de remplissage en moyenne</span>
         </div>
         <h3 class="srv-f-title">Moins de trous.<br>Plus de clients.<br><em>Automatiquement.</em></h3>
-        <p class="srv-f-sub">Un système propriétaire POLOW qui automatise vos réservations, relance vos clients inactifs et optimise votre agenda — pendant que vous travaillez.</p>
+        <p class="srv-f-sub">Un système complet qui inclut votre site web premium, la réservation en ligne 24h/24, le logiciel de gestion et les relances automatiques — tout en un, développé par POLOW.</p>
         <div class="srv-f-cible">
           <span class="srv-f-cible-tag">✂️ Coiffeurs</span>
           <span class="srv-f-cible-tag">💆 Spas</span>
@@ -1260,7 +1260,15 @@ h2.section-title em{font-style:italic}
         <button type="button" class="srv-cta-demo" onclick="showSection('contact')">Demander une démo →</button>
       </div>
       <div class="srv-f-right">
-        <p class="srv-f-right-label">Ce qui change tout</p>
+        <p class="srv-f-right-label">Ce qui est inclus</p>
+        <div class="srv-diff-item">
+          <div class="srv-diff-icon">🌐</div>
+          <div><div class="srv-diff-title">Site web premium inclus</div><div class="srv-diff-desc">Un site à votre image, responsive, optimisé SEO — intégré au système dès le départ.</div></div>
+        </div>
+        <div class="srv-diff-item">
+          <div class="srv-diff-icon">📲</div>
+          <div><div class="srv-diff-title">Réservation en ligne 24h/24</div><div class="srv-diff-desc">Vos clients réservent directement depuis votre site, à toute heure — zéro appel manqué.</div></div>
+        </div>
         <div class="srv-diff-item">
           <div class="srv-diff-icon">🚫</div>
           <div><div class="srv-diff-title">Anti no-show automatique</div><div class="srv-diff-desc">Acompte à la réservation + rappels SMS/email. Fini les créneaux bloqués pour rien.</div></div>
@@ -1268,10 +1276,6 @@ h2.section-title em{font-style:italic}
         <div class="srv-diff-item">
           <div class="srv-diff-icon">🔄</div>
           <div><div class="srv-diff-title">Relance clients intelligente</div><div class="srv-diff-desc">Vos inactifs reçoivent un message au bon moment. Ils reviennent sans que vous y pensiez.</div></div>
-        </div>
-        <div class="srv-diff-item">
-          <div class="srv-diff-icon">📅</div>
-          <div><div class="srv-diff-title">Remplissage des créneaux vides</div><div class="srv-diff-desc">Le système détecte vos trous et les propose en priorité. Plus de blanc, plus de chiffre.</div></div>
         </div>
         <div class="srv-diff-item">
           <div class="srv-diff-icon">📊</div>
@@ -1643,7 +1647,7 @@ const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
 /* ═══════════════════════════════════════════
    ROUTEUR : navigation type "pages" par hash
 ═══════════════════════════════════════════ */
-const SECTIONS = ['hero','why','for-who','about','founder','services','realisations','comparison','process','blog','testimonials','faq','contact','mentions-legales','confidentialite','cgv'];
+const SECTIONS = ['hero','why','for-who','about','founder','services','realisations','comparison','process','blog','testimonials','faq','contact','mentions-legales','confidentialite'];
 const DEFAULT_SECTION = 'hero';
 
 let _current = null;
@@ -2087,101 +2091,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </section>
 </div><!-- /.page__inner --></div><!-- /.page -->
 
-<!-- CGV -->
-<div id="page-cgv" class="page" data-section="cgv" tabindex="-1" role="main" aria-label="Conditions Générales de Vente">
-  <div class="page__inner">
-    <section id="cgv" class="legal-section">
-      <span class="section-label">Contractuel</span>
-      <h1 class="section-title">Conditions Générales de Vente</h1>
-      <p class="section-sub" style="margin-bottom:2.5rem">Version du 18/03/2026 — POLOW Agency, Paul PIOT</p>
-
-      <div class="legal-content">
-
-        <div class="legal-block">
-          <h2>Article 1 — Objet</h2>
-          <p>Les présentes Conditions Générales de Vente (CGV) régissent l'ensemble des prestations de services proposées par POLOW Agency (Paul PIOT, auto-entrepreneur) à ses clients professionnels et particuliers. Toute commande implique l'acceptation sans réserve des présentes CGV.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 2 — Prestations proposées</h2>
-          <p>POLOW Agency propose les prestations suivantes :</p>
-          <ul>
-            <li>Création de sites web vitrines</li>
-            <li>Création de sites web avec réservation en ligne</li>
-            <li>Intégration d'outils de réservation (Planity, Fresha, Calendly, Doctolib, etc.)</li>
-            <li>Développement de logiciels de gestion sur mesure (SaaS)</li>
-            <li>Maintenance, hébergement et support technique</li>
-            <li>Modifications et évolutions de sites existants</li>
-          </ul>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 3 — Devis et commande</h2>
-          <p>Toute prestation fait l'objet d'un devis préalable, valable <strong>15 jours</strong> à compter de sa date d'émission. Le devis signé par le client (ou son accord écrit par email) vaut bon de commande et acceptation des présentes CGV. Aucun travail ne sera démarré sans accord écrit du client.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 4 — Tarifs</h2>
-          <p>Les prix sont exprimés en euros TTC (TVA non applicable, article 293B du CGI). Les tarifs en vigueur sont ceux indiqués sur le devis accepté par le client. POLOW Agency se réserve le droit de modifier ses tarifs à tout moment, sans que cela n'affecte les devis déjà acceptés.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 5 — Conditions de paiement</h2>
-          <p><strong>Acompte :</strong> Un acompte de 50 % du montant total est exigible à la signature du devis, avant tout démarrage des travaux.</p>
-          <p><strong>Solde :</strong> Le solde de 50 % est dû à la livraison du projet, avant mise en ligne définitive.</p>
-          <p><strong>Abonnement mensuel :</strong> Les abonnements (hébergement, maintenance, SaaS) sont facturés mensuellement à compter de la date de livraison.</p>
-          <p><strong>Retard de paiement :</strong> Tout retard entraîne l'application de pénalités au taux légal en vigueur, ainsi qu'une indemnité forfaitaire de recouvrement de 40 €.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 6 — Délais de livraison</h2>
-          <p>Les délais indiqués sur le devis sont donnés à titre indicatif. Ils courent à compter de la réception de l'acompte ET de la fourniture de tous les éléments nécessaires par le client. Tout retard imputable au client suspend automatiquement le délai de livraison. Passé un délai de <strong>30 jours</strong> sans retour du client, la prestation est considérée comme validée et le solde devient exigible.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 7 — Obligations du client</h2>
-          <p>Le client s'engage à fournir l'ensemble des contenus dans les délais convenus, à donner ses retours dans un délai de <strong>5 jours ouvrés</strong> après chaque soumission, et à s'assurer que les contenus fournis ne violent aucun droit de propriété intellectuelle.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 8 — Propriété intellectuelle</h2>
-          <p>Les éléments créés restent la propriété de POLOW Agency jusqu'au paiement intégral. Après règlement complet, le client devient propriétaire des éléments graphiques et du code source livrés. POLOW Agency se réserve le droit de mentionner la réalisation dans son portfolio, sauf opposition écrite du client.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 9 — Hébergement et abonnement mensuel</h2>
-          <p>L'abonnement mensuel couvre l'hébergement, les sauvegardes automatiques, les mises à jour techniques et 1 modification mineure par mois (moins de 30 minutes).</p>
-          <p><strong>Résiliation :</strong> Possible avec un préavis d'un mois par email. Les fichiers du site sont transmis au client dans les 15 jours suivant la résiliation.</p>
-          <p><strong>Non-paiement :</strong> En cas de non-paiement après relance, POLOW Agency se réserve le droit de suspendre l'hébergement après 15 jours sans régularisation.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 10 — Modifications hors abonnement</h2>
-          <p>Toute modification dépassant le forfait mensuel est facturée selon les tarifs en vigueur : petite modification 60 €, modification moyenne 120 €, ajout de page 200 €, taux horaire standard 60 €/h, intervention urgente 90 €/h.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 11 — Responsabilité</h2>
-          <p>POLOW Agency ne saurait être tenu responsable des interruptions de service dues aux prestataires d'hébergement tiers, des dommages indirects liés à l'utilisation du site, ni des contenus fournis par le client. La responsabilité de POLOW Agency est limitée au montant total de la prestation concernée.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 12 — Confidentialité</h2>
-          <p>POLOW Agency s'engage à garder confidentielles toutes les informations communiquées par le client. Les données personnelles collectées sont traitées conformément au RGPD.</p>
-        </div>
-
-        <div class="legal-block">
-          <h2>Article 13 — Litiges</h2>
-          <p>En cas de litige, une solution amiable sera recherchée en priorité. À défaut, les tribunaux du ressort de Douai (59) seront seuls compétents, la loi française étant applicable.</p>
-        </div>
-
-      </div>
-
-      <button type="button" class="btn-secondary" onclick="history.back()" style="margin-top:2.5rem">← Retour</button>
-    </section>
-  </div>
-</div><!-- /.page -->
-
 <!-- BARRE LÉGALE FIXE -->
 <div class="legal-bar" id="legalBar">
   <span class="legal-bar-copy">© 2026 POLOW Agency</span>
@@ -2189,8 +2098,6 @@ document.addEventListener('DOMContentLoaded', function () {
     <a href="#mentions-legales" onclick="showSection('mentions-legales');return false">Mentions légales</a>
     <span class="legal-bar-sep">·</span>
     <a href="#confidentialite" onclick="showSection('confidentialite');return false">Confidentialité</a>
-    <span class="legal-bar-sep">·</span>
-    <a href="#cgv" onclick="showSection('cgv');return false">CGV</a>
   </div>
   <span class="legal-bar-avail"><span class="legal-bar-dot"></span>Disponible</span>
 </div>
