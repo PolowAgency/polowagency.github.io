@@ -843,6 +843,39 @@ h2.section-title em{font-style:italic}
 .srv-custom-banner{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;padding:1.2rem 1.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:14px}
 .srv-custom-banner p{font-size:.855rem;color:var(--text-soft);margin:0;line-height:1.5}
 .srv-custom-banner strong{color:var(--text);font-weight:500}
+/* ─── SLOTLY Dashboard Mockup ─── */
+.slotly-mock{background:#0d0d10;border:1px solid rgba(201,169,110,.18);border-radius:14px;overflow:hidden;font-family:'DM Sans',sans-serif}
+.sm-header{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;background:#111115;border-bottom:1px solid rgba(255,255,255,.06)}
+.sm-logo{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,169,110,.9);font-weight:500}
+.sm-header-right{display:flex;align-items:center;gap:.6rem}
+.sm-notif{position:relative;width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:rgba(242,240,235,.3)}
+.sm-notif svg{width:14px;height:14px}
+.sm-notif-dot{position:absolute;top:2px;right:2px;width:5px;height:5px;border-radius:50%;background:#f87171;box-shadow:0 0 6px rgba(248,113,113,.6)}
+.sm-avatar{width:22px;height:22px;border-radius:50%;background:rgba(201,169,110,.2);border:1px solid rgba(201,169,110,.35);display:flex;align-items:center;justify-content:center;font-size:.55rem;color:rgba(201,169,110,.9);font-weight:600}
+.sm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.06)}
+.sm-stat-box{padding:.6rem .75rem;background:#0d0d10;text-align:center}
+.sm-stat-green{background:#0d0d10}
+.sm-stat-val{font-size:.95rem;font-weight:600;color:var(--text);line-height:1;margin-bottom:.18rem}
+.sm-stat-green .sm-stat-val{color:#4ade80}
+.sm-stat-lbl{font-size:.52rem;letter-spacing:.04em;color:rgba(242,240,235,.35);text-transform:uppercase;line-height:1.3}
+.sm-stat-lbl--red{color:#f87171!important}
+.sm-agenda-label{font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,240,235,.3);padding:.6rem 1rem .3rem}
+.sm-slots{display:flex;flex-direction:column;padding:0 .6rem .6rem}
+.sm-slot{display:flex;align-items:center;gap:.6rem;padding:.45rem .5rem;border-radius:8px;transition:background .2s}
+.sm-slot--done{opacity:.45}
+.sm-slot--now{background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.14)}
+.sm-slot-time{font-size:.62rem;color:rgba(242,240,235,.4);min-width:30px;font-variant-numeric:tabular-nums}
+.sm-slot--now .sm-slot-time{color:rgba(201,169,110,.85)}
+.sm-slot-client{flex:1;min-width:0}
+.sm-slot-name{font-size:.7rem;font-weight:500;color:rgba(242,240,235,.85);line-height:1.2}
+.sm-slot-svc{font-size:.6rem;color:rgba(242,240,235,.35);line-height:1.3}
+.sm-slot-badge{font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;padding:.18rem .45rem;border-radius:100px;white-space:nowrap;flex-shrink:0}
+.sm-badge-done{background:rgba(242,240,235,.07);color:rgba(242,240,235,.3)}
+.sm-badge-now{background:rgba(201,169,110,.15);color:rgba(201,169,110,.9);border:1px solid rgba(201,169,110,.25)}
+.sm-badge-next{background:rgba(242,240,235,.04);color:rgba(242,240,235,.4);border:1px solid rgba(242,240,235,.08)}
+.sm-reminder{display:flex;align-items:center;gap:.5rem;padding:.55rem .85rem;background:rgba(74,222,128,.06);border-top:1px solid rgba(74,222,128,.12);font-size:.6rem;color:rgba(74,222,128,.7);line-height:1.4}
+.sm-reminder strong{color:rgba(74,222,128,.95)}
+
 /* Tablet 600px+ */
 @media(min-width:600px){
   .srv-footer{flex-direction:row;align-items:center;justify-content:space-between}
@@ -858,7 +891,7 @@ h2.section-title em{font-style:italic}
   .srv-card{padding:2rem;border-radius:20px}
   .srv-card.srv-featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;flex-direction:unset}
   .srv-f-left{padding:2.5rem;border-bottom:none;border-right:1px solid var(--border)}
-  .srv-f-right{padding:2.5rem;background:rgba(201,169,110,.025);justify-content:center}
+  .srv-f-right{padding:2.5rem;background:rgba(201,169,110,.025);justify-content:center;align-items:center}
   .srv-f-title{font-size:clamp(1.6rem,2.4vw,2rem)}
   .srv-f-sub{max-width:360px}
   .srv-card.srv-horizontal{grid-column:1/-1;padding:1.6rem 2rem}
@@ -893,7 +926,23 @@ h2.section-title em{font-style:italic}
   /* Services mobile : cartes empilées */
   .srv-grid{grid-template-columns:1fr;gap:1rem}
   .srv-card{padding:1.5rem 1.5rem 1.25rem}
-  
+
+  /* Featured SLOTLY mobile */
+  .srv-card.srv-featured{display:flex;flex-direction:column}
+  .srv-f-left{padding:1.5rem;gap:.65rem;border-bottom:1px solid var(--border)}
+  .srv-f-right{padding:1.25rem 1.5rem;background:none}
+  .srv-f-title{font-size:1.5rem;line-height:1.2}
+  .srv-f-sub{font-size:.82rem;max-width:100%}
+  .srv-f-eyebrow{flex-wrap:wrap;gap:.4rem}
+  .srv-f-cible{gap:.25rem}
+  .srv-f-cible-tag{font-size:.58rem}
+  .srv-cta-demo{width:100%;font-size:.82rem;padding:.72rem 1.25rem}
+  .srv-f-right-label{margin-bottom:.75rem}
+  .srv-diff-item{padding:.7rem 0;gap:.7rem}
+  .srv-diff-icon{width:28px;height:28px;font-size:.72rem;flex-shrink:0}
+  .srv-diff-title{font-size:.8rem}
+  .srv-diff-desc{font-size:.72rem}
+
   .srv-title{font-size:1.35rem}
   .srv-footer{flex-direction:column;align-items:flex-start;gap:.75rem}
   .srv-cta{width:100%;text-align:center;padding:.7rem}
@@ -1123,7 +1172,7 @@ h2.section-title em{font-style:italic}
     <div class="why-card reveal">
       <span class="why-icon">🧑‍💻</span>
       <h3>Interlocuteur unique</h3>
-      <p>Du brief au lancement, c'est toujours Paul. Pas de rotation d'équipe ni de ticket de support — une relation directe du début à la fin.</p>
+      <p>Du brief au lancement, c'est toujours Paul. Pas de rotation d'équipe ni de ticket de support. Une relation directe du début à la fin.</p>
     </div>
     <div class="why-card reveal d1">
       <span class="why-icon">✨</span>
@@ -1138,7 +1187,7 @@ h2.section-title em{font-style:italic}
     <div class="why-card reveal d3">
       <span class="why-icon">🇫🇷</span>
       <h3>Disponible partout en France</h3>
-      <p>Basé à Douai, je travaille avec des clients partout en France par visio et email. La distance n'est pas un obstacle — c'est mon quotidien.</p>
+      <p>Basé à Douai, je travaille avec des clients partout en France par visio et email. La distance n'est pas un obstacle, c'est mon quotidien.</p>
     </div>
     <div class="why-card reveal d1">
       <span class="why-icon">💸</span>
@@ -1158,7 +1207,7 @@ h2.section-title em{font-style:italic}
 <div class="page" data-section="for-who" id="page-for-who" role="region" aria-labelledby="heading-for-who" tabindex="-1"><div class="page__inner"><section id="for-who">
   <span class="section-label reveal">Pour qui</span>
   <h2 class="section-title reveal d1" id="heading-for-who">Vous êtes indépendant<br>ou <em>petite entreprise ?</em></h2>
-  <p class="section-sub reveal d2">POLOW crée des sites web pour les professionnels qui veulent se concentrer sur leur métier — pas sur la technique.</p>
+  <p class="section-sub reveal d2">POLOW crée des sites web pour les professionnels qui veulent se concentrer sur leur métier, pas sur la technique.</p>
   <div class="for-who-grid">
     <div class="for-who-item reveal"><span class="for-who-emoji">✂️</span><div><div class="for-who-label">Coiffeur & salon</div><div class="for-who-sub">Site vitrine + réservation Planity</div></div></div>
     <div class="for-who-item reveal d1"><span class="for-who-emoji">💅</span><div><div class="for-who-label">Esthéticienne & spa</div><div class="for-who-sub">Catalogue de soins + prise de RDV</div></div></div>
@@ -1169,10 +1218,13 @@ h2.section-title em{font-style:italic}
     <div class="for-who-item reveal d2"><span class="for-who-emoji">🏪</span><div><div class="for-who-label">Commerçant local</div><div class="for-who-sub">Présence web + Google Maps</div></div></div>
     <div class="for-who-item reveal d3"><span class="for-who-emoji">🔌</span><div><div class="for-who-label">Électricien, plombier…</div><div class="for-who-sub">Site professionnel + SEO local</div></div></div>
     <div class="for-who-item reveal"><span class="for-who-emoji">🏢</span><div><div class="for-who-label">Petite entreprise</div><div class="for-who-sub">Site institutionnel ou refonte</div></div></div>
+    <div class="for-who-item reveal d1"><span class="for-who-emoji">🩺</span><div><div class="for-who-label">Médecin & spécialiste</div><div class="for-who-sub">Prise de RDV + infos cabinet</div></div></div>
+    <div class="for-who-item reveal d2"><span class="for-who-emoji">🦴</span><div><div class="for-who-label">Kiné & ostéopathe</div><div class="for-who-sub">Agenda en ligne + fiche patient</div></div></div>
+    <div class="for-who-item reveal d3"><span class="for-who-emoji">🧘</span><div><div class="for-who-label">Psychologue & sophrologue</div><div class="for-who-sub">Site discret + réservation sécurisée</div></div></div>
   </div>
   <button type="button" class="why-show-more" id="whyShowMore" onclick="showAllWhy()" style="display:none;margin:1.25rem auto 0;background:var(--bg2);border:1px solid var(--border-strong);border-radius:100px;padding:.7rem 1.6rem;font-size:.85rem;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--text)">Voir toutes les raisons ↓</button>
 
-  <div class="for-who-note reveal"><strong>Vous êtes partout en France.</strong> Que vous soyez à Paris, Lyon, Bordeaux, Marseille, Nantes, Rennes ou à Douai — je travaille avec vous à distance. Un appel de 20 min suffit pour démarrer.</div>
+  <div class="for-who-note reveal"><strong>Vous êtes partout en France.</strong> Que vous soyez à Paris, Lyon, Bordeaux, Marseille, Nantes, Rennes ou à Douai, je travaille avec vous à distance. Un appel de 20 min suffit pour démarrer.</div>
 </section>
 </div><!-- /.page__inner --></div><!-- /.page -->
 
@@ -1193,7 +1245,7 @@ h2.section-title em{font-style:italic}
   <div class="about-text">
     <span class="section-label reveal">À propos</span>
     <h2 class="section-title reveal d1" id="heading-about">Agence web française,<br><em>à votre service.</em></h2>
-    <p class="reveal d2">POLOW Agency est née à <strong>Douai</strong> d'une conviction simple : un beau site web ne devrait pas être réservé aux grandes entreprises. Les coiffeurs, les artisans, les indépendants — <strong>partout en France</strong> — méritent aussi une présence en ligne dont ils sont fiers.</p>
+    <p class="reveal d2">POLOW Agency est née à <strong>Douai</strong> d'une conviction simple : un beau site web ne devrait pas être réservé aux grandes entreprises. Les coiffeurs, les artisans, les indépendants, <strong>partout en France</strong>, méritent aussi une présence en ligne dont ils sont fiers.</p>
     <p class="reveal d3">Site vitrine, intégration de réservation ou logiciel de gestion complet : je vous propose <em>la solution adaptée à votre activité</em>, sans jargon, sans surprise. <strong>Un interlocuteur unique, disponible</strong>, partout en France.</p>
     <div class="value-tags reveal d4">
       <span class="value-tag">📍 Basé à Douai</span>
@@ -1249,11 +1301,11 @@ h2.section-title em{font-style:italic}
     <article class="srv-card srv-featured reveal">
       <div class="srv-f-left">
         <div class="srv-f-eyebrow">
-          <span class="srv-f-tag">✦ Offre principale</span>
+          <span class="srv-f-tag">✦ SLOTLY by POLOW</span>
           <span class="srv-f-proof"><span class="srv-f-proof-dot"></span>+30 % de remplissage en moyenne</span>
         </div>
         <h3 class="srv-f-title">Un agenda plein.<br>Des clients fidèles.<br><em>Tout en automatique.</em></h3>
-        <p class="srv-f-sub">Un système complet qui inclut votre site web premium, la réservation en ligne 24h/24, le logiciel de gestion et les relances automatiques — tout en un, développé par POLOW.</p>
+        <p class="srv-f-sub">Un système complet qui inclut votre site web premium, la réservation en ligne 24h/24, le logiciel de gestion et les relances automatiques. Tout en un, développé par POLOW.</p>
         <div class="srv-f-cible">
           <span class="srv-f-cible-tag">✂️ Coiffeurs</span>
           <span class="srv-f-cible-tag">💆 Spas</span>
@@ -1261,32 +1313,53 @@ h2.section-title em{font-style:italic}
           <span class="srv-f-cible-tag">🔧 CT</span>
           <span class="srv-f-cible-tag">🧠 Thérapeutes</span>
           <span class="srv-f-cible-tag">📋 Coachs</span>
+          <span class="srv-f-cible-tag">🏥 Kinés & infirmiers</span>
+          <span class="srv-f-cible-tag">🩺 Médecins & spécialistes</span>
+          <span class="srv-f-cible-tag">🧘 Ostéopathes</span>
           <span class="srv-f-cible-tag">+ tous les pros sur RDV</span>
         </div>
         <p class="srv-f-rupture">Ce n'est pas un logiciel. C'est un système qui génère du chiffre.</p>
         <button type="button" class="srv-cta-demo" onclick="showSection('contact')">Demander une démo →</button>
       </div>
       <div class="srv-f-right">
-        <p class="srv-f-right-label">Ce qui est inclus</p>
-        <div class="srv-diff-item">
-          <div class="srv-diff-icon">🌐</div>
-          <div><div class="srv-diff-title">Site web premium inclus</div><div class="srv-diff-desc">Un site à votre image, responsive, optimisé SEO — intégré au système dès le départ.</div></div>
-        </div>
-        <div class="srv-diff-item">
-          <div class="srv-diff-icon">📲</div>
-          <div><div class="srv-diff-title">Réservation en ligne 24h/24</div><div class="srv-diff-desc">Vos clients réservent directement depuis votre site, à toute heure — zéro appel manqué.</div></div>
-        </div>
-        <div class="srv-diff-item">
-          <div class="srv-diff-icon">🚫</div>
-          <div><div class="srv-diff-title">Anti no-show automatique</div><div class="srv-diff-desc">Acompte à la réservation + rappels SMS/email. Fini les créneaux bloqués pour rien.</div></div>
-        </div>
-        <div class="srv-diff-item">
-          <div class="srv-diff-icon">🔄</div>
-          <div><div class="srv-diff-title">Relance clients intelligente</div><div class="srv-diff-desc">Vos inactifs reçoivent un message au bon moment. Ils reviennent sans que vous y pensiez.</div></div>
-        </div>
-        <div class="srv-diff-item">
-          <div class="srv-diff-icon">📊</div>
-          <div><div class="srv-diff-title">Tableau de bord centralisé</div><div class="srv-diff-desc">Réservations, fiches clients, historique — tout en un seul endroit, simple à utiliser.</div></div>
+        <p class="srv-f-right-label">Aperçu du tableau de bord</p>
+        <div class="slotly-mock">
+          <div class="sm-header">
+            <div class="sm-logo">SLOTLY</div>
+            <div class="sm-header-right">
+              <div class="sm-notif"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5a4.5 4.5 0 00-4.5 4.5v2.25L2 9.75V11h12V9.75L12.5 8.25V6A4.5 4.5 0 008 1.5z" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 12.5a1.5 1.5 0 003 0" stroke="currentColor" stroke-width="1.2"/></svg><span class="sm-notif-dot"></span></div>
+              <div class="sm-avatar">S</div>
+            </div>
+          </div>
+          <div class="sm-stats">
+            <div class="sm-stat-box"><div class="sm-stat-val">12</div><div class="sm-stat-lbl">RDV aujourd'hui</div></div>
+            <div class="sm-stat-box sm-stat-green"><div class="sm-stat-val">3</div><div class="sm-stat-lbl">Nouveaux clients</div></div>
+            <div class="sm-stat-box"><div class="sm-stat-val">0</div><div class="sm-stat-lbl sm-stat-lbl--red">No-shows</div></div>
+          </div>
+          <div class="sm-agenda-label">Agenda du jour</div>
+          <div class="sm-slots">
+            <div class="sm-slot sm-slot--done">
+              <div class="sm-slot-time">09:00</div>
+              <div class="sm-slot-client"><div class="sm-slot-name">Sophie M.</div><div class="sm-slot-svc">Coupe + Couleur</div></div>
+              <div class="sm-slot-badge sm-badge-done">Terminé</div>
+            </div>
+            <div class="sm-slot sm-slot--now">
+              <div class="sm-slot-time">10:30</div>
+              <div class="sm-slot-client"><div class="sm-slot-name">Lucas D.</div><div class="sm-slot-svc">Barbe + Coupe</div></div>
+              <div class="sm-slot-badge sm-badge-now">En cours</div>
+            </div>
+            <div class="sm-slot">
+              <div class="sm-slot-time">11:15</div>
+              <div class="sm-slot-client"><div class="sm-slot-name">Marie L.</div><div class="sm-slot-svc">Soin + Brushing</div></div>
+              <div class="sm-slot-badge sm-badge-next">À venir</div>
+            </div>
+            <div class="sm-slot">
+              <div class="sm-slot-time">14:00</div>
+              <div class="sm-slot-client"><div class="sm-slot-name">Claire R.</div><div class="sm-slot-svc">Mèches + Coupe</div></div>
+              <div class="sm-slot-badge sm-badge-next">À venir</div>
+            </div>
+          </div>
+          <div class="sm-reminder"><svg viewBox="0 0 16 16" fill="none" style="width:12px;height:12px;flex-shrink:0"><path d="M8 1l1.5 3 3.5.5-2.5 2.5.5 3.5L8 9 5 11l.5-3.5L3 5l3.5-.5L8 1z" stroke="#4ade80" stroke-width="1.2" stroke-linejoin="round"/></svg><span>Rappel SMS envoyé à <strong>Marie L.</strong> pour 11h15</span></div>
         </div>
       </div>
     </article>
@@ -1322,7 +1395,7 @@ h2.section-title em{font-style:italic}
         <span class="srv-badge">Le plus demandé</span>
       </div>
       <h3 class="srv-title">Site + réservation</h3>
-      <p class="srv-benefit">Déjà sur Planity, Fresha ou Doctolib ? Je connecte votre outil à votre site. Vos clients réservent directement — zéro double saisie.</p>
+      <p class="srv-benefit">Déjà sur Planity, Fresha ou Doctolib ? Je connecte votre outil à votre site. Vos clients réservent directement, zéro double saisie.</p>
       <ul class="srv-list">
         <li>Site vitrine complet inclus</li>
         <li>Intégration Planity, Fresha, Calendly, Doctolib</li>
@@ -1343,7 +1416,7 @@ h2.section-title em{font-style:italic}
         </div>
         <div class="srv-horizontal-body">
           <h3 class="srv-horizontal-title">Maintenance & support</h3>
-          <p class="srv-horizontal-desc">Hébergement, sauvegardes et mises à jour inclus. Votre site reste en ligne et à jour — vous, vous faites votre métier.</p>
+          <p class="srv-horizontal-desc">Hébergement, sauvegardes et mises à jour inclus. Votre site reste en ligne et à jour. Vous, vous faites votre métier.</p>
           <div class="srv-horizontal-tags">
             <span class="srv-horizontal-tag">Hébergement pris en charge</span>
             <span class="srv-horizontal-tag">Sauvegardes automatiques</span>
@@ -1360,7 +1433,7 @@ h2.section-title em{font-style:italic}
 
     <!-- Bannière sur-mesure -->
     <div class="srv-custom-banner reveal d3">
-      <p><strong>Besoin spécifique ?</strong> Migration, fonctionnalité avancée, intégration particulière — on en discute et on construit ensemble.</p>
+      <p><strong>Besoin spécifique ?</strong> Migration, fonctionnalité avancée, intégration particulière : on en discute et on construit ensemble.</p>
       <button type="button" class="srv-cta" onclick="showSection('contact')" style="flex-shrink:0">En parler →</button>
     </div>
 
@@ -1422,7 +1495,7 @@ h2.section-title em{font-style:italic}
 <div class="page" data-section="comparison" id="page-comparison" role="region" aria-labelledby="heading-comparison" tabindex="-1"><div class="page__inner"><section id="comparison">
   <span class="section-label reveal">Pourquoi pas ailleurs</span>
   <h2 class="section-title reveal d1" id="heading-comparison">Une alternative aux<br><em>agences classiques.</em></h2>
-  <p class="section-sub reveal d2">Des devis à 3 000 € avec 3 mois d'attente ? Il existe une autre façon de travailler — pensée pour vous.</p>
+  <p class="section-sub reveal d2">Des devis à 3 000 € avec 3 mois d'attente ? Il existe une autre façon de travailler, pensée pour vous.</p>
   <div class="comparison-cols">
     <div class="comp-col comp-them reveal">
       <div class="comp-title">Agences classiques</div>
@@ -1458,7 +1531,7 @@ h2.section-title em{font-style:italic}
   <h2 class="section-title reveal d1" id="heading-process">Comment se passe<br><em>la création de votre site.</em></h2>
   <p class="section-sub reveal d2" style="margin-bottom:2.5rem">Simple, rapide, sans jargon. De l'échange initial à la mise en ligne, voici les 4 étapes.</p>
   <div class="process-steps">
-    <div class="step reveal"><div class="step-num">01</div><h4>Échange sur votre activité</h4><p>Un appel de 20 min — gratuit et sans engagement. On comprend votre métier, vos clients et ce dont vous avez vraiment besoin.</p></div>
+    <div class="step reveal"><div class="step-num">01</div><h4>Échange sur votre activité</h4><p>Un appel de 20 min, gratuit et sans engagement. On comprend votre métier, vos clients et ce dont vous avez vraiment besoin.</p></div>
     <div class="step reveal d1"><div class="step-num">02</div><h4>Création de votre site</h4><p>Je vous soumets une maquette visuelle avant de développer quoi que ce soit. Vous validez, j'ajuste. Puis je construis avec soin.</p></div>
     <div class="step reveal d2"><div class="step-num">03</div><h4>Mise en ligne</h4><p>Votre site est mis en ligne, référencé sur Google, et prêt à accueillir vos visiteurs. Hébergement compris.</p></div>
     <div class="step reveal d3"><div class="step-num">04</div><h4>Accompagnement continu 🚀</h4><p>Je vous forme à gérer votre site et reste disponible après la livraison. Vous n'êtes jamais seul face à votre site.</p></div>
@@ -1474,7 +1547,7 @@ h2.section-title em{font-style:italic}
 <div class="page" data-section="blog" id="page-blog" role="region" aria-labelledby="heading-blog" tabindex="-1"><div class="page__inner"><section id="blog">
   <span class="section-label reveal">Blog</span>
   <h2 class="section-title reveal d1" id="heading-blog">Conseils & ressources<br><em>pour votre présence web.</em></h2>
-  <p class="section-sub reveal d2">Des articles pratiques pour les indépendants et artisans qui veulent comprendre le web — sans jargon.</p>
+  <p class="section-sub reveal d2">Des articles pratiques pour les indépendants et artisans qui veulent comprendre le web, sans jargon.</p>
   <div class="blog-grid">
     <article class="blog-card reveal" onclick="openArticle(0)">
       <div class="blog-meta"><span class="blog-cat">Conseils</span><span class="blog-date">Fév. 2025</span></div>
@@ -1507,7 +1580,7 @@ h2.section-title em{font-style:italic}
   <div class="testimonials-grid">
     <div class="testi-card reveal">
       <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">« Paul a vraiment compris ce que je voulais dès le premier échange. Mon site avec Planity intégré tourne parfaitement — mes clientes réservent même la nuit ! »</p>
+      <p class="testi-text">« Paul a vraiment compris ce que je voulais dès le premier échange. Mon site avec Planity intégré tourne parfaitement. Mes clientes réservent même la nuit ! »</p>
       <div class="testi-author"><div class="testi-avatar">JM</div><div><div class="testi-name">Julie M.</div><div class="testi-role">Coiffeuse indépendante</div></div></div>
     </div>
     <div class="testi-card reveal d1">
@@ -1535,7 +1608,7 @@ h2.section-title em{font-style:italic}
   <div class="faq-grid">
     <div class="faq-item reveal" role="button" tabindex="0" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)">
       <div class="faq-q"><span>Vous intervenez uniquement à Douai ?</span><span class="faq-icon">+</span></div>
-      <div class="faq-a">Non, je travaille avec des clients partout en France, entièrement à distance. Visio, email, messagerie — on s'adapte à ce qui vous convient. Je peux aussi me déplacer si vous êtes dans la région de Douai.</div>
+      <div class="faq-a">Non, je travaille avec des clients partout en France, entièrement à distance. Visio, email, messagerie : on s'adapte à ce qui vous convient. Je peux aussi me déplacer si vous êtes dans la région de Douai.</div>
     </div>
     <div class="faq-item reveal d1" role="button" tabindex="0" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' ')toggleFaq(this)">
       <div class="faq-q"><span>C'est quoi l'intégration Planity ?</span><span class="faq-icon">+</span></div>
@@ -1806,7 +1879,7 @@ const ARTICLES = [
     body: `
       <p>Imaginez un commercial disponible 24h/24, 7j/7, qui ne prend jamais de congés, ne demande pas d'augmentation et parle de votre activité avec précision. C'est exactement ce qu'est un site web bien conçu.</p>
       <h3>Un site travaille quand vous dormez</h3>
-      <p>Vos clients potentiels cherchent vos services le soir, le week-end, pendant leurs pauses. Un site bien référencé capte ces moments où vous n'êtes pas disponible — et prépare la décision d'achat avant même que vous décrochiez le téléphone.</p>
+      <p>Vos clients potentiels cherchent vos services le soir, le week-end, pendant leurs pauses. Un site bien référencé capte ces moments où vous n'êtes pas disponible et prépare la décision d'achat avant même que vous décrochiez le téléphone.</p>
       <h3>La confiance se construit visuellement</h3>
       <p>En moins de 3 secondes, un visiteur décide s'il reste ou s'il part. Un design soigné, des photos de qualité, un message clair : ce sont ces éléments qui transforment un inconnu en prospect sérieux.</p>
       <h3>Les éléments d'un site qui convertit</h3>
@@ -1816,32 +1889,32 @@ const ARTICLES = [
         <li>Un appel à l'action visible (formulaire, bouton de réservation)</li>
         <li>Un chargement rapide sur mobile</li>
       </ul>
-      <p>Chez POLOW Agency, chaque site est pensé comme un outil de conversion — pas juste une vitrine esthétique.</p>
+      <p>Chez POLOW Agency, chaque site est pensé comme un outil de conversion, pas juste une vitrine esthétique.</p>
     `
   },
   {
     cat: 'SEO', date: 'Jan. 2025',
     title: 'Référencement local : comment apparaître sur Google quand on cherche un coiffeur à Douai',
     body: `
-      <p>Le SEO local, c'est l'art d'apparaître dans les résultats Google quand quelqu'un cherche votre type de service près de chez lui. Pour un coiffeur, un artisan ou un indépendant, c'est souvent le levier le plus puissant — et le moins exploité.</p>
+      <p>Le SEO local, c'est l'art d'apparaître dans les résultats Google quand quelqu'un cherche votre type de service près de chez lui. Pour un coiffeur, un artisan ou un indépendant, c'est souvent le levier le plus puissant et le moins exploité.</p>
       <h3>Google My Business : votre première priorité</h3>
-      <p>Créez et optimisez votre fiche Google My Business. Ajoutez des photos, vos horaires, votre description. Les avis clients y ont un poids énorme — encouragez vos clients satisfaits à en laisser.</p>
+      <p>Créez et optimisez votre fiche Google My Business. Ajoutez des photos, vos horaires, votre description. Les avis clients y ont un poids énorme : encouragez vos clients satisfaits à en laisser.</p>
       <h3>Les mots-clés locaux dans votre site</h3>
-      <p>Votre site doit mentionner naturellement votre ville et votre métier. "Coiffeur à Douai", "salon de coiffure Douai" — ces expressions doivent apparaître dans vos titres, votre description et vos textes.</p>
+      <p>Votre site doit mentionner naturellement votre ville et votre métier. "Coiffeur à Douai", "salon de coiffure Douai" : ces expressions doivent apparaître dans vos titres, votre description et vos textes.</p>
       <h3>La cohérence NAP</h3>
       <p><strong>NAP = Name, Address, Phone.</strong> Vos coordonnées doivent être identiques partout : sur votre site, votre fiche Google, vos réseaux sociaux. Une incohérence et Google pénalise votre référencement.</p>
-      <p>POLOW Agency intègre le SEO local dans chaque site dès la conception — pas en option à la fin.</p>
+      <p>POLOW Agency intègre le SEO local dans chaque site dès la conception, pas en option à la fin.</p>
     `
   },
   {
     cat: 'Design', date: 'Déc. 2024',
     title: 'Ce que vos clients regardent en premier sur votre site (et que vous négligez)',
     body: `
-      <p>Des études d'eye-tracking ont cartographié précisément où les yeux des visiteurs se posent en premier sur un site web. Les résultats sont souvent surprenants — et très utiles pour concevoir une page efficace.</p>
+      <p>Des études d'eye-tracking ont cartographié précisément où les yeux des visiteurs se posent en premier sur un site web. Les résultats sont souvent surprenants et très utiles pour concevoir une page efficace.</p>
       <h3>Le haut de page : zone critique</h3>
       <p>Les 400 premiers pixels de votre site concentrent 80% de l'attention. Si votre message principal, votre valeur ajoutée et un appel à l'action ne s'y trouvent pas, vous perdez la majorité de vos visiteurs avant même qu'ils scrollent.</p>
       <h3>Les images de personnes attirent l'œil</h3>
-      <p>Le cerveau humain est câblé pour regarder les visages. Une photo de vous, de votre équipe ou de vos clients satisfaits attire instantanément le regard — et crée une connexion émotionnelle immédiate.</p>
+      <p>Le cerveau humain est câblé pour regarder les visages. Une photo de vous, de votre équipe ou de vos clients satisfaits attire instantanément le regard et crée une connexion émotionnelle immédiate.</p>
       <h3>Ce qu'on néglige souvent</h3>
       <ul>
         <li>Le bouton de contact : trop petit, trop discret, trop bas</li>
@@ -1849,7 +1922,7 @@ const ARTICLES = [
         <li>Le temps de chargement : chaque seconde supplémentaire fait fuir 10% des visiteurs</li>
         <li>La version mobile : souvent bâclée alors que 70% du trafic vient du téléphone</li>
       </ul>
-      <p>Un bon design, ce n'est pas juste ce qui est beau — c'est ce qui guide le regard vers l'action que vous souhaitez.</p>
+      <p>Un bon design, ce n'est pas juste ce qui est beau. C'est ce qui guide le regard vers l'action que vous souhaitez.</p>
     `
   }
 ];
