@@ -40,7 +40,7 @@
 ═══════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth}
-body{font-family:'League Spartan',sans-serif;background:#09090b;color:#f2f0eb;overflow-x:hidden;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:'League Spartan',sans-serif;background:#09090b;color:#f2f0eb;overflow-x:hidden;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;font-size:17px}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ::selection{background:rgba(201,169,110,.25);color:#f2f0eb}
@@ -143,7 +143,7 @@ nav.scrolled{background:rgba(9,9,11,.94);padding:.8rem 2.5rem}
 .section-label::before{content:'';display:block;width:18px;height:1px;background:var(--gold);opacity:.6}
 h2.section-title{font-family:'League Spartan',sans-serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;line-height:1.15;letter-spacing:-.02em;margin-bottom:1.1rem;color:var(--text)}
 h2.section-title em{font-style:italic}
-.section-sub{color:var(--text-soft);font-size:.93rem;line-height:1.75;max-width:520px}
+.section-sub{color:var(--text-soft);font-size:1rem;line-height:1.75;max-width:520px}
 .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--text);color:#0a0a0b;padding:.9rem 2rem;border-radius:100px;font-size:.875rem;font-weight:500;transition:background .2s,transform .2s;border:none;cursor:pointer;font-family:'League Spartan',sans-serif;position:relative;overflow:hidden}
 .btn-primary:hover{background:var(--mid);transform:translateY(-2px)}
 .btn-secondary{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--text);padding:.9rem 2rem;border-radius:100px;font-size:.875rem;border:1px solid var(--border-strong);transition:border-color .2s,background .2s;cursor:pointer;font-family:'League Spartan',sans-serif;position:relative;overflow:hidden}
@@ -173,7 +173,7 @@ h2.section-title em{font-style:italic}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 h1{font-family:'League Spartan',sans-serif;font-size:clamp(2.8rem,6.5vw,6.5rem);font-weight:300;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.75rem;max-width:960px}
 h1 em{font-style:italic;color:var(--gold)}
-.hero-sub{font-size:1rem;color:var(--text-soft);margin-bottom:2.5rem;max-width:580px;line-height:1.75;font-weight:300}
+.hero-sub{font-size:1.1rem;color:var(--text-soft);margin-bottom:2.5rem;max-width:580px;line-height:1.75;font-weight:300}
 .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem}
 .hero-tags{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:center}
 .hero-tag{font-size:.72rem;color:var(--text-soft);letter-spacing:.08em;opacity:.6}
@@ -193,7 +193,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .pos-card:hover{border-color:var(--gold-border);transform:translateY(-3px);box-shadow:0 10px 36px rgba(0,0,0,.4)}
 .pos-icon{font-size:1.5rem;margin-bottom:.9rem;display:block}
 .pos-card h3{font-family:'League Spartan',sans-serif;font-size:1.15rem;font-weight:400;color:var(--text);margin-bottom:.4rem}
-.pos-card p{font-size:.82rem;color:var(--text-soft);line-height:1.65}
+.pos-card p{font-size:.9rem;color:var(--text-soft);line-height:1.65}
 
 /* ═══════════════════════════════════════════
    REZOO SECTION
@@ -288,9 +288,9 @@ h1 em{font-style:italic;color:var(--gold)}
 .offre-badge-rezoo{color:#a78bfa;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25)}
 .offre-icon{font-size:1.75rem;margin-bottom:.25rem}
 .offre-title{font-family:'League Spartan',sans-serif;font-size:1.4rem;font-weight:400;color:var(--text);line-height:1.2}
-.offre-desc{font-size:.83rem;color:var(--text-soft);line-height:1.65}
+.offre-desc{font-size:.9rem;color:var(--text-soft);line-height:1.65}
 .offre-features{list-style:none;display:flex;flex-direction:column;gap:.4rem;flex:1;margin:.25rem 0}
-.offre-features li{font-size:.8rem;color:rgba(242,240,235,.55);display:flex;align-items:flex-start;gap:.5rem;line-height:1.45}
+.offre-features li{font-size:.875rem;color:rgba(242,240,235,.55);display:flex;align-items:flex-start;gap:.5rem;line-height:1.45}
 .offre-features li::before{content:'·';flex-shrink:0;opacity:.35;margin-top:.05rem}
 .offre-quote{font-family:'League Spartan',sans-serif;font-size:.95rem;font-style:italic;color:var(--gold);border-left:2px solid var(--gold-border);padding-left:.9rem;line-height:1.5;margin:.5rem 0}
 .offre-cta{display:block;text-align:center;padding:.8rem 1.25rem;border-radius:100px;font-size:.82rem;font-weight:500;transition:all .2s;cursor:pointer;border:none;font-family:'League Spartan',sans-serif;width:100%;margin-top:auto;position:relative;overflow:hidden}
@@ -312,7 +312,7 @@ h1 em{font-style:italic;color:var(--gold)}
 .diff-col-them .diff-col-title{color:var(--text-soft)}
 .diff-col-us .diff-col-title{color:var(--text)}
 .diff-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-.diff-list li{font-size:.875rem;line-height:1.5;display:flex;align-items:flex-start;gap:.65rem}
+.diff-list li{font-size:.95rem;line-height:1.55;display:flex;align-items:flex-start;gap:.65rem}
 .diff-col-them .diff-list li{color:var(--text-soft);opacity:.65}
 .diff-col-them .diff-list li::before{content:'✗';flex-shrink:0;opacity:.45;margin-top:.06rem}
 .diff-col-us .diff-list li{color:var(--text)}
@@ -331,64 +331,83 @@ h1 em{font-style:italic;color:var(--gold)}
 .real-card.placeholder-card:hover{opacity:.9}
 .real-preview{height:210px;position:relative;overflow:hidden;flex-shrink:0}
 /* Hair salon preview */
-.prev-coiff{background:#111;height:100%;display:flex;flex-direction:column}
-.pc-nav{background:rgba(255,255,255,.05);padding:.5rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
-.pc-nav-logo{font-size:.66rem;letter-spacing:.22em;color:rgba(255,255,255,.8);text-transform:uppercase;font-family:'League Spartan',sans-serif}
-.pc-nav-btn{background:#c9a96e;color:#111;font-size:.55rem;padding:.28rem .65rem;border-radius:100px;font-weight:500}
-.pc-hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;padding:.8rem 1rem;text-align:center}
-.pc-tag{font-size:.45rem;letter-spacing:.22em;color:#c9a96e;text-transform:uppercase}
-.pc-h1{font-size:1.05rem;font-weight:300;color:#fff;letter-spacing:.02em;line-height:1.2;font-family:'League Spartan',sans-serif}
-.pc-h1 em{font-style:italic;color:#c9a96e}
-.pc-sub{font-size:.48rem;color:rgba(255,255,255,.35);letter-spacing:.06em}
-.pc-cta{background:#c9a96e;color:#111;font-size:.52rem;padding:.3rem .9rem;border-radius:100px;margin-top:.35rem;font-weight:500}
-.pc-bottom{display:flex;border-top:1px solid rgba(255,255,255,.07);flex-shrink:0}
-.pc-svc{flex:1;text-align:center;padding:.5rem .3rem;border-right:1px solid rgba(255,255,255,.05)}
-.pc-svc:last-child{border-right:none}
-.pc-svc-icon{font-size:.8rem;display:block;margin-bottom:.12rem}
-.pc-svc-lbl{font-size:.42rem;color:rgba(255,255,255,.35)}
-/* Étoile Relax preview — crème/obsidian/gold/eucalyptus */
-.prev-etoile{background:#FBF8F3;height:100%;display:flex;flex-direction:column;font-family:'League Spartan',sans-serif}
-.pe-nav{background:#1C1814;padding:.5rem 1rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.pe-logo{font-size:.64rem;letter-spacing:.2em;color:#F7F2EA;text-transform:uppercase;font-family:'League Spartan',sans-serif;display:flex;align-items:center;gap:.3rem}
-.pe-logo-star{color:#C4A46B;font-size:.6rem}
-.pe-nav-rdv{border:1px solid rgba(196,164,107,.5);color:#C4A46B;font-size:.48rem;padding:.22rem .6rem;border-radius:3px;letter-spacing:.06em;text-transform:uppercase}
-.pe-hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.8rem 1rem;gap:.38rem;text-align:center;background:linear-gradient(180deg,#FBF8F3 0%,#EDE5D8 100%)}
-.pe-eyebrow{font-size:.42rem;letter-spacing:.28em;color:#C4A46B;text-transform:uppercase}
-.pe-h1{font-size:.98rem;font-weight:300;color:#1C1814;line-height:1.25;font-family:'League Spartan',sans-serif}
-.pe-h1 em{font-style:italic;color:#1C1814}
-.pe-sub{font-size:.44rem;color:#6B6158;letter-spacing:.04em}
-.pe-cta{background:#1C1814;color:#F7F2EA;font-size:.48rem;padding:.28rem .85rem;border-radius:2px;margin-top:.35rem;letter-spacing:.06em;text-transform:uppercase}
-.pe-services{display:flex;border-top:1px solid rgba(28,24,20,.08);flex-shrink:0;background:#1C1814}
-.pe-svc{flex:1;text-align:center;padding:.45rem .2rem;border-right:1px solid rgba(255,255,255,.07)}
-.pe-svc:last-child{border-right:none}
-.pe-svc-icon{font-size:.72rem;display:block;margin-bottom:.1rem}
-.pe-svc-name{font-size:.4rem;color:rgba(247,242,234,.45);text-transform:uppercase;letter-spacing:.08em;display:block}
-/* REZOO réalisation preview */
-.prev-rezoo{background:#0d0d10;height:100%;display:flex;flex-direction:column;font-family:'League Spartan',sans-serif}
-.prz-header{display:flex;align-items:center;justify-content:space-between;padding:.55rem .9rem;background:#111115;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0}
-.prz-logo{font-size:.78rem;font-weight:900;letter-spacing:-.4px;color:#fff;font-family:'Helvetica Neue',Arial,sans-serif}
-.prz-logo span{color:transparent;-webkit-text-stroke:1px rgba(201,169,110,.9)}
-.prz-live{display:flex;align-items:center;gap:.3rem;font-size:.52rem;color:rgba(74,222,128,.85);background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.18);padding:.2rem .55rem;border-radius:100px}
-.prz-live-dot{width:4px;height:4px;border-radius:50%;background:#4ade80;box-shadow:0 0 4px rgba(74,222,128,.6)}
-.prz-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0}
-.prz-stat{background:#0d0d10;padding:.5rem .6rem;text-align:center}
-.prz-stat-val{font-size:.85rem;font-weight:600;color:#f2f0eb;line-height:1;margin-bottom:.12rem}
-.prz-stat-val.gold{color:#c9a96e}
-.prz-stat-lbl{font-size:.44rem;letter-spacing:.06em;color:rgba(242,240,235,.28);text-transform:uppercase}
-.prz-slots{display:flex;flex-direction:column;padding:.4rem .6rem;gap:.25rem;flex:1}
-.prz-slot{display:flex;align-items:center;gap:.55rem;padding:.38rem .45rem;border-radius:7px}
-.prz-slot-now{background:rgba(201,169,110,.07);border:1px solid rgba(201,169,110,.16)}
-.prz-slot-done{opacity:.4}
-.prz-time{font-size:.56rem;color:rgba(242,240,235,.35);min-width:28px;font-variant-numeric:tabular-nums}
-.prz-slot-now .prz-time{color:rgba(201,169,110,.8)}
-.prz-name{font-size:.64rem;font-weight:500;color:rgba(242,240,235,.8);flex:1}
-.prz-svc{font-size:.54rem;color:rgba(242,240,235,.3)}
-.prz-badge{font-size:.46rem;letter-spacing:.06em;text-transform:uppercase;padding:.14rem .4rem;border-radius:100px}
-.prz-badge-now{background:rgba(201,169,110,.15);color:rgba(201,169,110,.9);border:1px solid rgba(201,169,110,.22)}
-.prz-badge-done{background:rgba(242,240,235,.06);color:rgba(242,240,235,.28)}
-.prz-footer{padding:.45rem .9rem;background:#111115;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.prz-footer-txt{font-size:.44rem;color:rgba(242,240,235,.22);letter-spacing:.04em}
-.prz-commission{font-size:.48rem;color:rgba(201,169,110,.7);font-weight:500}
+/* ── Carré d'Hair : REZOO Dashboard ── */
+.prev-cdh{background:#131208;height:100%;display:grid;grid-template-columns:68px 1fr 82px;overflow:hidden;font-family:'League Spartan',sans-serif}
+.pcd-sb{background:#1a1a0d;border-right:1px solid rgba(201,169,110,.1);display:flex;flex-direction:column;padding:.5rem .4rem;gap:.4rem;overflow:hidden}
+.pcd-logo-wrap{margin-bottom:.15rem}
+.pcd-logo{font-size:.58rem;font-weight:900;color:#f0ead8;letter-spacing:-.3px;line-height:1;display:flex;align-items:center;gap:0}
+.pcd-logo-o{display:inline-flex;align-items:center;justify-content:center;width:.55rem;height:.55rem}
+.pcd-logo-sub{font-size:.32rem;color:rgba(201,169,110,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:.1rem}
+.pcd-client{background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.18);border-radius:5px;padding:.3rem .35rem;margin-bottom:.1rem}
+.pcd-client-av{width:15px;height:15px;background:linear-gradient(135deg,#c9a96e,#a07840);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.36rem;font-weight:800;color:#fff;margin-bottom:.15rem}
+.pcd-client-name{font-size:.44rem;font-weight:700;color:#f0ead8;line-height:1.2}
+.pcd-client-loc{font-size:.36rem;color:rgba(201,169,110,.5)}
+.pcd-nav-item{display:flex;align-items:center;gap:.28rem;padding:.25rem .3rem;border-radius:4px;font-size:.4rem;color:rgba(240,234,216,.4)}
+.pcd-nav-item.on{background:rgba(201,169,110,.1);color:#c9a96e}
+.pcd-nav-ic{font-size:.55rem}
+/* Main */
+.pcd-main{padding:.45rem .55rem;display:flex;flex-direction:column;gap:.28rem;overflow:hidden;min-width:0}
+.pcd-date{font-size:.36rem;color:rgba(201,169,110,.45);text-transform:uppercase;letter-spacing:.05em}
+.pcd-greet{font-size:.68rem;font-weight:700;color:#f0ead8;line-height:1;letter-spacing:-.5px}
+.pcd-greet-name{color:#c9a96e}
+.pcd-biz{font-size:.38rem;color:rgba(240,234,216,.35);margin-top:.06rem}
+.pcd-perf{font-size:.34rem;font-weight:700;color:rgba(240,234,216,.3);text-transform:uppercase;letter-spacing:.08em}
+.pcd-ca{font-size:.7rem;font-weight:700;color:#f0ead8;filter:blur(5px);margin:.05rem 0}
+.pcd-chart-area{height:32px;position:relative;margin:.08rem 0}
+.pcd-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.22rem}
+.pcd-sbox{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:.28rem .3rem}
+.pcd-slbl{font-size:.32rem;color:rgba(240,234,216,.3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.1rem}
+.pcd-sval{font-size:.5rem;font-weight:700;color:#f0ead8;filter:blur(4px)}
+/* Right panel */
+.pcd-right{border-left:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;overflow:hidden}
+.pcd-ritem{background:#131208;padding:.38rem .45rem;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:.3rem;flex:1}
+.pcd-ritem:last-child{border-bottom:none}
+.pcd-ric{width:16px;height:16px;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.15);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.5rem;flex-shrink:0}
+.pcd-rtitle{font-size:.44rem;font-weight:600;color:#f0ead8;line-height:1.2}
+.pcd-rsub{font-size:.34rem;color:rgba(240,234,216,.35);margin-top:.05rem;line-height:1.3}
+
+/* ── Étoile Relax : dark hero ── */
+.prev-etoile{height:100%;display:flex;flex-direction:column;position:relative;overflow:hidden;background:linear-gradient(165deg,#2c2210 0%,#1a1508 45%,#0f0e08 100%)}
+.prev-etoile::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 35% 50%,rgba(160,140,60,.1) 0%,transparent 55%),radial-gradient(ellipse at 75% 40%,rgba(60,80,40,.15) 0%,transparent 50%);pointer-events:none}
+.pet-nav{display:flex;align-items:center;justify-content:space-between;padding:.5rem .85rem;flex-shrink:0;position:relative;z-index:1}
+.pet-logo{display:flex;align-items:center;gap:.3rem;font-size:.58rem;color:#F7F2EA}
+.pet-logo-star{color:#C4A46B}
+.pet-logo-main{font-weight:500;letter-spacing:.04em}
+.pet-logo-italic{font-style:italic;font-weight:300;color:#C4A46B}
+.pet-nav-links{display:flex;gap:.5rem}
+.pet-nav-link{font-size:.38rem;color:rgba(247,242,234,.45);text-transform:uppercase;letter-spacing:.1em}
+.pet-nav-cta{background:#C4A46B;color:#1C1814;font-size:.4rem;padding:.24rem .6rem;border-radius:3px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.pet-hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.32rem;text-align:center;padding:.5rem 1rem;position:relative;z-index:1}
+.pet-tag{display:flex;align-items:center;gap:.4rem;font-size:.36rem;letter-spacing:.2em;color:rgba(247,242,234,.5);text-transform:uppercase}
+.pet-tag-line{width:16px;height:1px;background:rgba(247,242,234,.3)}
+.pet-h1{font-size:.92rem;font-weight:300;color:#F7F2EA;line-height:1.15;letter-spacing:-.02em}
+.pet-h1-gold{display:block;font-size:1rem;font-style:italic;color:#C4A46B;font-weight:300;line-height:1.1}
+.pet-sub{font-size:.4rem;color:rgba(247,242,234,.4);line-height:1.55;max-width:88%;text-align:center}
+.pet-ctas{display:flex;gap:.38rem;margin-top:.2rem}
+.pet-cta1{background:#C4A46B;color:#1C1814;font-size:.4rem;padding:.3rem .7rem;border-radius:100px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.pet-cta2{border:1px solid rgba(247,242,234,.3);color:#F7F2EA;font-size:.4rem;padding:.3rem .7rem;border-radius:100px;letter-spacing:.05em;text-transform:uppercase}
+
+/* ── REZOO : landing page ── */
+.prev-rezoo{background:#f2ede6;height:100%;display:flex;flex-direction:column;overflow:hidden;font-family:'League Spartan',sans-serif}
+.prz-logo{display:flex;align-items:center;gap:0;font-size:.78rem;font-weight:900;letter-spacing:-.4px;color:#1a1814;font-family:'League Spartan',sans-serif;line-height:1}
+.prz-logo-o{display:inline-flex;align-items:center;justify-content:center;width:.78rem;height:.78rem;flex-shrink:0}
+.prz-nav{background:#fff;border-bottom:1px solid #ece8e2;padding:.4rem .85rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.prz-nav-right{display:flex;align-items:center;gap:.5rem}
+.prz-nav-links{display:flex;gap:.5rem}
+.prz-nav-link{font-size:.4rem;color:#888}
+.prz-nav-btn{background:#c9a96e;color:#fff;font-size:.42rem;font-weight:700;padding:.26rem .65rem;border-radius:100px}
+.prz-hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.5rem 1rem;text-align:center;gap:.3rem}
+.prz-badge{display:inline-flex;align-items:center;gap:.3rem;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.28);border-radius:100px;padding:.2rem .6rem;font-size:.4rem;color:#a07840;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.prz-badge-dot{width:5px;height:5px;border-radius:50%;background:#4ade80;flex-shrink:0}
+.prz-h1{font-size:.88rem;font-weight:800;color:#1a1814;line-height:1.1;letter-spacing:-.03em}
+.prz-h1-gold{color:#c9a96e;display:block}
+.prz-sub{font-size:.42rem;color:#888;line-height:1.5;max-width:90%;margin:.1rem auto 0}
+.prz-cta-wrap{display:flex;align-items:center;gap:.5rem;margin-top:.2rem}
+.prz-cta-main{background:linear-gradient(135deg,#c9a96e,#a07840);color:#fff;font-size:.48rem;font-weight:700;padding:.35rem .85rem;border-radius:100px;box-shadow:0 3px 10px rgba(201,169,110,.4)}
+.prz-cta-ghost{font-size:.45rem;color:#888;display:flex;align-items:center;gap:.2rem}
+.prz-trust{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
+.prz-trust-item{font-size:.4rem;color:#888;display:flex;align-items:center;gap:.22rem}
+.prz-trust-check{color:#4ade80;font-weight:700}
 /* Placeholder preview */
 .prev-placeholder{background:var(--bg);height:100%;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border)}
 .prev-placeholder-inner{text-align:center;opacity:.3}
@@ -988,22 +1007,49 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 1.
       <!-- Carré d'Hair -->
       <div class="real-card reveal d1">
         <div class="real-preview">
-          <div class="prev-coiff">
-            <div class="pc-nav">
-              <span class="pc-nav-logo">Carré d'Hair</span>
-              <span class="pc-nav-btn">Réserver</span>
+          <div class="prev-cdh">
+            <!-- Sidebar -->
+            <div class="pcd-sb">
+              <div class="pcd-logo-wrap">
+                <div class="pcd-logo">REZO<span class="pcd-logo-o"><svg viewBox="0 0 20 20" width="100%" height="100%"><circle cx="10" cy="10" r="8" fill="none" stroke="#c9a96e" stroke-width="2.2"/><circle cx="10" cy="10" r="4" fill="none" stroke="#c9a96e" stroke-width="2.2"/></svg></span></div>
+                <div class="pcd-logo-sub">by Polow Agency</div>
+              </div>
+              <div class="pcd-client">
+                <div class="pcd-client-av">CD</div>
+                <div class="pcd-client-name">Carré D'Hair</div>
+                <div class="pcd-client-loc">Dechy</div>
+              </div>
+              <div class="pcd-nav-item on"><span class="pcd-nav-ic">📊</span>Dashboard</div>
+              <div class="pcd-nav-item"><span class="pcd-nav-ic">📈</span>Analytics</div>
+              <div class="pcd-nav-item"><span class="pcd-nav-ic">👥</span>Clients</div>
+              <div class="pcd-nav-item"><span class="pcd-nav-ic">💰</span>Compta</div>
+              <div class="pcd-nav-item"><span class="pcd-nav-ic">📣</span>Campagnes</div>
             </div>
-            <div class="pc-hero">
-              <span class="pc-tag">Salon de coiffure · Douai</span>
-              <div class="pc-h1">L'art du <em>style</em><br>à votre portée</div>
-              <span class="pc-sub">Prenez rendez-vous en ligne en 60 secondes</span>
-              <div class="pc-cta">Réserver maintenant</div>
+            <!-- Main -->
+            <div class="pcd-main">
+              <div class="pcd-date">Jeudi 28 Mai 2026</div>
+              <div class="pcd-greet">Bonjour, <span class="pcd-greet-name">Sylvie</span></div>
+              <div class="pcd-biz">Carré D'Hair</div>
+              <div class="pcd-perf">Performance · 30 derniers jours</div>
+              <div class="pcd-ca">●●● €</div>
+              <div class="pcd-chart-area">
+                <svg width="100%" height="32" viewBox="0 0 160 32" preserveAspectRatio="none">
+                  <path d="M0,28 L20,26 L40,22 L55,24 L70,14 L85,18 L100,16 L115,20 L130,19 L145,21 L160,20" fill="none" stroke="#c9a96e" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M0,28 L20,26 L40,22 L55,24 L70,14 L85,18 L100,16 L115,20 L130,19 L145,21 L160,20 L160,32 L0,32Z" fill="rgba(201,169,110,.06)"/>
+                </svg>
+              </div>
+              <div class="pcd-stats">
+                <div class="pcd-sbox"><div class="pcd-slbl">CA</div><div class="pcd-sval">●●● €</div></div>
+                <div class="pcd-sbox"><div class="pcd-slbl">Semaine</div><div class="pcd-sval">●● RDV</div></div>
+                <div class="pcd-sbox"><div class="pcd-slbl">Demain</div><div class="pcd-sval">● RDV</div></div>
+              </div>
             </div>
-            <div class="pc-bottom">
-              <div class="pc-svc"><span class="pc-svc-icon">✂️</span><span class="pc-svc-lbl">Coupe</span></div>
-              <div class="pc-svc"><span class="pc-svc-icon">🎨</span><span class="pc-svc-lbl">Couleur</span></div>
-              <div class="pc-svc"><span class="pc-svc-icon">💆</span><span class="pc-svc-lbl">Soin</span></div>
-              <div class="pc-svc"><span class="pc-svc-icon">📅</span><span class="pc-svc-lbl">Agenda</span></div>
+            <!-- Right panel -->
+            <div class="pcd-right">
+              <div class="pcd-ritem"><div class="pcd-ric">📈</div><div><div class="pcd-rtitle">Analytics</div><div class="pcd-rsub">Stats détaillées</div></div></div>
+              <div class="pcd-ritem"><div class="pcd-ric">💰</div><div><div class="pcd-rtitle">Compta</div><div class="pcd-rsub">Exports financiers</div></div></div>
+              <div class="pcd-ritem"><div class="pcd-ric">📣</div><div><div class="pcd-rtitle">Campagnes</div><div class="pcd-rsub">SMS & relances</div></div></div>
+              <div class="pcd-ritem"><div class="pcd-ric">👥</div><div><div class="pcd-rtitle">Clients</div><div class="pcd-rsub">0 à relancer</div></div></div>
             </div>
           </div>
         </div>
@@ -1026,21 +1072,23 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 1.
       <div class="real-card reveal d2">
         <div class="real-preview">
           <div class="prev-etoile">
-            <div class="pe-nav">
-              <span class="pe-logo"><span class="pe-logo-star">✦</span> Étoile Relax</span>
-              <span class="pe-nav-rdv">Réserver</span>
+            <div class="pet-nav">
+              <div class="pet-logo"><span class="pet-logo-star">✦</span><span class="pet-logo-main"> Étoile </span><span class="pet-logo-italic">Relax</span></div>
+              <div class="pet-nav-links">
+                <span class="pet-nav-link">Le Spa</span>
+                <span class="pet-nav-link">Formules</span>
+                <span class="pet-nav-link">Contact</span>
+              </div>
+              <span class="pet-nav-cta">Réserver en ligne</span>
             </div>
-            <div class="pe-hero">
-              <span class="pe-eyebrow">Spa privatif &amp; Sauna · Douai</span>
-              <div class="pe-h1">Un moment rien<br>que pour <em>vous</em></div>
-              <span class="pe-sub">Réservation en ligne · Accès privatif</span>
-              <div class="pe-cta">Découvrir nos soins</div>
-            </div>
-            <div class="pe-services">
-              <div class="pe-svc"><span class="pe-svc-icon">🛁</span><span class="pe-svc-name">Spa privatif</span></div>
-              <div class="pe-svc"><span class="pe-svc-icon">🌿</span><span class="pe-svc-name">Sauna</span></div>
-              <div class="pe-svc"><span class="pe-svc-icon">💆</span><span class="pe-svc-name">Soins</span></div>
-              <div class="pe-svc"><span class="pe-svc-icon">✨</span><span class="pe-svc-name">Lounge</span></div>
+            <div class="pet-hero">
+              <div class="pet-tag"><span class="pet-tag-line"></span>Spa privatif · Douai<span class="pet-tag-line"></span></div>
+              <div class="pet-h1">Votre espace<span class="pet-h1-gold">de sérénité</span></div>
+              <div class="pet-sub">Sauna, jacuzzi et lounge entièrement privatisés — pour les couples, les groupes et les moments qui méritent l'exception.</div>
+              <div class="pet-ctas">
+                <span class="pet-cta1">Réserver maintenant</span>
+                <span class="pet-cta2">Voir les formules</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1064,36 +1112,33 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 1.
       <div class="real-card reveal d3">
         <div class="real-preview">
           <div class="prev-rezoo">
-            <div class="prz-header">
-              <div class="prz-logo">RE<span>ZOO</span></div>
-              <div class="prz-live"><span class="prz-live-dot"></span>En production</div>
-            </div>
-            <div class="prz-tagline" style="padding:.55rem 1rem;font-size:.62rem;color:rgba(201,169,110,.75);font-style:italic;border-bottom:1px solid rgba(255,255,255,.05);letter-spacing:.02em">Vos clients reviennent. Votre CA monte.</div>
-            <div class="prz-stats">
-              <div class="prz-stat"><div class="prz-stat-val gold">0%</div><div class="prz-stat-lbl">Commission</div></div>
-              <div class="prz-stat"><div class="prz-stat-val">24/7</div><div class="prz-stat-lbl">Réservation</div></div>
-              <div class="prz-stat"><div class="prz-stat-val">✓</div><div class="prz-stat-lbl">Anti no-show</div></div>
-            </div>
-            <div class="prz-slots">
-              <div class="prz-slot prz-slot-done">
-                <span class="prz-time">09:00</span>
-                <div style="flex:1"><div class="prz-name">Sophie M.</div><div class="prz-svc">Coupe + Couleur</div></div>
-                <span class="prz-badge prz-badge-done">Terminé</span>
+            <div class="prz-nav">
+              <div>
+                <div class="prz-logo">REZO<span class="prz-logo-o"><svg viewBox="0 0 20 20" width="100%" height="100%"><circle cx="10" cy="10" r="8" fill="none" stroke="#c9a96e" stroke-width="2.2"/><circle cx="10" cy="10" r="4" fill="none" stroke="#c9a96e" stroke-width="2.2"/></svg></span></div>
+                <div style="font-size:.3rem;color:#bbb;letter-spacing:.1em;text-transform:uppercase;margin-top:.1rem">by Polow Agency</div>
               </div>
-              <div class="prz-slot prz-slot-now">
-                <span class="prz-time">14:00</span>
-                <div style="flex:1"><div class="prz-name">Marie T.</div><div class="prz-svc">Mèches + Soin</div></div>
-                <span class="prz-badge prz-badge-now">En cours</span>
-              </div>
-              <div class="prz-slot">
-                <span class="prz-time">15:30</span>
-                <div style="flex:1"><div class="prz-name">Thomas B.</div><div class="prz-svc">Coupe classique</div></div>
-                <span class="prz-badge prz-badge-done">Suivant</span>
+              <div class="prz-nav-right">
+                <div class="prz-nav-links">
+                  <span class="prz-nav-link">Fonctionnalités</span>
+                  <span class="prz-nav-link">Tarifs</span>
+                  <span class="prz-nav-link">FAQ</span>
+                </div>
+                <span class="prz-nav-btn">Demander ma démo</span>
               </div>
             </div>
-            <div class="prz-footer">
-              <span class="prz-footer-txt">rezoo.io · Créé par POLOW Agency</span>
-              <span class="prz-commission">0% commission</span>
+            <div class="prz-hero">
+              <div class="prz-badge"><span class="prz-badge-dot"></span>6 places · Lancement Mai 2026</div>
+              <div class="prz-h1">Vos clients reviennent.<span class="prz-h1-gold">Votre CA monte.</span></div>
+              <div class="prz-sub">REZOO sait quels clients rappeler en priorité, quand leur prochain soin est dû, et comment remplir les trous du planning.</div>
+              <div class="prz-cta-wrap">
+                <span class="prz-cta-main">Demander ma démo →</span>
+                <span class="prz-cta-ghost">Voir les relances →</span>
+              </div>
+              <div class="prz-trust">
+                <span class="prz-trust-item"><span class="prz-trust-check">✓</span>Installation en 48h</span>
+                <span class="prz-trust-item"><span class="prz-trust-check">✓</span>Sans engagement</span>
+                <span class="prz-trust-item"><span class="prz-trust-check">✓</span>0% de commission</span>
+              </div>
             </div>
           </div>
         </div>
