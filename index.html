@@ -478,57 +478,121 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 1.
 /* ═══════════════════════════════════════════
    RESPONSIVE TABLET (600-1024px)
 ═══════════════════════════════════════════ */
+/* ── TABLET ── */
 @media(max-width:1024px){
   .container{padding:0 2rem}
-  .rezoo-inner{grid-template-columns:1fr;gap:3rem}
+  .rezoo-inner{grid-template-columns:1fr;gap:2.5rem}
   .rezoo-right{display:flex;justify-content:center}
-  .rezoo-mockup-wrap{max-width:480px;width:100%}
-  .solution-inner{grid-template-columns:1fr;gap:2.5rem}
+  .rezoo-mockup-wrap{max-width:560px;width:100%}
+  .rezoo-desc{max-width:100%}
+  .solution-inner{grid-template-columns:1fr;gap:2rem}
   .offres-grid{grid-template-columns:1fr;gap:1rem}
   .offre-card.featured{transform:none}
   .offre-card.featured:hover{transform:translateY(-4px)}
   .diff-cols{grid-template-columns:1fr}
+  .diff-col-them{display:none}
   .real-grid{grid-template-columns:1fr}
-  .process-steps{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .process-steps{grid-template-columns:repeat(3,1fr);gap:1.5rem}
   .process-line{display:none}
   .footer-inner{grid-template-columns:1fr 1fr;gap:2rem}
+  #hero{padding:8rem 2rem 4rem}
+  #rezoo,#offres,#difference,#realisations,#process{padding:5rem 0}
+  #positioning,#problems,#solution{padding:4.5rem 0}
+  #contact{padding:5.5rem 0}
 }
+
+/* ── MOBILE ── */
 @media(max-width:768px){
-  nav{padding:.85rem 1.25rem;grid-template-columns:1fr auto}
+  html{font-size:15px}
+  nav{padding:.9rem 1.25rem;grid-template-columns:1fr auto}
   .nav-links,.nav-right{display:none}
   .nav-burger{display:flex}
   .container{padding:0 1.25rem}
-  h1{font-size:clamp(2.2rem,9vw,3.8rem)}
-  #hero{padding:7rem 1.25rem 4rem}
-  .hero-actions{flex-direction:column;align-items:center}
-  .hero-actions .btn-primary,.hero-actions .btn-secondary{width:100%;max-width:320px;justify-content:center}
-  #positioning{padding:4rem 0}
-  .pos-grid{grid-template-columns:1fr 1fr;gap:.85rem}
-  #rezoo{padding:5rem 0}
-  #problems{padding:4rem 0}
-  .problems-grid{grid-template-columns:1fr}
-  #solution{padding:4rem 0}
-  #offres{padding:5rem 0}
-  #difference{padding:5rem 0}
-  #realisations{padding:5rem 0}
-  #process{padding:5rem 0}
-  .process-steps{grid-template-columns:1fr 1fr;gap:1.5rem}
-  #contact{padding:5rem 0}
-  .contact-options{flex-direction:column;align-items:stretch}
-  .form-row{grid-template-columns:1fr}
+
+  /* Hero */
+  h1{font-size:clamp(2.4rem,10vw,3.6rem);letter-spacing:-.025em;line-height:1.1}
+  #hero{padding:6rem 1.25rem 3.5rem;min-height:100svh}
+  .hero-badge{font-size:.65rem;margin-bottom:1.5rem}
+  .hero-sub{font-size:.95rem;margin-bottom:2rem}
+  .hero-actions{flex-direction:column;align-items:center;gap:.65rem;margin-bottom:2rem}
+  .hero-actions a{width:100%;max-width:340px;justify-content:center;padding:.95rem 1.5rem}
+  .hero-tags{gap:.5rem}
+  .hero-scroll{display:none}
+
+  /* Sections padding */
+  #positioning,#problems,#solution{padding:3.5rem 0}
+  #rezoo,#offres,#difference,#realisations,#process{padding:4rem 0}
+  #contact{padding:4.5rem 0}
   footer{padding:3rem 0 1.5rem}
-  .footer-inner{grid-template-columns:1fr;gap:2rem}
-  .footer-bottom{flex-direction:column;align-items:flex-start;gap:.35rem}
+
+  /* Positioning */
+  .pos-grid{grid-template-columns:1fr;gap:.75rem}
+  .section-sub{max-width:100%}
+
+  /* REZOO */
+  .rezoo-inner{gap:2rem}
+  .rezoo-mockup-wrap{max-width:100%}
+  .rezoo-features{gap:.45rem}
+  .rezoo-actions{flex-direction:column;gap:.6rem}
+  .rezoo-actions a{width:100%;justify-content:center}
+
+  /* Problems */
+  .problems-grid{grid-template-columns:1fr;gap:.65rem}
+
+  /* Solution */
+  .solution-quote{font-size:1.2rem}
+  .solution-list li{font-size:.85rem}
+
+  /* Offres */
+  .offres-grid{gap:.85rem}
+  .offre-card{padding:1.5rem}
+
+  /* Difference */
+  .diff-col-them{display:none}
+  .diff-col-us{border-radius:var(--radius)}
+
+  /* Réalisations */
+  .real-notice{font-size:.72rem}
+  .real-preview{height:190px}
+  .real-info{padding:1.1rem 1.25rem}
+
+  /* Process */
+  .process-steps{grid-template-columns:1fr;gap:1.25rem;margin-top:2rem}
+  .step{text-align:left;display:flex;align-items:flex-start;gap:1rem;padding:0}
+  .step-num{width:48px;height:48px;font-size:1.1rem;margin-bottom:0;flex-shrink:0}
+  .step h4{font-size:.95rem;margin-bottom:.3rem}
+  .step p{font-size:.82rem}
+
+  /* Contact */
+  .contact-ctas{flex-direction:column;align-items:center;gap:.65rem}
+  .contact-ctas a{width:100%;max-width:340px;justify-content:center}
+  .contact-options{flex-direction:column;gap:.65rem}
+  .form-row{grid-template-columns:1fr}
+  .contact-sub{font-size:.88rem}
+
+  /* Footer */
+  .footer-inner{grid-template-columns:1fr;gap:1.75rem}
+  .footer-bottom{flex-direction:column;gap:.35rem}
+  .footer-col-title{margin-top:.25rem}
+
+  /* Legal bar */
   .legal-bar{padding:0 1rem}
   .legal-bar-copy{display:none}
+
+  /* Floating */
   .float-group{bottom:calc(26px + .75rem);right:1rem}
   .wa-btn span{display:none}
-  .wa-btn{padding:0;border-radius:50%;width:44px;height:44px;justify-content:center}
+  .wa-btn{padding:0;border-radius:50%;width:46px;height:46px;justify-content:center}
 }
-@media(max-width:480px){
-  .pos-grid{grid-template-columns:1fr}
-  .process-steps{grid-template-columns:1fr}
-  h2.section-title{font-size:clamp(1.7rem,8vw,2.4rem)}
+
+/* ── SMALL MOBILE ── */
+@media(max-width:400px){
+  html{font-size:14px}
+  h1{font-size:clamp(2rem,10vw,3rem)}
+  h2.section-title{font-size:clamp(1.5rem,8vw,2rem)}
+  .container{padding:0 1rem}
+  #hero{padding:5.5rem 1rem 3rem}
+  .hero-actions a{max-width:100%}
 }
 </style>
 </head>
