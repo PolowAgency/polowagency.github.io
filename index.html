@@ -329,8 +329,10 @@ h1 em{font-style:italic;color:var(--gold)}
 .real-card:hover{transform:translateY(-5px);box-shadow:0 22px 65px rgba(0,0,0,.55);border-color:var(--border-strong)}
 .real-card.placeholder-card{border-style:dashed;opacity:.7}
 .real-card.placeholder-card:hover{opacity:.9}
-.real-preview{height:210px;position:relative;overflow:hidden;flex-shrink:0}
-.real-preview img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.real-preview{height:230px;position:relative;overflow:hidden;flex-shrink:0}
+.real-preview img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.real-card:hover .real-preview img{transform:scale(1.04)}
+.real-preview::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,var(--bg3));pointer-events:none;z-index:1}
 /* Hair salon preview */
 /* ── Carré d'Hair : REZOO Dashboard ── */
 .prev-cdh{background:#131208;height:100%;display:grid;grid-template-columns:68px 1fr 82px;overflow:hidden;font-family:'League Spartan',sans-serif}
