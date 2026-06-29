@@ -63,16 +63,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .burger.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
 /* ── MOBILE NAV ── */
-.mnav{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9000;background:#06060a;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .28s ease}
-.mnav.on{transform:translateX(0)}
-.mnav-hd{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
-.mnav-hd img{height:28px;width:auto;object-fit:contain}
-.mnav-close{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;font-size:1rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent;flex-shrink:0}
-.mnav-links{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
-.mnav-links a{display:block;padding:1.1rem 1.25rem;font-family:'Bricolage Grotesque',sans-serif;font-size:1.6rem;font-weight:700;color:rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.05);-webkit-tap-highlight-color:transparent;transition:color .1s}
-.mnav-links a:active{color:#fff}
-.mnav-cta{padding:1rem 1.25rem;border-top:1px solid rgba(255,255,255,.07);flex-shrink:0}
-.mnav-cta a{display:block;width:100%;background:#f97316;color:#000;font-family:'Manrope',sans-serif;font-size:.95rem;font-weight:800;padding:1rem;border-radius:12px;text-align:center;-webkit-tap-highlight-color:transparent;box-sizing:border-box}
+.mnav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#06060a}
+.mnav.on{display:block}
+.mnav-hd{position:absolute;top:0;left:0;right:0;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+.mnav-hd img{height:26px;width:auto}
+.mnav-close{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#fff;font-size:18px;width:44px;height:44px;line-height:1;cursor:pointer}
+.mnav-links{position:absolute;top:60px;left:0;right:0;bottom:88px;overflow-y:auto}
+.mnav-links a{display:block;padding:20px;font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:700;color:rgba(255,255,255,.45);border-bottom:1px solid rgba(255,255,255,.06)}
+.mnav-cta{position:absolute;bottom:0;left:0;right:0;height:88px;display:flex;align-items:center;padding:0 20px;border-top:1px solid rgba(255,255,255,.08)}
+.mnav-cta a{display:block;width:100%;background:#f97316;color:#000;font-family:'Manrope',sans-serif;font-size:15px;font-weight:800;padding:15px;border-radius:12px;text-align:center;box-sizing:border-box}
 
 /* ── UTILS ── */
 .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 3.5rem}
@@ -220,7 +219,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
 <div class="mnav" id="mnav">
   <div class="mnav-hd">
     <img src="logo.png" alt="POLOW">
-    <button class="mnav-close" id="mnavClose" aria-label="Fermer">✕</button>
+    <button class="mnav-close" id="mnavClose">✕</button>
   </div>
   <nav class="mnav-links">
     <a href="index.html">Accueil</a>
@@ -479,7 +478,7 @@ function openM(){mnav.classList.add('on');burger.classList.add('on');document.bo
 function closeM(){mnav.classList.remove('on');burger.classList.remove('on');document.body.style.overflow=''}
 burger.addEventListener('click',()=>mnav.classList.contains('on')?closeM():openM())
 document.getElementById('mnavClose').addEventListener('click',closeM)
-document.querySelectorAll('.mnav-links a,.mnav-cta a').forEach(a=>a.addEventListener('click',closeM))
+document.querySelectorAll('#mnav a').forEach(a=>a.addEventListener('click',closeM))
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.07})
 document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>io.observe(el))
