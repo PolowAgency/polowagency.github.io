@@ -98,7 +98,7 @@ nav.sc{background:rgba(6,6,10,.88);backdrop-filter:blur(24px);-webkit-backdrop-f
 .burger.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
 /* ── MOBILE NAV ── */
-.mnav{position:fixed;inset:0;z-index:290;background:var(--bg);display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .25s,visibility .25s}
+.mnav{position:fixed;inset:0;z-index:400;background:var(--bg);display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .25s,visibility .25s}
 .mnav.on{visibility:visible;opacity:1;pointer-events:auto}
 .mnav-top{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;border-bottom:1px solid var(--border)}
 .mnav-top img{width:24px;height:24px;object-fit:contain;mix-blend-mode:screen}
@@ -363,6 +363,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
   nav{padding:.85rem 1.25rem}
   .nav-links,.nav-cta,.nav-wa{display:none}
   .burger{display:flex}
+  .stats::before,.stats::after{width:60px}
+  .stat-item{padding:0 1.6rem}
+  .stat-v{font-size:1.5rem}
+  .stat-l{font-size:.72rem;max-width:120px}
   .wrap{padding:0 1.25rem}
   #hero{padding:6.5rem 1.25rem 3.5rem}
   .hero-h1{font-size:clamp(2.5rem,11vw,3.8rem)}
@@ -1035,60 +1039,6 @@ setInterval(()=>switchHmTab((hmIdx+1)%3),4500)
 const nav=document.getElementById('nav')
 window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>50),{passive:true})
 
-/* ── Stats accordion ── */
-;(function(){
-  const sec=document.getElementById('statsSection')
-  const hd=document.getElementById('statsHd')
-  const g=document.getElementById('statsG')
-  if(!hd||!g)return
-  const hdLabel=hd.querySelector('.stats-hd-r span')
-
-  function countUp(el,target,duration){
-    const start=performance.now()
-    const suffix=el.dataset.suffix||''
-    const prefix=el.dataset.prefix||''
-    function step(now){
-      const p=Math.min((now-start)/duration,1)
-      const eased=1-Math.pow(1-p,3)
-      el.textContent=prefix+Math.floor(eased*target)+suffix
-      if(p<1)requestAnimationFrame(step)
-      else el.textContent=prefix+target+suffix
-    }
-    requestAnimationFrame(step)
-  }
-
-  function runCountUps(){
-    document.querySelectorAll('.stat-v').forEach(el=>{
-      const raw=el.dataset.val
-      if(!raw)return
-      el.dataset.done='1'
-      countUp(el,parseInt(raw),900)
-    })
-  }
-
-  function openStats(){
-    g.classList.remove('closed')
-    sec.classList.add('open')
-    hd.setAttribute('aria-expanded','true')
-    if(hdLabel)hdLabel.textContent='Masquer'
-    setTimeout(runCountUps,120)
-  }
-  function closeStats(){
-    g.classList.add('closed')
-    sec.classList.remove('open')
-    hd.setAttribute('aria-expanded','false')
-    if(hdLabel)hdLabel.textContent='Voir'
-  }
-
-  /* start closed */
-  g.style.transition='none'
-  g.classList.add('closed')
-  requestAnimationFrame(()=>requestAnimationFrame(()=>g.style.transition=''))
-
-  hd.addEventListener('click',()=>g.classList.contains('closed')?openStats():closeStats())
-  hd.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();hd.click()}})
-})()
-
 /* ── Mobile nav Services accordion ── */
 ;(function(){
   const toggle=document.getElementById('mnavSvcToggle')
@@ -1108,7 +1058,7 @@ function closeM(){mnav.classList.remove('on');burger.classList.remove('on');docu
 burger.addEventListener('click',()=>mnav.classList.contains('on')?closeM():openM())
 document.getElementById('mnavClose').addEventListener('click',closeM)
 document.getElementById('mnavCta').addEventListener('click',()=>{closeM();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),230)})
-document.getElementById('mnavContact').addEventListener('click',closeM)
+document.querySelectorAll('.mnav-links a').forEach(a=>a.addEventListener('click',closeM))
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
 
 /* ── Scroll reveal ── */

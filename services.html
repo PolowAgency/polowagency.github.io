@@ -63,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .burger.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
 /* ── MOBILE NAV ── */
-.mnav{position:fixed;inset:0;z-index:290;background:var(--bg);display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s,visibility .2s}
+.mnav{position:fixed;inset:0;z-index:400;background:var(--bg);display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s,visibility .2s}
 .mnav.on{visibility:visible;opacity:1;pointer-events:auto}
 .mnav-top{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;border-bottom:1px solid var(--border)}
 .mnav-top img{width:24px;height:24px;object-fit:contain;mix-blend-mode:screen}
@@ -474,6 +474,7 @@ function openM(){mnav.classList.add('on');burger.classList.add('on');document.bo
 function closeM(){mnav.classList.remove('on');burger.classList.remove('on');document.body.style.overflow=''}
 burger.addEventListener('click',()=>mnav.classList.contains('on')?closeM():openM())
 document.getElementById('mnavClose').addEventListener('click',closeM)
+document.querySelectorAll('.mnav-links a').forEach(a=>a.addEventListener('click',closeM))
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.07})
 document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>io.observe(el))
