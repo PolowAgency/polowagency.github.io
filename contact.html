@@ -63,13 +63,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .burger.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 .mnav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#06060a}
 .mnav.on{display:block}
-.mnav-hd{position:absolute;top:0;left:0;right:0;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid rgba(255,255,255,.08)}
-.mnav-hd img{height:26px;width:auto}
-.mnav-close{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#fff;font-size:18px;width:44px;height:44px;line-height:1;cursor:pointer}
-.mnav-links{position:absolute;top:60px;left:0;right:0;bottom:88px;overflow-y:auto}
-.mnav-links a{display:block;padding:20px;font-family:'Bricolage Grotesque',sans-serif;font-size:28px;font-weight:700;color:rgba(255,255,255,.45);border-bottom:1px solid rgba(255,255,255,.06)}
-.mnav-cta{position:absolute;bottom:0;left:0;right:0;height:88px;display:flex;align-items:center;padding:0 20px;border-top:1px solid rgba(255,255,255,.08)}
-.mnav-cta a{display:block;width:100%;background:#f97316;color:#000;font-family:'Manrope',sans-serif;font-size:15px;font-weight:800;padding:15px;border-radius:12px;text-align:center;box-sizing:border-box}
+.mnav-hd{position:absolute;top:0;left:0;right:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid rgba(255,255,255,.06)}
+.mnav-hd img{height:22px;width:auto}
+.mnav-close{background:none;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:rgba(255,255,255,.7);font-size:15px;width:38px;height:38px;line-height:1;cursor:pointer}
+.mnav-links{position:absolute;top:56px;left:0;right:0;bottom:80px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px}
+.mnav-links a{display:block;padding:11px 24px;font-family:'Bricolage Grotesque',sans-serif;font-size:1.45rem;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:-.02em;text-align:center;border-radius:10px;transition:color .15s,background .15s}
+.mnav-links a:active{color:#fff;background:rgba(255,255,255,.05)}
+.mnav-cta{position:absolute;bottom:0;left:0;right:0;height:80px;display:flex;align-items:center;padding:0 20px;border-top:1px solid rgba(255,255,255,.06)}
+.mnav-cta a{display:block;width:100%;background:#f97316;color:#000;font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:800;padding:14px;border-radius:10px;text-align:center;cursor:pointer;letter-spacing:.02em;box-sizing:border-box}
 
 /* ── UTILS ── */
 .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 3.5rem}
