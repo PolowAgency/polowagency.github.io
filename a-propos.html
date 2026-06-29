@@ -66,16 +66,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .burger.on span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .burger.on span:nth-child(2){opacity:0;transform:scaleX(0)}
 .burger.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.mnav{position:fixed;inset:0;z-index:400;background:var(--bg);display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s,visibility .2s}
-.mnav.on{visibility:visible;opacity:1;pointer-events:auto}
-.mnav-top{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;border-bottom:1px solid var(--border)}
-.mnav-top img{width:24px;height:24px;object-fit:contain;mix-blend-mode:screen}
-.mnav-close{background:none;border:none;color:var(--muted);font-size:1.4rem;padding:.4rem}
-.mnav-links{flex:1;display:flex;flex-direction:column;justify-content:center}
-.mnav-links a{display:block;padding:.85rem 1.5rem;font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border);transition:color .15s}
-.mnav-links a:hover{color:var(--text)}
-.mnav-cta{padding:1.2rem 1.4rem;border-top:1px solid var(--border)}
-.mnav-cta button{width:100%;background:var(--accent);color:#000;font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:700;padding:.88rem;border:none;border-radius:10px}
+.mnav{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9000;background:#06060a;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .28s ease}
+.mnav.on{transform:translateX(0)}
+.mnav-hd{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
+.mnav-hd img{height:28px;width:auto;object-fit:contain}
+.mnav-close{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;font-size:1rem;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent;flex-shrink:0}
+.mnav-links{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.mnav-links a{display:block;padding:1.1rem 1.25rem;font-family:'Bricolage Grotesque',sans-serif;font-size:1.6rem;font-weight:700;color:rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.05);-webkit-tap-highlight-color:transparent;transition:color .1s}
+.mnav-links a:active{color:#fff}
+.mnav-cta{padding:1rem 1.25rem;border-top:1px solid rgba(255,255,255,.07);flex-shrink:0}
+.mnav-cta a{display:block;width:100%;background:#f97316;color:#000;font-family:'Manrope',sans-serif;font-size:.95rem;font-weight:800;padding:1rem;border-radius:12px;text-align:center;-webkit-tap-highlight-color:transparent;box-sizing:border-box}
 
 /* ── UTILS ── */
 .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 3.5rem}
@@ -215,11 +215,19 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
 </nav>
 
 <div class="mnav" id="mnav">
-  <div class="mnav-top"><img src="logo.png" alt="POLOW"><button class="mnav-close" id="mnavClose">✕</button></div>
+  <div class="mnav-hd">
+    <img src="logo.png" alt="POLOW">
+    <button class="mnav-close" id="mnavClose" aria-label="Fermer">✕</button>
+  </div>
   <nav class="mnav-links">
-    <a href="index.html">Accueil</a><a href="services.html">Services</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a>
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
   </nav>
-  <div class="mnav-cta"><button onclick="window.location='contact.html'">Démarrer mon projet</button></div>
+  <div class="mnav-cta">
+    <a href="contact.html">Démarrer mon projet →</a>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -381,7 +389,7 @@ function openM(){mnav.classList.add('on');burger.classList.add('on');document.bo
 function closeM(){mnav.classList.remove('on');burger.classList.remove('on');document.body.style.overflow=''}
 burger.addEventListener('click',()=>mnav.classList.contains('on')?closeM():openM())
 document.getElementById('mnavClose').addEventListener('click',closeM)
-document.querySelectorAll('.mnav-links a').forEach(a=>a.addEventListener('click',closeM))
+document.querySelectorAll('.mnav-links a,.mnav-cta a').forEach(a=>a.addEventListener('click',closeM))
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.07})
 document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>io.observe(el))
