@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · POLOW Agency — Audit gratuit, réponse sous 24h</title>
+<meta name="description" content="Parlez-nous de votre projet. Audit gratuit, réponse sous 24h. POLOW Agency, Douai.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06060a;--bg2:#0a0a0f;--bg3:#0e0e18;
+  --text:#f0f0f8;--muted:#6b7280;--muted2:#1f2937;
+  --accent:#f97316;--accent2:#fb923c;
+  --accent-lo:rgba(249,115,22,.09);--accent-md:rgba(249,115,22,.22);
+  --border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.14);
+  --green:#22c55e;--max:1240px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:'Manrope',sans-serif;cursor:pointer}
+::selection{background:rgba(249,115,22,.2);color:var(--text)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.on{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:.85rem 3.5rem;background:rgba(6,6,10,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:.5rem}
+.nav-logo img{width:26px;height:26px;object-fit:contain;mix-blend-mode:screen}
+.nav-brand{font-family:'Bricolage Grotesque',sans-serif;font-size:.95rem;font-weight:800}
+.nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%);align-items:center}
+.nav-links a{font-size:.83rem;color:rgba(255,255,255,.65);font-weight:500;transition:color .18s}
+.nav-links a:hover{color:#fff}
+.nav-has-drop{position:relative}
+.nav-has-drop::after{content:'';position:absolute;top:100%;left:-12px;right:-12px;height:1rem;z-index:1}
+.nav-drop-toggle{display:flex;align-items:center;gap:.28rem;font-size:.83rem;color:rgba(255,255,255,.65);font-weight:500;background:none;border:none;padding:0;transition:color .18s;cursor:pointer}
+.nav-has-drop:hover .nav-drop-toggle{color:#fff}
+.nav-drop-toggle svg{width:11px;height:11px;transition:transform .2s}
+.nav-has-drop:hover .nav-drop-toggle svg{transform:rotate(180deg)}
+.nav-drop{position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%) translateY(-6px);background:rgba(8,8,14,.98);border:1px solid var(--border2);border-radius:.9rem;padding:.5rem;min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,transform .2s,visibility .18s;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.nav-has-drop:hover .nav-drop{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.nav-drop-item{display:flex;align-items:center;gap:.7rem;padding:.65rem .9rem;border-radius:.55rem;color:rgba(255,255,255,.72);font-size:.82rem;font-weight:500;transition:background .15s,color .15s;white-space:nowrap}
+.nav-drop-item:hover{background:var(--accent-lo);color:#fff}
+.nav-drop-item svg{width:15px;height:15px;color:var(--accent2);flex-shrink:0}
+.nav-r{display:flex;align-items:center;gap:.55rem}
+.nav-cta{display:inline-flex;align-items:center;gap:.38rem;background:var(--accent);color:#000;padding:.5rem 1.2rem;border-radius:100px;font-size:.78rem;font-weight:800;border:none;transition:background .18s,transform .14s;box-shadow:0 4px 18px rgba(249,115,22,.35)}
+.nav-cta:hover{background:var(--accent2);transform:translateY(-1px)}
+.nav-wa{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid var(--border);transition:background .18s}
+.nav-wa:hover{background:rgba(255,255,255,.12)}
+.nav-wa svg{width:16px;height:16px;fill:rgba(255,255,255,.7)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px}
+.burger span{display:block;width:20px;height:1.5px;background:var(--text);border-radius:2px;transition:all .25s}
+.burger.on span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:290;background:var(--bg);display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s,visibility .2s}
+.mnav.on{visibility:visible;opacity:1;pointer-events:auto}
+.mnav-top{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;border-bottom:1px solid var(--border)}
+.mnav-top img{width:24px;height:24px;object-fit:contain;mix-blend-mode:screen}
+.mnav-close{background:none;border:none;color:var(--muted);font-size:1.4rem;padding:.4rem}
+.mnav-links{flex:1;display:flex;flex-direction:column;justify-content:center}
+.mnav-links a{display:block;padding:.85rem 1.5rem;font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border);transition:color .15s}
+.mnav-links a:hover{color:var(--text)}
+.mnav-cta{padding:1.2rem 1.4rem;border-top:1px solid var(--border)}
+.mnav-cta button{width:100%;background:var(--accent);color:#000;font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:700;padding:.88rem;border:none;border-radius:10px}
+
+/* ── UTILS ── */
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 3.5rem}
+.chip{display:inline-flex;align-items:center;gap:.45rem;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.24);color:var(--accent2);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:.32rem .8rem;border-radius:100px;margin-bottom:1.2rem}
+
+/* ── PAGE ── */
+#page{padding:9rem 0 6rem;min-height:100vh;position:relative;overflow:hidden}
+#page::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:0}
+#page::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(249,115,22,.07),transparent 65%);pointer-events:none;z-index:0}
+.page-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
+
+/* LEFT PANEL */
+.left h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:800;line-height:.97;letter-spacing:-.04em;margin-bottom:1.2rem;animation:fadeUp .5s .1s ease both}
+.left h1 em{font-style:italic;color:var(--accent2)}
+.left > p{color:var(--muted);font-size:.9rem;line-height:1.78;margin-bottom:2.5rem;max-width:340px;animation:fadeUp .5s .2s ease both}
+.contact-cards{display:flex;flex-direction:column;gap:.75rem;animation:fadeUp .5s .3s ease both}
+.contact-card{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:.9rem;transition:border-color .25s,background .25s}
+.contact-card:hover{border-color:rgba(249,115,22,.25);background:rgba(249,115,22,.04)}
+.cc-ic{width:40px;height:40px;border-radius:.75rem;background:var(--accent-lo);border:1px solid var(--accent-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cc-ic svg{width:18px;height:18px;color:var(--accent2)}
+.cc-t{font-size:.72rem;color:var(--muted);margin-bottom:.15rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.cc-v{font-size:.9rem;font-weight:700;color:var(--text)}
+.avail-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.18);border-radius:100px;padding:.45rem .9rem;font-size:.72rem;color:rgba(34,197,94,.85);font-weight:600;animation:fadeUp .5s .4s ease both;margin-top:.5rem}
+.avail-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px rgba(34,197,94,.6)}
+
+/* FORM */
+.right{animation:fadeUp .5s .2s ease both}
+.mform{display:flex;flex-direction:column;gap:2.5rem}
+.mstep{display:flex;flex-direction:column;gap:1.1rem}
+.mstep-head{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.85rem;border-bottom:1px solid var(--border)}
+.mstep-num{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--accent2);letter-spacing:.1em;font-weight:600}
+.mstep-hint{font-size:.72rem;color:var(--muted);text-align:right;max-width:160px;line-height:1.45}
+.mstep-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.55rem;font-weight:800;letter-spacing:-.025em;margin-top:.5rem}
+.mrow{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.mfield{display:flex;flex-direction:column;gap:.45rem}
+.mfield label{font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.mfield input,.mfield textarea{width:100%;background:rgba(255,255,255,.045);border:1px solid var(--border);border-radius:.65rem;padding:.82rem 1rem;color:var(--text);font-family:'Manrope',sans-serif;font-size:.85rem;outline:none;transition:border-color .2s,background .2s,box-shadow .2s;-webkit-appearance:none}
+.mfield input::placeholder,.mfield textarea::placeholder{color:var(--muted);opacity:.5}
+.mfield input:focus,.mfield textarea:focus{border-color:rgba(249,115,22,.45);background:rgba(249,115,22,.04);box-shadow:0 0 0 3px rgba(249,115,22,.1)}
+.mfield textarea{resize:vertical;min-height:120px}
+.mfield-icon{position:relative}
+.mfield-icon svg{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--muted);pointer-events:none}
+.mfield-icon input{padding-left:2.4rem}
+.type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+.type-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:.8rem;padding:1rem .9rem;cursor:pointer;transition:border-color .2s,background .2s;display:flex;flex-direction:column;align-items:center;gap:.55rem;text-align:center;user-select:none}
+.type-card:hover{border-color:var(--border2);background:rgba(255,255,255,.07)}
+.type-card.sel{border-color:var(--accent);background:rgba(249,115,22,.1)}
+.type-card svg{width:20px;height:20px;color:var(--muted);transition:color .2s}
+.type-card.sel svg{color:var(--accent2)}
+.type-card span{font-size:.75rem;font-weight:600;color:var(--muted);transition:color .2s}
+.type-card.sel span{color:var(--text)}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.budget-opt{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:.8rem;padding:.9rem 1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:border-color .2s,background .2s;user-select:none}
+.budget-opt:hover{border-color:var(--border2)}
+.budget-opt.sel{border-color:var(--accent);background:rgba(249,115,22,.1)}
+.budget-opt span{font-size:.82rem;font-weight:600}
+.budget-opt-dot{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border2);transition:background .2s,border-color .2s;flex-shrink:0}
+.budget-opt.sel .budget-opt-dot{background:var(--accent);border-color:var(--accent)}
+.pref-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.pref-btn{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:.8rem;padding:1rem;cursor:pointer;display:flex;align-items:center;gap:.75rem;transition:border-color .2s,background .2s;user-select:none}
+.pref-btn:hover{border-color:var(--border2)}
+.pref-btn.sel{border-color:var(--accent);background:rgba(249,115,22,.1)}
+.pref-btn-ic{width:36px;height:36px;border-radius:.55rem;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pref-btn.sel .pref-btn-ic{background:rgba(249,115,22,.2)}
+.pref-btn-ic svg{width:17px;height:17px;color:var(--muted)}
+.pref-btn.sel .pref-btn-ic svg{color:var(--accent2)}
+.pref-btn-t{font-size:.82rem;font-weight:600;line-height:1.3;color:var(--text)}
+.pref-btn-d{font-size:.7rem;color:var(--muted);margin-top:.1rem}
+.btn-submit{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;background:var(--accent);color:#000;padding:1.05rem;border-radius:.75rem;font-family:'Manrope',sans-serif;font-size:.9rem;font-weight:800;border:none;transition:background .18s,transform .14s,box-shadow .18s;box-shadow:0 4px 24px rgba(249,115,22,.3);position:relative;overflow:hidden}
+.btn-submit:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(249,115,22,.45)}
+.submit-checks{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:.9rem}
+.submit-check{display:flex;align-items:center;gap:.4rem;font-size:.7rem;color:var(--muted)}
+.submit-check svg{width:13px;height:13px;color:var(--green);flex-shrink:0}
+#ok{display:none;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.17);border-radius:.65rem;padding:.9rem;color:#4ade80;font-size:.82rem;text-align:center;margin-top:.5rem}
+#err{display:none;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.17);border-radius:.65rem;padding:.9rem;color:#fca5a5;font-size:.82rem;text-align:center;margin-top:.5rem}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1.5rem}
+.foot-g{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:2.5rem;margin-bottom:2.5rem}
+.foot-brand{display:flex;align-items:center;gap:.48rem;margin-bottom:.65rem}
+.foot-logo{width:22px;height:22px;object-fit:contain;mix-blend-mode:screen;opacity:.7}
+.foot-name{font-family:'Bricolage Grotesque',sans-serif;font-size:.88rem;font-weight:800;letter-spacing:.08em}
+.foot-tag{font-size:.75rem;color:var(--muted);line-height:1.65;max-width:210px;margin-bottom:.6rem}
+.foot-siren{font-family:'JetBrains Mono',monospace;font-size:.57rem;color:var(--muted2)}
+.foot-col-h{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:.82rem;opacity:.42;font-weight:700}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.foot-links a{font-size:.77rem;color:var(--muted);transition:color .18s}
+.foot-links a:hover{color:var(--text)}
+.foot-bot{display:flex;align-items:center;justify-content:space-between;padding-top:1.3rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:.4rem}
+.foot-copy,.foot-made{font-size:.67rem;color:var(--muted);opacity:.28}
+.legal{position:fixed;bottom:0;left:0;right:0;height:26px;background:rgba(4,4,10,.97);border-top:1px solid rgba(255,255,255,.04);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:100;gap:1rem}
+.legal-copy{font-size:.55rem;color:rgba(255,255,255,.13);letter-spacing:.04em;white-space:nowrap}
+.legal-links{display:flex;align-items:center;gap:.42rem;font-size:.55rem}
+.legal-links a{color:rgba(255,255,255,.15);transition:color .15s}
+.legal-links a:hover{color:rgba(255,255,255,.45)}
+.legal-sep{color:rgba(255,255,255,.07)}
+.legal-avail{display:flex;align-items:center;gap:.33rem;font-size:.55rem;color:rgba(255,255,255,.15);white-space:nowrap}
+.legal-dot{width:5px;height:5px;background:var(--green);border-radius:50%;box-shadow:0 0 5px rgba(34,197,94,.55);flex-shrink:0}
+@keyframes ring{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}65%{box-shadow:0 0 0 10px rgba(37,211,102,0)}}
+.wa-float{position:fixed;bottom:2.2rem;right:2rem;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);z-index:200;transition:transform .2s;animation:ring 3s infinite 2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:26px;height:26px;fill:#fff}
+
+@media(max-width:1080px){.wrap{padding:0 2rem}.page-inner{grid-template-columns:1fr;gap:3rem}.foot-g{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){nav{padding:.85rem 1.25rem}.nav-links,.nav-cta,.nav-wa{display:none}.burger{display:flex}.wrap{padding:0 1.25rem}.mrow,.type-grid{grid-template-columns:1fr}.budget-grid,.pref-grid{grid-template-columns:1fr}.foot-g{grid-template-columns:1fr}.foot-bot{flex-direction:column}.legal{padding:0 .9rem}.legal-copy{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="POLOW Agency"><span class="nav-brand">POLOW.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li class="nav-has-drop">
+      <button class="nav-drop-toggle">Nos Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="nav-drop">
+        <a href="services.html#site-web" class="nav-drop-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 9h18"/></svg>Site Web Premium</a>
+        <a href="services.html#saas" class="nav-drop-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>Application / SaaS</a>
+        <a href="services.html#crm" class="nav-drop-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>Logiciel métier</a>
+        <a href="services.html#ia" class="nav-drop-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>Automatisation IA</a>
+      </div>
+    </li>
+    <li><a href="a-propos.html">À Propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <button class="nav-cta">Démarrer mon projet</button>
+    <a href="https://wa.me/33781754719" target="_blank" rel="noopener" class="nav-wa" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mnav" id="mnav">
+  <div class="mnav-top"><img src="logo.png" alt="POLOW"><button class="mnav-close" id="mnavClose">✕</button></div>
+  <nav class="mnav-links"><a href="index.html">Accueil</a><a href="services.html">Services</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a></nav>
+  <div class="mnav-cta"><button>Démarrer mon projet</button></div>
+</div>
+
+<!-- PAGE -->
+<section id="page">
+  <div class="wrap">
+    <div class="page-inner">
+      <!-- LEFT -->
+      <div class="left">
+        <span class="chip" style="animation:fadeUp .5s ease both">Audit gratuit · 24h</span>
+        <h1>Parlons de votre <em>projet</em>.</h1>
+        <p>Remplissez le formulaire ou contactez-moi directement. Je reviens toujours sous 24h avec une analyse honnête.</p>
+
+        <div class="contact-cards">
+          <a href="tel:+33781754719" class="contact-card">
+            <div class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><div class="cc-t">Téléphone</div><div class="cc-v">07 81 75 47 19</div></div>
+          </a>
+          <a href="https://wa.me/33781754719" target="_blank" rel="noopener" class="contact-card">
+            <div class="cc-ic"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></div>
+            <div><div class="cc-t">WhatsApp</div><div class="cc-v">Message direct →</div></div>
+          </a>
+          <a href="mailto:contact@polowagency.fr" class="contact-card">
+            <div class="cc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+            <div><div class="cc-t">Email</div><div class="cc-v">contact@polowagency.fr</div></div>
+          </a>
+        </div>
+
+        <div class="avail-badge">
+          <span class="avail-dot"></span>
+          Disponible · Réponse sous 24h garantie
+        </div>
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="right">
+        <form class="mform" id="cform" novalidate>
+          <div class="mstep">
+            <div class="mstep-head">
+              <div><div class="mstep-num">01 · ÉTAPE</div><div class="mstep-title">Vous</div></div>
+              <div class="mstep-hint">Pour qu'on sache à qui on parle</div>
+            </div>
+            <div class="mrow">
+              <div class="mfield"><label>Prénom</label><input type="text" name="prenom" placeholder="Paul" autocomplete="given-name"></div>
+              <div class="mfield"><label>Nom</label><input type="text" name="nom" placeholder="Dupont" required autocomplete="family-name"></div>
+            </div>
+            <div class="mfield"><label>Entreprise</label><input type="text" name="entreprise" placeholder="Nom de votre société" autocomplete="organization"></div>
+          </div>
+          <div class="mstep">
+            <div class="mstep-head">
+              <div><div class="mstep-num">02 · ÉTAPE</div><div class="mstep-title">Vous joindre</div></div>
+              <div class="mstep-hint">Email + préférence de contact</div>
+            </div>
+            <div class="mfield"><label>Email</label>
+              <div class="mfield-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <input type="email" name="email" placeholder="vous@entreprise.com" required autocomplete="email">
+              </div>
+            </div>
+            <div class="mfield"><label>Téléphone</label>
+              <div class="mfield-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <input type="tel" name="telephone" placeholder="+33 6 00 00 00 00" autocomplete="tel">
+              </div>
+            </div>
+            <div class="pref-grid">
+              <button type="button" class="pref-btn sel" id="prefCall" onclick="togglePref('call')">
+                <span class="pref-btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <span><div class="pref-btn-t">Je suis OK pour être appelé</div><div class="pref-btn-d">Pour discuter de vive voix</div></span>
+              </button>
+              <button type="button" class="pref-btn" id="prefMsg" onclick="togglePref('msg')">
+                <span class="pref-btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                <span><div class="pref-btn-t">Par message uniquement</div><div class="pref-btn-d">Pas d'appel, je préfère à l'écrit</div></span>
+              </button>
+            </div>
+            <input type="hidden" name="contact_pref" id="contactPref" value="call">
+          </div>
+          <div class="mstep">
+            <div class="mstep-head">
+              <div><div class="mstep-num">03 · ÉTAPE</div><div class="mstep-title">Votre projet</div></div>
+              <div class="mstep-hint">Le plus de détails possible</div>
+            </div>
+            <div class="mfield"><label>Type de projet</label>
+              <div class="type-grid" id="typeGrid">
+                <div class="type-card sel" data-type="site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 9h18"/></svg><span>Site web</span></div>
+                <div class="type-card" data-type="saas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><span>App / SaaS</span></div>
+                <div class="type-card" data-type="logiciel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg><span>Logiciel</span></div>
+                <div class="type-card" data-type="ia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg><span>Auto. IA</span></div>
+                <div class="type-card" data-type="autre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>Autre</span></div>
+              </div>
+              <input type="hidden" name="type_projet" id="typeProjet" value="site">
+            </div>
+            <div class="mfield"><label>Décrivez votre projet</label><textarea name="message" placeholder="Ex : on veut lancer un SaaS de gestion pour les artisans avec réservation et facturation..." required></textarea></div>
+          </div>
+          <div class="mstep">
+            <div class="mstep-head">
+              <div><div class="mstep-num">04 · ÉTAPE</div><div class="mstep-title">Budget estimé</div></div>
+              <div class="mstep-hint">Une fourchette TTC</div>
+            </div>
+            <div class="budget-grid" id="budgetGrid">
+              <div class="budget-opt" data-budget="1500-3000"><span>1 500 € → 3 000 €</span><span class="budget-opt-dot"></span></div>
+              <div class="budget-opt" data-budget="3000-5000"><span>3 000 € → 5 000 €</span><span class="budget-opt-dot"></span></div>
+              <div class="budget-opt" data-budget="5000-7000"><span>5 000 € → 7 000 €</span><span class="budget-opt-dot"></span></div>
+              <div class="budget-opt" data-budget="7000-10000"><span>7 000 € → 10 000 €</span><span class="budget-opt-dot"></span></div>
+              <div class="budget-opt" data-budget="10000-20000"><span>10 000 € → 20 000 €</span><span class="budget-opt-dot"></span></div>
+              <div class="budget-opt" data-budget="20000+"><span>+ 20 000 €</span><span class="budget-opt-dot"></span></div>
+            </div>
+            <input type="hidden" name="budget" id="budgetVal" value="">
+          </div>
+          <div>
+            <button type="submit" class="btn-submit">
+              <span>Envoyer ma demande</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <div class="submit-checks">
+              <div class="submit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Audit en direct</div>
+              <div class="submit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Devis gratuit & détaillé</div>
+              <div class="submit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Délais clairs</div>
+            </div>
+            <div id="ok">Message envoyé — je reviens vers vous très vite !</div>
+            <div id="err">Une erreur est survenue. Contactez-moi au 07 81 75 47 19.</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-g">
+      <div><div class="foot-brand"><img src="logo.png" alt="POLOW" class="foot-logo"><span class="foot-name">POLOW</span></div><p class="foot-tag">Logiciels sur mesure pour les entreprises de Douai et la région Hauts-de-France.</p><p class="foot-siren">SIREN 101 540 243 — France</p></div>
+      <div><div class="foot-col-h">Services</div><ul class="foot-links"><li><a href="services.html#site-web">Site web</a></li><li><a href="services.html#saas">Application & SaaS</a></li><li><a href="services.html#crm">CRM & Logiciel</a></li></ul></div>
+      <div><div class="foot-col-h">Agence</div><ul class="foot-links"><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><div class="foot-col-h">Contact</div><ul class="foot-links"><li><a href="tel:+33781754719">07 81 75 47 19</a></li><li><a href="mailto:contact@polowagency.fr">contact@polowagency.fr</a></li></ul></div>
+    </div>
+    <div class="foot-bot"><span class="foot-copy">© 2026 POLOW Agency</span><span class="foot-made">Conçu & développé par Paul Piot</span></div>
+  </div>
+</footer>
+
+<div class="legal">
+  <span class="legal-copy">SIREN 101 540 243 — POLOW Agency</span>
+  <div class="legal-links"><a href="#">Mentions légales</a><span class="legal-sep">·</span><a href="#">Confidentialité</a></div>
+  <div class="legal-avail"><span class="legal-dot"></span> Douai & environs · Disponible</div>
+</div>
+
+<a href="https://wa.me/33781754719" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+
+<script>
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav')
+function openM(){mnav.classList.add('on');burger.classList.add('on');document.body.style.overflow='hidden'}
+function closeM(){mnav.classList.remove('on');burger.classList.remove('on');document.body.style.overflow=''}
+burger.addEventListener('click',()=>mnav.classList.contains('on')?closeM():openM())
+document.getElementById('mnavClose').addEventListener('click',closeM)
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
+function togglePref(type){
+  document.getElementById('prefCall').classList.toggle('sel',type==='call')
+  document.getElementById('prefMsg').classList.toggle('sel',type==='msg')
+  document.getElementById('contactPref').value=type
+}
+document.getElementById('typeGrid').addEventListener('click',function(e){
+  const card=e.target.closest('.type-card')
+  if(!card)return
+  this.querySelectorAll('.type-card').forEach(c=>c.classList.remove('sel'))
+  card.classList.add('sel')
+  document.getElementById('typeProjet').value=card.dataset.type
+})
+document.getElementById('budgetGrid').addEventListener('click',function(e){
+  const opt=e.target.closest('.budget-opt')
+  if(!opt)return
+  this.querySelectorAll('.budget-opt').forEach(o=>o.classList.remove('sel'))
+  opt.classList.add('sel')
+  document.getElementById('budgetVal').value=opt.dataset.budget
+})
+document.getElementById('cform').addEventListener('submit',async function(e){
+  e.preventDefault()
+  const btn=this.querySelector('.btn-submit')
+  const ok=document.getElementById('ok'),err=document.getElementById('err')
+  ok.style.display='none';err.style.display='none'
+  btn.disabled=true;btn.querySelector('span').textContent='Envoi...'
+  try{
+    const res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(this)))})
+    if(res.ok){ok.style.display='block';this.reset()}else throw new Error()
+  }catch{err.style.display='block'}
+  finally{btn.disabled=false;btn.querySelector('span').textContent='Envoyer ma demande'}
+})
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.07})
+document.querySelectorAll('.rv').forEach(el=>io.observe(el))
+</script>
+</body>
+</html>

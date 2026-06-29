@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À Propos · POLOW Agency — Développeur web à Douai</title>
+<meta name="description" content="POLOW Agency — développeur web indépendant basé à Douai. Sites, SaaS, logiciels sur mesure. Sans intermédiaire, sans template.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06060a;--bg2:#0a0a0f;--bg3:#0e0e18;
+  --text:#f0f0f8;--muted:#6b7280;--muted2:#1f2937;
+  --accent:#f97316;--accent2:#fb923c;
+  --accent-lo:rgba(249,115,22,.09);--accent-md:rgba(249,115,22,.22);
+  --border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.14);
+  --green:#22c55e;--max:1240px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:'Manrope',sans-serif;cursor:pointer}
+::selection{background:rgba(249,115,22,.2);color:var(--text)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.on{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-l.on{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-r.on{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
+@media(prefers-reduced-motion:reduce){.rv,.rv-l,.rv-r{opacity:1;transform:none;transition:none}}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:.85rem 3.5rem;background:rgba(6,6,10,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:.5rem}
+.nav-logo img{width:26px;height:26px;object-fit:contain;mix-blend-mode:screen}
+.nav-brand{font-family:'Bricolage Grotesque',sans-serif;font-size:.95rem;font-weight:800}
+.nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%);align-items:center}
+.nav-links a{font-size:.83rem;color:rgba(255,255,255,.65);font-weight:500;transition:color .18s}
+.nav-links a:hover{color:#fff}
+.nav-has-drop{position:relative}
+.nav-has-drop::after{content:'';position:absolute;top:100%;left:-12px;right:-12px;height:1rem;z-index:1}
+.nav-drop-toggle{display:flex;align-items:center;gap:.28rem;font-size:.83rem;color:rgba(255,255,255,.65);font-weight:500;background:none;border:none;padding:0;transition:color .18s;cursor:pointer}
+.nav-has-drop:hover .nav-drop-toggle{color:#fff}
+.nav-drop-toggle svg{width:11px;height:11px;transition:transform .2s}
+.nav-has-drop:hover .nav-drop-toggle svg{transform:rotate(180deg)}
+.nav-drop{position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%) translateY(-6px);background:rgba(8,8,14,.98);border:1px solid var(--border2);border-radius:.9rem;padding:.5rem;min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,transform .2s,visibility .18s;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.nav-has-drop:hover .nav-drop{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.nav-drop-item{display:flex;align-items:center;gap:.7rem;padding:.65rem .9rem;border-radius:.55rem;color:rgba(255,255,255,.72);font-size:.82rem;font-weight:500;transition:background .15s,color .15s;white-space:nowrap}
+.nav-drop-item:hover{background:var(--accent-lo);color:#fff}
+.nav-drop-item svg{width:15px;height:15px;color:var(--accent2);flex-shrink:0}
+.nav-r{display:flex;align-items:center;gap:.55rem}
+.nav-cta{display:inline-flex;align-items:center;gap:.38rem;background:var(--accent);color:#000;padding:.5rem 1.2rem;border-radius:100px;font-size:.78rem;font-weight:800;border:none;transition:background .18s,transform .14s;box-shadow:0 4px 18px rgba(249,115,22,.35)}
+.nav-cta:hover{background:var(--accent2);transform:translateY(-1px)}
+.nav-wa{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid var(--border);transition:background .18s}
+.nav-wa:hover{background:rgba(255,255,255,.12)}
+.nav-wa svg{width:16px;height:16px;fill:rgba(255,255,255,.7)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px}
+.burger span{display:block;width:20px;height:1.5px;background:var(--text);border-radius:2px;transition:all .25s}
+.burger.on span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:290;background:var(--bg);display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s,visibility .2s}
+.mnav.on{visibility:visible;opacity:1;pointer-events:auto}
+.mnav-top{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;border-bottom:1px solid var(--border)}
+.mnav-top img{width:24px;height:24px;object-fit:contain;mix-blend-mode:screen}
+.mnav-close{background:none;border:none;color:var(--muted);font-size:1.4rem;padding:.4rem}
+.mnav-links{flex:1;display:flex;flex-direction:column;justify-content:center}
+.mnav-links a{display:block;padding:.85rem 1.5rem;font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:700;color:var(--muted);border-bottom:1px solid var(--border);transition:color .15s}
+.mnav-links a:hover{color:var(--text)}
+.mnav-cta{padding:1.2rem 1.4rem;border-top:1px solid var(--border)}
+.mnav-cta button{width:100%;background:var(--accent);color:#000;font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:700;padding:.88rem;border:none;border-radius:10px}
+
+/* ── UTILS ── */
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 3.5rem}
+.chip{display:inline-flex;align-items:center;gap:.45rem;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.24);color:var(--accent2);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:.32rem .8rem;border-radius:100px;margin-bottom:1.2rem}
+.sec-h{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2rem,3.2vw,2.9rem);font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-bottom:1rem}
+.sec-h em{font-style:italic;font-weight:500;color:var(--accent2)}
+.sec-p{color:var(--muted);font-size:.9rem;line-height:1.78}
+.giant-h{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(4rem,10vw,10rem);font-weight:800;line-height:.95;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,.28) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1.5rem}
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#000;padding:.82rem 1.9rem;border-radius:100px;font-size:.88rem;font-weight:800;border:none;transition:background .18s,transform .14s;box-shadow:0 4px 20px rgba(249,115,22,.3)}
+.btn-p:hover{background:var(--accent2);transform:translateY(-2px)}
+.btn-g{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);color:rgba(255,255,255,.75);padding:.82rem 1.9rem;border-radius:100px;font-size:.88rem;font-weight:700;border:1px solid var(--border2);transition:background .18s,color .18s}
+.btn-g:hover{background:rgba(255,255,255,.1);color:#fff}
+
+/* ── HERO ── */
+#hero{padding:9rem 0 5rem;background:radial-gradient(ellipse 120% 80% at 50% -5%,#c2410c 0%,#9a3412 25%,#0a0a20 55%,var(--bg) 75%);position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;opacity:.5;pointer-events:none}
+.hero-in{position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto}
+.hero-in .chip{animation:fadeUp .5s .1s ease both}
+.hero-in h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2.8rem,6.5vw,6.5rem);font-weight:800;line-height:.97;letter-spacing:-.04em;color:#fff;margin-bottom:1.2rem;animation:fadeUp .5s .2s ease both}
+.hero-in h1 em{font-style:italic;font-weight:700;color:var(--accent2)}
+.hero-in p{font-size:1rem;color:rgba(255,255,255,.6);margin-bottom:2.5rem;animation:fadeUp .5s .3s ease both;max-width:480px;margin-left:auto;margin-right:auto}
+.hero-acts{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .5s .4s ease both}
+
+/* ── CONVICTION ── */
+#conviction{padding:7rem 0;background:var(--bg2);position:relative;overflow:hidden}
+#conviction::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(249,115,22,.05),transparent 65%);pointer-events:none}
+.conv-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.conv-txt h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:800;line-height:1.08;letter-spacing:-.035em;margin-bottom:1.5rem}
+.conv-txt h2 em{font-style:italic;color:var(--accent2)}
+.conv-txt p{color:var(--muted);font-size:.9rem;line-height:1.82;margin-bottom:1rem}
+.conv-quote{background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.15);border-radius:1.2rem;padding:1.8rem 2rem;margin-top:2rem;position:relative}
+.conv-quote::before{content:'"';font-family:'Bricolage Grotesque',sans-serif;font-size:3rem;color:var(--accent);opacity:.35;line-height:1;position:absolute;top:.8rem;left:1.4rem}
+.conv-quote p{font-family:'Bricolage Grotesque',sans-serif;font-size:1rem;font-weight:600;color:rgba(255,255,255,.82);line-height:1.68;padding-left:1.8rem;color:var(--text);margin:0}
+.conv-stats{display:flex;flex-direction:column;gap:1px;background:var(--border);border-radius:1.2rem;overflow:hidden}
+.conv-stat{background:var(--bg3);padding:1.5rem 1.8rem;position:relative}
+.conv-stat-v{font-family:'Bricolage Grotesque',sans-serif;font-size:2.2rem;font-weight:800;color:var(--text);letter-spacing:-.04em;line-height:1}
+.conv-stat-v span{color:var(--accent2)}
+.conv-stat-l{font-size:.78rem;color:var(--muted);margin-top:.3rem}
+
+/* ── APPROACH ── */
+#approach{padding:7rem 0;background:var(--bg)}
+.approach-head{text-align:center;max-width:560px;margin:0 auto 4rem}
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.ap-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:1.2rem;padding:2rem;transition:border-color .3s,transform .3s}
+.ap-card:hover{border-color:rgba(249,115,22,.25);transform:translateY(-4px)}
+.ap-num{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--accent2);opacity:.7;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;letter-spacing:.06em}
+.ap-num::after{content:'';flex:1;height:1px;background:var(--border2);max-width:30px}
+.ap-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:800;line-height:1.15;margin-bottom:.7rem;letter-spacing:-.025em}
+.ap-card p{font-size:.84rem;color:var(--muted);line-height:1.75}
+
+/* ── VALUES ── */
+#values{padding:7rem 0;background:var(--bg2)}
+#values::before{content:'';display:block;height:0}
+.values-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.values-txt h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:1.2rem}
+.values-txt h2 em{font-style:italic;color:var(--accent2)}
+.values-txt p{color:var(--muted);font-size:.9rem;line-height:1.78}
+.values-list{display:flex;flex-direction:column;gap:1rem}
+.val-item{display:flex;gap:1rem;padding:1.2rem 1.4rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:.9rem;transition:border-color .3s}
+.val-item:hover{border-color:rgba(249,115,22,.2)}
+.val-ic{width:40px;height:40px;border-radius:.75rem;background:var(--accent-lo);border:1px solid var(--accent-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.val-ic svg{width:18px;height:18px;color:var(--accent2)}
+.val-t{font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+.val-d{font-size:.78rem;color:var(--muted);line-height:1.6}
+
+/* ── VISION ── */
+#vision{padding:7rem 0;text-align:center;background:var(--bg)}
+.vision-giant{max-width:900px;margin:0 auto}
+.vision-block{max-width:680px;margin:0 auto 3rem;background:rgba(255,255,255,.025);border:1px solid rgba(249,115,22,.12);border-radius:1.5rem;padding:2.5rem 3rem}
+.vision-block p{font-family:'Bricolage Grotesque',sans-serif;font-size:1.05rem;font-weight:600;line-height:1.72;color:rgba(255,255,255,.82)}
+.vision-pills{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
+.vision-pill{display:flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:100px;padding:.55rem 1.1rem;font-size:.78rem;color:rgba(255,255,255,.65)}
+.vision-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent2);flex-shrink:0}
+
+/* ── CTA BAND ── */
+#cta-band{padding:6rem 0;background:var(--bg3);text-align:center;position:relative;overflow:hidden}
+#cta-band::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(249,115,22,.08),transparent 65%);pointer-events:none}
+.cta-band-in{position:relative;z-index:1;max-width:560px;margin:0 auto}
+.cta-band-in h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:800;line-height:1.06;letter-spacing:-.04em;margin-bottom:1.2rem}
+.cta-band-in p{color:var(--muted);font-size:.9rem;margin-bottom:2rem}
+.cta-acts{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1.5rem}
+.foot-g{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:2.5rem;margin-bottom:2.5rem}
+.foot-brand{display:flex;align-items:center;gap:.48rem;margin-bottom:.65rem}
+.foot-logo{width:22px;height:22px;object-fit:contain;mix-blend-mode:screen;opacity:.7}
+.foot-name{font-family:'Bricolage Grotesque',sans-serif;font-size:.88rem;font-weight:800;letter-spacing:.08em}
+.foot-tag{font-size:.75rem;color:var(--muted);line-height:1.65;max-width:210px;margin-bottom:.6rem}
+.foot-siren{font-family:'JetBrains Mono',monospace;font-size:.57rem;color:var(--muted2)}
+.foot-col-h{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:.82rem;opacity:.42;font-weight:700}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.foot-links a{font-size:.77rem;color:var(--muted);transition:color .18s}
+.foot-links a:hover{color:var(--text)}
+.foot-bot{display:flex;align-items:center;justify-content:space-between;padding-top:1.3rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:.4rem}
+.foot-copy,.foot-made{font-size:.67rem;color:var(--muted);opacity:.28}
+.legal{position:fixed;bottom:0;left:0;right:0;height:26px;background:rgba(4,4,10,.97);border-top:1px solid rgba(255,255,255,.04);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:100;gap:1rem}
+.legal-copy{font-size:.55rem;color:rgba(255,255,255,.13);letter-spacing:.04em;white-space:nowrap}
+.legal-links{display:flex;align-items:center;gap:.42rem;font-size:.55rem}
+.legal-links a{color:rgba(255,255,255,.15);transition:color .15s}
+.legal-links a:hover{color:rgba(255,255,255,.45)}
+.legal-sep{color:rgba(255,255,255,.07)}
+.legal-avail{display:flex;align-items:center;gap:.33rem;font-size:.55rem;color:rgba(255,255,255,.15);white-space:nowrap}
+.legal-dot{width:5px;height:5px;background:var(--green);border-radius:50%;box-shadow:0 0 5px rgba(34,197,94,.55);flex-shrink:0}
+@keyframes ring{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}65%{box-shadow:0 0 0 10px rgba(37,211,102,0)}}
+.wa-float{position:fixed;bottom:2.2rem;right:2rem;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);z-index:200;transition:transform .2s;animation:ring 3s infinite 2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:26px;height:26px;fill:#fff}
+
+@media(max-width:1080px){.wrap{padding:0 2rem}.conv-grid{grid-template-columns:1fr;gap:2.5rem}.values-inner{grid-template-columns:1fr;gap:2.5rem}.approach-grid{grid-template-columns:1fr;gap:1rem}.foot-g{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){nav{padding:.85rem 1.25rem}.nav-links,.nav-cta,.nav-wa{display:none}.burger{display:flex}.wrap{padding:0 1.25rem}.foot-g{grid-template-columns:1fr}.foot-bot{flex-direction:column}.legal{padding:0 .9rem}.legal-copy{display:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="POLOW Agency"><span class="nav-brand">POLOW.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li class="nav-has-drop">
+      <button class="nav-drop-toggle">Nos Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="nav-drop">
+        <a href="services.html#site-web" class="nav-drop-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 9h18"/></svg>Site Web Premium</a>
+        <a href="services.html#saas" class="nav-drop-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>Application / SaaS</a>
+        <a href="services.html#crm" class="nav-drop-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>Logiciel métier</a>
+        <a href="services.html#ia" class="nav-drop-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>Automatisation IA</a>
+      </div>
+    </li>
+    <li><a href="a-propos.html">À Propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <button class="nav-cta" onclick="window.location='contact.html'">Démarrer mon projet</button>
+    <a href="https://wa.me/33781754719" target="_blank" rel="noopener" class="nav-wa" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mnav" id="mnav">
+  <div class="mnav-top"><img src="logo.png" alt="POLOW"><button class="mnav-close" id="mnavClose">✕</button></div>
+  <nav class="mnav-links">
+    <a href="index.html">Accueil</a><a href="services.html">Services</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="mnav-cta"><button onclick="window.location='contact.html'">Démarrer mon projet</button></div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-in">
+      <span class="chip">À propos · Paul Piot</span>
+      <h1>On construit les outils qui font <em>avancer</em> votre business.</h1>
+      <p>Les entreprises ne manquent pas d'idées. Elles manquent d'exécution. C'est exactement ce que POLOW Agency résout.</p>
+      <div class="hero-acts">
+        <a href="contact.html" class="btn-p">Démarrer un projet →</a>
+        <a href="services.html" class="btn-g">Voir nos services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVICTION -->
+<section id="conviction">
+  <div class="wrap">
+    <div class="conv-grid">
+      <div class="conv-txt rv-l">
+        <span class="chip">Notre conviction</span>
+        <h2>L'exécution est<br>le vrai <em>levier de croissance</em>.</h2>
+        <p>Trop d'entreprises attendent le bon moment, la bonne agence, le bon budget. Pendant ce temps, leurs concurrents avancent avec des outils digitaux qui travaillent pour eux 24h/24.</p>
+        <p>POLOW Agency a été créé pour répondre à un constat simple : les TPE et indépendants méritent des outils aussi puissants que ceux des grandes entreprises — sans les délais, les intermédiaires ni les templates génériques.</p>
+        <div class="conv-quote">
+          <p>Un outil digital bien construit, c'est un commercial qui travaille pendant que vous dormez.</p>
+        </div>
+      </div>
+      <div class="rv-r">
+        <div class="conv-stats">
+          <div class="conv-stat"><div class="conv-stat-v">10<span>+</span></div><div class="conv-stat-l">projets livrés en production</div></div>
+          <div class="conv-stat"><div class="conv-stat-v">1<span> seul</span></div><div class="conv-stat-l">interlocuteur du brief à la livraison</div></div>
+          <div class="conv-stat"><div class="conv-stat-v">0<span>€</span></div><div class="conv-stat-l">de template — tout est écrit pour vous</div></div>
+          <div class="conv-stat"><div class="conv-stat-v">24<span>h</span></div><div class="conv-stat-l">de réponse garantie sur chaque demande</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="wrap">
+    <div class="approach-head rv">
+      <span class="chip">Comment on travaille</span>
+      <h2 class="sec-h">Trois principes,<br><em>aucun compromis</em></h2>
+      <p class="sec-p">Pas de chef de projet entre nous. Pas de template recyclé. Pas de promesse qu'on ne peut pas tenir.</p>
+    </div>
+    <div class="approach-grid">
+      <div class="ap-card rv d1">
+        <div class="ap-num">// 01</div>
+        <h3>Un seul interlocuteur</h3>
+        <p>Vous parlez directement au développeur qui va coder votre projet. Pas de commercial, pas de chef de projet, pas de traduction approximative du besoin.</p>
+      </div>
+      <div class="ap-card rv d2">
+        <div class="ap-num">// 02</div>
+        <h3>Sur mesure, toujours</h3>
+        <p>Chaque ligne de code est écrite pour votre cas précis. Zéro template WordPress, zéro thème Shopify, zéro drag-and-drop. Un vrai produit technique.</p>
+      </div>
+      <div class="ap-card rv d3">
+        <div class="ap-num">// 03</div>
+        <h3>Vite et bien</h3>
+        <p>Livraison en semaines, pas en semestres. On itère rapidement pour que vous ayez quelque chose en production avant même d'avoir oublié le brief.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div class="wrap">
+    <div class="values-inner">
+      <div class="rv-l">
+        <span class="chip">Notre ADN</span>
+        <h2 class="sec-h">Ce qu'on défend,<br><em>chaque jour</em></h2>
+        <p class="sec-p" style="margin-bottom:0">Des valeurs concrètes, pas des slogans. Ce sont elles qui déterminent comment on traite chaque projet, chaque client, chaque ligne de code.</p>
+      </div>
+      <div class="values-list rv-r">
+        <div class="val-item">
+          <div class="val-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div><div class="val-t">Vitesse d'exécution</div><div class="val-d">Un projet qui traîne est un projet qui meurt. On se donne les moyens de livrer vite sans sacrifier la qualité.</div></div>
+        </div>
+        <div class="val-item">
+          <div class="val-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><div class="val-t">Précision technique</div><div class="val-d">Du code propre, maintenable, documenté. Ce qu'on livre tient dans le temps — pas seulement le jour de la démo.</div></div>
+        </div>
+        <div class="val-item">
+          <div class="val-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div><div class="val-t">Transparence totale</div><div class="val-d">Vous savez où on en est, pourquoi on fait un choix, combien ça coûte. Aucune surprise en fin de projet.</div></div>
+        </div>
+        <div class="val-item">
+          <div class="val-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div><div class="val-t">Orientation résultats</div><div class="val-d">On ne livre pas du code, on livre des résultats mesurables : leads, chiffre d'affaires, temps économisé.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="wrap">
+    <div class="vision-giant rv" style="text-align:center;margin:0 auto 3rem">
+      <span class="chip">Notre vision</span>
+      <h2 class="giant-h">Des projets<br>concrets.</h2>
+    </div>
+    <div class="vision-block rv d1">
+      <p>Nous voulons bâtir la prochaine génération d'agences digitales françaises — indépendantes, ambitieuses, ancrées dans la qualité, mais agiles comme une startup. Basés à Douai, disponibles partout en France.</p>
+    </div>
+    <div class="vision-pills rv d2">
+      <div class="vision-pill">Résultats mesurables</div>
+      <div class="vision-pill">Solutions évolutives</div>
+      <div class="vision-pill">Approche distinctive</div>
+      <div class="vision-pill">Ancré dans les Hauts-de-France</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta-band">
+  <div class="wrap">
+    <div class="cta-band-in rv">
+      <span class="chip">Audit gratuit · Réponse sous 24h</span>
+      <h2>Travaillons ensemble.</h2>
+      <p>Un projet, une idée, un problème à résoudre. Parlez-moi de votre situation et je reviens avec une analyse honnête.</p>
+      <div class="cta-acts">
+        <a href="contact.html" class="btn-p">Démarrer mon projet →</a>
+        <a href="https://wa.me/33781754719" target="_blank" rel="noopener" class="btn-g">WhatsApp direct</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-g">
+      <div><div class="foot-brand"><img src="logo.png" alt="POLOW" class="foot-logo"><span class="foot-name">POLOW</span></div><p class="foot-tag">Logiciels sur mesure pour les entreprises de Douai et la région Hauts-de-France.</p><p class="foot-siren">SIREN 101 540 243 — France</p></div>
+      <div><div class="foot-col-h">Services</div><ul class="foot-links"><li><a href="services.html#site-web">Site web</a></li><li><a href="services.html#saas">Application & SaaS</a></li><li><a href="services.html#crm">CRM & Logiciel</a></li></ul></div>
+      <div><div class="foot-col-h">Agence</div><ul class="foot-links"><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><div class="foot-col-h">Contact</div><ul class="foot-links"><li><a href="tel:+33781754719">07 81 75 47 19</a></li><li><a href="mailto:contact@polowagency.fr">contact@polowagency.fr</a></li></ul></div>
+    </div>
+    <div class="foot-bot"><span class="foot-copy">© 2026 POLOW Agency</span><span class="foot-made">Conçu & développé par Paul Piot</span></div>
+  </div>
+</footer>
+
+<div class="legal">
+  <span class="legal-copy">SIREN 101 540 243 — POLOW Agency</span>
+  <div class="legal-links"><a href="#">Mentions légales</a><span class="legal-sep">·</span><a href="#">Confidentialité</a></div>
+  <div class="legal-avail"><span class="legal-dot"></span> Douai & environs · Disponible</div>
+</div>
+
+<a href="https://wa.me/33781754719" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
+
+<script>
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav')
+function openM(){mnav.classList.add('on');burger.classList.add('on');document.body.style.overflow='hidden'}
+function closeM(){mnav.classList.remove('on');burger.classList.remove('on');document.body.style.overflow=''}
+burger.addEventListener('click',()=>mnav.classList.contains('on')?closeM():openM())
+document.getElementById('mnavClose').addEventListener('click',closeM)
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.07})
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>io.observe(el))
+</script>
+</body>
+</html>

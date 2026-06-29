@@ -3,1365 +3,1166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POLOW Agency · Sites web & Logiciels SaaS sur mesure | Créateur de REZOO</title>
-<meta name="description" content="POLOW Agency conçoit des sites web professionnels et des logiciels SaaS sur mesure pour les entreprises ambitieuses. Créateur de REZOO, solution de réservation pour les professionnels du rendez-vous.">
-<meta name="keywords" content="agence web France, création site web professionnel, logiciel SaaS sur mesure, REZOO réservation en ligne, agence web Douai, site internet coiffeur, salon de coiffure réservation, développement web sur mesure">
+<title>POLOW Agency · Développeur web & logiciel sur mesure à Douai</title>
+<meta name="description" content="POLOW Agency conçoit des sites web, logiciels sur mesure, applications et SaaS pour les TPE et indépendants à Douai et ses environs (Lens, Arras, Valenciennes). Sans template, sans intermédiaire.">
 <meta name="robots" content="index, follow">
-<meta name="geo.region" content="FR-59">
-<meta name="geo.placename" content="Douai">
-<meta property="og:title" content="POLOW Agency · Sites web & Logiciels SaaS sur mesure">
-<meta property="og:description" content="Agence web française basée à Douai. Créateur de REZOO. Sites web et logiciels SaaS sur mesure pour les entreprises ambitieuses.">
+<meta property="og:title" content="POLOW Agency · Développeur web & logiciel à Douai">
+<meta property="og:description" content="Des outils sur mesure. Pas des templates.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
 <link rel="icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "POLOW Agency",
-  "description": "Agence web française basée à Douai. Création de sites web professionnels et logiciels SaaS sur mesure. Créateur de REZOO, solution de réservation pour les professionnels du rendez-vous.",
-  "address": {"@type": "PostalAddress","addressLocality": "Douai","addressRegion": "Hauts-de-France","postalCode": "59500","addressCountry": "FR"},
-  "areaServed": "France",
-  "founder": {"@type": "Person","name": "Paul PIOT"},
-  "priceRange": "€€",
-  "email": "contact@polowagency.fr",
-  "url": "https://polowagency.fr"
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"POLOW Agency","founder":{"@type":"Person","name":"Paul PIOT"},"areaServed":["Douai","Lens","Arras","Valenciennes","Lille","Hauts-de-France"],"address":{"@type":"PostalAddress","addressLocality":"Douai","addressRegion":"Hauts-de-France","addressCountry":"FR"},"telephone":"+33781754719","url":"https://polowagency.fr"}</script>
 <style>
-/* ═══════════════════════════════════════════
-   RESET & VARIABLES
-═══════════════════════════════════════════ */
+:root{
+  --bg:#06060a;--bg2:#0a0a0f;--bg3:#0e0e18;
+  --text:#f0f0f8;--muted:#6b7280;--muted2:#1f2937;
+  --accent:#f97316;--accent2:#fb923c;
+  --accent-lo:rgba(249,115,22,.09);--accent-md:rgba(249,115,22,.22);
+  --border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.14);
+  --green:#22c55e;--max:1240px;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:'League Spartan',sans-serif;background:#09090b;color:#f2f0eb;overflow-x:hidden;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;font-size:17px}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:none}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-::selection{background:rgba(201,169,110,.25);color:#f2f0eb}
-:root{
-  --bg:#09090b;
-  --bg2:#111115;
-  --bg3:#18181d;
-  --text:#f2f0eb;
-  --text-soft:#6b6960;
-  --mid:#c8c4bc;
-  --gold:#c9a96e;
-  --gold-dim:rgba(201,169,110,.12);
-  --gold-border:rgba(201,169,110,.28);
-  --border:rgba(242,240,235,.07);
-  --border-strong:rgba(242,240,235,.15);
-  --green:#4ade80;
-  --radius:18px;
-  --radius-lg:24px;
-  --max:1160px;
-}
+button{font-family:'Manrope',sans-serif;cursor:pointer}
+::selection{background:rgba(249,115,22,.2);color:var(--text)}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.022'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
 
-/* ═══════════════════════════════════════════
-   NOISE TEXTURE
-═══════════════════════════════════════════ */
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:.55}
-
-/* ═══════════════════════════════════════════
-   CUSTOM CURSOR
-═══════════════════════════════════════════ */
-.cursor{position:fixed;width:10px;height:10px;background:rgba(242,240,235,.9);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .18s,height .18s,background .18s;mix-blend-mode:difference}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(242,240,235,.25);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .32s,height .32s,border-color .2s,transform .06s;opacity:0}
-.cursor-ring.vis{opacity:1}
-.cursor.hov{width:5px;height:5px;background:rgba(201,169,110,.9)}
-.cursor-ring.hov{width:52px;height:52px;border-color:rgba(201,169,110,.55)}
-@media(hover:none){.cursor,.cursor-ring{display:none}}
-
-/* ═══════════════════════════════════════════
-   ORB BACKGROUND
-═══════════════════════════════════════════ */
-.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.065;animation:orbFloat linear infinite}
-.orb1{width:650px;height:650px;background:radial-gradient(circle,#c9a96e,transparent);top:-15%;left:-20%;animation-duration:28s}
-.orb2{width:500px;height:500px;background:radial-gradient(circle,rgba(242,240,235,.5),transparent);top:40%;right:-18%;animation-duration:35s;animation-delay:-12s}
-.orb3{width:420px;height:420px;background:radial-gradient(circle,#c9a96e,transparent);bottom:-12%;left:35%;animation-duration:22s;animation-delay:-6s}
-@keyframes orbFloat{0%{transform:translate(0,0) scale(1)}25%{transform:translate(50px,-35px) scale(1.04)}50%{transform:translate(-25px,55px) scale(.96)}75%{transform:translate(-50px,-18px) scale(1.02)}100%{transform:translate(0,0) scale(1)}}
-
-/* ═══════════════════════════════════════════
-   FLOATING BUTTONS
-═══════════════════════════════════════════ */
-.float-group{position:fixed;bottom:calc(26px + 1.1rem);right:1.5rem;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:.65rem}
-.wa-btn{display:flex;align-items:center;gap:.55rem;background:#25D366;color:#fff;padding:.65rem 1.1rem .65rem .85rem;border-radius:100px;font-size:.82rem;font-weight:500;box-shadow:0 4px 18px rgba(37,211,102,.38);transition:transform .2s,box-shadow .2s;white-space:nowrap;border:none;cursor:pointer;text-decoration:none}
-.wa-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 26px rgba(37,211,102,.48)}
-.wa-btn svg{width:20px;height:20px;flex-shrink:0}
-@keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
-.wa-pulse{animation:waPulse 2.5s infinite}
-.wa-pulse:hover{animation:none}
-
-/* ═══════════════════════════════════════════
-   NAVIGATION
-═══════════════════════════════════════════ */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;padding:1rem 2.5rem;background:rgba(9,9,11,.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:padding .3s,background .3s}
-nav.scrolled{background:rgba(9,9,11,.94);padding:.8rem 2.5rem}
-.nav-logo{display:flex;align-items:center;gap:.65rem;flex-shrink:0}
-.nav-logo-img{width:38px;height:38px;object-fit:contain;mix-blend-mode:screen}
-.nav-brand{font-family:'League Spartan',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:.08em;color:var(--text);text-transform:uppercase}
-.nav-links{display:flex;gap:1.75rem;list-style:none;align-items:center;justify-content:center}
-.nav-links a{font-size:.82rem;letter-spacing:.04em;color:var(--text-soft);transition:color .2s}
-.nav-links a:hover{color:var(--text)}
-.nav-right{display:flex;align-items:center;justify-content:flex-end}
-.nav-cta{background:var(--gold);color:#0a0a0b;padding:.5rem 1.25rem;border-radius:100px;font-size:.8rem;font-weight:500;letter-spacing:.02em;transition:background .2s,transform .15s;border:none;cursor:pointer;font-family:'League Spartan',sans-serif;display:inline-block}
-.nav-cta:hover{background:#d4b47a;transform:translateY(-1px)}
-.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:201}
-.nav-burger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:all .3s}
-.nav-burger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.nav-burger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
-.nav-burger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
-/* ═══════════════════════════════════════════
-   MOBILE NAV
-═══════════════════════════════════════════ */
-.mobile-nav{position:fixed;inset:0;z-index:9999;background:#0a0a0b;display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .25s,visibility .25s}
-.mobile-nav.open{visibility:visible;opacity:1;pointer-events:auto}
-.mobile-nav-top{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0}
-.mobile-nav-logo-img{width:30px;height:30px;object-fit:contain;mix-blend-mode:screen}
-.mobile-nav-close{background:none;border:none;color:rgba(255,255,255,.45);cursor:pointer;padding:.5rem;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;transition:color .15s;font-size:1.5rem}
-.mobile-nav-close:active{color:#fff}
-.mobile-nav-links{flex:1;display:flex;flex-direction:column;justify-content:center;padding:1rem 0}
-.mobile-nav-links a{display:block;padding:.9rem 1.75rem;font-family:'League Spartan',sans-serif;font-size:1.65rem;font-weight:300;color:rgba(255,255,255,.65);border-bottom:1px solid rgba(255,255,255,.05);-webkit-tap-highlight-color:transparent;transition:color .15s;letter-spacing:-.02em;line-height:1.2}
-.mobile-nav-links a:last-child{border-bottom:none}
-.mobile-nav-links a:active{color:#fff}
-.mobile-nav-cta-wrap{padding:1.25rem 1.5rem;border-top:1px solid rgba(255,255,255,.06);flex-shrink:0}
-.mobile-nav-cta{width:100%;background:var(--gold);color:#0a0a0b;font-family:'League Spartan',sans-serif;font-size:.9rem;font-weight:500;padding:.9rem;border:none;border-radius:12px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:opacity .15s}
-.mobile-nav-cta:active{opacity:.8}
-
-/* ═══════════════════════════════════════════
-   UTILITIES
-═══════════════════════════════════════════ */
-.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 2.5rem}
-.section-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;opacity:.9}
-.section-label::before{content:'';display:block;width:18px;height:1px;background:var(--gold);opacity:.6}
-h2.section-title{font-family:'League Spartan',sans-serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:300;line-height:1.15;letter-spacing:-.02em;margin-bottom:1.1rem;color:var(--text)}
-h2.section-title em{font-style:italic}
-.section-sub{color:var(--text-soft);font-size:1rem;line-height:1.75;max-width:520px}
-.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--text);color:#0a0a0b;padding:.9rem 2rem;border-radius:100px;font-size:.875rem;font-weight:500;transition:background .2s,transform .2s;border:none;cursor:pointer;font-family:'League Spartan',sans-serif;position:relative;overflow:hidden}
-.btn-primary:hover{background:var(--mid);transform:translateY(-2px)}
-.btn-secondary{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--text);padding:.9rem 2rem;border-radius:100px;font-size:.875rem;border:1px solid var(--border-strong);transition:border-color .2s,background .2s;cursor:pointer;font-family:'League Spartan',sans-serif;position:relative;overflow:hidden}
-.btn-secondary:hover{border-color:var(--text);background:rgba(242,240,235,.04)}
-.btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#0a0a0b;padding:.9rem 2rem;border-radius:100px;font-size:.875rem;font-weight:500;transition:background .2s,transform .2s;border:none;cursor:pointer;font-family:'League Spartan',sans-serif;position:relative;overflow:hidden}
-.btn-gold:hover{background:#d4b47a;transform:translateY(-2px)}
+/* ── KEYFRAMES ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes ring{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}65%{box-shadow:0 0 0 10px rgba(37,211,102,0)}}
 @keyframes ripple{to{transform:scale(4);opacity:0}}
-.ripple-effect{position:absolute;border-radius:50%;background:rgba(255,255,255,.22);transform:scale(0);animation:ripple .6s linear;pointer-events:none}
+@keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
-/* ═══════════════════════════════════════════
-   SCROLL REVEAL
-═══════════════════════════════════════════ */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-.reveal.vis{opacity:1;transform:translateY(0)}
-.reveal-left{opacity:0;transform:translateX(-26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-.reveal-left.vis{opacity:1;transform:translateX(0)}
-.reveal-right{opacity:0;transform:translateX(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-.reveal-right.vis{opacity:1;transform:translateX(0)}
-.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}.d5{transition-delay:.35s}.d6{transition-delay:.42s}
+/* ── LOADER ── */
+#loader{position:fixed;inset:0;z-index:8000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;transition:opacity .5s,visibility .5s}
+#loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.ld-logo{display:flex;align-items:center;gap:.55rem;opacity:0;animation:fadeUp .4s .1s ease both}
+.ld-logo img{width:28px;height:28px;object-fit:contain;mix-blend-mode:screen}
+.ld-logo span{font-family:'Bricolage Grotesque',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.ld-track{width:180px;height:1px;background:rgba(255,255,255,.07);border-radius:1px;overflow:hidden;opacity:0;animation:fadeUp .4s .2s ease both}
+.ld-fill{height:100%;background:var(--accent);width:0%;border-radius:1px;transition:width .04s linear}
+.ld-n{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted);opacity:0;animation:fadeUp .35s .25s ease both}
+body.loading{overflow:hidden}
 
-/* ═══════════════════════════════════════════
-   HERO
-═══════════════════════════════════════════ */
-#hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;position:relative;overflow:hidden}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.38rem .9rem;border-radius:100px;margin-bottom:2rem;font-family:'League Spartan',sans-serif}
-.hero-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-h1{font-family:'League Spartan',sans-serif;font-size:clamp(2.8rem,6.5vw,6.5rem);font-weight:300;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.75rem;max-width:960px}
-h1 em{font-style:italic;color:var(--gold)}
-.hero-sub{font-size:1.1rem;color:var(--text-soft);margin-bottom:2.5rem;max-width:580px;line-height:1.75;font-weight:300}
-.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem}
-.hero-tags{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:center}
-.hero-tag{font-size:.72rem;color:var(--text-soft);letter-spacing:.08em;opacity:.6}
-.hero-tag-sep{color:var(--border-strong);opacity:.8}
-.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:.35;animation:scrollBounce 2.5s ease-in-out infinite}
-.hero-scroll span{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-soft)}
-.hero-scroll-line{width:1px;height:28px;background:linear-gradient(to bottom,var(--border-strong),transparent)}
-@keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+/* ── WORD BLUR ── */
+.bw{display:inline-block;will-change:transform,filter,opacity;opacity:0;filter:blur(8px);transform:translateY(28px);transition:opacity .55s var(--d,0ms) cubic-bezier(.22,1,.36,1),filter .55s var(--d,0ms) cubic-bezier(.22,1,.36,1),transform .55s var(--d,0ms) cubic-bezier(.22,1,.36,1)}
+body.ready .bw{opacity:1;filter:blur(0);transform:none}
 
-/* ═══════════════════════════════════════════
-   POSITIONING
-═══════════════════════════════════════════ */
-#positioning{background:var(--bg2);padding:6rem 0}
-.pos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.75rem}
-.pos-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:border-color .25s,transform .25s,box-shadow .25s;position:relative;overflow:hidden}
-.pos-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 0% 0%,rgba(201,169,110,.04),transparent 60%);pointer-events:none}
-.pos-card:hover{border-color:var(--gold-border);transform:translateY(-3px);box-shadow:0 10px 36px rgba(0,0,0,.4)}
-.pos-icon{font-size:1.5rem;margin-bottom:.9rem;display:block}
-.pos-card h3{font-family:'League Spartan',sans-serif;font-size:1.15rem;font-weight:400;color:var(--text);margin-bottom:.4rem}
-.pos-card p{font-size:.9rem;color:var(--text-soft);line-height:1.65}
+/* ── REVEALS ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.on{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-l.on{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv-r.on{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}.d5{transition-delay:.35s}
+@media(prefers-reduced-motion:reduce){.rv,.rv-l,.rv-r,.bw{opacity:1;transform:none;filter:none;transition:none}}
 
-/* ═══════════════════════════════════════════
-   REZOO SECTION
-═══════════════════════════════════════════ */
-#rezoo{background:var(--bg);padding:7rem 0;position:relative;overflow:hidden}
-#rezoo::before{content:'';position:absolute;top:-100px;left:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(201,169,110,.06),transparent 65%);pointer-events:none}
-.rezoo-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.rezoo-product-badge{display:inline-flex;align-items:center;gap:.45rem;background:rgba(201,169,110,.1);border:1px solid var(--gold-border);color:var(--gold);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px;margin-bottom:1.25rem;font-family:'League Spartan',sans-serif}
-.rezoo-product-badge svg{width:10px;height:10px;fill:var(--gold)}
-.rezoo-left h2{font-family:'League Spartan',sans-serif;font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:300;line-height:1.15;letter-spacing:-.02em;margin-bottom:1.1rem;color:var(--text)}
-.rezoo-left h2 em{font-style:italic;color:var(--gold)}
-.rezoo-desc{font-size:.9rem;color:var(--text-soft);line-height:1.75;margin-bottom:1.5rem;max-width:460px}
-.rezoo-targets{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.75rem}
-.rezoo-target{font-size:.68rem;letter-spacing:.06em;background:var(--bg3);border:1px solid var(--border-strong);color:var(--mid);padding:.25rem .65rem;border-radius:100px}
-.rezoo-features{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-bottom:2rem}
-.rezoo-features li{display:flex;align-items:center;gap:.65rem;font-size:.85rem;color:var(--text-soft)}
-.rezoo-features li::before{content:'';display:block;width:16px;height:16px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%23c9a96e' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:10px;background-repeat:no-repeat;background-position:center}
-.rezoo-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem}
-.rezoo-note{font-size:.72rem;color:var(--text-soft);opacity:.5;font-style:italic}
-.rezoo-right{position:relative}
-.rezoo-mockup-wrap{border-radius:20px;overflow:hidden;border:1px solid var(--gold-border);box-shadow:0 24px 80px rgba(0,0,0,.6),0 0 0 1px rgba(201,169,110,.08);background:#0d0d10}
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3.5rem;background:transparent;transition:padding .3s,background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.sc{background:rgba(6,6,10,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom-color:var(--border);padding:.85rem 3.5rem}
+.nav-logo{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.nav-logo img{width:26px;height:26px;object-fit:contain;mix-blend-mode:screen}
+.nav-brand{font-family:'Bricolage Grotesque',sans-serif;font-size:.95rem;font-weight:800;letter-spacing:.01em}
+.nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%);align-items:center}
+.nav-links a{font-size:.83rem;color:rgba(255,255,255,.65);font-weight:500;transition:color .18s}
+.nav-links a:hover{color:#fff}
+.nav-has-drop{position:relative}
+.nav-has-drop::after{content:'';position:absolute;top:100%;left:-12px;right:-12px;height:1rem;z-index:1}
+.nav-drop-toggle{display:flex;align-items:center;gap:.28rem;font-size:.83rem;color:rgba(255,255,255,.65);font-weight:500;background:none;border:none;padding:0;transition:color .18s;cursor:pointer}
+.nav-has-drop:hover .nav-drop-toggle{color:#fff}
+.nav-drop-toggle svg{width:11px;height:11px;transition:transform .2s}
+.nav-has-drop:hover .nav-drop-toggle svg{transform:rotate(180deg)}
+.nav-drop{position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%) translateY(-6px);background:rgba(8,8,14,.98);border:1px solid var(--border2);border-radius:.9rem;padding:.5rem;min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,transform .2s,visibility .18s;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.nav-has-drop:hover .nav-drop{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.nav-drop-item{display:flex;align-items:center;gap:.7rem;padding:.65rem .9rem;border-radius:.55rem;color:rgba(255,255,255,.72);font-size:.82rem;font-weight:500;transition:background .15s,color .15s;white-space:nowrap}
+.nav-drop-item:hover{background:var(--accent-lo);color:#fff}
+.nav-drop-item svg{width:15px;height:15px;color:var(--accent2);flex-shrink:0}
+.nav-r{display:flex;align-items:center;gap:.55rem;flex-shrink:0}
+.nav-cta{display:inline-flex;align-items:center;gap:.38rem;background:var(--accent);color:#000;padding:.5rem 1.2rem;border-radius:100px;font-size:.78rem;font-weight:800;border:none;transition:background .18s,transform .14s;box-shadow:0 4px 18px rgba(249,115,22,.35)}
+.nav-cta:hover{background:var(--accent2);transform:translateY(-1px)}
+.nav-wa{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid var(--border);transition:background .18s}
+.nav-wa:hover{background:rgba(255,255,255,.12)}
+.nav-wa svg{width:16px;height:16px;fill:rgba(255,255,255,.7)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px}
+.burger span{display:block;width:20px;height:1.5px;background:var(--text);border-radius:2px;transition:all .25s}
+.burger.on span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
-/* ═══════════════════════════════════════════
-   PROBLEMS
-═══════════════════════════════════════════ */
-#problems{background:var(--bg3);padding:6rem 0}
-.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin-top:2.5rem}
-.problem-card{display:flex;align-items:flex-start;gap:.85rem;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.25rem;transition:border-color .2s,transform .2s}
-.problem-card:hover{border-color:var(--border-strong);transform:translateY(-2px)}
-.problem-icon{font-size:1.25rem;flex-shrink:0;margin-top:.05rem}
-.problem-text{font-size:.845rem;color:var(--mid);line-height:1.5;font-weight:400}
+/* ── MOBILE NAV ── */
+.mnav{position:fixed;inset:0;z-index:290;background:var(--bg);display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .25s,visibility .25s}
+.mnav.on{visibility:visible;opacity:1;pointer-events:auto}
+.mnav-top{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;border-bottom:1px solid var(--border)}
+.mnav-top img{width:24px;height:24px;object-fit:contain;mix-blend-mode:screen}
+.mnav-close{background:none;border:none;color:var(--muted);font-size:1.4rem;padding:.4rem}
+.mnav-links{flex:1;display:flex;flex-direction:column;justify-content:center;overflow-y:auto}
+.mnav-row{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1.5rem;border-bottom:1px solid var(--border)}
+.mnav-row a{font-family:'Bricolage Grotesque',sans-serif;font-size:1.4rem;font-weight:700;color:var(--muted);transition:color .15s;display:block;flex:1}
+.mnav-row a:hover,.mnav-row a.cur{color:var(--text)}
+.mnav-acc-toggle{background:none;border:1px solid var(--border);border-radius:.45rem;color:var(--muted);padding:.3rem .5rem;display:flex;align-items:center;transition:border-color .2s,color .2s}
+.mnav-acc-toggle svg{width:16px;height:16px;transition:transform .3s}
+.mnav-acc-toggle.open{border-color:var(--accent-md);color:var(--accent2)}
+.mnav-acc-toggle.open svg{transform:rotate(180deg)}
+.mnav-sub{overflow:hidden;max-height:0;transition:max-height .38s cubic-bezier(.22,1,.36,1)}
+.mnav-sub.open{max-height:300px}
+.mnav-sub a{display:flex;align-items:center;gap:.65rem;padding:.65rem 1.5rem .65rem 2.2rem;font-size:.88rem;color:rgba(255,255,255,.5);border-bottom:1px solid var(--border);transition:color .15s,background .15s}
+.mnav-sub a:hover{color:var(--text);background:var(--accent-lo)}
+.mnav-sub svg{width:13px;height:13px;color:var(--accent2);flex-shrink:0}
+.mnav-cta{padding:1.1rem 1.4rem;border-top:1px solid var(--border)}
+.mnav-cta button{width:100%;background:var(--accent);color:#000;font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:700;padding:.88rem;border:none;border-radius:10px;transition:background .18s}
+.mnav-cta button:hover{background:var(--accent2)}
 
-/* ═══════════════════════════════════════════
-   SOLUTION
-═══════════════════════════════════════════ */
-#solution{background:var(--bg2);padding:6rem 0}
-.solution-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.solution-left h2{margin-bottom:1rem}
-.solution-quote{font-family:'League Spartan',sans-serif;font-size:1.45rem;font-style:italic;font-weight:300;color:var(--mid);line-height:1.5;border-left:2px solid var(--gold);padding-left:1.25rem;margin:1.75rem 0}
-.solution-sub{font-size:.88rem;color:var(--text-soft);line-height:1.75}
-.solution-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-top:.5rem}
-.solution-list li{display:flex;align-items:flex-start;gap:.85rem;font-size:.9rem;color:var(--text-soft);line-height:1.55;padding:.75rem;background:var(--bg3);border:1px solid var(--border);border-radius:12px;transition:border-color .2s}
-.solution-list li:hover{border-color:var(--gold-border)}
-.solution-check{width:22px;height:22px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.08rem}
-.solution-check svg{width:10px;height:10px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* ── UTILS ── */
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 3.5rem}
+.chip{display:inline-flex;align-items:center;gap:.45rem;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.24);color:var(--accent2);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:.32rem .8rem;border-radius:100px;margin-bottom:1.2rem}
+.chip svg{width:13px;height:13px}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.16);transform:scale(0);animation:ripple .5s linear;pointer-events:none}
+.giant-h{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(4rem,11vw,13rem);font-weight:800;line-height:.95;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,.28) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:2rem}
 
-/* ═══════════════════════════════════════════
-   OFFRES
-═══════════════════════════════════════════ */
-#offres{background:var(--bg);padding:7rem 0}
-.offres-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;align-items:start}
-.offre-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;display:flex;flex-direction:column;gap:.65rem;transition:border-color .25s,transform .25s,box-shadow .25s;position:relative;overflow:hidden}
-.offre-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(242,240,235,.03),transparent 60%);pointer-events:none}
-.offre-card:hover{border-color:var(--border-strong);transform:translateY(-4px);box-shadow:0 14px 48px rgba(0,0,0,.4)}
-.offre-card.featured{border-color:var(--gold-border);transform:translateY(-6px);box-shadow:0 20px 64px rgba(0,0,0,.5),0 0 0 1px var(--gold-dim);background:linear-gradient(160deg,var(--bg2),rgba(201,169,110,.03))}
-.offre-card.featured::before{background:radial-gradient(ellipse at 50% 0%,rgba(201,169,110,.08),transparent 65%)}
-.offre-card.featured:hover{transform:translateY(-9px)}
-.offre-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;font-family:'League Spartan',sans-serif;padding:.25rem .7rem;border-radius:100px;margin-bottom:.25rem;width:fit-content}
-.offre-badge-default{color:var(--text-soft);background:var(--bg3);border:1px solid var(--border)}
-.offre-badge-gold{color:var(--gold);background:var(--gold-dim);border:1px solid var(--gold-border)}
-.offre-badge-rezoo{color:#a78bfa;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25)}
-.offre-icon{font-size:1.75rem;margin-bottom:.25rem}
-.offre-title{font-family:'League Spartan',sans-serif;font-size:1.4rem;font-weight:400;color:var(--text);line-height:1.2}
-.offre-desc{font-size:.9rem;color:var(--text-soft);line-height:1.65}
-.offre-features{list-style:none;display:flex;flex-direction:column;gap:.4rem;flex:1;margin:.25rem 0}
-.offre-features li{font-size:.875rem;color:rgba(242,240,235,.55);display:flex;align-items:flex-start;gap:.5rem;line-height:1.45}
-.offre-features li::before{content:'·';flex-shrink:0;opacity:.35;margin-top:.05rem}
-.offre-quote{font-family:'League Spartan',sans-serif;font-size:.95rem;font-style:italic;color:var(--gold);border-left:2px solid var(--gold-border);padding-left:.9rem;line-height:1.5;margin:.5rem 0}
-.offre-cta{display:block;text-align:center;padding:.8rem 1.25rem;border-radius:100px;font-size:.82rem;font-weight:500;transition:all .2s;cursor:pointer;border:none;font-family:'League Spartan',sans-serif;width:100%;margin-top:auto;position:relative;overflow:hidden}
-.offre-cta-default{background:transparent;border:1px solid var(--border-strong);color:var(--text)}
-.offre-cta-default:hover{background:rgba(242,240,235,.06);border-color:var(--text)}
-.offre-cta-gold{background:var(--gold);color:#0a0a0b}
-.offre-cta-gold:hover{background:#d4b47a}
+/* ── HERO ── */
+#hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8rem 0 5rem;text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse 140% 100% at 50% -10%,#c2410c 0%,#9a3412 20%,#0a0a20 50%,var(--bg) 70%)}
+#hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;opacity:.5;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.88);font-size:.73rem;padding:.38rem 1rem .38rem .5rem;border-radius:100px;margin-bottom:2.2rem;font-weight:500;opacity:0;transition:opacity .5s .1s ease;backdrop-filter:blur(8px)}
+body.ready .hero-badge{opacity:1}
+.hero-badge-icon{width:28px;height:28px;border-radius:100px;background:rgba(249,115,22,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-badge-icon svg{width:15px;height:15px;fill:var(--accent2)}
+.hero-h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(3.5rem,10vw,10.5rem);font-weight:800;line-height:.97;letter-spacing:-.04em;margin-bottom:1.5rem;max-width:1100px;margin-left:auto;margin-right:auto;color:#fff;position:relative;z-index:1}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.6);margin-bottom:2.8rem;max-width:480px;line-height:1.72;margin-left:auto;margin-right:auto;opacity:0;transition:opacity .55s .38s ease;position:relative;z-index:1}
+body.ready .hero-sub{opacity:1}
+.hero-acts{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;align-items:center;margin-bottom:.7rem;opacity:0;transition:opacity .55s .5s ease;position:relative;z-index:1}
+body.ready .hero-acts{opacity:1}
+.btn-hero{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#000;padding:.82rem 1.9rem;border-radius:100px;font-size:.88rem;font-weight:800;border:none;transition:background .18s,transform .14s,box-shadow .18s;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(249,115,22,.35)}
+.btn-hero:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(249,115,22,.4)}
+.hero-note{font-size:.72rem;color:rgba(255,255,255,.38);letter-spacing:.01em;opacity:0;transition:opacity .55s .62s ease;position:relative;z-index:1}
+body.ready .hero-note{opacity:1}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;animation:float 2.8s ease-in-out infinite;opacity:0;transition:opacity .5s .9s ease}
+body.ready .hero-scroll{opacity:.22}
+.hero-scroll span{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.hero-scroll-ln{width:1px;height:20px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent)}
 
-/* ═══════════════════════════════════════════
-   DIFFERENCE
-═══════════════════════════════════════════ */
-#difference{background:var(--bg3);padding:7rem 0}
-.diff-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.75rem}
-.diff-col{border-radius:var(--radius-lg);padding:2.25rem 2.5rem}
-.diff-col-them{background:var(--bg);border:1px solid var(--border)}
-.diff-col-us{background:var(--bg2);border:1px solid var(--gold-border);position:relative;overflow:hidden}
-.diff-col-us::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,rgba(201,169,110,.07),transparent 70%);pointer-events:none}
-.diff-col-title{font-family:'League Spartan',sans-serif;font-size:1.05rem;font-weight:400;margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
-.diff-col-them .diff-col-title{color:var(--text-soft)}
-.diff-col-us .diff-col-title{color:var(--text)}
-.diff-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-.diff-list li{font-size:.95rem;line-height:1.55;display:flex;align-items:flex-start;gap:.65rem}
-.diff-col-them .diff-list li{color:var(--text-soft);opacity:.65}
-.diff-col-them .diff-list li::before{content:'✗';flex-shrink:0;opacity:.45;margin-top:.06rem}
-.diff-col-us .diff-list li{color:var(--text)}
-.diff-col-us .diff-list li::before{content:'✓';color:var(--green);flex-shrink:0;font-weight:600;margin-top:.06rem}
+/* ── HERO MOCKUP ── */
+.hero-mock-wrap{width:100%;max-width:1020px;margin:3.5rem auto 0;opacity:0;transform:translateY(30px);transition:opacity .8s .75s cubic-bezier(.22,1,.36,1),transform .8s .75s;position:relative;z-index:1}
+body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
+.hero-mock{background:rgba(8,8,18,.92);border:1px solid rgba(255,255,255,.1);border-radius:1.6rem;overflow:hidden;box-shadow:0 50px 100px rgba(0,0,0,.7),0 0 0 1px rgba(249,115,22,.06);backdrop-filter:blur(12px);animation:float 7s ease-in-out infinite 1.8s}
+.hm-top{padding:1.8rem 2.5rem 1.4rem;text-align:center}
+.hm-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:.9rem;letter-spacing:-.025em;transition:opacity .22s,transform .22s}
+.hm-bullets{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 2rem;transition:opacity .22s}
+.hm-bullet{font-size:.78rem;color:rgba(255,255,255,.52);display:flex;align-items:center;gap:.38rem}
+.hm-bullet::before{content:'•';color:var(--accent2)}
+.hm-win{margin:0 1.5rem;border-radius:1rem 1rem 0 0;overflow:hidden;border:1px solid rgba(255,255,255,.08);border-bottom:none}
+.hm-win-bar{background:#0e0e1c;padding:.55rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid rgba(255,255,255,.05)}
+.hm-dots{display:flex;gap:.28rem}
+.hm-dots i{display:block;width:9px;height:9px;border-radius:50%}
+.hm-dots i:nth-child(1){background:#FF5F57}
+.hm-dots i:nth-child(2){background:#FEBC2E}
+.hm-dots i:nth-child(3){background:#28C840}
+.hm-win-body{display:grid;grid-template-columns:1fr .72fr}
+.hm-code-pane{background:#0a0a16;border-right:1px solid rgba(255,255,255,.05);overflow:hidden;display:flex}
+.hm-gutter{padding:1.1rem .6rem 1.1rem .9rem;user-select:none;flex-shrink:0;display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,.04)}
+.hm-gutter span{font-family:'JetBrains Mono',monospace;font-size:.68rem;line-height:1.9;color:rgba(255,255,255,.2);text-align:right;display:block}
+.hm-code-inner{padding:1.1rem 1.4rem;overflow:hidden;flex:1}
+.hm-code-inner code{display:block;white-space:pre;transition:opacity .18s;font-family:'JetBrains Mono',monospace;font-size:.72rem;line-height:1.9}
+.hm-preview-pane{background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1rem;padding:1.5rem}
+.hm-preview-text{font-family:'Bricolage Grotesque',sans-serif;font-size:2.1rem;font-weight:900;color:#fff;text-align:center;line-height:1.05;letter-spacing:-.04em;transition:opacity .18s,transform .18s}
+.hm-preview-btn{width:44px;height:44px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#000;font-size:1.15rem;font-weight:800;transition:transform .2s,background .2s}
+.hm-preview-btn:hover{transform:scale(1.1);background:var(--accent2)}
+.hm-tabs{display:flex;align-items:center;gap:.5rem;padding:.9rem 1.5rem;background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.05);flex-wrap:wrap}
+.hm-tab{background:none;border:none;color:rgba(255,255,255,.38);font-family:'Manrope',sans-serif;font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.42rem .95rem;border-radius:100px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap}
+.hm-tab.act{background:var(--accent);color:#000}
+.hm-tab:hover:not(.act){color:rgba(255,255,255,.75)}
 
-/* ═══════════════════════════════════════════
-   RÉALISATIONS
-═══════════════════════════════════════════ */
-#realisations{background:var(--bg2);padding:7rem 0}
-.real-notice{display:inline-flex;align-items:center;gap:.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:.55rem 1rem;font-size:.78rem;color:var(--text-soft);margin-bottom:2.5rem}
-.real-notice-dot{width:5px;height:5px;border-radius:50%;background:#4ade80;box-shadow:0 0 5px rgba(74,222,128,.5);flex-shrink:0}
-.real-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-.real-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
-.real-card:hover{transform:translateY(-5px);box-shadow:0 22px 65px rgba(0,0,0,.55);border-color:var(--border-strong)}
-.real-card.placeholder-card{border-style:dashed;opacity:.7}
-.real-card.placeholder-card:hover{opacity:.9}
-.real-preview{height:230px;position:relative;overflow:hidden;flex-shrink:0}
-.real-preview img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .4s cubic-bezier(.22,1,.36,1)}
-.real-card:hover .real-preview img{transform:scale(1.04)}
-.real-preview::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to bottom,transparent,var(--bg3));pointer-events:none;z-index:1}
-/* Hair salon preview */
-/* ── Carré d'Hair : REZOO Dashboard ── */
-.prev-cdh{background:#131208;height:100%;display:grid;grid-template-columns:68px 1fr 82px;overflow:hidden;font-family:'League Spartan',sans-serif}
-.pcd-sb{background:#1a1a0d;border-right:1px solid rgba(201,169,110,.1);display:flex;flex-direction:column;padding:.5rem .4rem;gap:.4rem;overflow:hidden}
-.pcd-logo-wrap{margin-bottom:.15rem}
-.pcd-logo{font-size:.58rem;font-weight:900;color:#f0ead8;letter-spacing:-.3px;line-height:1;display:flex;align-items:center;gap:0}
-.pcd-logo-o{display:inline-flex;align-items:center;justify-content:center;width:.55rem;height:.55rem}
-.pcd-logo-sub{font-size:.32rem;color:rgba(201,169,110,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:.1rem}
-.pcd-client{background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.18);border-radius:5px;padding:.3rem .35rem;margin-bottom:.1rem}
-.pcd-client-av{width:15px;height:15px;background:linear-gradient(135deg,#c9a96e,#a07840);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.36rem;font-weight:800;color:#fff;margin-bottom:.15rem}
-.pcd-client-name{font-size:.44rem;font-weight:700;color:#f0ead8;line-height:1.2}
-.pcd-client-loc{font-size:.36rem;color:rgba(201,169,110,.5)}
-.pcd-nav-item{display:flex;align-items:center;gap:.28rem;padding:.25rem .3rem;border-radius:4px;font-size:.4rem;color:rgba(240,234,216,.4)}
-.pcd-nav-item.on{background:rgba(201,169,110,.1);color:#c9a96e}
-.pcd-nav-ic{font-size:.55rem}
-/* Main */
-.pcd-main{padding:.45rem .55rem;display:flex;flex-direction:column;gap:.28rem;overflow:hidden;min-width:0}
-.pcd-date{font-size:.36rem;color:rgba(201,169,110,.45);text-transform:uppercase;letter-spacing:.05em}
-.pcd-greet{font-size:.68rem;font-weight:700;color:#f0ead8;line-height:1;letter-spacing:-.5px}
-.pcd-greet-name{color:#c9a96e}
-.pcd-biz{font-size:.38rem;color:rgba(240,234,216,.35);margin-top:.06rem}
-.pcd-perf{font-size:.34rem;font-weight:700;color:rgba(240,234,216,.3);text-transform:uppercase;letter-spacing:.08em}
-.pcd-ca{font-size:.7rem;font-weight:700;color:#f0ead8;filter:blur(5px);margin:.05rem 0}
-.pcd-chart-area{height:32px;position:relative;margin:.08rem 0}
-.pcd-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.22rem}
-.pcd-sbox{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:.28rem .3rem}
-.pcd-slbl{font-size:.32rem;color:rgba(240,234,216,.3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.1rem}
-.pcd-sval{font-size:.5rem;font-weight:700;color:#f0ead8;filter:blur(4px)}
-/* Right panel */
-.pcd-right{border-left:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;overflow:hidden}
-.pcd-ritem{background:#131208;padding:.38rem .45rem;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:.3rem;flex:1}
-.pcd-ritem:last-child{border-bottom:none}
-.pcd-ric{width:16px;height:16px;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.15);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.5rem;flex-shrink:0}
-.pcd-rtitle{font-size:.44rem;font-weight:600;color:#f0ead8;line-height:1.2}
-.pcd-rsub{font-size:.34rem;color:rgba(240,234,216,.35);margin-top:.05rem;line-height:1.3}
+/* ── STATS ── */
+.stats{background:var(--bg2);padding:2.2rem 0;position:relative;overflow:hidden}
+.stats::before,.stats::after{content:'';position:absolute;top:0;bottom:0;width:160px;pointer-events:none;z-index:2}
+.stats::before{left:0;background:linear-gradient(to right,var(--bg) 0%,transparent 100%)}
+.stats::after{right:0;background:linear-gradient(to left,var(--bg) 0%,transparent 100%)}
+.stats-track{display:flex;width:max-content;animation:stats-scroll 28s linear infinite}
+.stats:hover .stats-track{animation-play-state:paused}
+@keyframes stats-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.stat-item{display:flex;align-items:center;gap:1.2rem;padding:0 3rem;white-space:nowrap;border-left:1px solid var(--border)}
+.stat-item:first-child{border-left:none}
+.stat-v{font-family:'Bricolage Grotesque',sans-serif;font-size:2rem;font-weight:800;line-height:1;letter-spacing:-.04em}
+.stat-num{color:var(--text)}
+.stat-sfx{color:var(--accent2)}
+.stat-l{font-size:.8rem;color:var(--muted);line-height:1.35;max-width:160px}
 
-/* ── Étoile Relax : dark hero ── */
-.prev-etoile{height:100%;display:flex;flex-direction:column;position:relative;overflow:hidden;background:linear-gradient(165deg,#2c2210 0%,#1a1508 45%,#0f0e08 100%)}
-.prev-etoile::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 35% 50%,rgba(160,140,60,.1) 0%,transparent 55%),radial-gradient(ellipse at 75% 40%,rgba(60,80,40,.15) 0%,transparent 50%);pointer-events:none}
-.pet-nav{display:flex;align-items:center;justify-content:space-between;padding:.5rem .85rem;flex-shrink:0;position:relative;z-index:1}
-.pet-logo{display:flex;align-items:center;gap:.3rem;font-size:.58rem;color:#F7F2EA}
-.pet-logo-star{color:#C4A46B}
-.pet-logo-main{font-weight:500;letter-spacing:.04em}
-.pet-logo-italic{font-style:italic;font-weight:300;color:#C4A46B}
-.pet-nav-links{display:flex;gap:.5rem}
-.pet-nav-link{font-size:.38rem;color:rgba(247,242,234,.45);text-transform:uppercase;letter-spacing:.1em}
-.pet-nav-cta{background:#C4A46B;color:#1C1814;font-size:.4rem;padding:.24rem .6rem;border-radius:3px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.pet-hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.32rem;text-align:center;padding:.5rem 1rem;position:relative;z-index:1}
-.pet-tag{display:flex;align-items:center;gap:.4rem;font-size:.36rem;letter-spacing:.2em;color:rgba(247,242,234,.5);text-transform:uppercase}
-.pet-tag-line{width:16px;height:1px;background:rgba(247,242,234,.3)}
-.pet-h1{font-size:.92rem;font-weight:300;color:#F7F2EA;line-height:1.15;letter-spacing:-.02em}
-.pet-h1-gold{display:block;font-size:1rem;font-style:italic;color:#C4A46B;font-weight:300;line-height:1.1}
-.pet-sub{font-size:.4rem;color:rgba(247,242,234,.4);line-height:1.55;max-width:88%;text-align:center}
-.pet-ctas{display:flex;gap:.38rem;margin-top:.2rem}
-.pet-cta1{background:#C4A46B;color:#1C1814;font-size:.4rem;padding:.3rem .7rem;border-radius:100px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
-.pet-cta2{border:1px solid rgba(247,242,234,.3);color:#F7F2EA;font-size:.4rem;padding:.3rem .7rem;border-radius:100px;letter-spacing:.05em;text-transform:uppercase}
+/* ── PROCESS ── */
+#process{background:var(--bg);padding:7rem 0 9rem;position:relative;overflow:hidden}
+.proc-giant-wrap{text-align:center;padding:0 2rem 5rem}
+.proc-giant-wrap .sec-p{max-width:540px;margin:0 auto}
+.proc-list{display:flex;flex-direction:column;gap:0;position:relative}
+.proc-list::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--border2) 8%,var(--border2) 92%,transparent);transform:translateX(-50%);pointer-events:none}
+.proc-step{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:4.5rem 0;position:relative}
+.proc-step::after{content:'';position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(249,115,22,.18),0 0 18px rgba(249,115,22,.4);transform:translate(-50%,-50%);z-index:1}
+.proc-step:nth-child(even) .ps-t{order:2}
+.proc-step:nth-child(even) .ps-c{order:1}
+.ps-num{position:absolute;font-family:'Bricolage Grotesque',sans-serif;font-size:13rem;font-weight:900;color:rgba(255,255,255,.018);line-height:1;pointer-events:none;z-index:0;letter-spacing:-.06em}
+.proc-step:nth-child(odd) .ps-num{right:0;top:-2rem}
+.proc-step:nth-child(even) .ps-num{left:0;top:-2rem}
+.ps-t{position:relative;z-index:1}
+.ps-n{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--accent2);opacity:.7;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;letter-spacing:.06em}
+.ps-n::after{content:'';flex:1;height:1px;background:var(--border2);max-width:40px}
+.ps-t h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.55rem;font-weight:800;line-height:1.15;margin-bottom:.75rem;letter-spacing:-.025em}
+.ps-t p{font-size:.87rem;color:var(--muted);line-height:1.78;max-width:380px}
+.ps-c{position:relative;z-index:1}
+.cw{background:#060610;border:1px solid rgba(255,255,255,.07);border-radius:.85rem;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.cw-bar{display:flex;align-items:center;padding:.52rem .85rem;border-bottom:1px solid rgba(255,255,255,.05);background:#08081a;gap:.6rem}
+.cw-d{display:flex;gap:.28rem}
+.cw-d i{display:block;width:8px;height:8px;border-radius:50%}
+.cw-d i:nth-child(1){background:#FF5F57}.cw-d i:nth-child(2){background:#FEBC2E}.cw-d i:nth-child(3){background:#28C840}
+.cw-f{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:rgba(255,255,255,.2);margin-left:auto}
+.cw-b{padding:1rem 1.2rem;font-family:'JetBrains Mono',monospace;font-size:.75rem;line-height:1.85}
+.cw-b code{display:block;white-space:pre}
+.kw{color:#38bdf8;font-weight:600}.fn{color:#7dd3fc}.st{color:#86efac}.op{color:rgba(255,255,255,.3)}.cm{color:rgba(255,255,255,.2);font-style:italic}.nm{color:#c4b5fd}.ky{color:rgba(255,255,255,.75)}.pu{color:rgba(255,255,255,.4)}
+.sec-p{color:var(--muted);font-size:.9rem;line-height:1.78}
 
-/* ── REZOO : landing page ── */
-.prev-rezoo{background:#f2ede6;height:100%;display:flex;flex-direction:column;overflow:hidden;font-family:'League Spartan',sans-serif}
-.prz-logo{display:flex;align-items:center;gap:0;font-size:.78rem;font-weight:900;letter-spacing:-.4px;color:#1a1814;font-family:'League Spartan',sans-serif;line-height:1}
-.prz-logo-o{display:inline-flex;align-items:center;justify-content:center;width:.78rem;height:.78rem;flex-shrink:0}
-.prz-nav{background:#fff;border-bottom:1px solid #ece8e2;padding:.4rem .85rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.prz-nav-right{display:flex;align-items:center;gap:.5rem}
-.prz-nav-links{display:flex;gap:.5rem}
-.prz-nav-link{font-size:.4rem;color:#888}
-.prz-nav-btn{background:#c9a96e;color:#fff;font-size:.42rem;font-weight:700;padding:.26rem .65rem;border-radius:100px}
-.prz-hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.5rem 1rem;text-align:center;gap:.3rem}
-.prz-badge{display:inline-flex;align-items:center;gap:.3rem;background:rgba(201,169,110,.1);border:1px solid rgba(201,169,110,.28);border-radius:100px;padding:.2rem .6rem;font-size:.4rem;color:#a07840;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.prz-badge-dot{width:5px;height:5px;border-radius:50%;background:#4ade80;flex-shrink:0}
-.prz-h1{font-size:.88rem;font-weight:800;color:#1a1814;line-height:1.1;letter-spacing:-.03em}
-.prz-h1-gold{color:#c9a96e;display:block}
-.prz-sub{font-size:.42rem;color:#888;line-height:1.5;max-width:90%;margin:.1rem auto 0}
-.prz-cta-wrap{display:flex;align-items:center;gap:.5rem;margin-top:.2rem}
-.prz-cta-main{background:linear-gradient(135deg,#c9a96e,#a07840);color:#fff;font-size:.48rem;font-weight:700;padding:.35rem .85rem;border-radius:100px;box-shadow:0 3px 10px rgba(201,169,110,.4)}
-.prz-cta-ghost{font-size:.45rem;color:#888;display:flex;align-items:center;gap:.2rem}
-.prz-trust{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
-.prz-trust-item{font-size:.4rem;color:#888;display:flex;align-items:center;gap:.22rem}
-.prz-trust-check{color:#4ade80;font-weight:700}
-/* Placeholder preview */
-.prev-placeholder{background:var(--bg);height:100%;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border)}
-.prev-placeholder-inner{text-align:center;opacity:.3}
-.prev-placeholder-inner span{display:block;font-size:2.5rem;margin-bottom:.5rem}
-.prev-placeholder-inner p{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft)}
-/* Real info */
-.real-info{padding:1.35rem 1.5rem;background:var(--bg3)}
-.real-info-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;margin-bottom:.2rem}
-.real-info h3{font-family:'League Spartan',sans-serif;font-size:1.15rem;font-weight:400;color:var(--text)}
-.real-type{font-size:.72rem;color:var(--text-soft);margin-bottom:.7rem}
-.real-meta{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.85rem}
-.real-meta-row{font-size:.78rem;color:var(--text-soft);line-height:1.5}
-.real-meta-row strong{color:rgba(242,240,235,.7);font-weight:400}
-.real-chips{display:flex;gap:.35rem;flex-wrap:wrap}
-.real-chip{background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:.18rem .6rem;font-size:.68rem;color:var(--text-soft)}
-.real-cta-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;color:var(--gold);margin-top:.75rem;transition:gap .2s;cursor:pointer;background:none;border:none;font-family:'League Spartan',sans-serif;padding:0}
-.real-cta-link:hover{gap:.55rem}
+/* ── TESTIMONIALS ── */
+#testimonials{background:var(--bg2);padding:7rem 0;position:relative;overflow:hidden}
+#testimonials::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(249,115,22,.05),transparent 65%);pointer-events:none}
+.testi-head{text-align:center;max-width:560px;margin:0 auto 3.5rem}
+.sec-h{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2rem,3.2vw,2.9rem);font-weight:800;line-height:1.06;letter-spacing:-.03em;color:var(--text);margin-bottom:1rem}
+.sec-h em{font-style:italic;font-weight:500;color:var(--accent2)}
+/* Marquee */
+.testi-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)}
+.testi-track{display:flex;gap:1.2rem;width:max-content;margin-bottom:1.2rem}
+.testi-track:last-child{margin-bottom:0}
+.testi-track-1{animation:marquee-l 38s linear infinite}
+.testi-track-2{animation:marquee-r 32s linear infinite}
+.testi-marquee:hover .testi-track{animation-play-state:paused}
+@keyframes marquee-l{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes marquee-r{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.testi-card{width:360px;flex-shrink:0;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:1.2rem;padding:1.8rem;display:flex;flex-direction:column;gap:1.1rem;transition:border-color .3s,background .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+.testi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(249,115,22,.4),transparent);opacity:0;transition:opacity .3s}
+.testi-card:hover{border-color:rgba(249,115,22,.22);background:rgba(249,115,22,.03);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.testi-card:hover::before{opacity:1}
+.testi-stars{display:flex;gap:.18rem}
+.testi-star{width:13px;height:13px;fill:#facc15}
+.testi-quote{font-size:.875rem;color:rgba(255,255,255,.72);line-height:1.74;flex:1;position:relative;padding-left:1.1rem}
+.testi-quote::before{content:'"';position:absolute;left:0;top:-.1rem;font-family:'Bricolage Grotesque',sans-serif;font-size:1.4rem;color:var(--accent);line-height:1;opacity:.7}
+.testi-author{display:flex;align-items:center;gap:.72rem;margin-top:auto;padding-top:.9rem;border-top:1px solid var(--border)}
+.testi-av{width:36px;height:36px;border-radius:50%;background:var(--accent-lo);border:1px solid var(--accent-md);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-size:.78rem;font-weight:800;color:var(--accent2);flex-shrink:0}
+.testi-name{font-size:.8rem;font-weight:700;color:var(--text);line-height:1.2}
+.testi-role{font-size:.7rem;color:var(--muted);margin-top:.12rem}
+.testi-tag{display:inline-flex;align-items:center;font-size:.6rem;color:var(--accent2);background:var(--accent-lo);border:1px solid var(--accent-md);padding:.18rem .55rem;border-radius:100px;font-weight:600;letter-spacing:.04em;margin-left:auto;flex-shrink:0;white-space:nowrap}
 
-/* ═══════════════════════════════════════════
-   PROCESS
-═══════════════════════════════════════════ */
-#process{background:var(--bg);padding:7rem 0}
-.process-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:3rem;position:relative}
-.process-line{position:absolute;top:32px;left:calc(100%/12);right:calc(100%/12);height:1px;background:linear-gradient(90deg,transparent,var(--border-strong),var(--border-strong),transparent);pointer-events:none}
-.step{text-align:center;padding:0 .75rem;position:relative;z-index:1}
-.step-num{width:64px;height:64px;border:1px solid var(--border-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'League Spartan',sans-serif;font-size:1.3rem;font-weight:300;color:var(--text-soft);margin:0 auto 1.35rem;background:var(--bg);transition:border-color .25s,color .25s;position:relative;z-index:1}
-.step:hover .step-num{border-color:var(--gold-border);color:var(--gold)}
-.step h4{font-family:'League Spartan',sans-serif;font-size:1rem;font-weight:400;margin-bottom:.4rem;color:var(--text);line-height:1.25}
-.step p{font-size:.77rem;color:var(--text-soft);line-height:1.6}
+/* ── VISION ── */
+#vision{background:var(--bg);padding:8rem 0;text-align:center;position:relative;overflow:hidden}
+#vision::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:500px;background:radial-gradient(ellipse,rgba(249,115,22,.06),transparent 65%);pointer-events:none}
+.vision-block{max-width:700px;margin:0 auto 3rem;background:rgba(255,255,255,.025);border:1px solid rgba(249,115,22,.12);border-radius:1.5rem;padding:2.5rem 3rem;position:relative;z-index:1}
+.vision-quote{font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;font-weight:600;line-height:1.72;color:rgba(255,255,255,.82)}
+.vision-bullets{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;position:relative;z-index:1}
+.vision-b{display:flex;align-items:center;gap:.6rem;font-size:.84rem;color:rgba(255,255,255,.65)}
+.vision-b::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent2);flex-shrink:0}
 
-/* ═══════════════════════════════════════════
-   CTA FINAL / CONTACT
-═══════════════════════════════════════════ */
-#contact{background:var(--bg3);padding:7rem 0;text-align:center;position:relative;overflow:hidden}
-#contact::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.055),transparent 65%);pointer-events:none}
-.contact-inner{position:relative;z-index:1;max-width:760px;margin:0 auto}
-#contact .section-title{font-size:clamp(2.2rem,4vw,3.5rem)}
-.contact-sub{color:var(--text-soft);font-size:.95rem;line-height:1.75;margin-bottom:2.5rem;max-width:580px;margin-left:auto;margin-right:auto}
-.contact-ctas{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem}
-.contact-options{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
-.contact-option{display:flex;align-items:center;gap:.75rem;background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1rem 1.5rem;text-decoration:none;color:var(--text);transition:border-color .2s,transform .2s;cursor:pointer}
-.contact-option:hover{border-color:var(--border-strong);transform:translateY(-2px)}
-.contact-option-icon{font-size:1.4rem;flex-shrink:0}
-.contact-option-label{font-size:.72rem;color:var(--text-soft);margin-bottom:.1rem}
-.contact-option-value{font-size:.875rem;font-weight:400}
-.wa-option{border-color:rgba(37,211,102,.2)}
-.wa-option:hover{background:rgba(37,211,102,.06)!important;border-color:rgba(37,211,102,.35)!important}
-.contact-form{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:.85rem;text-align:left}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
-.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:.95rem 1.1rem;color:var(--text);font-family:'League Spartan',sans-serif;font-size:.875rem;outline:none;font-weight:300;transition:border-color .2s;-webkit-appearance:none;appearance:none}
-.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--text-soft);opacity:.6}
-.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--gold-border)}
-.contact-form textarea{resize:vertical;min-height:110px}
-.contact-form select option{background:var(--bg2);color:var(--text)}
-.btn-send{display:flex;align-items:center;justify-content:center;gap:.5rem;background:var(--gold);color:#0a0a0b;padding:1rem;border-radius:100px;font-family:'League Spartan',sans-serif;font-size:.9rem;font-weight:500;border:none;cursor:pointer;transition:background .2s,transform .2s;width:100%;position:relative;overflow:hidden}
-.btn-send:hover{background:#d4b47a;transform:translateY(-1px)}
-.form-note{font-size:.7rem;color:var(--text-soft);text-align:center;opacity:.55}
-#formSuccess{display:none;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);border-radius:12px;padding:1rem;color:#6ee77a;font-size:.875rem;text-align:center}
-#formError{display:none;background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.25);border-radius:12px;padding:1rem;color:#fca5a5;font-size:.875rem;text-align:center}
+/* ── CONTACT ── */
+#contact{background:var(--bg);padding:7rem 0 8rem;position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:0}
+.contact-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.contact-head{text-align:center;margin-bottom:3.5rem}
+.contact-head h2{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.9rem,3.5vw,3rem);font-weight:800;line-height:1.06;letter-spacing:-.03em;margin-bottom:.8rem}
+.contact-head p{color:var(--muted);font-size:.9rem;max-width:420px;margin:0 auto}
+.mform{display:flex;flex-direction:column;gap:2.8rem}
+.mstep{display:flex;flex-direction:column;gap:1.2rem}
+.mstep-head{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:.9rem;border-bottom:1px solid var(--border)}
+.mstep-num{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--accent2);letter-spacing:.1em;font-weight:600;opacity:.8}
+.mstep-hint{font-size:.72rem;color:var(--muted);text-align:right;max-width:160px;line-height:1.45}
+.mstep-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.7rem;font-weight:800;letter-spacing:-.025em;margin-top:.55rem}
+.mrow{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.mfield{display:flex;flex-direction:column;gap:.45rem}
+.mfield label{font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.mfield input,.mfield textarea{width:100%;background:rgba(255,255,255,.045);border:1px solid var(--border);border-radius:.65rem;padding:.82rem 1rem;color:var(--text);font-family:'Manrope',sans-serif;font-size:.85rem;outline:none;transition:border-color .2s,background .2s,box-shadow .2s;-webkit-appearance:none}
+.mfield input::placeholder,.mfield textarea::placeholder{color:var(--muted);opacity:.5}
+.mfield input:focus,.mfield textarea:focus{border-color:rgba(249,115,22,.45);background:rgba(249,115,22,.04);box-shadow:0 0 0 3px rgba(249,115,22,.1)}
+.mfield textarea{resize:vertical;min-height:120px}
+.mfield-icon{position:relative}
+.mfield-icon svg{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--muted);pointer-events:none}
+.mfield-icon input{padding-left:2.4rem}
+.type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+.type-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:.8rem;padding:1rem .9rem;cursor:pointer;transition:border-color .2s,background .2s;display:flex;flex-direction:column;align-items:center;gap:.55rem;text-align:center;user-select:none}
+.type-card:hover{border-color:var(--border2);background:rgba(255,255,255,.07)}
+.type-card.sel{border-color:var(--accent);background:rgba(249,115,22,.1)}
+.type-card svg{width:20px;height:20px;color:var(--muted);transition:color .2s}
+.type-card.sel svg{color:var(--accent2)}
+.type-card span{font-size:.75rem;font-weight:600;color:var(--muted);transition:color .2s}
+.type-card.sel span{color:var(--text)}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.budget-opt{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:.8rem;padding:.9rem 1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:border-color .2s,background .2s;user-select:none}
+.budget-opt:hover{border-color:var(--border2);background:rgba(255,255,255,.07)}
+.budget-opt.sel{border-color:var(--accent);background:rgba(249,115,22,.1)}
+.budget-opt span{font-size:.82rem;font-weight:600}
+.budget-opt-dot{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border2);transition:background .2s,border-color .2s;flex-shrink:0}
+.budget-opt.sel .budget-opt-dot{background:var(--accent);border-color:var(--accent)}
+.pref-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.pref-btn{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:.8rem;padding:1rem;cursor:pointer;display:flex;align-items:center;gap:.75rem;transition:border-color .2s,background .2s;user-select:none}
+.pref-btn:hover{border-color:var(--border2)}
+.pref-btn.sel{border-color:var(--accent);background:rgba(249,115,22,.1)}
+.pref-btn-ic{width:36px;height:36px;border-radius:.55rem;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pref-btn.sel .pref-btn-ic{background:rgba(249,115,22,.2)}
+.pref-btn-ic svg{width:17px;height:17px;color:var(--muted)}
+.pref-btn.sel .pref-btn-ic svg{color:var(--accent2)}
+.pref-btn-t{font-size:.82rem;font-weight:600;line-height:1.3;color:var(--text)}
+.pref-btn-d{font-size:.7rem;color:var(--muted);margin-top:.1rem}
+.btn-submit{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;background:var(--accent);color:#000;padding:1.05rem;border-radius:.75rem;font-family:'Manrope',sans-serif;font-size:.9rem;font-weight:800;border:none;transition:background .18s,transform .14s,box-shadow .18s;box-shadow:0 4px 24px rgba(249,115,22,.3);position:relative;overflow:hidden}
+.btn-submit:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(249,115,22,.45)}
+.submit-checks{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-top:.9rem}
+.submit-check{display:flex;align-items:center;gap:.4rem;font-size:.7rem;color:var(--muted)}
+.submit-check svg{width:13px;height:13px;color:var(--green);flex-shrink:0}
+#ok{display:none;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.17);border-radius:.65rem;padding:.9rem;color:#4ade80;font-size:.82rem;text-align:center;margin-top:.5rem}
+#err{display:none;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.17);border-radius:.65rem;padding:.9rem;color:#fca5a5;font-size:.82rem;text-align:center;margin-top:.5rem}
 
-/* ═══════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════ */
-footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 0 1.5rem}
-.footer-inner{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:3rem;margin-bottom:3rem}
-.footer-brand{display:flex;align-items:center;gap:.65rem;margin-bottom:.75rem}
-.footer-brand-img{width:28px;height:28px;object-fit:contain;mix-blend-mode:screen;opacity:.8}
-.footer-brand-name{font-family:'League Spartan',sans-serif;font-size:1rem;font-weight:400;letter-spacing:.06em}
-.footer-tagline{font-size:.78rem;color:var(--text-soft);line-height:1.65;margin-bottom:.75rem;max-width:240px}
-.footer-location{font-size:.72rem;color:var(--text-soft);opacity:.5}
-.footer-col-title{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-soft);margin-bottom:.9rem;opacity:.6}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.footer-links a{font-size:.82rem;color:var(--text-soft);transition:color .2s}
-.footer-links a:hover{color:var(--text)}
-.footer-rezoo-badge{display:inline-flex;align-items:center;gap:.4rem;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:.68rem;padding:.25rem .65rem;border-radius:100px;margin-bottom:.75rem}
-.footer-social{display:flex;gap:.65rem;margin-top:.75rem}
-.footer-social-link{width:32px;height:32px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-soft);transition:border-color .2s,color .2s}
-.footer-social-link:hover{border-color:var(--border-strong);color:var(--text)}
-.footer-social-link svg{width:14px;height:14px}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:.5rem}
-.footer-copy{font-size:.72rem;color:var(--text-soft);opacity:.45}
-.footer-made{font-size:.72rem;color:var(--text-soft);opacity:.35;font-style:italic}
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0 1.5rem}
+.foot-g{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:2.5rem;margin-bottom:2.5rem}
+.foot-brand{display:flex;align-items:center;gap:.48rem;margin-bottom:.65rem}
+.foot-logo{width:22px;height:22px;object-fit:contain;mix-blend-mode:screen;opacity:.7}
+.foot-name{font-family:'Bricolage Grotesque',sans-serif;font-size:.88rem;font-weight:800;letter-spacing:.08em}
+.foot-tag{font-size:.75rem;color:var(--muted);line-height:1.65;margin-bottom:.6rem;max-width:210px}
+.foot-siren{font-family:'JetBrains Mono',monospace;font-size:.57rem;color:var(--muted2)}
+.foot-col-h{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:.82rem;opacity:.42;font-weight:700}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.foot-links a{font-size:.77rem;color:var(--muted);transition:color .18s}
+.foot-links a:hover{color:var(--text)}
+.foot-bot{display:flex;align-items:center;justify-content:space-between;padding-top:1.3rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:.4rem}
+.foot-copy,.foot-made{font-size:.67rem;color:var(--muted);opacity:.28}
+.legal{position:fixed;bottom:0;left:0;right:0;height:26px;background:rgba(4,4,10,.97);border-top:1px solid rgba(255,255,255,.04);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:100;gap:1rem}
+.legal-copy{font-size:.55rem;color:rgba(255,255,255,.13);letter-spacing:.04em;white-space:nowrap}
+.legal-links{display:flex;align-items:center;gap:.42rem;font-size:.55rem}
+.legal-links a{color:rgba(255,255,255,.15);transition:color .15s}
+.legal-links a:hover{color:rgba(255,255,255,.45)}
+.legal-sep{color:rgba(255,255,255,.07)}
+.legal-avail{display:flex;align-items:center;gap:.33rem;font-size:.55rem;color:rgba(255,255,255,.15);white-space:nowrap}
+.legal-dot{width:5px;height:5px;background:var(--green);border-radius:50%;box-shadow:0 0 5px rgba(34,197,94,.55);flex-shrink:0}
+.wa-float{position:fixed;bottom:2.2rem;right:2rem;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);z-index:200;transition:transform .2s,box-shadow .2s;animation:ring 3s infinite 2s}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,.55)}
+.wa-float svg{width:26px;height:26px;fill:#fff}
 
-/* ═══════════════════════════════════════════
-   LEGAL BAR
-═══════════════════════════════════════════ */
-.legal-bar{position:fixed;bottom:0;left:0;right:0;height:26px;background:rgba(7,7,9,.96);border-top:1px solid rgba(255,255,255,.055);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:100;gap:1rem}
-.legal-bar-copy{font-size:.6rem;color:rgba(255,255,255,.2);letter-spacing:.04em;white-space:nowrap}
-.legal-bar-links{display:flex;align-items:center;gap:.6rem;font-size:.6rem}
-.legal-bar-links a{color:rgba(255,255,255,.22);text-decoration:none;letter-spacing:.04em;transition:color .15s}
-.legal-bar-links a:hover{color:rgba(255,255,255,.55)}
-.legal-bar-sep{color:rgba(255,255,255,.12)}
-.legal-bar-avail{display:flex;align-items:center;gap:.4rem;font-size:.6rem;color:rgba(255,255,255,.22);white-space:nowrap}
-.legal-bar-dot{width:5px;height:5px;background:#4ade80;border-radius:50%;flex-shrink:0;box-shadow:0 0 5px rgba(74,222,128,.5)}
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE TABLET (600-1024px)
-═══════════════════════════════════════════ */
-/* ── TABLET ── */
-@media(max-width:1024px){
-  .container{padding:0 2rem}
-  .rezoo-inner{grid-template-columns:1fr;gap:2.5rem}
-  .rezoo-right{display:flex;justify-content:center}
-  .rezoo-mockup-wrap{max-width:560px;width:100%}
-  .rezoo-desc{max-width:100%}
-  .solution-inner{grid-template-columns:1fr;gap:2rem}
-  .offres-grid{grid-template-columns:1fr;gap:1rem}
-  .offre-card.featured{transform:none}
-  .offre-card.featured:hover{transform:translateY(-4px)}
-  .diff-cols{grid-template-columns:1fr}
-  .diff-col-them{display:none}
-  .real-grid{grid-template-columns:1fr}
-  .process-steps{grid-template-columns:repeat(3,1fr);gap:1.5rem}
-  .process-line{display:none}
-  .footer-inner{grid-template-columns:1fr 1fr;gap:2rem}
-  #hero{padding:8rem 2rem 4rem}
-  #rezoo,#offres,#difference,#realisations,#process{padding:5rem 0}
-  #positioning,#problems,#solution{padding:4.5rem 0}
-  #contact{padding:5.5rem 0}
+/* ── RESPONSIVE ── */
+@media(max-width:1080px){
+  .wrap{padding:0 2.5rem}
+  nav,nav.sc{padding:.9rem 2rem}
+  .proc-list::before{display:none}
+  .proc-step{grid-template-columns:1fr;gap:2rem;padding:3rem 0}
+  .proc-step::after{display:none}
+  .ps-num{display:none}
+  .proc-step:nth-child(even) .ps-t,.proc-step:nth-child(even) .ps-c{order:0}
+  .hm-win-body{grid-template-columns:1fr}
+  .hm-preview-pane{min-height:80px;padding:1rem}
+  .foot-g{grid-template-columns:1fr 1fr;gap:2rem}
+  #process,#testimonials,#vision,#contact{padding:5.5rem 0}
 }
-
-/* ── MOBILE ── */
 @media(max-width:768px){
   html{font-size:15px}
-  nav{padding:.9rem 1.25rem;grid-template-columns:1fr auto}
-  .nav-links,.nav-right{display:none}
-  .nav-burger{display:flex}
-  .container{padding:0 1.25rem}
-
-  /* Hero */
-  h1{font-size:clamp(2.4rem,10vw,3.6rem);letter-spacing:-.025em;line-height:1.1}
-  #hero{padding:6rem 1.25rem 3.5rem;min-height:100svh}
-  .hero-badge{font-size:.65rem;margin-bottom:1.5rem}
-  .hero-sub{font-size:.95rem;margin-bottom:2rem}
-  .hero-actions{flex-direction:column;align-items:center;gap:.65rem;margin-bottom:2rem}
-  .hero-actions a{width:100%;max-width:340px;justify-content:center;padding:.95rem 1.5rem}
-  .hero-tags{gap:.5rem}
-  .hero-scroll{display:none}
-
-  /* Sections padding */
-  #positioning,#problems,#solution{padding:3.5rem 0}
-  #rezoo,#offres,#difference,#realisations,#process{padding:4rem 0}
-  #contact{padding:4.5rem 0}
-  footer{padding:3rem 0 1.5rem}
-
-  /* Positioning */
-  .pos-grid{grid-template-columns:1fr;gap:.75rem}
-  .section-sub{max-width:100%}
-
-  /* REZOO */
-  .rezoo-inner{gap:2rem}
-  .rezoo-mockup-wrap{max-width:100%}
-  .rezoo-features{gap:.45rem}
-  .rezoo-actions{flex-direction:column;gap:.6rem}
-  .rezoo-actions a{width:100%;justify-content:center}
-
-  /* Problems */
-  .problems-grid{grid-template-columns:1fr;gap:.65rem}
-
-  /* Solution */
-  .solution-quote{font-size:1.2rem}
-  .solution-list li{font-size:.85rem}
-
-  /* Offres */
-  .offres-grid{gap:.85rem}
-  .offre-card{padding:1.5rem}
-
-  /* Difference */
-  .diff-col-them{display:none}
-  .diff-col-us{border-radius:var(--radius)}
-
-  /* Réalisations */
-  .real-notice{font-size:.72rem}
-  .real-preview{height:190px}
-  .real-info{padding:1.1rem 1.25rem}
-
-  /* Process */
-  .process-steps{grid-template-columns:1fr;gap:1.25rem;margin-top:2rem}
-  .step{text-align:left;display:flex;align-items:flex-start;gap:1rem;padding:0}
-  .step-num{width:48px;height:48px;font-size:1.1rem;margin-bottom:0;flex-shrink:0}
-  .step h4{font-size:.95rem;margin-bottom:.3rem}
-  .step p{font-size:.82rem}
-
-  /* Contact */
-  .contact-ctas{flex-direction:column;align-items:center;gap:.65rem}
-  .contact-ctas a{width:100%;max-width:340px;justify-content:center}
-  .contact-options{flex-direction:column;gap:.65rem}
-  .form-row{grid-template-columns:1fr}
-  .contact-sub{font-size:.88rem}
-
-  /* Footer */
-  .footer-inner{grid-template-columns:1fr;gap:1.75rem}
-  .footer-bottom{flex-direction:column;gap:.35rem}
-  .footer-col-title{margin-top:.25rem}
-
-  /* Legal bar */
-  .legal-bar{padding:0 1rem}
-  .legal-bar-copy{display:none}
-
-  /* Floating */
-  .float-group{bottom:calc(26px + .75rem);right:1rem}
-  .wa-btn span{display:none}
-  .wa-btn{padding:0;border-radius:50%;width:46px;height:46px;justify-content:center}
+  nav{padding:.85rem 1.25rem}
+  .nav-links,.nav-cta,.nav-wa{display:none}
+  .burger{display:flex}
+  .wrap{padding:0 1.25rem}
+  #hero{padding:6.5rem 1.25rem 3.5rem}
+  .hero-h1{font-size:clamp(2.5rem,11vw,3.8rem)}
+  .hero-sub{font-size:.92rem;max-width:100%}
+  .hero-mock-wrap{margin:2.5rem .25rem 0;padding:0 .25rem}
+  .hero-mock{border-radius:1.1rem}
+  .hm-top{padding:1.1rem 1rem .9rem}
+  .hm-title{font-size:1.1rem}
+  .hm-win{margin:0 .5rem}
+  .hm-win-body{min-height:auto}
+  .hm-code-inner code{font-size:.65rem}
+  .hm-preview-pane{display:none}
+  .hm-tabs{gap:.28rem;padding:.65rem .75rem}
+  .hm-tab{font-size:.6rem;padding:.35rem .7rem}
+  .hero-acts{flex-direction:column;align-items:stretch;max-width:280px;margin-left:auto;margin-right:auto}
+  .hero-acts .btn-hero{justify-content:center}
+  .mrow{grid-template-columns:1fr}
+  .type-grid{grid-template-columns:1fr 1fr}
+  .budget-grid{grid-template-columns:1fr}
+  .pref-grid{grid-template-columns:1fr}
+  .foot-g{grid-template-columns:1fr;gap:1.5rem}
+  .foot-bot{flex-direction:column;gap:.2rem}
+  .legal{padding:0 .9rem}
+  .legal-copy{display:none}
+  .vision-block{padding:1.5rem 1.2rem}
+  .vision-quote{font-size:.95rem}
+  .vision-bullets{gap:1.2rem}
+  .submit-checks{flex-direction:column;align-items:center;gap:.5rem}
+  .giant-h{font-size:clamp(3rem,9vw,5.5rem)}
+  #process,#testimonials,#vision,#contact{padding:4rem 0}
+  .proc-step{padding:2.5rem 0}
+  .ps-t h3{font-size:1.3rem}
 }
-
-/* ── SMALL MOBILE ── */
-@media(max-width:400px){
+@media(max-width:520px){
+  .hero-h1{font-size:clamp(2.2rem,10vw,3.2rem)}
+  .hm-gutter{display:none}
+  .testi-card{padding:1.3rem}
+  .vision-bullets{flex-direction:column;align-items:center;gap:.75rem}
+}
+@media(max-width:420px){
   html{font-size:14px}
-  h1{font-size:clamp(2rem,10vw,3rem)}
-  h2.section-title{font-size:clamp(1.5rem,8vw,2rem)}
-  .container{padding:0 1rem}
-  #hero{padding:5.5rem 1rem 3rem}
-  .hero-actions a{max-width:100%}
+  .wrap{padding:0 1rem}
+  .type-grid{grid-template-columns:1fr}
+  .hero-acts{max-width:100%}
 }
 </style>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
-<!-- ORBS -->
-<div class="orbs" aria-hidden="true">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
-</div>
-
-<!-- FLOATING -->
-<div class="float-group">
-  <a href="https://wa.me/33XXXXXXXXXX" target="_blank" rel="noopener" class="wa-btn wa-pulse" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-    <span>WhatsApp</span>
-  </a>
+<!-- LOADER -->
+<div id="loader" aria-label="Chargement" role="status">
+  <div class="ld-logo"><img src="logo.png" alt="POLOW"><span>POLOW</span></div>
+  <div class="ld-track"><div class="ld-fill" id="ldFill"></div></div>
+  <span class="ld-n" id="ldN">0%</span>
 </div>
 
 <!-- NAV -->
-<nav id="main-nav">
+<nav id="nav">
   <a href="#hero" class="nav-logo">
-    <img src="logo.png" alt="POLOW Agency" class="nav-logo-img">
-    <span class="nav-brand">POLOW</span>
+    <img src="logo.png" alt="POLOW Agency">
+    <span class="nav-brand">POLOW.</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#offres">Offres</a></li>
-    <li><a href="#rezoo">REZOO</a></li>
-    <li><a href="#realisations">Réalisations</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#hero">Accueil</a></li>
+    <li class="nav-has-drop">
+      <button class="nav-drop-toggle" aria-expanded="false">Nos Services
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="nav-drop" role="menu">
+        <a href="services.html" class="nav-drop-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 9h18"/></svg>Site Web Premium
+        </a>
+        <a href="services.html#saas" class="nav-drop-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>Application / SaaS
+        </a>
+        <a href="services.html#crm" class="nav-drop-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>Logiciel métier
+        </a>
+        <a href="services.html#ia" class="nav-drop-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>Automatisation IA
+        </a>
+      </div>
+    </li>
+    <li><a href="a-propos.html">À Propos</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
-  <div class="nav-right">
-    <a href="#contact" class="nav-cta">Demander un devis</a>
+  <div class="nav-r">
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Démarrer mon projet</button>
+    <a href="https://wa.me/33781754719" target="_blank" rel="noopener" class="nav-wa" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-  <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
 <!-- MOBILE NAV -->
-<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation">
-  <div class="mobile-nav-top">
-    <img src="logo.png" alt="POLOW" class="mobile-nav-logo-img">
-    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fermer">✕</button>
-  </div>
-  <nav class="mobile-nav-links">
-    <a href="#offres">Offres</a>
-    <a href="#rezoo">REZOO</a>
-    <a href="#realisations">Réalisations</a>
-    <a href="#process">Process</a>
-    <a href="#contact">Contact</a>
+<div class="mnav" id="mnav" role="dialog" aria-modal="true">
+  <div class="mnav-top"><img src="logo.png" alt="POLOW"><button class="mnav-close" id="mnavClose">✕</button></div>
+  <nav class="mnav-links">
+    <div class="mnav-row">
+      <a href="index.html">Accueil</a>
+    </div>
+    <div class="mnav-row">
+      <a href="services.html">Services</a>
+      <button class="mnav-acc-toggle" id="mnavSvcToggle" aria-expanded="false" aria-label="Voir les services">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+    </div>
+    <div class="mnav-sub" id="mnavSub">
+      <a href="services.html#site-web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 9h18"/></svg>Site Web Premium</a>
+      <a href="services.html#saas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>Application / SaaS</a>
+      <a href="services.html#crm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>Logiciel métier</a>
+      <a href="services.html#ia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>Automatisation IA</a>
+    </div>
+    <div class="mnav-row">
+      <a href="a-propos.html">À propos</a>
+    </div>
+    <div class="mnav-row">
+      <a href="contact.html" id="mnavContact">Contact</a>
+    </div>
   </nav>
-  <div class="mobile-nav-cta-wrap">
-    <button class="mobile-nav-cta" onclick="document.getElementById('mobileNav').classList.remove('open');document.getElementById('burger').classList.remove('active');document.body.style.overflow='';window.location.hash='#contact'">Demander un devis</button>
-  </div>
+  <div class="mnav-cta"><button id="mnavCta">Démarrer mon projet →</button></div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     HERO
-═══════════════════════════════════════════ -->
+<!-- ══ HERO ══ -->
 <section id="hero">
-  <div class="hero-badge">
-    <span class="hero-badge-dot"></span>
-    Créateur de rezoo.io
-  </div>
-  <h1>Votre site web.<br><em>Votre logiciel métier.</em><br>Votre croissance digitale.</h1>
-  <p class="hero-sub">De la présence en ligne au logiciel métier complet, nous créons des outils digitaux pensés pour automatiser, convertir et faire grandir votre activité.</p>
-  <div class="hero-actions">
-    <a href="#rezoo" class="btn-gold">Découvrir REZOO</a>
-    <a href="#contact" class="btn-secondary">Demander un devis</a>
-  </div>
-  <div class="hero-tags">
-    <span class="hero-tag">Sites web</span>
-    <span class="hero-tag-sep">•</span>
-    <span class="hero-tag">SaaS sur mesure</span>
-    <span class="hero-tag-sep">•</span>
-    <span class="hero-tag">Réservation en ligne</span>
-  </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <span>Découvrir</span>
-    <div class="hero-scroll-line"></div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     POSITIONNEMENT
-═══════════════════════════════════════════ -->
-<section id="positioning">
-  <div class="container">
-    <span class="section-label reveal">Notre approche</span>
-    <h2 class="section-title reveal">Nous ne créons pas seulement<br>des sites vitrines.</h2>
-    <p class="section-sub reveal d1">Nous concevons des outils digitaux qui servent réellement votre activité, et qui travaillent pour vous au quotidien.</p>
-    <div class="pos-grid">
-      <div class="pos-card reveal d1">
-        <span class="pos-icon">🌐</span>
-        <h3>Être visible en ligne</h3>
-        <p>Un site professionnel qui rassure et attire vos clients cibles dès le premier regard.</p>
-      </div>
-      <div class="pos-card reveal d2">
-        <span class="pos-icon">⚡</span>
-        <h3>Automatiser les tâches</h3>
-        <p>Moins de messages à gérer, moins d'appels, plus de temps pour ce qui compte vraiment dans votre métier.</p>
-      </div>
-      <div class="pos-card reveal d3">
-        <span class="pos-icon">📋</span>
-        <h3>Simplifier la gestion</h3>
-        <p>Des outils conçus selon votre fonctionnement réel, pas des solutions génériques qui ne s'adaptent pas.</p>
-      </div>
-      <div class="pos-card reveal d4">
-        <span class="pos-icon">👥</span>
-        <h3>Centraliser vos clients</h3>
-        <p>Toutes vos données clients au même endroit, accessibles en un clic, pour un suivi sans effort.</p>
-      </div>
-      <div class="pos-card reveal d5">
-        <span class="pos-icon">⭐</span>
-        <h3>Améliorer l'expérience</h3>
-        <p>Des interactions fluides du premier contact jusqu'à la fidélisation, pour des clients qui reviennent.</p>
-      </div>
-      <div class="pos-card reveal d6">
-        <span class="pos-icon">📈</span>
-        <h3>Générer plus de demandes</h3>
-        <p>Votre outil digital qui travaille pour vous, même quand vous dormez. 24h/24, 7j/7.</p>
-      </div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="hero-badge">
+      <span class="hero-badge-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6 2 2 6.5 2 12s4 10 10 10 10-4.5 10-10S18 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm3.5-11.5l-5 5-2-2-1.5 1.5 3.5 3.5 6.5-6.5-1.5-1.5z"/></svg>
+      </span>
+      Douai &amp; environs · Hauts-de-France
     </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     REZOO
-═══════════════════════════════════════════ -->
-<section id="rezoo">
-  <div class="container">
-    <div class="rezoo-inner">
-      <div class="rezoo-left">
-        <div class="rezoo-product-badge reveal">
-          <svg viewBox="0 0 10 10"><polygon points="5,1 6.2,3.8 9,4.4 7,6.3 7.5,9 5,7.7 2.5,9 3,6.3 1,4.4 3.8,3.8"/></svg>
-          Produit phare POLOW Agency
-        </div>
-        <h2 class="section-title reveal"><em>REZOO</em>, la solution de réservation pensée pour les professionnels du rendez-vous.</h2>
-        <p class="rezoo-desc reveal d1">Nous avons conçu REZOO pour répondre à un besoin concret : offrir aux professionnels du rendez-vous un outil complet, simple et sans commission. Créé par POLOW Agency, pour les professionnels qui méritent mieux que les solutions génériques.</p>
-        <div class="rezoo-targets reveal d2">
-          <span class="rezoo-target">Coiffeurs</span>
-          <span class="rezoo-target">Barbers</span>
-          <span class="rezoo-target">Spas</span>
-          <span class="rezoo-target">Instituts</span>
-          <span class="rezoo-target">Thérapeutes</span>
-          <span class="rezoo-target">Indépendants</span>
-          <span class="rezoo-target">Bien-être</span>
-        </div>
-        <ul class="rezoo-features reveal d3">
-          <li>Réservation en ligne 24h/24</li>
-          <li>Gestion des prestations et praticiens</li>
-          <li>Acomptes et paiements en ligne</li>
-          <li>Emails de confirmation automatiques</li>
-          <li>Tableau de bord en temps réel</li>
-          <li>Suivi client et fidélisation</li>
-          <li>Réduction des no-shows</li>
-          <li>0% commission sur les réservations</li>
-        </ul>
-        <div class="rezoo-actions reveal d4">
-          <a href="https://rezoo.io" target="_blank" rel="noopener" class="btn-gold">Découvrir rezoo.io</a>
-          <a href="#contact" class="btn-secondary">Demander une démo</a>
-        </div>
-        <p class="rezoo-note reveal d5">Une solution créée par POLOW Agency</p>
-      </div>
-      <div class="rezoo-right reveal-right">
-        <div class="rezoo-mockup-wrap">
-          <img src="mockup-dashboard.jpg" alt="Dashboard REZOO" style="width:100%;height:auto;display:block;border-radius:20px">
-        </div>
-      </div>
+    <h1 class="hero-h1" id="heroH1">De l'idée à la<br>mise en ligne.</h1>
+    <p class="hero-sub">Nous concevons des SaaS, Applications, sites Web et logiciels sur-mesure pour les entreprises de Douai, Lens, Arras et toute la région.</p>
+    <div class="hero-acts">
+      <button class="btn-hero" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        J'ai une idée de projet
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
     </div>
-  </div>
-</section>
+    <p class="hero-note">Audit offert · Réponse sous 24h</p>
 
-<!-- ═══════════════════════════════════════════
-     PROBLÈMES
-═══════════════════════════════════════════ -->
-<section id="problems">
-  <div class="container">
-    <span class="section-label reveal">Ce que vivent vos clients</span>
-    <h2 class="section-title reveal">Les problèmes du quotidien<br>qu'on aide à résoudre.</h2>
-    <div class="problems-grid">
-      <div class="problem-card reveal d1">
-        <span class="problem-icon">📱</span>
-        <span class="problem-text">Trop de messages Instagram à gérer pour les rendez-vous</span>
-      </div>
-      <div class="problem-card reveal d2">
-        <span class="problem-icon">📞</span>
-        <span class="problem-text">Trop d'appels téléphoniques qui interrompent le travail</span>
-      </div>
-      <div class="problem-card reveal d3">
-        <span class="problem-icon">😤</span>
-        <span class="problem-text">No-shows qui plombent le planning et le chiffre d'affaires</span>
-      </div>
-      <div class="problem-card reveal d1">
-        <span class="problem-icon">📅</span>
-        <span class="problem-text">Planning mal optimisé avec des créneaux vides</span>
-      </div>
-      <div class="problem-card reveal d2">
-        <span class="problem-icon">🔄</span>
-        <span class="problem-text">Clients qui ne reviennent pas sans relance manuelle</span>
-      </div>
-      <div class="problem-card reveal d3">
-        <span class="problem-icon">📂</span>
-        <span class="problem-text">Aucun suivi client structuré ni historique accessible</span>
-      </div>
-      <div class="problem-card reveal d1">
-        <span class="problem-icon">💸</span>
-        <span class="problem-text">Outils trop chers, trop complexes ou trop génériques</span>
-      </div>
-      <div class="problem-card reveal d2">
-        <span class="problem-icon">🔍</span>
-        <span class="problem-text">Visibilité locale insuffisante sur Google et les recherches</span>
-      </div>
-      <div class="problem-card reveal d3">
-        <span class="problem-icon">📉</span>
-        <span class="problem-text">Site web présent mais qui ne génère aucun contact</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     SOLUTION
-═══════════════════════════════════════════ -->
-<section id="solution">
-  <div class="container">
-    <div class="solution-inner">
-      <div class="solution-left">
-        <span class="section-label reveal">Ce qu'on apporte</span>
-        <h2 class="section-title reveal">L'objectif n'est pas seulement d'avoir un beau site.</h2>
-        <blockquote class="solution-quote reveal d1">L'objectif est d'avoir un outil qui travaille pour vous.</blockquote>
-        <p class="solution-sub reveal d2">Chaque projet que nous livrons est pensé pour servir votre activité concrètement, pas seulement pour exister en ligne.</p>
-      </div>
-      <ul class="solution-list">
-        <li class="reveal d1">
-          <span class="solution-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          Un site web moderne, crédible et optimisé pour les moteurs de recherche
-        </li>
-        <li class="reveal d2">
-          <span class="solution-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          Une expérience mobile irréprochable, testée sur tous les appareils
-        </li>
-        <li class="reveal d3">
-          <span class="solution-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          Un système de réservation intégré pour supprimer les prises de contact manuelles
-        </li>
-        <li class="reveal d4">
-          <span class="solution-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          Des automatisations qui vous font gagner des heures chaque semaine
-        </li>
-        <li class="reveal d5">
-          <span class="solution-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          Un accompagnement humain, réactif et pensé sur le long terme
-        </li>
-        <li class="reveal d6">
-          <span class="solution-check"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          Une solution qui évolue avec votre activité, sans partir de zéro
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     OFFRES
-═══════════════════════════════════════════ -->
-<section id="offres">
-  <div class="container">
-    <span class="section-label reveal">Nos offres</span>
-    <h2 class="section-title reveal">Trois façons de travailler ensemble.</h2>
-    <p class="section-sub reveal d1">Que vous ayez besoin d'une présence en ligne, d'un logiciel métier ou d'une solution complète de réservation : nous avons l'offre qui correspond.</p>
-    <div class="offres-grid">
-
-      <!-- Offre 1 -->
-      <div class="offre-card reveal d1">
-        <span class="offre-badge offre-badge-default">Offre 01</span>
-        <span class="offre-icon">🖥️</span>
-        <h3 class="offre-title">Site vitrine professionnel</h3>
-        <p class="offre-desc">Pour les entreprises, indépendants et commerces qui veulent une présence en ligne moderne, claire et crédible.</p>
-        <ul class="offre-features">
-          <li>Design moderne et sur mesure</li>
-          <li>Responsive mobile impeccable</li>
-          <li>SEO local de base intégré</li>
-          <li>Formulaire de contact</li>
-          <li>Performance optimisée</li>
-          <li>Structure pensée pour convertir</li>
-        </ul>
-        <button class="offre-cta offre-cta-default" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Demander un devis</button>
-      </div>
-
-      <!-- Offre 2 Featured -->
-      <div class="offre-card featured reveal d2">
-        <span class="offre-badge offre-badge-gold">✦ Expertise premium</span>
-        <span class="offre-icon">⚙️</span>
-        <h3 class="offre-title">Logiciel SaaS sur mesure</h3>
-        <p class="offre-desc">Un outil web accessible en ligne, conçu pour votre fonctionnement réel. Il automatise, centralise et simplifie. Adapté à votre activité, pas l'inverse.</p>
-        <ul class="offre-features">
-          <li>Dashboard métier personnalisé</li>
-          <li>Gestion clients & CRM sur mesure</li>
-          <li>Plateforme membre ou espace client</li>
-          <li>Automatisation des tâches internes</li>
-          <li>Logiciel métier spécifique à votre secteur</li>
-          <li>Évolutif et maintenable dans le temps</li>
-        </ul>
-        <p class="offre-quote">Nous concevons des outils digitaux pensés pour votre fonctionnement réel.</p>
-        <button class="offre-cta offre-cta-gold" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Parler de mon projet SaaS</button>
-      </div>
-
-      <!-- Offre 3 -->
-      <div class="offre-card reveal d3">
-        <span class="offre-badge offre-badge-rezoo">Offre 03 · REZOO</span>
-        <span class="offre-icon">📅</span>
-        <h3 class="offre-title">Solution complète REZOO</h3>
-        <p class="offre-desc">Pour les professionnels du rendez-vous qui veulent un site, une réservation en ligne et un outil de gestion intégral.</p>
-        <ul class="offre-features">
-          <li>Site web inclus et personnalisé</li>
-          <li>Réservation en ligne 24h/24</li>
-          <li>Paiement en ligne & acomptes</li>
-          <li>Agenda intelligent anti no-show</li>
-          <li>Tableau de bord en temps réel</li>
-          <li>0% de commission sur les réservations</li>
-        </ul>
-        <button class="offre-cta offre-cta-default" onclick="document.querySelector('#rezoo').scrollIntoView({behavior:'smooth'})">Découvrir REZOO</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     DIFFÉRENCE
-═══════════════════════════════════════════ -->
-<section id="difference">
-  <div class="container">
-    <span class="section-label reveal">Notre différence</span>
-    <h2 class="section-title reveal">Nous créons des outils qui s'adaptent<br>à votre activité, pas l'inverse.</h2>
-    <p class="section-sub reveal d1">POLOW Agency n'est pas une agence comme les autres. Nous avons prouvé notre capacité à créer des produits digitaux complets : REZOO en est la preuve.</p>
-    <div class="diff-cols">
-      <div class="diff-col diff-col-them reveal-left">
-        <h3 class="diff-col-title">Agences classiques &amp; outils génériques</h3>
-        <ul class="diff-list">
-          <li>Design sans stratégie ni objectif business</li>
-          <li>Solution clé-en-main impersonnelle</li>
-          <li>Aucun accompagnement après la livraison</li>
-          <li>Outils qui ne collent pas à votre métier réel</li>
-          <li>Support inexistant ou facturé en supplément</li>
-          <li>Aucune possibilité d'évolution réelle</li>
-        </ul>
-      </div>
-      <div class="diff-col diff-col-us reveal-right">
-        <h3 class="diff-col-title">POLOW Agency</h3>
-        <ul class="diff-list">
-          <li>Approche orientée business, conversion et résultats</li>
-          <li>Développement sur mesure selon votre fonctionnement</li>
-          <li>Accompagnement humain et réactif sur la durée</li>
-          <li>Outils conçus pour le terrain, testés en conditions réelles</li>
-          <li>Suivi post-livraison inclus, évolutions possibles</li>
-          <li>REZOO comme preuve concrète de savoir-faire produit</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     RÉALISATIONS
-═══════════════════════════════════════════ -->
-<section id="realisations">
-  <div class="container">
-    <span class="section-label reveal">Réalisations</span>
-    <h2 class="section-title reveal">Quelques projets qui parlent d'eux-mêmes.</h2>
-    <div class="real-notice reveal d1">
-      <span class="real-notice-dot"></span>
-      Projets en cours de documentation · captures d'écran disponibles sur demande
-    </div>
-    <div class="real-grid">
-
-      <!-- Carré d'Hair -->
-      <div class="real-card reveal d1">
-        <div class="real-preview">
-          <img src="mockup-dashboard.jpg" alt="Dashboard REZOO - Carré d'Hair" loading="lazy">
-        </div>
-        <div class="real-info">
-          <h3>Carré d'Hair</h3>
-          <div class="real-type">Salon de coiffure · Douai</div>
-          <div class="real-meta">
-            <div class="real-meta-row"><strong>Problème :</strong> Gestion manuelle des RDV par messages Instagram</div>
-            <div class="real-meta-row"><strong>Solution :</strong> Site web + réservation en ligne REZOO intégrée</div>
-          </div>
-          <div class="real-chips">
-            <span class="real-chip">Site web</span>
-            <span class="real-chip">REZOO</span>
-            <span class="real-chip">Réservation en ligne</span>
+    <!-- ANIMATED MOCKUP -->
+    <div class="hero-mock-wrap">
+      <div class="hero-mock">
+        <div class="hm-top">
+          <div class="hm-title" id="hmTitle">Un site qui déclenche l'action</div>
+          <div class="hm-bullets" id="hmBullets">
+            <span class="hm-bullet">Plus de demandes réellement qualifiées</span>
+            <span class="hm-bullet">Meilleure conversion à trafic égal</span>
+            <span class="hm-bullet">Moins de visiteurs qui repartent sans décider</span>
           </div>
         </div>
-      </div>
-
-      <!-- Étoile Relax -->
-      <div class="real-card reveal d2">
-        <div class="real-preview">
-          <img src="mockup-etoile.jpg" alt="Site Étoile Relax" loading="lazy">
-        </div>
-        <div class="real-info">
-          <h3>Étoile Relax</h3>
-          <div class="real-type">Spa privatif &amp; Sauna · Douai</div>
-          <div class="real-meta">
-            <div class="real-meta-row"><strong>Problème :</strong> Gestion manuelle des réservations et du planning</div>
-            <div class="real-meta-row"><strong>Solution :</strong> Site web + réservation en ligne via REZOO</div>
+        <div class="hm-win">
+          <div class="hm-win-bar">
+            <div class="hm-dots"><i></i><i></i><i></i></div>
           </div>
-          <div class="real-chips">
-            <span class="real-chip">Site web</span>
-            <span class="real-chip">REZOO</span>
-            <span class="real-chip">Bien-être</span>
-          </div>
-          <a href="https://etoile-relax.vercel.app" target="_blank" rel="noopener" class="real-cta-link">Voir le site →</a>
-        </div>
-      </div>
-
-      <!-- REZOO -->
-      <div class="real-card reveal d3">
-        <div class="real-preview">
-          <img src="mockup-rezoo.jpg" alt="rezoo.io - Vos clients reviennent" loading="lazy">
-        </div>
-        <div class="real-info">
-          <h3>REZOO</h3>
-          <div class="real-type">SaaS · Réservation en ligne · En production</div>
-          <div class="real-meta">
-            <div class="real-meta-row"><strong>Constat :</strong> Les professionnels du rendez-vous manquaient d'un outil simple, complet et sans commission</div>
-            <div class="real-meta-row"><strong>Réponse :</strong> Logiciel de réservation et de gestion conçu entièrement par POLOW Agency</div>
-          </div>
-          <div class="real-chips">
-            <span class="real-chip">SaaS</span>
-            <span class="real-chip">Réservation</span>
-            <span class="real-chip">Dashboard</span>
-            <span class="real-chip">0% commission</span>
-          </div>
-          <a href="https://rezoo.io" target="_blank" rel="noopener" class="real-cta-link">Découvrir rezoo.io →</a>
-        </div>
-      </div>
-
-      <!-- Votre projet -->
-      <div class="real-card placeholder-card reveal d4">
-        <div class="real-preview">
-          <div class="prev-placeholder">
-            <div class="prev-placeholder-inner">
-              <span>🚀</span>
-              <p>Votre projet ici</p>
+          <div class="hm-win-body">
+            <div class="hm-code-pane">
+              <div class="hm-gutter" id="hmGutter"></div>
+              <div class="hm-code-inner"><code id="hmCode"></code></div>
+            </div>
+            <div class="hm-preview-pane">
+              <div class="hm-preview-text" id="hmPreviewText">Site Web.</div>
+              <button class="hm-preview-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">→</button>
             </div>
           </div>
         </div>
-        <div class="real-info">
-          <h3>Votre prochain projet</h3>
-          <div class="real-type">Sites web · SaaS · REZOO</div>
-          <div class="real-meta">
-            <div class="real-meta-row"><strong>Vous avez :</strong> Un besoin digital que vous n'avez pas encore concrétisé</div>
-            <div class="real-meta-row"><strong>Nous pouvons :</strong> Vous proposer la solution adaptée à votre activité</div>
-          </div>
-          <div class="real-chips">
-            <span class="real-chip">Sites web</span>
-            <span class="real-chip">SaaS</span>
-            <span class="real-chip">REZOO</span>
-          </div>
-          <button class="real-cta-link" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">Discuter de votre projet →</button>
+        <div class="hm-tabs" id="hmTabs">
+          <button class="hm-tab act" data-idx="0">SITE VITRINE</button>
+          <button class="hm-tab" data-idx="1">APPLICATION / SAAS</button>
+          <button class="hm-tab" data-idx="2">SYSTÈMES / ERP</button>
         </div>
       </div>
-
     </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Découvrir</span>
+    <div class="hero-scroll-ln"></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     PROCESS
-═══════════════════════════════════════════ -->
+<!-- ══ STATS ══ -->
+<div class="stats">
+  <div class="stats-track">
+    <!-- original -->
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">10</span><span class="stat-sfx">+</span></div><div class="stat-l">projets livrés en production</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">1</span><span class="stat-sfx"> seul</span></div><div class="stat-l">interlocuteur du brief à la mise en ligne</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">24</span><span class="stat-sfx">h</span></div><div class="stat-l">de réponse garantie</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">0</span><span class="stat-sfx">€</span></div><div class="stat-l">de template — tout sur mesure</div></div>
+    <!-- duplicate for seamless loop -->
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">10</span><span class="stat-sfx">+</span></div><div class="stat-l">projets livrés en production</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">1</span><span class="stat-sfx"> seul</span></div><div class="stat-l">interlocuteur du brief à la mise en ligne</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">24</span><span class="stat-sfx">h</span></div><div class="stat-l">de réponse garantie</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">0</span><span class="stat-sfx">€</span></div><div class="stat-l">de template — tout sur mesure</div></div>
+  </div>
+</div>
+
+<!-- ══ PROCESS ══ -->
 <section id="process">
-  <div class="container">
-    <span class="section-label reveal">Comment ça se passe</span>
-    <h2 class="section-title reveal">Un process clair, de A à Z.</h2>
-    <p class="section-sub reveal d1">Pas de surprises, pas de jargon. Chaque étape est validée avec vous avant de passer à la suivante.</p>
-    <div class="process-steps">
-      <div class="process-line" aria-hidden="true"></div>
-      <div class="step reveal d1">
-        <div class="step-num">1</div>
-        <h4>Analyse de votre besoin</h4>
-        <p>On prend le temps de comprendre votre activité, vos contraintes et vos objectifs réels.</p>
+  <div class="wrap">
+    <div class="proc-giant-wrap rv">
+      <h2 class="giant-h">Un process clair,<br>en 4 étapes</h2>
+      <p class="sec-p">On avance étape par étape : vous savez ce qu'on fait, pourquoi on le fait, et ce qui vient ensuite.</p>
+    </div>
+    <div class="proc-list">
+      <div class="proc-step">
+        <span class="ps-num" aria-hidden="true">01</span>
+        <div class="ps-t rv-l">
+          <div class="ps-n">// étape 01</div>
+          <h3>On comprend votre besoin</h3>
+          <p>Un échange direct avec moi — pas de formulaire de 40 champs, pas de chef de projet entre nous. On identifie le vrai problème et ce que l'outil doit concrètement résoudre.</p>
+        </div>
+        <div class="ps-c rv-r">
+          <div class="cw">
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">brief.json</span></div>
+            <div class="cw-b"><code><span class="pu">{</span>
+  <span class="ky">"problème"</span><span class="op">:</span>     <span class="st">"gestion manuelle"</span><span class="pu">,</span>
+  <span class="ky">"utilisateurs"</span><span class="op">:</span> <span class="pu">[</span><span class="st">"gérant"</span><span class="pu">,</span> <span class="st">"clients"</span><span class="pu">]</span><span class="pu">,</span>
+  <span class="ky">"flux"</span><span class="op">:</span>         <span class="pu">[</span><span class="st">"résa"</span><span class="pu">,</span> <span class="st">"paiement"</span><span class="pu">]</span><span class="pu">,</span>
+  <span class="ky">"contraintes"</span><span class="op">:</span> <span class="pu">[</span><span class="st">"mobile"</span><span class="pu">,</span> <span class="st">"zéro formation"</span><span class="pu">]</span>
+<span class="pu">}</span></code></div>
+          </div>
+        </div>
       </div>
-      <div class="step reveal d2">
-        <div class="step-num">2</div>
-        <h4>Proposition claire</h4>
-        <p>Vous recevez une proposition détaillée et lisible, sans jargon technique inutile.</p>
+      <div class="proc-step">
+        <span class="ps-num" aria-hidden="true">02</span>
+        <div class="ps-t rv-r">
+          <div class="ps-n">// étape 02</div>
+          <h3>On conçoit l'interface</h3>
+          <p>UX, architecture de données, choix techniques. Ce travail en amont évite les refontes en cours de route et vous fait économiser du temps et de l'argent.</p>
+        </div>
+        <div class="ps-c rv-l">
+          <div class="cw">
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">architecture.ts</span></div>
+            <div class="cw-b"><code><span class="kw">type</span> <span class="fn">User</span> <span class="op">=</span> <span class="pu">{</span>
+  <span class="ky">id</span><span class="op">:</span>   <span class="nm">string</span>
+  <span class="ky">role</span><span class="op">:</span> <span class="st">"owner"</span> <span class="op">|</span> <span class="st">"client"</span>
+<span class="pu">}</span>
+<span class="kw">const</span> <span class="fn">db</span> <span class="op">=</span> <span class="fn">createClient</span><span class="pu">(</span><span class="fn">URL</span><span class="pu">,</span> <span class="fn">KEY</span><span class="pu">)</span></code></div>
+          </div>
+        </div>
       </div>
-      <div class="step reveal d3">
-        <div class="step-num">3</div>
-        <h4>Design &amp; conception</h4>
-        <p>On crée une interface pensée pour vos utilisateurs et qui reflète votre image.</p>
+      <div class="proc-step">
+        <span class="ps-num" aria-hidden="true">03</span>
+        <div class="ps-t rv-l">
+          <div class="ps-n">// étape 03</div>
+          <h3>On développe sur mesure</h3>
+          <p>Le code est écrit pour votre métier, pas adapté d'un template. Chaque fonctionnalité existe pour votre cas précis. Zéro superflu.</p>
+        </div>
+        <div class="ps-c rv-r">
+          <div class="cw">
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">dashboard.tsx</span></div>
+            <div class="cw-b"><code><span class="kw">export default function</span> <span class="fn">Dashboard</span><span class="pu">() {</span>
+  <span class="kw">const</span> <span class="pu">{</span> <span class="fn">data</span> <span class="pu">}</span> <span class="op">=</span> <span class="fn">useBookings</span><span class="pu">({</span>
+    <span class="ky">today</span><span class="op">:</span> <span class="kw">true</span>
+  <span class="pu">})</span>
+  <span class="kw">return</span> <span class="op">&lt;</span><span class="fn">BookingGrid</span> <span class="ky">data</span><span class="op">=</span><span class="pu">{</span><span class="fn">data</span><span class="pu">}</span> <span class="op">/&gt;</span>
+<span class="pu">}</span></code></div>
+          </div>
+        </div>
       </div>
-      <div class="step reveal d4">
-        <div class="step-num">4</div>
-        <h4>Développement</h4>
-        <p>On code. Chaque fonctionnalité est testée et validée avec vous en cours de route.</p>
-      </div>
-      <div class="step reveal d5">
-        <div class="step-num">5</div>
-        <h4>Mise en ligne</h4>
-        <p>Déploiement soigné, accompagnement à la prise en main si nécessaire.</p>
-      </div>
-      <div class="step reveal d6">
-        <div class="step-num">6</div>
-        <h4>Suivi &amp; évolution</h4>
-        <p>On reste disponibles. Votre outil évolue avec vous et votre activité.</p>
+      <div class="proc-step">
+        <span class="ps-num" aria-hidden="true">04</span>
+        <div class="ps-t rv-r">
+          <div class="ps-n">// étape 04</div>
+          <h3>On livre et on reste présents</h3>
+          <p>Déploiement, formation à l'usage, maintenance dans la durée. Un numéro direct après la livraison — pas un ticket de support.</p>
+        </div>
+        <div class="ps-c rv-l">
+          <div class="cw">
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">deploy.sh</span></div>
+            <div class="cw-b"><code><span class="cm"># Mise en production</span>
+<span class="fn">pnpm</span> <span class="st">build</span>
+<span class="fn">vercel</span> <span class="st">deploy --prod</span>
+
+<span class="fn">echo</span> <span class="st">"✓ En ligne"</span>
+<span class="cm"># Un contact direct. Toujours.</span></code></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     CONTACT / CTA FINAL
-═══════════════════════════════════════════ -->
-<section id="contact">
-  <div class="container">
-    <div class="contact-inner">
-      <span class="section-label reveal">On discute ?</span>
-      <h2 class="section-title reveal">Vous voulez un outil digital qui aide<br><em>vraiment</em> votre activité ?</h2>
-      <p class="contact-sub reveal d1">Pas seulement un beau site. Un outil qui travaille pour vous, qui convertit et qui simplifie votre quotidien. C'est ce qu'on construit.</p>
-      <div class="contact-ctas reveal d2">
-        <a href="mailto:contact@polowagency.fr?subject=Demande de démo REZOO" class="btn-gold">Demander une démo</a>
-        <a href="mailto:contact@polowagency.fr?subject=Mon projet" class="btn-secondary">Parler de mon projet</a>
-      </div>
-      <div class="contact-options reveal d3">
-        <a href="mailto:contact@polowagency.fr" class="contact-option">
-          <span class="contact-option-icon">✉️</span>
-          <div>
-            <div class="contact-option-label">Email</div>
-            <div class="contact-option-value">contact@polowagency.fr</div>
-          </div>
-        </a>
-        <a href="https://wa.me/33XXXXXXXXXX" target="_blank" rel="noopener" class="contact-option wa-option">
-          <span class="contact-option-icon">💬</span>
-          <div>
-            <div class="contact-option-label">WhatsApp</div>
-            <div class="contact-option-value">Message rapide</div>
-          </div>
-        </a>
-      </div>
-      <form class="contact-form reveal d4" id="contactForm" novalidate>
-        <div class="form-row">
-          <input type="text" name="prenom" placeholder="Votre prénom" required autocomplete="given-name">
-          <input type="email" name="email" placeholder="Votre email" required autocomplete="email">
+<!-- ══ TESTIMONIALS ══ -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="testi-head rv">
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Ce qu'ils en disent
+      </span>
+      <h2 class="sec-h">Des clients qui avancent,<br><em>des projets qui durent</em></h2>
+      <p class="sec-p">Quelques retours de fondateurs et gérants qui nous ont confié leurs outils digitaux.</p>
+    </div>
+    <div class="testi-marquee">
+      <!-- TRACK 1 → gauche -->
+      <div class="testi-track testi-track-1">
+        <!-- original -->
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Paul a créé notre système de réservation en 3 semaines. Avant, on gérait tout par appel. Aujourd'hui 60 % des RDV arrivent sans qu'on décroche le téléphone.</p>
+          <div class="testi-author"><div class="testi-av">KB</div><div><div class="testi-name">Karim B.</div><div class="testi-role">Gérant, salon de coiffure · Paris</div></div><span class="testi-tag">Réservation en ligne</span></div>
         </div>
-        <select name="projet" required>
-          <option value="" disabled selected>Type de projet</option>
-          <option value="vitrine">Site vitrine professionnel</option>
-          <option value="saas">Logiciel SaaS sur mesure</option>
-          <option value="rezoo">Solution complète REZOO</option>
-          <option value="autre">Autre / Je ne sais pas encore</option>
-        </select>
-        <textarea name="message" placeholder="Décrivez votre projet en quelques mots…" rows="4"></textarea>
-        <button type="submit" class="btn-send">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-          Envoyer ma demande
-        </button>
-        <p class="form-note">Réponse sous 24h · Aucun engagement</p>
-        <div id="formSuccess">✓ Message envoyé. Nous vous répondons sous 24h.</div>
-        <div id="formError">Une erreur est survenue. Écrivez-nous directement à contact@polowagency.fr</div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">On voulait un espace client pour que nos membres réservent leurs séances. C'est exactement ce qu'on a eu — sans les fonctions inutiles des grosses plateformes.</p>
+          <div class="testi-author"><div class="testi-av">SM</div><div><div class="testi-name">Sophie M.</div><div class="testi-role">Co-fondatrice, studio pilates · Lyon</div></div><span class="testi-tag">App membres</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Notre CRM sur mesure nous fait économiser 2h de saisie par jour. Le ROI a été immédiat dès le premier mois. Il fait exactement ce dont on a besoin — rien de plus.</p>
+          <div class="testi-author"><div class="testi-av">TR</div><div><div class="testi-name">Thomas R.</div><div class="testi-role">Directeur commercial, BTP · Bordeaux</div></div><span class="testi-tag">CRM sur mesure</span></div>
+        </div>
+        <!-- duplicate for seamless loop -->
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Paul a créé notre système de réservation en 3 semaines. Avant, on gérait tout par appel. Aujourd'hui 60 % des RDV arrivent sans qu'on décroche le téléphone.</p>
+          <div class="testi-author"><div class="testi-av">KB</div><div><div class="testi-name">Karim B.</div><div class="testi-role">Gérant, salon de coiffure · Paris</div></div><span class="testi-tag">Réservation en ligne</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">On voulait un espace client pour que nos membres réservent leurs séances. C'est exactement ce qu'on a eu — sans les fonctions inutiles des grosses plateformes.</p>
+          <div class="testi-author"><div class="testi-av">SM</div><div><div class="testi-name">Sophie M.</div><div class="testi-role">Co-fondatrice, studio pilates · Lyon</div></div><span class="testi-tag">App membres</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Notre CRM sur mesure nous fait économiser 2h de saisie par jour. Le ROI a été immédiat dès le premier mois. Il fait exactement ce dont on a besoin — rien de plus.</p>
+          <div class="testi-author"><div class="testi-av">TR</div><div><div class="testi-name">Thomas R.</div><div class="testi-role">Directeur commercial, BTP · Bordeaux</div></div><span class="testi-tag">CRM sur mesure</span></div>
+        </div>
+      </div>
+      <!-- TRACK 2 → droite -->
+      <div class="testi-track testi-track-2">
+        <!-- original -->
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Site livré en 2 semaines, propre, rapide, et qui convertit vraiment. J'ai eu 4 prospects qualifiés dès la première semaine de mise en ligne. Zéro friction dans les échanges.</p>
+          <div class="testi-author"><div class="testi-av">AD</div><div><div class="testi-name">Amina D.</div><div class="testi-role">Consultante RH indépendante · Nantes</div></div><span class="testi-tag">Site vitrine</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">On avait essayé avec une autre agence — 6 mois de délai pour rien livré. Avec POLOW, 8 semaines et on avait une V1 en production avec nos 10 premiers clients. La différence est nette.</p>
+          <div class="testi-author"><div class="testi-av">JC</div><div><div class="testi-name">Julien C.</div><div class="testi-role">Co-fondateur, SaaS B2B · Paris</div></div><span class="testi-tag">Application SaaS</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Le dashboard livré nous donne exactement les données dont on avait besoin pour piloter nos stocks et nos ventes. Fini les exports Excel manuels chaque lundi matin.</p>
+          <div class="testi-author"><div class="testi-av">ML</div><div><div class="testi-name">Marie-Laure P.</div><div class="testi-role">Gérante, e-commerce · Rennes</div></div><span class="testi-tag">Dashboard BI</span></div>
+        </div>
+        <!-- duplicate for seamless loop -->
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Site livré en 2 semaines, propre, rapide, et qui convertit vraiment. J'ai eu 4 prospects qualifiés dès la première semaine de mise en ligne. Zéro friction dans les échanges.</p>
+          <div class="testi-author"><div class="testi-av">AD</div><div><div class="testi-name">Amina D.</div><div class="testi-role">Consultante RH indépendante · Nantes</div></div><span class="testi-tag">Site vitrine</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">On avait essayé avec une autre agence — 6 mois de délai pour rien livré. Avec POLOW, 8 semaines et on avait une V1 en production avec nos 10 premiers clients. La différence est nette.</p>
+          <div class="testi-author"><div class="testi-av">JC</div><div><div class="testi-name">Julien C.</div><div class="testi-role">Co-fondateur, SaaS B2B · Paris</div></div><span class="testi-tag">Application SaaS</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Le dashboard livré nous donne exactement les données dont on avait besoin pour piloter nos stocks et nos ventes. Fini les exports Excel manuels chaque lundi matin.</p>
+          <div class="testi-author"><div class="testi-av">ML</div><div><div class="testi-name">Marie-Laure P.</div><div class="testi-role">Gérante, e-commerce · Rennes</div></div><span class="testi-tag">Dashboard BI</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VISION ══ -->
+<section id="vision">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <span class="chip rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+        Notre vision
+      </span>
+      <h2 class="giant-h rv d1" style="max-width:900px;margin:0 auto">Des projets concrets,<br>des résultats réels.</h2>
+      <p class="sec-p rv d2" style="max-width:520px;margin:.8rem auto 0">Nous accompagnons les entreprises à chaque étape, de l'idée au produit final, avec des solutions pensées pour durer.</p>
+    </div>
+    <div class="vision-block rv d3">
+      <p class="vision-quote">Nous voulons bâtir la prochaine génération d'agences digitales françaises — indépendantes, ambitieuses, ancrées dans la qualité, mais agiles comme une startup.</p>
+    </div>
+    <div class="vision-bullets rv d4">
+      <div class="vision-b">Une culture produit : créer ce qui sert vraiment le business.</div>
+      <div class="vision-b">Une culture vitesse : livrer en semaines, pas en semestres.</div>
+      <div class="vision-b">Une culture justesse : pas faire plus, mais faire mieux.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div class="contact-head rv">
+        <span class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+          AUDIT GRATUIT · RÉPONSE SOUS 24H
+        </span>
+        <h2>Parlez-nous de votre projet</h2>
+        <p>Quelques infos pour qu'on puisse préparer un audit pertinent et un échange utile.</p>
+      </div>
+      <form class="mform" id="cform" novalidate>
+        <div class="mstep rv d1">
+          <div class="mstep-head">
+            <div><div class="mstep-num">01 · ÉTAPE</div><div class="mstep-title">Vous</div></div>
+            <div class="mstep-hint">Pour qu'on sache à qui on parle</div>
+          </div>
+          <div class="mrow">
+            <div class="mfield"><label>Prénom</label><input type="text" name="prenom" placeholder="Paul" autocomplete="given-name"></div>
+            <div class="mfield"><label>Nom</label><input type="text" name="nom" placeholder="Dupont" autocomplete="family-name" required></div>
+          </div>
+          <div class="mfield"><label>Entreprise</label><input type="text" name="entreprise" placeholder="Nom de votre société" autocomplete="organization"></div>
+        </div>
+        <div class="mstep rv d2">
+          <div class="mstep-head">
+            <div><div class="mstep-num">02 · ÉTAPE</div><div class="mstep-title">Vous joindre</div></div>
+            <div class="mstep-hint">Email + préférence de contact</div>
+          </div>
+          <div class="mfield"><label>Email</label>
+            <div class="mfield-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <input type="email" name="email" placeholder="vous@entreprise.com" required autocomplete="email">
+            </div>
+          </div>
+          <div class="mfield"><label>Téléphone</label>
+            <div class="mfield-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <input type="tel" name="telephone" placeholder="+33 6 00 00 00 00" autocomplete="tel">
+            </div>
+          </div>
+          <div class="pref-grid">
+            <button type="button" class="pref-btn sel" id="prefCall" onclick="togglePref('call')">
+              <span class="pref-btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <span><div class="pref-btn-t">Je suis OK pour être appelé</div><div class="pref-btn-d">Pour discuter du projet de vive voix</div></span>
+            </button>
+            <button type="button" class="pref-btn" id="prefMsg" onclick="togglePref('msg')">
+              <span class="pref-btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+              <span><div class="pref-btn-t">Par message uniquement</div><div class="pref-btn-d">Pas d'appel, je préfère par écrit</div></span>
+            </button>
+          </div>
+          <input type="hidden" name="contact_pref" id="contactPref" value="call">
+        </div>
+        <div class="mstep rv d3">
+          <div class="mstep-head">
+            <div><div class="mstep-num">03 · ÉTAPE</div><div class="mstep-title">Votre projet</div></div>
+            <div class="mstep-hint">Le plus de détails possible</div>
+          </div>
+          <div class="mfield"><label>Quel est votre projet ?</label>
+            <div class="type-grid" id="typeGrid">
+              <div class="type-card sel" data-type="site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 9h18"/></svg><span>Site web</span></div>
+              <div class="type-card" data-type="saas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><span>App / SaaS</span></div>
+              <div class="type-card" data-type="logiciel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg><span>Logiciel métier</span></div>
+              <div class="type-card" data-type="ia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg><span>Automatisation IA</span></div>
+              <div class="type-card" data-type="autre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>Je ne sais pas encore</span></div>
+            </div>
+            <input type="hidden" name="type_projet" id="typeProjet" value="site">
+          </div>
+          <div class="mfield"><label>Décrivez votre projet</label><textarea name="message" placeholder="Ex : on veut lancer un SaaS de gestion pour les artisans, avec un dashboard et de la facturation..." required></textarea></div>
+        </div>
+        <div class="mstep rv d4">
+          <div class="mstep-head">
+            <div><div class="mstep-num">04 · ÉTAPE</div><div class="mstep-title">Budget estimé</div></div>
+            <div class="mstep-hint">Une fourchette TTC pour calibrer la proposition</div>
+          </div>
+          <div class="budget-grid" id="budgetGrid">
+            <div class="budget-opt" data-budget="1500-3000"><span>1 500 € → 3 000 €</span><span class="budget-opt-dot"></span></div>
+            <div class="budget-opt" data-budget="3000-5000"><span>3 000 € → 5 000 €</span><span class="budget-opt-dot"></span></div>
+            <div class="budget-opt" data-budget="5000-7000"><span>5 000 € → 7 000 €</span><span class="budget-opt-dot"></span></div>
+            <div class="budget-opt" data-budget="7000-10000"><span>7 000 € → 10 000 €</span><span class="budget-opt-dot"></span></div>
+            <div class="budget-opt" data-budget="10000-20000"><span>10 000 € → 20 000 €</span><span class="budget-opt-dot"></span></div>
+            <div class="budget-opt" data-budget="20000+"><span>+ 20 000 €</span><span class="budget-opt-dot"></span></div>
+          </div>
+          <input type="hidden" name="budget" id="budgetVal" value="">
+        </div>
+        <div class="rv d5">
+          <button type="submit" class="btn-submit">
+            <span>Envoyer ma demande</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <div class="submit-checks">
+            <div class="submit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Audit en direct de votre projet</div>
+            <div class="submit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Devis gratuit &amp; détaillé</div>
+            <div class="submit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Délais de livraison clairs</div>
+          </div>
+          <div id="ok">Message envoyé — je reviens vers vous très vite.</div>
+          <div id="err">Une erreur est survenue. Contactez-moi au 07 81 75 47 19.</div>
+        </div>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════ -->
+<!-- ══ FOOTER ══ -->
 <footer>
-  <div class="container">
-    <div class="footer-inner">
+  <div class="wrap">
+    <div class="foot-g">
       <div>
-        <div class="footer-brand">
-          <img src="logo.png" alt="POLOW" class="footer-brand-img">
-          <span class="footer-brand-name">POLOW Agency</span>
-        </div>
-        <p class="footer-tagline">Agence web & créateur de REZOO. Nous construisons des outils digitaux qui font vraiment avancer votre activité.</p>
-        <p class="footer-location">Basé à Douai, France · Projets partout en France</p>
-        <div class="footer-social">
-          <a href="#" class="footer-social-link" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
-          </a>
-          <a href="#" class="footer-social-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg>
-          </a>
-        </div>
+        <div class="foot-brand"><img src="logo.png" alt="POLOW" class="foot-logo"><span class="foot-name">POLOW</span></div>
+        <p class="foot-tag">Logiciels sur mesure pour les entreprises de Douai et de la région Hauts-de-France.</p>
+        <p class="foot-siren">SIREN 101 540 243 — France</p>
       </div>
       <div>
-        <div class="footer-col-title">Agence</div>
-        <ul class="footer-links">
-          <li><a href="#positioning">Notre approche</a></li>
-          <li><a href="#offres">Nos offres</a></li>
-          <li><a href="#realisations">Réalisations</a></li>
-          <li><a href="#process">Notre process</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <div class="foot-col-h">Services</div>
+        <ul class="foot-links">
+          <li><a href="services.html">Site web</a></li>
+          <li><a href="services.html#saas">Application &amp; SaaS</a></li>
+          <li><a href="services.html#crm">CRM &amp; Outil interne</a></li>
+          <li><a href="services.html#ia">Automatisation IA</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-rezoo-badge">✦ Produit phare</div>
-        <div class="footer-col-title">REZOO</div>
-        <ul class="footer-links">
-          <li><a href="https://rezoo.io" target="_blank" rel="noopener">Découvrir rezoo.io</a></li>
-          <li><a href="#contact">Demander une démo</a></li>
-          <li><a href="#rezoo">Fonctionnalités</a></li>
+        <div class="foot-col-h">Agence</div>
+        <ul class="foot-links">
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links">
+        <div class="foot-col-h">Contact</div>
+        <ul class="foot-links">
+          <li><a href="tel:+33781754719">07 81 75 47 19</a></li>
           <li><a href="mailto:contact@polowagency.fr">contact@polowagency.fr</a></li>
-          <li><a href="https://wa.me/33XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://rezoo.io" target="_blank" rel="noopener">rezoo.io ↗</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2024 POLOW Agency · Tous droits réservés</span>
-      <span class="footer-made">Fièrement créé par POLOW Agency</span>
+    <div class="foot-bot">
+      <span class="foot-copy">© 2026 POLOW Agency</span>
+      <span class="foot-made">Conçu &amp; développé par Paul Piot</span>
     </div>
   </div>
 </footer>
 
-<!-- LEGAL BAR -->
-<div class="legal-bar">
-  <span class="legal-bar-copy">© 2024 POLOW Agency</span>
-  <div class="legal-bar-links">
-    <a href="#">Mentions légales</a>
-    <span class="legal-bar-sep">·</span>
-    <a href="#">CGV</a>
-  </div>
-  <div class="legal-bar-avail">
-    <span class="legal-bar-dot"></span>
-    Disponible
-  </div>
+<div class="legal">
+  <span class="legal-copy">SIREN 101 540 243 — POLOW Agency</span>
+  <div class="legal-links"><a href="#">Mentions légales</a><span class="legal-sep">·</span><a href="#">Confidentialité</a></div>
+  <div class="legal-avail"><span class="legal-dot"></span> Douai &amp; environs · Disponible</div>
 </div>
 
+<a href="https://wa.me/33781754719" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
 <script>
-/* ═══════════════════════════════════════════
-   CUSTOM CURSOR
-═══════════════════════════════════════════ */
-(function(){
-  var cursor = document.getElementById('cursor');
-  var ring = document.getElementById('cursorRing');
-  if(!cursor || !ring) return;
-  var rx=0,ry=0,cx=0,cy=0;
-  document.addEventListener('mousemove', function(e){
-    cx = e.clientX; cy = e.clientY;
-    cursor.style.left = cx+'px';
-    cursor.style.top = cy+'px';
-    ring.classList.add('vis');
-  });
-  function lerp(a,b,t){return a+(b-a)*t}
-  function loop(){
-    rx = lerp(rx,cx,.12);
-    ry = lerp(ry,cy,.12);
-    ring.style.left = rx+'px';
-    ring.style.top = ry+'px';
-    requestAnimationFrame(loop);
+/* ── Loader ── */
+;(function(){
+  document.body.classList.add('loading')
+  const fill=document.getElementById('ldFill'),num=document.getElementById('ldN'),loader=document.getElementById('loader')
+  let v=0
+  function step(){
+    const spd=v<30?2:v<60?1.4:v<80?.9:v<92?.5:.28
+    v=Math.min(v+spd*(Math.random()*.6+.7),100)
+    fill.style.width=v+'%';num.textContent=Math.round(v)+'%'
+    if(v<100){requestAnimationFrame(step)}
+    else{setTimeout(()=>{loader.classList.add('done');document.body.classList.remove('loading');document.body.classList.add('ready');initBlurText()},280)}
   }
-  loop();
-  document.querySelectorAll('a,button,.pos-card,.offre-card,.real-card,.step').forEach(function(el){
-    el.addEventListener('mouseenter', function(){ cursor.classList.add('hov'); ring.classList.add('hov'); });
-    el.addEventListener('mouseleave', function(){ cursor.classList.remove('hov'); ring.classList.remove('hov'); });
-  });
-})();
+  setTimeout(()=>requestAnimationFrame(step),360)
+})()
 
-/* ═══════════════════════════════════════════
-   SCROLL REVEAL
-═══════════════════════════════════════════ */
-(function(){
-  var els = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
-  if(!els.length) return;
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); }
-    });
-  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(function(el){ obs.observe(el); });
-})();
+/* ── Blur-text ── */
+function initBlurText(){
+  const h1=document.getElementById('heroH1')
+  if(!h1)return
+  let delay=0
+  const processNode=(node)=>{
+    if(node.nodeType===3){
+      const words=node.textContent.split(/(\s+)/)
+      const frag=document.createDocumentFragment()
+      words.forEach(w=>{
+        if(w.match(/\S/)){const s=document.createElement('span');s.className='bw';s.style.setProperty('--d',delay+'ms');s.textContent=w;frag.appendChild(s);delay+=65}
+        else if(w){frag.appendChild(document.createTextNode(w))}
+      })
+      node.parentNode.replaceChild(frag,node)
+    }else if(node.nodeType===1&&node.tagName!=='BR'){Array.from(node.childNodes).forEach(processNode)}
+  }
+  Array.from(h1.childNodes).forEach(processNode);h1.offsetHeight
+}
 
-/* ═══════════════════════════════════════════
-   NAV SCROLL
-═══════════════════════════════════════════ */
-(function(){
-  var nav = document.getElementById('main-nav');
-  if(!nav) return;
-  window.addEventListener('scroll', function(){
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  }, {passive:true});
-})();
+/* ── Hero Mockup Tabs ── */
+const hmData=[
+  {
+    title:"Un site qui déclenche l'action",
+    bullets:["Plus de demandes réellement qualifiées","Meilleure conversion à trafic égal","Moins de visiteurs qui repartent sans décider"],
+    preview:"Site Web.",
+    code:`<span class="kw">export default function</span> <span class="fn">Landing</span> <span class="pu">() {</span>
+  <span class="kw">return</span> <span class="pu">(</span>
+    <span class="op">&lt;</span> <span class="fn">SiteVitrine</span>
+      <span class="ky">titre</span>    <span class="op">=</span> <span class="st">"Douai."</span>
+      <span class="ky">objectif</span> <span class="op">=</span> <span class="st">"Convertir"</span>
+      <span class="ky">cta</span>      <span class="op">=</span> <span class="pu">{</span> <span class="fn">Démarrer</span> <span class="pu">}</span>
+    <span class="op">/&gt;</span>
+  <span class="pu">)</span>
+<span class="pu">}</span>`
+  },
+  {
+    title:"Un dashboard que votre équipe va adorer",
+    bullets:["Données en temps réel, toujours accessibles","Accès multi-rôles et permissions fines","Déployé en semaines, pas en mois"],
+    preview:"App / SaaS.",
+    code:`<span class="kw">export default function</span> <span class="fn">Dashboard</span> <span class="pu">() {</span>
+  <span class="kw">const</span> <span class="pu">{</span> <span class="fn">data</span> <span class="pu">}</span> <span class="op">=</span> <span class="fn">useMetrics</span><span class="pu">({</span>
+    <span class="ky">period</span> <span class="op">:</span> <span class="st">"today"</span><span class="pu">,</span>
+    <span class="ky">roles</span>  <span class="op">:</span> <span class="pu">[</span><span class="st">"admin"</span><span class="pu">,</span> <span class="st">"user"</span><span class="pu">]</span>
+  <span class="pu">})</span>
+  <span class="kw">return</span> <span class="pu">(</span>
+    <span class="op">&lt;</span> <span class="fn">Analytics</span>
+      <span class="ky">data</span> <span class="op">=</span> <span class="pu">{</span> <span class="fn">data</span> <span class="pu">}</span>
+    <span class="op">/&gt;</span>
+  <span class="pu">)</span>
+<span class="pu">}</span>`
+  },
+  {
+    title:"Un logiciel taillé pour votre métier",
+    bullets:["Adapté à vos flux, pas l'inverse","Intégrations sur mesure avec vos outils","Formation et support inclus"],
+    preview:"ERP / Logiciel.",
+    code:`<span class="kw">export default function</span> <span class="fn">Workflow</span> <span class="pu">() {</span>
+  <span class="kw">const</span> <span class="fn">tasks</span> <span class="op">=</span> <span class="fn">useQueue</span><span class="pu">({</span>
+    <span class="ky">priority</span> <span class="op">:</span> <span class="st">"high"</span><span class="pu">,</span>
+    <span class="ky">assign</span>   <span class="op">:</span> <span class="st">"auto"</span>
+  <span class="pu">})</span>
+  <span class="kw">return</span> <span class="pu">(</span>
+    <span class="op">&lt;</span> <span class="fn">TaskBoard</span>
+      <span class="ky">tasks</span> <span class="op">=</span> <span class="pu">{</span> <span class="fn">tasks</span> <span class="pu">}</span>
+    <span class="op">/&gt;</span>
+  <span class="pu">)</span>
+<span class="pu">}</span>`
+  }
+]
+function setGutter(code){
+  const lines=code.split('\n').length
+  document.getElementById('hmGutter').innerHTML=Array.from({length:lines},(_,i)=>`<span>${i+1}</span>`).join('')
+}
+let hmIdx=0
+function switchHmTab(idx){
+  const d=hmData[idx]
+  const title=document.getElementById('hmTitle')
+  const bullets=document.getElementById('hmBullets')
+  const code=document.getElementById('hmCode')
+  const preview=document.getElementById('hmPreviewText')
+  title.style.opacity='0';title.style.transform='translateY(6px)'
+  bullets.style.opacity='0';code.style.opacity='0'
+  preview.style.opacity='0';preview.style.transform='translateY(6px)'
+  setTimeout(()=>{
+    title.textContent=d.title
+    bullets.innerHTML=d.bullets.map(b=>`<span class="hm-bullet">${b}</span>`).join('')
+    code.innerHTML=d.code
+    setGutter(d.code)
+    preview.textContent=d.preview
+    title.style.opacity='1';title.style.transform='none'
+    bullets.style.opacity='1';code.style.opacity='1'
+    preview.style.opacity='1';preview.style.transform='none'
+  },200)
+  document.querySelectorAll('.hm-tab').forEach((t,i)=>t.classList.toggle('act',i===idx))
+  hmIdx=idx
+}
+document.getElementById('hmCode').innerHTML=hmData[0].code
+setGutter(hmData[0].code)
+document.getElementById('hmTabs').addEventListener('click',e=>{
+  const tab=e.target.closest('.hm-tab')
+  if(!tab)return
+  switchHmTab(parseInt(tab.dataset.idx))
+})
+setInterval(()=>switchHmTab((hmIdx+1)%3),4500)
 
-/* ═══════════════════════════════════════════
-   MOBILE NAV
-═══════════════════════════════════════════ */
-(function(){
-  var burger = document.getElementById('burger');
-  var mobileNav = document.getElementById('mobileNav');
-  var close = document.getElementById('mobileNavClose');
-  if(!burger || !mobileNav) return;
-  function open(){ mobileNav.classList.add('open'); burger.classList.add('active'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-  function closeFn(){ mobileNav.classList.remove('open'); burger.classList.remove('active'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-  burger.addEventListener('click', function(){ mobileNav.classList.contains('open') ? closeFn() : open(); });
-  if(close) close.addEventListener('click', closeFn);
-  mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeFn); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeFn(); });
-})();
+/* ── Nav scroll ── */
+const nav=document.getElementById('nav')
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>50),{passive:true})
 
-/* ═══════════════════════════════════════════
-   RIPPLE EFFECT
-═══════════════════════════════════════════ */
-(function(){
-  document.querySelectorAll('.btn-primary,.btn-secondary,.btn-gold,.btn-send,.offre-cta,.nav-cta').forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      var r = document.createElement('span');
-      r.className = 'ripple-effect';
-      var rect = btn.getBoundingClientRect();
-      var size = Math.max(rect.width, rect.height);
-      r.style.cssText = 'width:'+size+'px;height:'+size+'px;left:'+(e.clientX-rect.left-size/2)+'px;top:'+(e.clientY-rect.top-size/2)+'px;';
-      btn.appendChild(r);
-      setTimeout(function(){ r.remove(); }, 700);
-    });
-  });
-})();
+/* ── Stats accordion ── */
+;(function(){
+  const sec=document.getElementById('statsSection')
+  const hd=document.getElementById('statsHd')
+  const g=document.getElementById('statsG')
+  if(!hd||!g)return
+  const hdLabel=hd.querySelector('.stats-hd-r span')
 
-/* ═══════════════════════════════════════════
-   SMOOTH SCROLL (fallback)
-═══════════════════════════════════════════ */
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click', function(e){
-    var id = a.getAttribute('href').slice(1);
-    if(!id) return;
-    var el = document.getElementById(id);
-    if(!el) return;
-    e.preventDefault();
-    el.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
+  function countUp(el,target,duration){
+    const start=performance.now()
+    const suffix=el.dataset.suffix||''
+    const prefix=el.dataset.prefix||''
+    function step(now){
+      const p=Math.min((now-start)/duration,1)
+      const eased=1-Math.pow(1-p,3)
+      el.textContent=prefix+Math.floor(eased*target)+suffix
+      if(p<1)requestAnimationFrame(step)
+      else el.textContent=prefix+target+suffix
+    }
+    requestAnimationFrame(step)
+  }
 
-/* ═══════════════════════════════════════════
-   CONTACT FORM
-═══════════════════════════════════════════ */
-(function(){
-  var form = document.getElementById('contactForm');
-  if(!form) return;
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var data = new FormData(form);
-    var subject = encodeURIComponent('Demande depuis polowagency.fr : ' + (data.get('projet') || 'Projet'));
-    var body = encodeURIComponent(
-      'Prénom : ' + (data.get('prenom')||'') + '\n' +
-      'Email : ' + (data.get('email')||'') + '\n' +
-      'Type de projet : ' + (data.get('projet')||'') + '\n\n' +
-      'Message :\n' + (data.get('message')||'')
-    );
-    var mailto = 'mailto:contact@polowagency.fr?subject='+subject+'&body='+body;
-    window.location.href = mailto;
-    document.getElementById('formSuccess').style.display = 'block';
-    form.reset();
-    setTimeout(function(){ document.getElementById('formSuccess').style.display='none'; }, 5000);
-  });
-})();
+  function runCountUps(){
+    document.querySelectorAll('.stat-v').forEach(el=>{
+      const raw=el.dataset.val
+      if(!raw)return
+      el.dataset.done='1'
+      countUp(el,parseInt(raw),900)
+    })
+  }
+
+  function openStats(){
+    g.classList.remove('closed')
+    sec.classList.add('open')
+    hd.setAttribute('aria-expanded','true')
+    if(hdLabel)hdLabel.textContent='Masquer'
+    setTimeout(runCountUps,120)
+  }
+  function closeStats(){
+    g.classList.add('closed')
+    sec.classList.remove('open')
+    hd.setAttribute('aria-expanded','false')
+    if(hdLabel)hdLabel.textContent='Voir'
+  }
+
+  /* start closed */
+  g.style.transition='none'
+  g.classList.add('closed')
+  requestAnimationFrame(()=>requestAnimationFrame(()=>g.style.transition=''))
+
+  hd.addEventListener('click',()=>g.classList.contains('closed')?openStats():closeStats())
+  hd.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();hd.click()}})
+})()
+
+/* ── Mobile nav Services accordion ── */
+;(function(){
+  const toggle=document.getElementById('mnavSvcToggle')
+  const sub=document.getElementById('mnavSub')
+  if(!toggle||!sub)return
+  toggle.addEventListener('click',()=>{
+    const open=sub.classList.toggle('open')
+    toggle.classList.toggle('open',open)
+    toggle.setAttribute('aria-expanded',open?'true':'false')
+  })
+})()
+
+/* ── Mobile nav ── */
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav')
+function openM(){mnav.classList.add('on');burger.classList.add('on');document.body.style.overflow='hidden';burger.setAttribute('aria-expanded','true')}
+function closeM(){mnav.classList.remove('on');burger.classList.remove('on');document.body.style.overflow='';burger.setAttribute('aria-expanded','false')}
+burger.addEventListener('click',()=>mnav.classList.contains('on')?closeM():openM())
+document.getElementById('mnavClose').addEventListener('click',closeM)
+document.getElementById('mnavCta').addEventListener('click',()=>{closeM();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),230)})
+document.getElementById('mnavContact').addEventListener('click',closeM)
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
+
+/* ── Scroll reveal ── */
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.07})
+document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(el=>io.observe(el))
+
+/* ── Ripple ── */
+document.querySelectorAll('.btn-hero,.btn-submit,.nav-cta').forEach(b=>{
+  b.addEventListener('click',function(e){
+    const r=document.createElement('span');r.className='rip'
+    const rect=this.getBoundingClientRect(),s=Math.max(rect.width,rect.height)
+    r.style.cssText=`width:${s}px;height:${s}px;left:${e.clientX-rect.left-s/2}px;top:${e.clientY-rect.top-s/2}px`
+    this.appendChild(r);r.addEventListener('animationend',()=>r.remove())
+  })
+})
+
+/* ── Pref buttons ── */
+function togglePref(type){
+  document.getElementById('prefCall').classList.toggle('sel',type==='call')
+  document.getElementById('prefMsg').classList.toggle('sel',type==='msg')
+  document.getElementById('contactPref').value=type
+}
+
+/* ── Type selector ── */
+document.getElementById('typeGrid').addEventListener('click',function(e){
+  const card=e.target.closest('.type-card')
+  if(!card)return
+  this.querySelectorAll('.type-card').forEach(c=>c.classList.remove('sel'))
+  card.classList.add('sel')
+  document.getElementById('typeProjet').value=card.dataset.type
+})
+
+/* ── Budget selector ── */
+document.getElementById('budgetGrid').addEventListener('click',function(e){
+  const opt=e.target.closest('.budget-opt')
+  if(!opt)return
+  this.querySelectorAll('.budget-opt').forEach(o=>o.classList.remove('sel'))
+  opt.classList.add('sel')
+  document.getElementById('budgetVal').value=opt.dataset.budget
+})
+
+/* ── Contact form ── */
+document.getElementById('cform').addEventListener('submit',async function(e){
+  e.preventDefault()
+  const btn=this.querySelector('.btn-submit')
+  const ok=document.getElementById('ok'),err=document.getElementById('err')
+  ok.style.display='none';err.style.display='none'
+  btn.disabled=true;btn.querySelector('span').textContent='Envoi...'
+  try{
+    const res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(this)))})
+    if(res.ok){ok.style.display='block';this.reset()}else throw new Error()
+  }catch{err.style.display='block'}
+  finally{btn.disabled=false;btn.querySelector('span').textContent='Envoyer ma demande'}
+})
 </script>
 </body>
 </html>
