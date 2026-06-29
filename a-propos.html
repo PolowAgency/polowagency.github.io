@@ -66,16 +66,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .burger.on span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .burger.on span:nth-child(2){opacity:0;transform:scaleX(0)}
 .burger.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.mnav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#06060a}
+.mnav{display:none;position:fixed;inset:0;z-index:9999}
 .mnav.on{display:block}
+.mnav-bg{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px)}
+.mnav-panel{position:absolute;top:0;right:0;bottom:0;width:82%;max-width:340px;background:#0a0a0f;border-left:1px solid rgba(255,255,255,.07)}
 .mnav-hd{position:absolute;top:0;left:0;right:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid rgba(255,255,255,.06)}
-.mnav-hd img{height:22px;width:auto}
-.mnav-close{background:none;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:rgba(255,255,255,.7);font-size:15px;width:38px;height:38px;line-height:1;cursor:pointer}
-.mnav-links{position:absolute;top:56px;left:0;right:0;bottom:80px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px}
-.mnav-links a{display:block;padding:11px 24px;font-family:'Bricolage Grotesque',sans-serif;font-size:1.45rem;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:-.02em;text-align:center;border-radius:10px;transition:color .15s,background .15s}
-.mnav-links a:active{color:#fff;background:rgba(255,255,255,.05)}
-.mnav-cta{position:absolute;bottom:0;left:0;right:0;height:80px;display:flex;align-items:center;padding:0 20px;border-top:1px solid rgba(255,255,255,.06)}
-.mnav-cta a{display:block;width:100%;background:#f97316;color:#000;font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:800;padding:14px;border-radius:10px;text-align:center;cursor:pointer;letter-spacing:.02em;box-sizing:border-box}
+.mnav-hd img{height:20px;width:auto}
+.mnav-close{background:none;border:1px solid rgba(255,255,255,.13);border-radius:8px;color:rgba(255,255,255,.6);font-size:14px;width:36px;height:36px;line-height:1;cursor:pointer}
+.mnav-links{position:absolute;top:56px;left:0;right:0;bottom:78px;display:flex;flex-direction:column;justify-content:center;padding:0 24px;gap:2px}
+.mnav-links a{display:block;padding:10px 0;font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:700;color:rgba(255,255,255,.38);letter-spacing:-.02em;border-bottom:1px solid rgba(255,255,255,.05);transition:color .12s}
+.mnav-links a:last-child{border-bottom:none}
+.mnav-links a:active{color:#fff}
+.mnav-cta{position:absolute;bottom:0;left:0;right:0;height:78px;display:flex;align-items:center;padding:0 20px;border-top:1px solid rgba(255,255,255,.06)}
+.mnav-cta a{display:block;width:100%;background:#f97316;color:#000;font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:800;padding:13px;border-radius:10px;text-align:center;cursor:pointer;letter-spacing:.02em;box-sizing:border-box}
 
 /* ── UTILS ── */
 .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 3.5rem}
@@ -215,18 +218,21 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
 </nav>
 
 <div class="mnav" id="mnav">
-  <div class="mnav-hd">
-    <img src="logo.png" alt="POLOW">
-    <button class="mnav-close" id="mnavClose">✕</button>
-  </div>
-  <div class="mnav-links">
-    <a href="index.html">Accueil</a>
-    <a href="services.html">Services</a>
-    <a href="a-propos.html">À propos</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <div class="mnav-cta">
-    <a href="contact.html">Démarrer mon projet →</a>
+  <div class="mnav-bg" id="mnavBg"></div>
+  <div class="mnav-panel">
+    <div class="mnav-hd">
+      <img src="logo.png" alt="POLOW">
+      <button class="mnav-close" id="mnavClose">✕</button>
+    </div>
+    <div class="mnav-links">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mnav-cta">
+      <a href="contact.html">Démarrer mon projet →</a>
+    </div>
   </div>
 </div>
 
@@ -389,6 +395,7 @@ function openM(){mnav.classList.add('on');burger.classList.add('on');document.bo
 function closeM(){mnav.classList.remove('on');burger.classList.remove('on');document.body.style.overflow=''}
 burger.addEventListener('click',()=>mnav.classList.contains('on')?closeM():openM())
 document.getElementById('mnavClose').addEventListener('click',closeM)
+document.getElementById('mnavBg').addEventListener('click',closeM)
 document.querySelectorAll('#mnav a').forEach(a=>a.addEventListener('click',closeM))
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.07})
