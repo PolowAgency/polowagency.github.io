@@ -98,27 +98,16 @@ nav.sc{background:rgba(6,6,10,.88);backdrop-filter:blur(24px);-webkit-backdrop-f
 .burger.on span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
 /* ── MOBILE NAV ── */
-.mnav{position:fixed;inset:0;z-index:400;background:var(--bg);display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .25s,visibility .25s}
+.mnav{position:fixed;top:0;left:0;right:0;bottom:0;z-index:400;background:#06060a;display:flex;flex-direction:column;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .22s,visibility .22s}
 .mnav.on{visibility:visible;opacity:1;pointer-events:auto}
-.mnav-top{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.4rem;border-bottom:1px solid var(--border);flex-shrink:0}
-.mnav-top img{width:24px;height:24px;object-fit:contain;mix-blend-mode:screen}
-.mnav-close{background:none;border:none;color:var(--muted);font-size:1.4rem;padding:.4rem;cursor:pointer}
-.mnav-links{flex:1;overflow-y:auto;padding-top:1rem}
-.mnav-row{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.5rem;border-bottom:1px solid var(--border)}
-.mnav-row a{font-family:'Bricolage Grotesque',sans-serif;font-size:1.4rem;font-weight:700;color:var(--muted);transition:color .15s;flex:1}
-.mnav-row a:hover,.mnav-row a.cur{color:var(--text)}
-.mnav-acc-toggle{background:none;border:1px solid var(--border);border-radius:.45rem;color:var(--muted);padding:.3rem .5rem;display:flex;align-items:center;transition:border-color .2s,color .2s;cursor:pointer}
-.mnav-acc-toggle svg{width:16px;height:16px;transition:transform .3s}
-.mnav-acc-toggle.open{border-color:var(--accent-md);color:var(--accent2)}
-.mnav-acc-toggle.open svg{transform:rotate(180deg)}
-.mnav-sub{overflow:hidden;max-height:0;transition:max-height .38s cubic-bezier(.22,1,.36,1)}
-.mnav-sub.open{max-height:300px}
-.mnav-sub a{display:flex;align-items:center;gap:.65rem;padding:.65rem 1.5rem .65rem 2.2rem;font-size:.88rem;color:rgba(255,255,255,.5);border-bottom:1px solid var(--border);transition:color .15s,background .15s}
-.mnav-sub a:hover{color:var(--text);background:var(--accent-lo)}
-.mnav-sub svg{width:13px;height:13px;color:var(--accent2);flex-shrink:0}
-.mnav-cta{flex-shrink:0;padding:1.1rem 1.4rem;border-top:1px solid var(--border)}
-.mnav-cta button{width:100%;background:var(--accent);color:#000;font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:700;padding:.88rem;border:none;border-radius:10px;transition:background .18s;cursor:pointer}
-.mnav-cta button:hover{background:var(--accent2)}
+.mnav-hd{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.mnav-hd img{width:26px;height:26px;object-fit:contain;mix-blend-mode:screen}
+.mnav-x{background:none;border:1px solid rgba(255,255,255,.12);border-radius:8px;color:rgba(255,255,255,.6);font-size:1rem;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.mnav-body{display:flex;flex-direction:column;flex:1;overflow-y:auto}
+.mnav-link{display:block;padding:1.1rem 1.5rem;font-family:'Bricolage Grotesque',sans-serif;font-size:1.65rem;font-weight:700;color:rgba(255,255,255,.45);border-bottom:1px solid rgba(255,255,255,.06);transition:color .15s}
+.mnav-link:active,.mnav-link:hover{color:#fff}
+.mnav-ft{padding:1.2rem 1.5rem;border-top:1px solid rgba(255,255,255,.08)}
+.mnav-ft button{width:100%;background:var(--accent);color:#000;font-family:'Manrope',sans-serif;font-size:.95rem;font-weight:800;padding:1rem;border:none;border-radius:12px;cursor:pointer;letter-spacing:.01em}
 
 /* ── UTILS ── */
 .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 3.5rem}
@@ -463,32 +452,20 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
 </nav>
 
 <!-- MOBILE NAV -->
-<div class="mnav" id="mnav" role="dialog" aria-modal="true">
-  <div class="mnav-top"><img src="logo.png" alt="POLOW"><button class="mnav-close" id="mnavClose">✕</button></div>
-  <nav class="mnav-links">
-    <div class="mnav-row">
-      <a href="index.html">Accueil</a>
-    </div>
-    <div class="mnav-row">
-      <a href="services.html">Services</a>
-      <button class="mnav-acc-toggle" id="mnavSvcToggle" aria-expanded="false" aria-label="Voir les services">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-      </button>
-    </div>
-    <div class="mnav-sub" id="mnavSub">
-      <a href="services.html#site-web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 9h18"/></svg>Site Web Premium</a>
-      <a href="services.html#saas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>Application / SaaS</a>
-      <a href="services.html#crm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>Logiciel métier</a>
-      <a href="services.html#ia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>Automatisation IA</a>
-    </div>
-    <div class="mnav-row">
-      <a href="a-propos.html">À propos</a>
-    </div>
-    <div class="mnav-row">
-      <a href="contact.html" id="mnavContact">Contact</a>
-    </div>
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="mnav-hd">
+    <img src="logo.png" alt="POLOW">
+    <button class="mnav-x" id="mnavClose" aria-label="Fermer">✕</button>
+  </div>
+  <nav class="mnav-body">
+    <a href="index.html" class="mnav-link">Accueil</a>
+    <a href="services.html" class="mnav-link">Services</a>
+    <a href="a-propos.html" class="mnav-link">À propos</a>
+    <a href="contact.html" class="mnav-link">Contact</a>
   </nav>
-  <div class="mnav-cta"><button id="mnavCta">Démarrer mon projet →</button></div>
+  <div class="mnav-ft">
+    <button id="mnavCta">Démarrer mon projet →</button>
+  </div>
 </div>
 
 <!-- ══ HERO ══ -->
@@ -1039,26 +1016,14 @@ setInterval(()=>switchHmTab((hmIdx+1)%3),4500)
 const nav=document.getElementById('nav')
 window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>50),{passive:true})
 
-/* ── Mobile nav Services accordion ── */
-;(function(){
-  const toggle=document.getElementById('mnavSvcToggle')
-  const sub=document.getElementById('mnavSub')
-  if(!toggle||!sub)return
-  toggle.addEventListener('click',()=>{
-    const open=sub.classList.toggle('open')
-    toggle.classList.toggle('open',open)
-    toggle.setAttribute('aria-expanded',open?'true':'false')
-  })
-})()
-
 /* ── Mobile nav ── */
 const burger=document.getElementById('burger'),mnav=document.getElementById('mnav')
-function openM(){mnav.classList.add('on');burger.classList.add('on');document.body.style.overflow='hidden';burger.setAttribute('aria-expanded','true')}
-function closeM(){mnav.classList.remove('on');burger.classList.remove('on');document.body.style.overflow='';burger.setAttribute('aria-expanded','false')}
+function openM(){mnav.classList.add('on');burger.classList.add('on');document.body.style.overflow='hidden'}
+function closeM(){mnav.classList.remove('on');burger.classList.remove('on');document.body.style.overflow=''}
 burger.addEventListener('click',()=>mnav.classList.contains('on')?closeM():openM())
 document.getElementById('mnavClose').addEventListener('click',closeM)
 document.getElementById('mnavCta').addEventListener('click',()=>{closeM();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),230)})
-document.querySelectorAll('.mnav-links a').forEach(a=>a.addEventListener('click',closeM))
+document.querySelectorAll('.mnav-body a').forEach(a=>a.addEventListener('click',closeM))
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
 
 /* ── Scroll reveal ── */
