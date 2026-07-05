@@ -41,15 +41,18 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 @keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
 /* ── LOADER ── */
-#loader{position:fixed;inset:0;z-index:8000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;transition:opacity .5s,visibility .5s}
+#loader{position:fixed;inset:0;z-index:8000;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity .5s,visibility .5s}
 #loader.done{opacity:0;visibility:hidden;pointer-events:none}
-.ld-logo{display:flex;align-items:center;gap:.55rem;opacity:0;animation:fadeUp .4s .1s ease both}
-.ld-logo img{width:28px;height:28px;object-fit:contain;mix-blend-mode:screen}
-.ld-logo span{font-family:'Bricolage Grotesque',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-.ld-track{width:180px;height:1px;background:rgba(255,255,255,.07);border-radius:1px;overflow:hidden;opacity:0;animation:fadeUp .4s .2s ease both}
-.ld-fill{height:100%;background:var(--accent);width:0%;border-radius:1px;transition:width .04s linear}
-.ld-n{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--muted);opacity:0;animation:fadeUp .35s .25s ease both}
 body.loading{overflow:hidden}
+.ld-term{width:min(420px,86vw);background:#08081a;border:1px solid rgba(255,255,255,.1);border-radius:.8rem;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6);opacity:0;animation:fadeUp .4s .1s ease both}
+.ld-term-bar{display:flex;gap:.28rem;padding:.55rem .85rem;background:#0e0e1c;border-bottom:1px solid rgba(255,255,255,.05)}
+.ld-term-bar i{display:block;width:8px;height:8px;border-radius:50%}
+.ld-term-bar i:nth-child(1){background:#FF5F57}.ld-term-bar i:nth-child(2){background:#FEBC2E}.ld-term-bar i:nth-child(3){background:#28C840}
+.ld-term-body{padding:1.1rem 1.3rem 1.3rem;font-family:'JetBrains Mono',monospace;font-size:.78rem;line-height:1.9;min-height:6.2em}
+.ld-line{color:rgba(255,255,255,.7);white-space:pre}
+.ld-line:empty{display:block}
+.ld-cursor{color:var(--accent);font-weight:700;animation:ld-blink 1s step-end infinite}
+@keyframes ld-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
 
 /* ── WORD BLUR ── */
 .bw{display:inline-block;will-change:transform,filter,opacity;opacity:0;filter:blur(8px);transform:translateY(28px);transition:opacity .55s var(--d,0ms) cubic-bezier(.22,1,.36,1),filter .55s var(--d,0ms) cubic-bezier(.22,1,.36,1),transform .55s var(--d,0ms) cubic-bezier(.22,1,.36,1)}
@@ -148,7 +151,7 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .hm-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:.9rem;letter-spacing:-.025em;transition:opacity .22s,transform .22s}
 .hm-bullets{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 2rem;transition:opacity .22s}
 .hm-bullet{font-size:.78rem;color:rgba(255,255,255,.52);display:flex;align-items:center;gap:.38rem}
-.hm-bullet::before{content:'•';color:var(--accent2)}
+.hm-bullet::before{content:'»';color:var(--accent2);font-weight:700}
 .hm-win{margin:0 1.5rem;border-radius:1rem 1rem 0 0;overflow:hidden;border:1px solid rgba(255,255,255,.08);border-bottom:none}
 .hm-win-bar{background:#0e0e1c;padding:.55rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid rgba(255,255,255,.05)}
 .hm-dots{display:flex;gap:.28rem}
@@ -205,7 +208,10 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .ps-t h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.55rem;font-weight:800;line-height:1.15;margin-bottom:.75rem;letter-spacing:-.025em}
 .ps-t p{font-size:.87rem;color:var(--muted);line-height:1.78;max-width:380px}
 .ps-c{position:relative;z-index:1}
-.cw{background:#060610;border:1px solid rgba(255,255,255,.07);border-radius:.85rem;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.cw{background:#060610;border:1px solid rgba(255,255,255,.07);border-radius:.85rem;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative;transition:border-color .3s}
+.cw::after{content:'»';position:absolute;bottom:.6rem;right:.9rem;color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:.95rem;font-weight:700;opacity:0;transform:translateX(-4px);transition:opacity .25s,transform .25s;pointer-events:none}
+.cw:hover{border-color:rgba(249,115,22,.25)}
+.cw:hover::after{opacity:1;transform:none}
 .cw-bar{display:flex;align-items:center;padding:.52rem .85rem;border-bottom:1px solid rgba(255,255,255,.05);background:#08081a;gap:.6rem}
 .cw-d{display:flex;gap:.28rem}
 .cw-d i{display:block;width:8px;height:8px;border-radius:50%}
@@ -410,9 +416,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
 
 <!-- LOADER -->
 <div id="loader" aria-label="Chargement" role="status">
-  <div class="ld-logo"><img src="logo.png" alt="POLOW"><span>POLOW</span></div>
-  <div class="ld-track"><div class="ld-fill" id="ldFill"></div></div>
-  <span class="ld-n" id="ldN">0%</span>
+  <div class="ld-term">
+    <div class="ld-term-bar"><i></i><i></i><i></i></div>
+    <div class="ld-term-body">
+      <div class="ld-line" id="ldLine1"></div>
+      <div class="ld-line" id="ldLine2"></div>
+      <div class="ld-line" id="ldLine3"></div>
+      <span class="ld-cursor">»</span>
+    </div>
+  </div>
 </div>
 
 <!-- NAV -->
@@ -483,15 +495,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
       </span>
       Douai &amp; environs · Hauts-de-France
     </div>
-    <h1 class="hero-h1" id="heroH1">De l'idée à la<br>mise en ligne.</h1>
-    <p class="hero-sub">Nous concevons des SaaS, Applications, sites Web et logiciels sur-mesure pour les entreprises de Douai, Lens, Arras et toute la région.</p>
+    <h1 class="hero-h1" id="heroH1">On code ce que<br>vous avez en tête.</h1>
+    <p class="hero-sub">Sites, applications, logiciels métier : on construit sur-mesure ce qui vous manque, pour les indépendants et entreprises de Douai, Lens, Arras et toute la région.</p>
     <div class="hero-acts">
       <button class="btn-hero" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-        J'ai une idée de projet
+        Parlons de votre projet
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </button>
     </div>
-    <p class="hero-note">Audit offert · Réponse sous 24h</p>
+    <p class="hero-note">Premier échange gratuit · Réponse en 24h</p>
 
     <!-- ANIMATED MOCKUP -->
     <div class="hero-mock-wrap">
@@ -560,55 +572,54 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
       <div class="proc-step">
         <span class="ps-num" aria-hidden="true">01</span>
         <div class="ps-t rv-l">
-          <div class="ps-n">// étape 01</div>
-          <h3>On comprend votre besoin</h3>
-          <p>Un échange direct avec moi — pas de formulaire de 40 champs, pas de chef de projet entre nous. On identifie le vrai problème et ce que l'outil doit concrètement résoudre.</p>
+          <div class="ps-n">» étape 01</div>
+          <h3>On cadre le vrai problème</h3>
+          <p>Un échange direct avec moi, sans formulaire à rallonge ni chef de projet en relais : on cerne ce que l'outil doit résoudre, concrètement.</p>
         </div>
         <div class="ps-c rv-r">
           <div class="cw">
-            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">brief.json</span></div>
-            <div class="cw-b"><code><span class="pu">{</span>
-  <span class="ky">"problème"</span><span class="op">:</span>     <span class="st">"gestion manuelle"</span><span class="pu">,</span>
-  <span class="ky">"utilisateurs"</span><span class="op">:</span> <span class="pu">[</span><span class="st">"gérant"</span><span class="pu">,</span> <span class="st">"clients"</span><span class="pu">]</span><span class="pu">,</span>
-  <span class="ky">"flux"</span><span class="op">:</span>         <span class="pu">[</span><span class="st">"résa"</span><span class="pu">,</span> <span class="st">"paiement"</span><span class="pu">]</span><span class="pu">,</span>
-  <span class="ky">"contraintes"</span><span class="op">:</span> <span class="pu">[</span><span class="st">"mobile"</span><span class="pu">,</span> <span class="st">"zéro formation"</span><span class="pu">]</span>
-<span class="pu">}</span></code></div>
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">brief-salon.md</span></div>
+            <div class="cw-b"><code><span class="cm"># Brief — salon de coiffure</span>
+<span class="ky">problème</span>   <span class="op">:</span> <span class="st">gestion 100% par téléphone</span>
+<span class="ky">objectif</span>   <span class="op">:</span> <span class="st">réservation en ligne, zéro appel</span>
+<span class="ky">contrainte</span> <span class="op">:</span> <span class="st">aucune formation nécessaire</span></code></div>
           </div>
         </div>
       </div>
       <div class="proc-step">
         <span class="ps-num" aria-hidden="true">02</span>
         <div class="ps-t rv-r">
-          <div class="ps-n">// étape 02</div>
-          <h3>On conçoit l'interface</h3>
-          <p>UX, architecture de données, choix techniques. Ce travail en amont évite les refontes en cours de route et vous fait économiser du temps et de l'argent.</p>
+          <div class="ps-n">» étape 02</div>
+          <h3>On pose les fondations</h3>
+          <p>Architecture des données, choix techniques, parcours utilisateur : ce travail en amont évite les refontes en cours de route et vous fait gagner du temps et de l'argent.</p>
         </div>
         <div class="ps-c rv-l">
           <div class="cw">
-            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">architecture.ts</span></div>
-            <div class="cw-b"><code><span class="kw">type</span> <span class="fn">User</span> <span class="op">=</span> <span class="pu">{</span>
-  <span class="ky">id</span><span class="op">:</span>   <span class="nm">string</span>
-  <span class="ky">role</span><span class="op">:</span> <span class="st">"owner"</span> <span class="op">|</span> <span class="st">"client"</span>
-<span class="pu">}</span>
-<span class="kw">const</span> <span class="fn">db</span> <span class="op">=</span> <span class="fn">createClient</span><span class="pu">(</span><span class="fn">URL</span><span class="pu">,</span> <span class="fn">KEY</span><span class="pu">)</span></code></div>
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">schema.sql</span></div>
+            <div class="cw-b"><code><span class="kw">create table</span> <span class="fn">reservations</span> <span class="pu">(</span>
+  <span class="ky">id</span><span class="pu">,</span>        <span class="nm">uuid</span> <span class="kw">primary key</span><span class="pu">,</span>
+  <span class="ky">client_id</span><span class="pu">,</span> <span class="nm">uuid</span> <span class="kw">references</span> <span class="fn">clients</span><span class="pu">,</span>
+  <span class="ky">creneau</span><span class="pu">,</span>   <span class="nm">timestamptz</span><span class="pu">,</span>
+  <span class="ky">statut</span><span class="pu">,</span>    <span class="nm">text</span> <span class="kw">default</span> <span class="st">'confirmé'</span>
+<span class="pu">);</span></code></div>
           </div>
         </div>
       </div>
       <div class="proc-step">
         <span class="ps-num" aria-hidden="true">03</span>
         <div class="ps-t rv-l">
-          <div class="ps-n">// étape 03</div>
-          <h3>On développe sur mesure</h3>
-          <p>Le code est écrit pour votre métier, pas adapté d'un template. Chaque fonctionnalité existe pour votre cas précis. Zéro superflu.</p>
+          <div class="ps-n">» étape 03</div>
+          <h3>On construit, sur mesure</h3>
+          <p>Chaque ligne de code existe pour votre cas précis — pas de template ajusté à la va-vite, pas de fonctionnalité superflue.</p>
         </div>
         <div class="ps-c rv-r">
           <div class="cw">
-            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">dashboard.tsx</span></div>
-            <div class="cw-b"><code><span class="kw">export default function</span> <span class="fn">Dashboard</span><span class="pu">() {</span>
-  <span class="kw">const</span> <span class="pu">{</span> <span class="fn">data</span> <span class="pu">}</span> <span class="op">=</span> <span class="fn">useBookings</span><span class="pu">({</span>
-    <span class="ky">today</span><span class="op">:</span> <span class="kw">true</span>
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">ReservationGrid.tsx</span></div>
+            <div class="cw-b"><code><span class="kw">export default function</span> <span class="fn">ReservationGrid</span><span class="pu">() {</span>
+  <span class="kw">const</span> <span class="pu">{</span> <span class="fn">creneaux</span> <span class="pu">}</span> <span class="op">=</span> <span class="fn">useReservations</span><span class="pu">({</span>
+    <span class="ky">jour</span><span class="op">:</span> <span class="kw">today</span>
   <span class="pu">})</span>
-  <span class="kw">return</span> <span class="op">&lt;</span><span class="fn">BookingGrid</span> <span class="ky">data</span><span class="op">=</span><span class="pu">{</span><span class="fn">data</span><span class="pu">}</span> <span class="op">/&gt;</span>
+  <span class="kw">return</span> <span class="op">&lt;</span><span class="fn">Planning</span> <span class="ky">creneaux</span><span class="op">=</span><span class="pu">{</span><span class="fn">creneaux</span><span class="pu">}</span> <span class="op">/&gt;</span>
 <span class="pu">}</span></code></div>
           </div>
         </div>
@@ -616,19 +627,17 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
       <div class="proc-step">
         <span class="ps-num" aria-hidden="true">04</span>
         <div class="ps-t rv-r">
-          <div class="ps-n">// étape 04</div>
-          <h3>On livre et on reste présents</h3>
-          <p>Déploiement, formation à l'usage, maintenance dans la durée. Un numéro direct après la livraison — pas un ticket de support.</p>
+          <div class="ps-n">» étape 04</div>
+          <h3>On livre, et on reste joignable</h3>
+          <p>Mise en production, prise en main, maintenance dans la durée. Un numéro direct après la livraison — pas un ticket de support.</p>
         </div>
         <div class="ps-c rv-l">
           <div class="cw">
-            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">deploy.sh</span></div>
-            <div class="cw-b"><code><span class="cm"># Mise en production</span>
-<span class="fn">pnpm</span> <span class="st">build</span>
-<span class="fn">vercel</span> <span class="st">deploy --prod</span>
-
-<span class="fn">echo</span> <span class="st">"✓ En ligne"</span>
-<span class="cm"># Un contact direct. Toujours.</span></code></div>
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">livraison.log</span></div>
+            <div class="cw-b"><code><span class="cm">✓ build terminé — 0 erreur</span>
+<span class="cm">✓ déployé sur polowagency.fr</span>
+<span class="cm">✓ formation client planifiée</span>
+<span class="fn">→</span> <span class="st">"Un contact direct, pas un ticket."</span></code></div>
           </div>
         </div>
       </div>
@@ -899,19 +908,46 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
 </a>
 
 <script>
-/* ── Loader ── */
+/* ── Loader : boot terminal ── */
 ;(function(){
   document.body.classList.add('loading')
-  const fill=document.getElementById('ldFill'),num=document.getElementById('ldN'),loader=document.getElementById('loader')
-  let v=0
-  function step(){
-    const spd=v<30?2:v<60?1.4:v<80?.9:v<92?.5:.28
-    v=Math.min(v+spd*(Math.random()*.6+.7),100)
-    fill.style.width=v+'%';num.textContent=Math.round(v)+'%'
-    if(v<100){requestAnimationFrame(step)}
-    else{setTimeout(()=>{loader.classList.add('done');document.body.classList.remove('loading');document.body.classList.add('ready');initBlurText()},280)}
+  const loader=document.getElementById('loader')
+  const lines=[
+    {el:document.getElementById('ldLine1'),text:'$ polow_agency --init'},
+    {el:document.getElementById('ldLine2'),text:'> assemblage du studio...'},
+    {el:document.getElementById('ldLine3'),text:'> prêt.'}
+  ]
+  const cursor=document.querySelector('.ld-cursor')
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  function finish(){
+    loader.classList.add('done');document.body.classList.remove('loading');document.body.classList.add('ready');initBlurText()
   }
-  setTimeout(()=>requestAnimationFrame(step),360)
+  if(reduceMotion){
+    lines.forEach(l=>l.el.textContent=l.text)
+    setTimeout(finish,300)
+    return
+  }
+  let li=0
+  function typeLine(){
+    if(li>=lines.length){setTimeout(finish,420);return}
+    const {el,text}=lines[li]
+    if(li>0)el.parentNode.insertBefore(cursor,null)
+    let ci=0
+    el.appendChild(cursor)
+    const speed=text.startsWith('$')?38:26
+    ;(function type(){
+      if(ci<=text.length){
+        el.textContent=text.slice(0,ci)
+        el.appendChild(cursor)
+        ci++
+        setTimeout(type,speed)
+      }else{
+        li++
+        setTimeout(typeLine,220)
+      }
+    })()
+  }
+  setTimeout(typeLine,380)
 })()
 
 /* ── Blur-text ── */
@@ -939,47 +975,28 @@ const hmData=[
     title:"Un site qui déclenche l'action",
     bullets:["Plus de demandes réellement qualifiées","Meilleure conversion à trafic égal","Moins de visiteurs qui repartent sans décider"],
     preview:"Site Web.",
-    code:`<span class="kw">export default function</span> <span class="fn">Landing</span> <span class="pu">() {</span>
-  <span class="kw">return</span> <span class="pu">(</span>
-    <span class="op">&lt;</span> <span class="fn">SiteVitrine</span>
-      <span class="ky">titre</span>    <span class="op">=</span> <span class="st">"Douai."</span>
-      <span class="ky">objectif</span> <span class="op">=</span> <span class="st">"Convertir"</span>
-      <span class="ky">cta</span>      <span class="op">=</span> <span class="pu">{</span> <span class="fn">Démarrer</span> <span class="pu">}</span>
-    <span class="op">/&gt;</span>
-  <span class="pu">)</span>
-<span class="pu">}</span>`
+    code:`<span class="cm">// votre site, en clair</span>
+<span class="ky">objectif</span> <span class="op">:</span> <span class="st">"convertir les visiteurs en rendez-vous"</span>
+<span class="ky">action</span>   <span class="op">:</span> <span class="st">"répond en 5 secondes aux questions clés"</span>
+<span class="ky">résultat</span> <span class="op">:</span> <span class="st">"moins d'appels, plus de demandes qualifiées"</span>`
   },
   {
     title:"Un dashboard que votre équipe va adorer",
     bullets:["Données en temps réel, toujours accessibles","Accès multi-rôles et permissions fines","Déployé en semaines, pas en mois"],
     preview:"App / SaaS.",
-    code:`<span class="kw">export default function</span> <span class="fn">Dashboard</span> <span class="pu">() {</span>
-  <span class="kw">const</span> <span class="pu">{</span> <span class="fn">data</span> <span class="pu">}</span> <span class="op">=</span> <span class="fn">useMetrics</span><span class="pu">({</span>
-    <span class="ky">period</span> <span class="op">:</span> <span class="st">"today"</span><span class="pu">,</span>
-    <span class="ky">roles</span>  <span class="op">:</span> <span class="pu">[</span><span class="st">"admin"</span><span class="pu">,</span> <span class="st">"user"</span><span class="pu">]</span>
-  <span class="pu">})</span>
-  <span class="kw">return</span> <span class="pu">(</span>
-    <span class="op">&lt;</span> <span class="fn">Analytics</span>
-      <span class="ky">data</span> <span class="op">=</span> <span class="pu">{</span> <span class="fn">data</span> <span class="pu">}</span>
-    <span class="op">/&gt;</span>
-  <span class="pu">)</span>
-<span class="pu">}</span>`
+    code:`<span class="cm">// votre application, en clair</span>
+<span class="ky">objectif</span> <span class="op">:</span> <span class="st">"un outil que vos équipes ouvrent chaque jour"</span>
+<span class="ky">action</span>   <span class="op">:</span> <span class="st">"centralise vos données en temps réel"</span>
+<span class="ky">résultat</span> <span class="op">:</span> <span class="st">"zéro tableur, zéro double-saisie"</span>`
   },
   {
     title:"Un logiciel taillé pour votre métier",
     bullets:["Adapté à vos flux, pas l'inverse","Intégrations sur mesure avec vos outils","Formation et support inclus"],
     preview:"ERP / Logiciel.",
-    code:`<span class="kw">export default function</span> <span class="fn">Workflow</span> <span class="pu">() {</span>
-  <span class="kw">const</span> <span class="fn">tasks</span> <span class="op">=</span> <span class="fn">useQueue</span><span class="pu">({</span>
-    <span class="ky">priority</span> <span class="op">:</span> <span class="st">"high"</span><span class="pu">,</span>
-    <span class="ky">assign</span>   <span class="op">:</span> <span class="st">"auto"</span>
-  <span class="pu">})</span>
-  <span class="kw">return</span> <span class="pu">(</span>
-    <span class="op">&lt;</span> <span class="fn">TaskBoard</span>
-      <span class="ky">tasks</span> <span class="op">=</span> <span class="pu">{</span> <span class="fn">tasks</span> <span class="pu">}</span>
-    <span class="op">/&gt;</span>
-  <span class="pu">)</span>
-<span class="pu">}</span>`
+    code:`<span class="cm">// votre logiciel métier, en clair</span>
+<span class="ky">objectif</span> <span class="op">:</span> <span class="st">"suivre vos dossiers sans y penser"</span>
+<span class="ky">action</span>   <span class="op">:</span> <span class="st">"alerte automatiquement en cas de retard"</span>
+<span class="ky">résultat</span> <span class="op">:</span> <span class="st">"zéro appel pour un point d'avancement"</span>`
   }
 ]
 function setGutter(code){

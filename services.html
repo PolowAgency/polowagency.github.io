@@ -104,8 +104,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .offer-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:1.4rem;padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden;cursor:default}
 .offer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,transparent,var(--accent-md),transparent);opacity:0;transition:opacity .3s}
+.offer-card::after{content:'»';position:absolute;bottom:1.1rem;right:1.3rem;color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:1rem;font-weight:700;opacity:0;transform:translateX(-4px);transition:opacity .25s,transform .25s;pointer-events:none}
 .offer-card:hover{border-color:rgba(249,115,22,.25);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
 .offer-card:hover::before{opacity:1}
+.offer-card:hover::after{opacity:1;transform:none}
 .offer-ic{width:44px;height:44px;border-radius:.9rem;background:var(--accent-lo);border:1px solid var(--accent-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .offer-ic svg{width:20px;height:20px;color:var(--accent2)}
 .offer-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-.025em}
@@ -137,7 +139,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .svc-price-l{font-size:.72rem;color:var(--muted);line-height:1.45}
 .svc-price-sep{width:1px;height:36px;background:var(--border2)}
 .svc-vis{position:sticky;top:6.5rem}
-.svc-card{background:#060610;border:1px solid rgba(255,255,255,.07);border-radius:1rem;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.svc-card{background:#060610;border:1px solid rgba(255,255,255,.07);border-radius:1rem;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);position:relative;transition:border-color .3s}
+.svc-card::after{content:'»';position:absolute;bottom:.6rem;right:.9rem;color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:.95rem;font-weight:700;opacity:0;transform:translateX(-4px);transition:opacity .25s,transform .25s;pointer-events:none}
+.svc-card:hover{border-color:rgba(249,115,22,.25)}
+.svc-card:hover::after{opacity:1;transform:none}
 .svc-card-bar{display:flex;align-items:center;padding:.52rem .85rem;border-bottom:1px solid rgba(255,255,255,.05);background:#08081a;gap:.6rem}
 .svc-dots{display:flex;gap:.28rem}
 .svc-dots i{display:block;width:8px;height:8px;border-radius:50%}
@@ -265,7 +270,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
       <div class="offer-card rv d1">
         <div class="offer-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 9h18"/></svg></div>
         <h3>Site Web</h3>
-        <p>Compris en 5 secondes. Crédible. Conçu pour générer des demandes, pas juste afficher de l'information.</p>
+        <p>Clair dès l'arrivée, crédible au premier regard. Pensé pour transformer vos visiteurs en demandes, pas pour faire joli dans le vide.</p>
         <div class="offer-meta">
           <span class="offer-badge">À partir de 1 500 €</span>
           <span class="offer-badge">Dès 1 semaine</span>
@@ -275,7 +280,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
       <div class="offer-card rv d2">
         <div class="offer-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
         <h3>Application / SaaS</h3>
-        <p>Des bases solides, pensées pour l'usage réel avant d'ajouter de la complexité. Déployé en semaines.</p>
+        <p>Une base solide d'abord — la complexité seulement si elle sert vraiment vos utilisateurs. En production en quelques semaines.</p>
         <div class="offer-meta">
           <span class="offer-badge">À partir de 7 000 €</span>
           <span class="offer-badge">Dès 4 semaines</span>
@@ -285,7 +290,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
       <div class="offer-card rv d3">
         <div class="offer-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
         <h3>Systèmes / ERP</h3>
-        <p>Moins d'erreurs, plus de contrôle. Un logiciel métier construit pour durer et s'adapter à vos flux.</p>
+        <p>Vos flux de travail, sans les contourner. Un outil construit pour durer et évoluer avec votre activité, pas pour être remplacé dans un an.</p>
         <div class="offer-meta">
           <span class="offer-badge">À partir de 4 000 €</span>
           <span class="offer-badge">Dès 2 semaines</span>
@@ -302,7 +307,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
     <div class="svc-inner">
       <div class="svc-txt rv-l">
         <span class="chip">01 · Site Web</span>
-        <h2>Un site qui <em>convertit</em>,<br>pas qui décore.</h2>
+        <h2>Un site qui <em>rapporte</em><br>des clients, pas des compliments.</h2>
         <p>Un site vitrine ou landing page conçu pour que vos visiteurs comprennent en 5 secondes ce que vous faites et pourquoi vous choisir. Zéro template — chaque ligne de code est écrite pour votre cas.</p>
         <div class="svc-price rv">
           <div><div class="svc-price-v">1 500 €</div><div class="svc-price-l">à partir de (TTC)<br>selon les fonctionnalités</div></div>
@@ -325,14 +330,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
       </div>
       <div class="svc-vis rv-r">
         <div class="svc-card">
-          <div class="svc-card-bar"><div class="svc-dots"><i></i><i></i><i></i></div><span class="svc-card-f">landing.tsx</span></div>
+          <div class="svc-card-bar"><div class="svc-dots"><i></i><i></i><i></i></div><span class="svc-card-f">site-amina.tsx</span></div>
           <div class="svc-card-b"><code><span class="kw">export default function</span> <span class="fn">Landing</span> <span class="pu">() {</span>
   <span class="cm">// Message clair, CTA fort</span>
   <span class="kw">return</span> <span class="pu">(</span>
     <span class="op">&lt;</span><span class="fn">Hero</span>
-      <span class="ky">headline</span><span class="op">=</span><span class="st">"Votre métier."</span>
-      <span class="ky">cta</span><span class="op">=</span><span class="st">"Prendre contact"</span>
-      <span class="ky">geo</span><span class="op">=</span><span class="st">"Douai"</span>
+      <span class="ky">headline</span><span class="op">=</span><span class="st">"Recrutez sans vous tromper."</span>
+      <span class="ky">cta</span><span class="op">=</span><span class="st">"Prendre rendez-vous"</span>
+      <span class="ky">secteur</span><span class="op">=</span><span class="st">"Conseil RH"</span>
     <span class="op">/&gt;</span>
   <span class="pu">)</span>
 <span class="pu">}</span></code></div>
@@ -348,7 +353,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
     <div class="svc-inner rev">
       <div class="svc-txt rv-r">
         <span class="chip">02 · Application / SaaS</span>
-        <h2>Un produit que vos<br>utilisateurs <em>adoptent</em>.</h2>
+        <h2>Un outil que votre<br>équipe <em>utilise vraiment</em>.</h2>
         <p>Application web, plateforme SaaS, espace client, dashboard — conçu pour que les vrais utilisateurs l'adoptent dès le premier jour. Stack moderne, architecture scalable, livraison en semaines.</p>
         <div class="svc-price rv">
           <div><div class="svc-price-v">7 000 €</div><div class="svc-price-l">à partir de (TTC)<br>selon la complexité</div></div>
@@ -371,16 +376,16 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
       </div>
       <div class="svc-vis rv-l">
         <div class="svc-card">
-          <div class="svc-card-bar"><div class="svc-dots"><i></i><i></i><i></i></div><span class="svc-card-f">dashboard.tsx</span></div>
+          <div class="svc-card-bar"><div class="svc-dots"><i></i><i></i><i></i></div><span class="svc-card-f">metriques.tsx</span></div>
           <div class="svc-card-b"><code><span class="kw">export default function</span> <span class="fn">Dashboard</span> <span class="pu">() {</span>
-  <span class="kw">const</span> <span class="pu">{</span> <span class="fn">data</span> <span class="pu">}</span> <span class="op">=</span> <span class="fn">useMetrics</span><span class="pu">({</span>
-    <span class="ky">period</span><span class="op">:</span> <span class="st">"today"</span><span class="pu">,</span>
-    <span class="ky">roles</span><span class="op">:</span> <span class="pu">[</span><span class="st">"admin"</span><span class="pu">,</span> <span class="st">"user"</span><span class="pu">]</span>
+  <span class="kw">const</span> <span class="pu">{</span> <span class="fn">data</span> <span class="pu">}</span> <span class="op">=</span> <span class="fn">useAbonnes</span><span class="pu">({</span>
+    <span class="ky">periode</span><span class="op">:</span> <span class="st">"ce_mois"</span><span class="pu">,</span>
+    <span class="ky">plans</span><span class="op">:</span> <span class="pu">[</span><span class="st">"free"</span><span class="pu">,</span> <span class="st">"pro"</span><span class="pu">]</span>
   <span class="pu">})</span>
   <span class="kw">return</span> <span class="pu">(</span>
     <span class="op">&lt;</span><span class="fn">Analytics</span>
       <span class="ky">data</span><span class="op">=</span><span class="pu">{</span><span class="fn">data</span><span class="pu">}</span>
-      <span class="ky">realtime</span><span class="op">=</span><span class="pu">{</span><span class="kw">true</span><span class="pu">}</span>
+      <span class="ky">tempsReel</span><span class="op">=</span><span class="pu">{</span><span class="kw">true</span><span class="pu">}</span>
     <span class="op">/&gt;</span>
   <span class="pu">)</span>
 <span class="pu">}</span></code></div>
@@ -396,7 +401,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
     <div class="svc-inner">
       <div class="svc-txt rv-l">
         <span class="chip">03 · Systèmes / ERP</span>
-        <h2>Un logiciel fait<br>pour <em>votre métier</em>.</h2>
+        <h2>Un logiciel calé<br>sur <em>votre façon de travailler</em>.</h2>
         <p>CRM, ERP, outil interne, logiciel de gestion — adapté à vos flux de travail spécifiques. Fini les tableurs Excel et les logiciels génériques qui ne font que 30% de ce dont vous avez besoin.</p>
         <div class="svc-price rv">
           <div><div class="svc-price-v">4 000 €</div><div class="svc-price-l">à partir de (TTC)<br>selon le périmètre</div></div>
@@ -419,16 +424,16 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
       </div>
       <div class="svc-vis rv-r">
         <div class="svc-card">
-          <div class="svc-card-bar"><div class="svc-dots"><i></i><i></i><i></i></div><span class="svc-card-f">workflow.ts</span></div>
+          <div class="svc-card-bar"><div class="svc-dots"><i></i><i></i><i></i></div><span class="svc-card-f">chantiers.ts</span></div>
           <div class="svc-card-b"><code><span class="kw">export default function</span> <span class="fn">Workflow</span> <span class="pu">() {</span>
-  <span class="kw">const</span> <span class="fn">tasks</span> <span class="op">=</span> <span class="fn">useQueue</span><span class="pu">({</span>
-    <span class="ky">priority</span><span class="op">:</span> <span class="st">"high"</span><span class="pu">,</span>
-    <span class="ky">assign</span><span class="op">:</span> <span class="st">"auto"</span>
+  <span class="kw">const</span> <span class="fn">chantiers</span> <span class="op">=</span> <span class="fn">useDossiers</span><span class="pu">({</span>
+    <span class="ky">statut</span><span class="op">:</span> <span class="st">"en_cours"</span><span class="pu">,</span>
+    <span class="ky">assigner</span><span class="op">:</span> <span class="st">"auto"</span>
   <span class="pu">})</span>
   <span class="kw">return</span> <span class="pu">(</span>
-    <span class="op">&lt;</span><span class="fn">TaskBoard</span>
-      <span class="ky">tasks</span><span class="op">=</span><span class="pu">{</span><span class="fn">tasks</span><span class="pu">}</span>
-      <span class="ky">notify</span><span class="op">=</span><span class="pu">{</span><span class="kw">true</span><span class="pu">}</span>
+    <span class="op">&lt;</span><span class="fn">Suivi</span>
+      <span class="ky">chantiers</span><span class="op">=</span><span class="pu">{</span><span class="fn">chantiers</span><span class="pu">}</span>
+      <span class="ky">alerte</span><span class="op">=</span><span class="pu">{</span><span class="kw">true</span><span class="pu">}</span>
     <span class="op">/&gt;</span>
   <span class="pu">)</span>
 <span class="pu">}</span></code></div>
