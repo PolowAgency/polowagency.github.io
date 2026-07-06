@@ -180,7 +180,7 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .stats::before{left:0;background:linear-gradient(to right,var(--bg) 0%,transparent 100%)}
 .stats::after{right:0;background:linear-gradient(to left,var(--bg) 0%,transparent 100%)}
 .stats-track{display:flex;width:max-content;animation:stats-scroll 28s linear infinite}
-.stats:hover .stats-track{animation-play-state:paused}
+@media(hover:hover) and (pointer:fine){.stats:hover .stats-track{animation-play-state:paused}}
 @keyframes stats-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .stat-item{display:flex;align-items:center;gap:1.2rem;padding:0 3rem;white-space:nowrap;border-left:1px solid var(--border)}
 .stat-item:first-child{border-left:none}
@@ -234,7 +234,7 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .testi-track:last-child{margin-bottom:0}
 .testi-track-1{animation:marquee-l 38s linear infinite}
 .testi-track-2{animation:marquee-r 32s linear infinite}
-.testi-marquee:hover .testi-track{animation-play-state:paused}
+@media(hover:hover) and (pointer:fine){.testi-marquee:hover .testi-track{animation-play-state:paused}}
 @keyframes marquee-l{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes marquee-r{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .testi-card{width:360px;flex-shrink:0;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:1.2rem;padding:1.8rem;display:flex;flex-direction:column;gap:1.1rem;transition:border-color .3s,background .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden}
