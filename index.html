@@ -182,9 +182,9 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .stats-track{display:flex;width:max-content;animation:stats-scroll 28s linear infinite}
 @media(hover:hover) and (pointer:fine){.stats:hover .stats-track{animation-play-state:paused}}
 @keyframes stats-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.stat-item{display:flex;align-items:center;gap:1.2rem;padding:0 3rem;white-space:nowrap;border-left:1px solid var(--border)}
+.stat-item{display:flex;align-items:center;padding:0 3rem;white-space:nowrap;border-left:1px solid var(--border)}
 .stat-item:first-child{border-left:none}
-.stat-v{font-family:'Bricolage Grotesque',sans-serif;font-size:2rem;font-weight:800;line-height:1;letter-spacing:-.04em}
+.stat-v{font-family:'Bricolage Grotesque',sans-serif;font-size:2rem;font-weight:800;line-height:1;letter-spacing:-.04em;margin-right:1.2rem;flex-shrink:0}
 .stat-num{color:var(--text)}
 .stat-sfx{color:var(--accent2)}
 .stat-l{font-size:.8rem;color:var(--muted);line-height:1.35;max-width:160px}
