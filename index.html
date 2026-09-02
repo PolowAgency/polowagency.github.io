@@ -227,6 +227,10 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 #work::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(249,115,22,.05),transparent 65%);pointer-events:none}
 .work-head{position:relative;z-index:1}
 .work-card{display:grid;grid-template-columns:1.15fr 1fr;gap:3.5rem;align-items:center;position:relative;z-index:1}
+.work-card+.work-card{margin-top:5rem}
+.work-card-rev{grid-template-columns:1fr 1.15fr}
+.work-card-rev .work-shot{order:2}
+.work-card-rev .work-info{order:1}
 .work-shot{position:relative}
 .work-cw{border-radius:1rem}
 .work-cw .cw-b{padding:0}
@@ -376,7 +380,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
   .hm-preview-pane{min-height:80px;padding:1rem}
   .foot-g{grid-template-columns:1fr 1fr;gap:2rem}
   #process,#testimonials,#vision,#contact,#work{padding:5.5rem 0}
-  .work-card{grid-template-columns:1fr;gap:2.2rem}
+  .work-card,.work-card-rev{grid-template-columns:1fr;gap:2.2rem}
+  .work-card-rev .work-shot{order:1}
+  .work-card-rev .work-info{order:2}
+  .work-card+.work-card{margin-top:3.5rem}
 }
 @media(max-width:768px){
   html{font-size:15px}
@@ -673,10 +680,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
     <div class="work-head rv" style="text-align:center;max-width:600px;margin:0 auto 3.5rem">
       <span class="chip">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        Une réalisation
+        Nos réalisations
       </span>
       <h2 class="sec-h">Des vrais commerces,<br><em>de vrais outils.</em></h2>
-      <p class="sec-p">Pas de maquette figée : un site en production, pour un salon du Vieux Lille qui gère désormais ses rendez-vous en ligne.</p>
+      <p class="sec-p">Pas de maquette figée : des produits en production, chacun construit autour d'un problème métier précis.</p>
     </div>
     <div class="work-card rv d2">
       <a class="work-shot" href="https://bisouvole.fr" target="_blank" rel="noopener" aria-label="Voir bisouvole.fr">
@@ -698,6 +705,30 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
         </div>
         <a class="work-link" href="https://bisouvole.fr" target="_blank" rel="noopener">
           <span>Voir bisouvole.fr</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="work-card work-card-rev rv d2">
+      <a class="work-shot" href="https://kmmterminal.com" target="_blank" rel="noopener" aria-label="Voir kmmterminal.com">
+        <div class="cw work-cw">
+          <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">kmmterminal.com</span></div>
+          <div class="cw-b">
+            <img src="case-kmmterminal.png" alt="Le Terminal KMM, tableau de bord d'analyse temps réel des futures Gold" loading="lazy">
+          </div>
+        </div>
+      </a>
+      <div class="work-info">
+        <span class="work-tag">Application SaaS + formation</span>
+        <h3>KMM Trade Hub</h3>
+        <p>Un terminal d'analyse temps réel des futures Gold (données CME) couplé à une formation et une communauté privée, pour apprendre à trader avec méthode.</p>
+        <div class="work-meta">
+          <div class="work-meta-item"><span class="work-meta-l">Client</span><span class="work-meta-v">Kevin</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Marché</span><span class="work-meta-v">Futures Gold</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Prestation</span><span class="work-meta-v">Terminal + formation</span></div>
+        </div>
+        <a class="work-link" href="https://kmmterminal.com" target="_blank" rel="noopener">
+          <span>Voir kmmterminal.com</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
         </a>
       </div>
