@@ -222,6 +222,27 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .kw{color:#38bdf8;font-weight:600}.fn{color:#7dd3fc}.st{color:#86efac}.op{color:rgba(255,255,255,.3)}.cm{color:rgba(255,255,255,.2);font-style:italic}.nm{color:#c4b5fd}.ky{color:rgba(255,255,255,.75)}.pu{color:rgba(255,255,255,.4)}
 .sec-p{color:var(--muted);font-size:.9rem;line-height:1.78}
 
+/* ── WORK ── */
+#work{background:var(--bg2);padding:7rem 0;position:relative;overflow:hidden}
+#work::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(249,115,22,.05),transparent 65%);pointer-events:none}
+.work-head{position:relative;z-index:1}
+.work-card{display:grid;grid-template-columns:1.15fr 1fr;gap:3.5rem;align-items:center;position:relative;z-index:1}
+.work-shot{position:relative}
+.work-cw{border-radius:1rem}
+.work-cw .cw-b{padding:0}
+.work-cw img{width:100%;display:block;aspect-ratio:16/10.5;object-fit:cover;object-position:top}
+.work-info{display:flex;flex-direction:column;align-items:flex-start;gap:.9rem}
+.work-tag{display:inline-flex;align-items:center;font-size:.62rem;color:var(--accent2);background:var(--accent-lo);border:1px solid var(--accent-md);padding:.28rem .75rem;border-radius:100px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.work-info h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.9rem;font-weight:800;letter-spacing:-.03em}
+.work-info p{font-size:.88rem;color:var(--muted);line-height:1.78;max-width:400px}
+.work-meta{display:flex;gap:1.6rem;flex-wrap:wrap;margin:.2rem 0 .3rem;padding:1rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);width:100%}
+.work-meta-item{display:flex;flex-direction:column;gap:.25rem}
+.work-meta-l{font-size:.58rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;opacity:.6}
+.work-meta-v{font-size:.82rem;font-weight:700;color:var(--text)}
+.work-link{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#000;padding:.78rem 1.5rem;border-radius:100px;font-size:.83rem;font-weight:800;transition:background .18s,transform .14s,box-shadow .18s;box-shadow:0 4px 20px rgba(249,115,22,.3)}
+.work-link:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(249,115,22,.4)}
+.work-link svg{width:15px;height:15px}
+
 /* ── TESTIMONIALS ── */
 #testimonials{background:var(--bg2);padding:7rem 0;position:relative;overflow:hidden}
 #testimonials::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(249,115,22,.05),transparent 65%);pointer-events:none}
@@ -354,7 +375,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
   .hm-win-body{grid-template-columns:1fr}
   .hm-preview-pane{min-height:80px;padding:1rem}
   .foot-g{grid-template-columns:1fr 1fr;gap:2rem}
-  #process,#testimonials,#vision,#contact{padding:5.5rem 0}
+  #process,#testimonials,#vision,#contact,#work{padding:5.5rem 0}
+  .work-card{grid-template-columns:1fr;gap:2.2rem}
 }
 @media(max-width:768px){
   html{font-size:15px}
@@ -394,9 +416,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
   .vision-bullets{gap:1.2rem}
   .submit-checks{flex-direction:column;align-items:center;gap:.5rem}
   .giant-h{font-size:clamp(3rem,9vw,5.5rem)}
-  #process,#testimonials,#vision,#contact{padding:4rem 0}
+  #process,#testimonials,#vision,#contact,#work{padding:4rem 0}
   .proc-step{padding:2.5rem 0}
   .ps-t h3{font-size:1.3rem}
+  .work-info h3{font-size:1.6rem}
+  .work-info p{max-width:100%}
+  .work-meta{gap:1.2rem}
 }
 @media(max-width:520px){
   .hero-h1{font-size:clamp(2.2rem,10vw,3.2rem)}
@@ -637,6 +662,44 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
 <span class="fn">→</span> <span class="st">"Un contact direct, pas un ticket."</span></code></div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RÉALISATIONS ══ -->
+<section id="work">
+  <div class="wrap">
+    <div class="work-head rv" style="text-align:center;max-width:600px;margin:0 auto 3.5rem">
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        Une réalisation
+      </span>
+      <h2 class="sec-h">Des vrais commerces,<br><em>de vrais outils.</em></h2>
+      <p class="sec-p">Pas de maquette figée : un site en production, pour un salon du Vieux Lille qui gère désormais ses rendez-vous en ligne.</p>
+    </div>
+    <div class="work-card rv d2">
+      <a class="work-shot" href="https://bisouvole.fr" target="_blank" rel="noopener" aria-label="Voir bisouvole.fr">
+        <div class="cw work-cw">
+          <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">bisouvole.fr</span></div>
+          <div class="cw-b">
+            <img src="case-bisouvole.jpg" alt="Page d'accueil du site Bisou Volé, salon de coiffure du Vieux Lille à Lille" loading="lazy">
+          </div>
+        </div>
+      </a>
+      <div class="work-info">
+        <span class="work-tag">Site vitrine + réservation en ligne</span>
+        <h3>Bisou Volé</h3>
+        <p>Le salon de coiffure de Valentin Rico, dans le Vieux Lille. Contenu sur mesure, prise de rendez-vous intégrée, fiche établissement optimisée pour le référencement local.</p>
+        <div class="work-meta">
+          <div class="work-meta-item"><span class="work-meta-l">Client</span><span class="work-meta-v">Valentin Rico</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Lieu</span><span class="work-meta-v">Vieux Lille</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Prestation</span><span class="work-meta-v">Site + réservation</span></div>
+        </div>
+        <a class="work-link" href="https://bisouvole.fr" target="_blank" rel="noopener">
+          <span>Voir bisouvole.fr</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
       </div>
     </div>
   </div>
