@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+import Seo from '../components/Seo.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  jsonLd?: object | object[];
+}
+---
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06060a">
+<Seo {...Astro.props} />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="sitemap" href="/sitemap-index.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<slot name="head" />
+</head>
+<body class="ready">
+<Nav />
+<main>
+<slot />
+</main>
+<Footer />
+
+<script>
+  /* Nav au scroll */
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav?.classList.toggle('sc', scrollY > 50), { passive: true });
+
+  /* Menu mobile */
+  const burger = document.getElementById('burger');
+  const mnav = document.getElementById('mnav');
+  const openM = () => { mnav?.classList.add('on'); burger?.classList.add('on'); burger?.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+  const closeM = () => { mnav?.classList.remove('on'); burger?.classList.remove('on'); burger?.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+  burger?.addEventListener('click', () => (mnav?.classList.contains('on') ? closeM() : openM()));
+  document.getElementById('mnavClose')?.addEventListener('click', closeM);
+  document.getElementById('mnavBg')?.addEventListener('click', closeM);
+  document.querySelectorAll('#mnav a').forEach((a) => a.addEventListener('click', closeM));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeM(); });
+
+  /* Apparition au scroll */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.rv,.rv-l,.rv-r').forEach((el) => io.observe(el));
+
+  /* Effet ripple sur les boutons */
+  document.querySelectorAll<HTMLElement>('.btn-hero,.btn-submit,.nav-cta').forEach((b) => {
+    b.addEventListener('click', function (e) {
+      const r = document.createElement('span');
+      r.className = 'rip';
+      const rect = this.getBoundingClientRect(), s = Math.max(rect.width, rect.height);
+      r.style.cssText = `width:${s}px;height:${s}px;left:${e.clientX - rect.left - s / 2}px;top:${e.clientY - rect.top - s / 2}px`;
+      this.appendChild(r);
+      r.addEventListener('animationend', () => r.remove());
+    });
+  });
+</script>
+</body>
+</html>

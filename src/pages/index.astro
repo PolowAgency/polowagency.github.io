@@ -1,0 +1,443 @@
+---
+import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import bisou from '../assets/realisations/bisou-vole-home.jpg';
+import kmm from '../assets/realisations/kmm-terminal.png';
+---
+<Base>
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="hero-badge">
+      <span class="hero-badge-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6 2 2 6.5 2 12s4 10 10 10 10-4.5 10-10S18 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm3.5-11.5l-5 5-2-2-1.5 1.5 3.5 3.5 6.5-6.5-1.5-1.5z"/></svg>
+      </span>
+      Douai &amp; environs · Hauts-de-France
+    </div>
+    <h1 class="hero-h1" id="heroH1">On code ce que<br>vous avez en tête.</h1>
+    <p class="hero-sub">Sites, applications, logiciels métier : on construit sur-mesure ce qui vous manque, pour les indépendants et entreprises de Douai, Lens, Arras et toute la région.</p>
+    <div class="hero-acts">
+      <button class="btn-hero" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Parlons de votre projet
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+    </div>
+    <p class="hero-note">Premier échange gratuit · Réponse en 24h</p>
+
+    <!-- ANIMATED MOCKUP -->
+    <div class="hero-mock-wrap">
+      <div class="hero-mock">
+        <div class="hm-top">
+          <div class="hm-title" id="hmTitle">Un site qui déclenche l'action</div>
+          <div class="hm-bullets" id="hmBullets">
+            <span class="hm-bullet">Plus de demandes réellement qualifiées</span>
+            <span class="hm-bullet">Meilleure conversion à trafic égal</span>
+            <span class="hm-bullet">Moins de visiteurs qui repartent sans décider</span>
+          </div>
+        </div>
+        <div class="hm-win">
+          <div class="hm-win-bar">
+            <div class="hm-dots"><i></i><i></i><i></i></div>
+          </div>
+          <div class="hm-win-body">
+            <div class="hm-code-pane">
+              <div class="hm-gutter" id="hmGutter"></div>
+              <div class="hm-code-inner"><code id="hmCode"></code></div>
+            </div>
+            <div class="hm-preview-pane">
+              <div class="hm-preview-text" id="hmPreviewText">Site Web.</div>
+              <button class="hm-preview-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">→</button>
+            </div>
+          </div>
+        </div>
+        <div class="hm-tabs" id="hmTabs">
+          <button class="hm-tab act" data-idx="0">SITE VITRINE</button>
+          <button class="hm-tab" data-idx="1">APPLICATION / SAAS</button>
+          <button class="hm-tab" data-idx="2">SYSTÈMES / ERP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Découvrir</span>
+    <div class="hero-scroll-ln"></div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<div class="stats">
+  <div class="stats-track">
+    <!-- original -->
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">10</span><span class="stat-sfx">+</span></div><div class="stat-l">projets livrés en production</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">1</span><span class="stat-sfx"> seul</span></div><div class="stat-l">interlocuteur du brief à la mise en ligne</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">24</span><span class="stat-sfx">h</span></div><div class="stat-l">de réponse garantie</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">0</span><span class="stat-sfx">€</span></div><div class="stat-l">de template — tout sur mesure</div></div>
+    <!-- duplicate for seamless loop -->
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">10</span><span class="stat-sfx">+</span></div><div class="stat-l">projets livrés en production</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">1</span><span class="stat-sfx"> seul</span></div><div class="stat-l">interlocuteur du brief à la mise en ligne</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">24</span><span class="stat-sfx">h</span></div><div class="stat-l">de réponse garantie</div></div>
+    <div class="stat-item"><div class="stat-v"><span class="stat-num">0</span><span class="stat-sfx">€</span></div><div class="stat-l">de template — tout sur mesure</div></div>
+  </div>
+</div>
+
+<!-- ══ PROCESS ══ -->
+<section id="process">
+  <div class="wrap">
+    <div class="proc-giant-wrap rv">
+      <h2 class="giant-h">Un process clair,<br>en 4 étapes</h2>
+      <p class="sec-p">On avance étape par étape : vous savez ce qu'on fait, pourquoi on le fait, et ce qui vient ensuite.</p>
+    </div>
+    <div class="proc-list">
+      <div class="proc-step">
+        <span class="ps-num" aria-hidden="true">01</span>
+        <div class="ps-t rv-l">
+          <div class="ps-n">» étape 01</div>
+          <h3>On cadre le vrai problème</h3>
+          <p>Un échange direct avec moi, sans formulaire à rallonge ni chef de projet en relais : on cerne ce que l'outil doit résoudre, concrètement.</p>
+        </div>
+        <div class="ps-c rv-r">
+          <div class="cw">
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">brief-salon.md</span></div>
+            <div class="cw-b"><code><span class="cm"># Brief — salon de coiffure</span>
+<span class="ky">problème</span>   <span class="op">:</span> <span class="st">gestion 100% par téléphone</span>
+<span class="ky">objectif</span>   <span class="op">:</span> <span class="st">réservation en ligne, zéro appel</span>
+<span class="ky">contrainte</span> <span class="op">:</span> <span class="st">aucune formation nécessaire</span></code></div>
+          </div>
+        </div>
+      </div>
+      <div class="proc-step">
+        <span class="ps-num" aria-hidden="true">02</span>
+        <div class="ps-t rv-r">
+          <div class="ps-n">» étape 02</div>
+          <h3>On pose les fondations</h3>
+          <p>Architecture des données, choix techniques, parcours utilisateur : ce travail en amont évite les refontes en cours de route et vous fait gagner du temps et de l'argent.</p>
+        </div>
+        <div class="ps-c rv-l">
+          <div class="cw">
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">schema.sql</span></div>
+            <div class="cw-b"><code><span class="kw">create table</span> <span class="fn">reservations</span> <span class="pu">(</span>
+  <span class="ky">id</span><span class="pu">,</span>        <span class="nm">uuid</span> <span class="kw">primary key</span><span class="pu">,</span>
+  <span class="ky">client_id</span><span class="pu">,</span> <span class="nm">uuid</span> <span class="kw">references</span> <span class="fn">clients</span><span class="pu">,</span>
+  <span class="ky">creneau</span><span class="pu">,</span>   <span class="nm">timestamptz</span><span class="pu">,</span>
+  <span class="ky">statut</span><span class="pu">,</span>    <span class="nm">text</span> <span class="kw">default</span> <span class="st">'confirmé'</span>
+<span class="pu">);</span></code></div>
+          </div>
+        </div>
+      </div>
+      <div class="proc-step">
+        <span class="ps-num" aria-hidden="true">03</span>
+        <div class="ps-t rv-l">
+          <div class="ps-n">» étape 03</div>
+          <h3>On construit, sur mesure</h3>
+          <p>Chaque ligne de code existe pour votre cas précis — pas de template ajusté à la va-vite, pas de fonctionnalité superflue.</p>
+        </div>
+        <div class="ps-c rv-r">
+          <div class="cw">
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">ReservationGrid.tsx</span></div>
+            <div class="cw-b"><code><span class="kw">export default function</span> <span class="fn">ReservationGrid</span><span class="pu">() &#123;</span>
+  <span class="kw">const</span> <span class="pu">&#123;</span> <span class="fn">creneaux</span> <span class="pu">&#125;</span> <span class="op">=</span> <span class="fn">useReservations</span><span class="pu">(&#123;</span>
+    <span class="ky">jour</span><span class="op">:</span> <span class="kw">today</span>
+  <span class="pu">&#125;)</span>
+  <span class="kw">return</span> <span class="op">&lt;</span><span class="fn">Planning</span> <span class="ky">creneaux</span><span class="op">=</span><span class="pu">&#123;</span><span class="fn">creneaux</span><span class="pu">&#125;</span> <span class="op">/&gt;</span>
+<span class="pu">&#125;</span></code></div>
+          </div>
+        </div>
+      </div>
+      <div class="proc-step">
+        <span class="ps-num" aria-hidden="true">04</span>
+        <div class="ps-t rv-r">
+          <div class="ps-n">» étape 04</div>
+          <h3>On livre, et on reste joignable</h3>
+          <p>Mise en production, prise en main, maintenance dans la durée. Un numéro direct après la livraison — pas un ticket de support.</p>
+        </div>
+        <div class="ps-c rv-l">
+          <div class="cw">
+            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">livraison.log</span></div>
+            <div class="cw-b"><code><span class="cm">✓ build terminé — 0 erreur</span>
+<span class="cm">✓ déployé sur polowagency.fr</span>
+<span class="cm">✓ formation client planifiée</span>
+<span class="fn">→</span> <span class="st">"Un contact direct, pas un ticket."</span></code></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RÉALISATIONS ══ -->
+<section id="work">
+  <div class="wrap">
+    <div class="work-head rv" style="text-align:center;max-width:600px;margin:0 auto 3.5rem">
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        Nos réalisations
+      </span>
+      <h2 class="sec-h">Des vrais commerces,<br><em>de vrais outils.</em></h2>
+      <p class="sec-p">Pas de maquette figée : des produits en production, chacun construit autour d'un problème métier précis.</p>
+    </div>
+    <div class="work-card rv d2">
+      <a class="work-shot" href="https://bisouvole.fr" target="_blank" rel="noopener" aria-label="Voir bisouvole.fr">
+        <div class="cw work-cw">
+          <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">bisouvole.fr</span></div>
+          <div class="cw-b">
+            <Image src={bisou} alt="Page d'accueil du site Bisou Volé, salon de coiffure du Vieux Lille à Lille" widths={[480, 800, 1200]} sizes="(max-width: 900px) 100vw, 640px" loading="lazy" />
+          </div>
+        </div>
+      </a>
+      <div class="work-info">
+        <span class="work-tag">Site vitrine + réservation en ligne</span>
+        <h3>Bisou Volé</h3>
+        <p>Le salon de coiffure de Valentin Rico, dans le Vieux Lille. Contenu sur mesure, prise de rendez-vous intégrée, fiche établissement optimisée pour le référencement local.</p>
+        <div class="work-meta">
+          <div class="work-meta-item"><span class="work-meta-l">Client</span><span class="work-meta-v">Valentin Rico</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Lieu</span><span class="work-meta-v">Vieux Lille</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Prestation</span><span class="work-meta-v">Site + réservation</span></div>
+        </div>
+        <a class="work-link" href="https://bisouvole.fr" target="_blank" rel="noopener">
+          <span>Voir bisouvole.fr</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="work-card work-card-rev rv d2">
+      <a class="work-shot" href="https://kmmterminal.com" target="_blank" rel="noopener" aria-label="Voir kmmterminal.com">
+        <div class="cw work-cw">
+          <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">kmmterminal.com</span></div>
+          <div class="cw-b">
+            <Image src={kmm} alt="Le Terminal KMM, tableau de bord d'analyse temps réel des futures Gold" widths={[480, 800, 1200]} sizes="(max-width: 900px) 100vw, 640px" loading="lazy" />
+          </div>
+        </div>
+      </a>
+      <div class="work-info">
+        <span class="work-tag">Application SaaS + formation</span>
+        <h3>KMM Trade Hub</h3>
+        <p>Un terminal d'analyse temps réel des futures Gold (données CME) couplé à une formation et une communauté privée, pour apprendre à trader avec méthode.</p>
+        <div class="work-meta">
+          <div class="work-meta-item"><span class="work-meta-l">Client</span><span class="work-meta-v">Kevin</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Marché</span><span class="work-meta-v">Futures Gold</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Prestation</span><span class="work-meta-v">Terminal + formation</span></div>
+        </div>
+        <a class="work-link" href="https://kmmterminal.com" target="_blank" rel="noopener">
+          <span>Voir kmmterminal.com</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="testi-head rv">
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Ce qu'ils en disent
+      </span>
+      <h2 class="sec-h">Des clients qui avancent,<br><em>des projets qui durent</em></h2>
+      <p class="sec-p">Quelques retours de fondateurs et gérants qui nous ont confié leurs outils digitaux.</p>
+    </div>
+    <div class="testi-marquee">
+      <!-- TRACK 1 → gauche -->
+      <div class="testi-track testi-track-1">
+        <!-- original -->
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Paul a créé notre système de réservation en 3 semaines. Avant, on gérait tout par appel. Aujourd'hui 60 % des RDV arrivent sans qu'on décroche le téléphone.</p>
+          <div class="testi-author"><div class="testi-av">KB</div><div><div class="testi-name">Karim B.</div><div class="testi-role">Gérant, salon de coiffure · Paris</div></div><span class="testi-tag">Réservation en ligne</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">On voulait un espace client pour que nos membres réservent leurs séances. C'est exactement ce qu'on a eu — sans les fonctions inutiles des grosses plateformes.</p>
+          <div class="testi-author"><div class="testi-av">SM</div><div><div class="testi-name">Sophie M.</div><div class="testi-role">Co-fondatrice, studio pilates · Lyon</div></div><span class="testi-tag">App membres</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Notre CRM sur mesure nous fait économiser 2h de saisie par jour. Le ROI a été immédiat dès le premier mois. Il fait exactement ce dont on a besoin — rien de plus.</p>
+          <div class="testi-author"><div class="testi-av">TR</div><div><div class="testi-name">Thomas R.</div><div class="testi-role">Directeur commercial, BTP · Bordeaux</div></div><span class="testi-tag">CRM sur mesure</span></div>
+        </div>
+        <!-- duplicate for seamless loop -->
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Paul a créé notre système de réservation en 3 semaines. Avant, on gérait tout par appel. Aujourd'hui 60 % des RDV arrivent sans qu'on décroche le téléphone.</p>
+          <div class="testi-author"><div class="testi-av">KB</div><div><div class="testi-name">Karim B.</div><div class="testi-role">Gérant, salon de coiffure · Paris</div></div><span class="testi-tag">Réservation en ligne</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">On voulait un espace client pour que nos membres réservent leurs séances. C'est exactement ce qu'on a eu — sans les fonctions inutiles des grosses plateformes.</p>
+          <div class="testi-author"><div class="testi-av">SM</div><div><div class="testi-name">Sophie M.</div><div class="testi-role">Co-fondatrice, studio pilates · Lyon</div></div><span class="testi-tag">App membres</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Notre CRM sur mesure nous fait économiser 2h de saisie par jour. Le ROI a été immédiat dès le premier mois. Il fait exactement ce dont on a besoin — rien de plus.</p>
+          <div class="testi-author"><div class="testi-av">TR</div><div><div class="testi-name">Thomas R.</div><div class="testi-role">Directeur commercial, BTP · Bordeaux</div></div><span class="testi-tag">CRM sur mesure</span></div>
+        </div>
+      </div>
+      <!-- TRACK 2 → droite -->
+      <div class="testi-track testi-track-2">
+        <!-- original -->
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Site livré en 2 semaines, propre, rapide, et qui convertit vraiment. J'ai eu 4 prospects qualifiés dès la première semaine de mise en ligne. Zéro friction dans les échanges.</p>
+          <div class="testi-author"><div class="testi-av">AD</div><div><div class="testi-name">Amina D.</div><div class="testi-role">Consultante RH indépendante · Nantes</div></div><span class="testi-tag">Site vitrine</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">On avait essayé avec une autre agence — 6 mois de délai pour rien livré. Avec POLOW, 8 semaines et on avait une V1 en production avec nos 10 premiers clients. La différence est nette.</p>
+          <div class="testi-author"><div class="testi-av">JC</div><div><div class="testi-name">Julien C.</div><div class="testi-role">Co-fondateur, SaaS B2B · Paris</div></div><span class="testi-tag">Application SaaS</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Le dashboard livré nous donne exactement les données dont on avait besoin pour piloter nos stocks et nos ventes. Fini les exports Excel manuels chaque lundi matin.</p>
+          <div class="testi-author"><div class="testi-av">ML</div><div><div class="testi-name">Marie-Laure P.</div><div class="testi-role">Gérante, e-commerce · Rennes</div></div><span class="testi-tag">Dashboard BI</span></div>
+        </div>
+        <!-- duplicate for seamless loop -->
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Site livré en 2 semaines, propre, rapide, et qui convertit vraiment. J'ai eu 4 prospects qualifiés dès la première semaine de mise en ligne. Zéro friction dans les échanges.</p>
+          <div class="testi-author"><div class="testi-av">AD</div><div><div class="testi-name">Amina D.</div><div class="testi-role">Consultante RH indépendante · Nantes</div></div><span class="testi-tag">Site vitrine</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">On avait essayé avec une autre agence — 6 mois de délai pour rien livré. Avec POLOW, 8 semaines et on avait une V1 en production avec nos 10 premiers clients. La différence est nette.</p>
+          <div class="testi-author"><div class="testi-av">JC</div><div><div class="testi-name">Julien C.</div><div class="testi-role">Co-fondateur, SaaS B2B · Paris</div></div><span class="testi-tag">Application SaaS</span></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <p class="testi-quote">Le dashboard livré nous donne exactement les données dont on avait besoin pour piloter nos stocks et nos ventes. Fini les exports Excel manuels chaque lundi matin.</p>
+          <div class="testi-author"><div class="testi-av">ML</div><div><div class="testi-name">Marie-Laure P.</div><div class="testi-role">Gérante, e-commerce · Rennes</div></div><span class="testi-tag">Dashboard BI</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VISION ══ -->
+<section id="vision">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <span class="chip rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+        Notre vision
+      </span>
+      <h2 class="giant-h rv d1" style="max-width:900px;margin:0 auto">Des projets concrets,<br>des résultats réels.</h2>
+      <p class="sec-p rv d2" style="max-width:520px;margin:.8rem auto 0">Nous accompagnons les entreprises à chaque étape, de l'idée au produit final, avec des solutions pensées pour durer.</p>
+    </div>
+    <div class="vision-block rv d3">
+      <p class="vision-quote">Nous voulons bâtir la prochaine génération d'agences digitales françaises — indépendantes, ambitieuses, ancrées dans la qualité, mais agiles comme une startup.</p>
+    </div>
+    <div class="vision-bullets rv d4">
+      <div class="vision-b">Une culture produit : créer ce qui sert vraiment le business.</div>
+      <div class="vision-b">Une culture vitesse : livrer en semaines, pas en semestres.</div>
+      <div class="vision-b">Une culture justesse : pas faire plus, mais faire mieux.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div class="contact-head rv">
+        <span class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+          AUDIT GRATUIT · RÉPONSE SOUS 24H
+        </span>
+        <h2>Parlez-nous de votre projet</h2>
+        <p>Quelques infos pour qu'on puisse préparer un audit pertinent et un échange utile.</p>
+      </div>
+      <form class="mform" id="cform" novalidate>
+        <div class="mstep rv d1">
+          <div class="mstep-head">
+            <div><div class="mstep-num">01 · ÉTAPE</div><div class="mstep-title">Vous</div></div>
+            <div class="mstep-hint">Pour qu'on sache à qui on parle</div>
+          </div>
+          <div class="mrow">
+            <div class="mfield"><label>Prénom</label><input type="text" name="prenom" placeholder="Paul" autocomplete="given-name"></div>
+            <div class="mfield"><label>Nom</label><input type="text" name="nom" placeholder="Dupont" autocomplete="family-name" required></div>
+          </div>
+          <div class="mfield"><label>Entreprise</label><input type="text" name="entreprise" placeholder="Nom de votre société" autocomplete="organization"></div>
+        </div>
+        <div class="mstep rv d2">
+          <div class="mstep-head">
+            <div><div class="mstep-num">02 · ÉTAPE</div><div class="mstep-title">Vous joindre</div></div>
+            <div class="mstep-hint">Email + préférence de contact</div>
+          </div>
+          <div class="mfield"><label>Email</label>
+            <div class="mfield-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <input type="email" name="email" placeholder="vous@entreprise.com" required autocomplete="email">
+            </div>
+          </div>
+          <div class="mfield"><label>Téléphone</label>
+            <div class="mfield-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <input type="tel" name="telephone" placeholder="+33 6 00 00 00 00" autocomplete="tel">
+            </div>
+          </div>
+          <div class="pref-grid">
+            <button type="button" class="pref-btn sel" id="prefCall">
+              <span class="pref-btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <span><div class="pref-btn-t">Je suis OK pour être appelé</div><div class="pref-btn-d">Pour discuter du projet de vive voix</div></span>
+            </button>
+            <button type="button" class="pref-btn" id="prefMsg">
+              <span class="pref-btn-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+              <span><div class="pref-btn-t">Par message uniquement</div><div class="pref-btn-d">Pas d'appel, je préfère par écrit</div></span>
+            </button>
+          </div>
+          <input type="hidden" name="contact_pref" id="contactPref" value="call">
+        </div>
+        <div class="mstep rv d3">
+          <div class="mstep-head">
+            <div><div class="mstep-num">03 · ÉTAPE</div><div class="mstep-title">Votre projet</div></div>
+            <div class="mstep-hint">Le plus de détails possible</div>
+          </div>
+          <div class="mfield"><label>Quel est votre projet ?</label>
+            <div class="type-grid" id="typeGrid">
+              <div class="type-card sel" data-type="site"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M3 9h18"/></svg><span>Site web</span></div>
+              <div class="type-card" data-type="saas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><span>App / SaaS</span></div>
+              <div class="type-card" data-type="logiciel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg><span>Logiciel métier</span></div>
+              <div class="type-card" data-type="ia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg><span>Automatisation IA</span></div>
+              <div class="type-card" data-type="autre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span>Je ne sais pas encore</span></div>
+            </div>
+            <input type="hidden" name="type_projet" id="typeProjet" value="site">
+          </div>
+          <div class="mfield"><label>Décrivez votre projet</label><textarea name="message" placeholder="Ex : on veut lancer un SaaS de gestion pour les artisans, avec un dashboard et de la facturation..." required></textarea></div>
+        </div>
+        <div class="mstep rv d4">
+          <div class="mstep-head">
+            <div><div class="mstep-num">04 · ÉTAPE</div><div class="mstep-title">Budget estimé</div></div>
+            <div class="mstep-hint">Une fourchette TTC pour calibrer la proposition</div>
+          </div>
+          <div class="budget-grid" id="budgetGrid">
+            <div class="budget-opt" data-budget="1500-3000"><span>1 500 € → 3 000 €</span><span class="budget-opt-dot"></span></div>
+            <div class="budget-opt" data-budget="3000-5000"><span>3 000 € → 5 000 €</span><span class="budget-opt-dot"></span></div>
+            <div class="budget-opt" data-budget="5000-7000"><span>5 000 € → 7 000 €</span><span class="budget-opt-dot"></span></div>
+            <div class="budget-opt" data-budget="7000-10000"><span>7 000 € → 10 000 €</span><span class="budget-opt-dot"></span></div>
+            <div class="budget-opt" data-budget="10000-20000"><span>10 000 € → 20 000 €</span><span class="budget-opt-dot"></span></div>
+            <div class="budget-opt" data-budget="20000+"><span>+ 20 000 €</span><span class="budget-opt-dot"></span></div>
+          </div>
+          <input type="hidden" name="budget" id="budgetVal" value="">
+        </div>
+        <div class="rv d5">
+          <button type="submit" class="btn-submit">
+            <span>Envoyer ma demande</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <div class="submit-checks">
+            <div class="submit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Audit en direct de votre projet</div>
+            <div class="submit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Devis gratuit &amp; détaillé</div>
+            <div class="submit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Délais de livraison clairs</div>
+          </div>
+          <div id="ok">Message envoyé — je reviens vers vous très vite.</div>
+          <div id="err">Une erreur est survenue. Contactez-moi au 07 81 75 47 19.</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "../scripts/home.js";
+</script>
+</Base>
