@@ -238,6 +238,9 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .work-info{display:flex;flex-direction:column;align-items:flex-start;gap:.9rem}
 .work-tag{display:inline-flex;align-items:center;font-size:.62rem;color:var(--accent2);background:var(--accent-lo);border:1px solid var(--accent-md);padding:.28rem .75rem;border-radius:100px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .work-info h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.9rem;font-weight:800;letter-spacing:-.03em}
+.work-result{display:flex;align-items:center;gap:.9rem;margin:.1rem 0 .2rem}
+.work-result-v{font-family:'Bricolage Grotesque',sans-serif;font-size:2.6rem;font-weight:800;line-height:1;letter-spacing:-.04em;color:var(--accent2)}
+.work-result-t{font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:700;line-height:1.25;letter-spacing:-.02em;color:var(--text);max-width:420px}
 .work-info p{font-size:.88rem;color:var(--muted);line-height:1.78;max-width:400px}
 .work-meta{display:flex;gap:1.6rem;flex-wrap:wrap;margin:.2rem 0 .3rem;padding:1rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);width:100%}
 .work-meta-item{display:flex;flex-direction:column;gap:.25rem}
@@ -688,18 +691,65 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
       <p class="sec-p">Pas de maquette figée : des produits en production, chacun construit autour d'un problème métier précis.</p>
     </div>
     <div class="work-card rv d2">
-      <a class="work-shot" href="https://bisouvole.fr" target="_blank" rel="noopener" aria-label="Voir bisouvole.fr">
+      <a class="work-shot" href="https://kmmterminal.com" target="_blank" rel="noopener" aria-label="Voir kmmterminal.com">
         <div class="cw work-cw">
-          <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">bisouvole.fr</span></div>
+          <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">kmmterminal.com</span></div>
           <div class="cw-b">
-            <img src="case-bisouvole.jpg" alt="Page d'accueil du site Bisou Volé, salon de coiffure du Vieux Lille à Lille" loading="lazy">
+            <img src="case-kmmterminal.png" alt="Le terminal KMM, tableau de bord d'analyse en temps réel des futures Gold" loading="lazy">
           </div>
         </div>
       </a>
       <div class="work-info">
-        <span class="work-tag">Site vitrine + réservation en ligne</span>
+        <span class="work-tag">Plateforme web / SaaS + landing page</span>
+        <h3>KMM Trade Hub</h3>
+        <div class="work-result"><span class="work-result-v">x2,4</span><span class="work-result-t">De 50 à 120 abonnés au terminal</span></div>
+        <p>Un écosystème complet pour apprendre à trader les futures Gold avec méthode : un terminal d'analyse en temps réel (données CME), la plateforme de formation KMM Academy avec son tableau de bord, un espace communauté privé et une landing page pour convertir les visiteurs. Utilisateurs et client très satisfaits, avec un design particulièrement apprécié.</p>
+        <div class="work-meta">
+          <div class="work-meta-item"><span class="work-meta-l">Client</span><span class="work-meta-v">Kevin Mbumba</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Marché</span><span class="work-meta-v">Futures Gold</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Prestation</span><span class="work-meta-v">Terminal + Academy + landing</span></div>
+        </div>
+        <a class="work-link" href="https://kmmterminal.com" target="_blank" rel="noopener">
+          <span>Voir kmmterminal.com</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="work-card work-card-rev rv d2">
+      <div class="work-shot">
+        <div class="cw work-cw">
+          <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">tableau de bord · Carré d'Hair</span></div>
+          <div class="cw-b">
+            <img src="mockup-dashboard.jpg" alt="Tableau de bord du logiciel de gestion conçu pour le salon Carré d'Hair" loading="lazy" style="object-position:left top">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <span class="work-tag">Outil métier sur mesure</span>
+        <h3>Carré d'Hair</h3>
+        <div class="work-result"><span class="work-result-t">Une gestion du salon plus claire, avec moins d'erreurs au quotidien</span></div>
+        <p>Un logiciel de gestion conçu pour ce salon de coiffure : les rendez-vous, le fichier clients et l'organisation du salon réunis dans un seul tableau de bord, simple à utiliser entre deux clients.</p>
+        <div class="work-meta">
+          <div class="work-meta-item"><span class="work-meta-l">Client</span><span class="work-meta-v">Le Carré d'Hair</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Lieu</span><span class="work-meta-v">Déchy</span></div>
+          <div class="work-meta-item"><span class="work-meta-l">Prestation</span><span class="work-meta-v">Logiciel de gestion</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-card rv d2">
+      <a class="work-shot" href="https://bisouvole.fr" target="_blank" rel="noopener" aria-label="Voir bisouvole.fr">
+        <div class="cw work-cw">
+          <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">bisouvole.fr</span></div>
+          <div class="cw-b">
+            <img src="case-bisouvole.jpg" alt="Page d'accueil du site Bisou Volé, salon de coiffure du Vieux Lille" loading="lazy">
+          </div>
+        </div>
+      </a>
+      <div class="work-info">
+        <span class="work-tag">Site vitrine</span>
         <h3>Bisou Volé</h3>
-        <p>Le salon de coiffure de Valentin Rico, dans le Vieux Lille. Contenu sur mesure, prise de rendez-vous intégrée, fiche établissement optimisée pour le référencement local.</p>
+        <div class="work-result"><span class="work-result-t">Plus de visibilité en ligne et plus de réservations</span></div>
+        <p>Le site vitrine du salon de coiffure de Valentin Rico, dans le Vieux Lille, avec une direction artistique calquée sur l'identité du lieu. Contenu sur mesure, prise de rendez-vous intégrée, fiche établissement optimisée pour le référencement local.</p>
         <div class="work-meta">
           <div class="work-meta-item"><span class="work-meta-l">Client</span><span class="work-meta-v">Valentin Rico</span></div>
           <div class="work-meta-item"><span class="work-meta-l">Lieu</span><span class="work-meta-v">Vieux Lille</span></div>
@@ -709,116 +759,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
           <span>Voir bisouvole.fr</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
         </a>
-      </div>
-    </div>
-    <div class="work-card work-card-rev rv d2">
-      <a class="work-shot" href="https://kmmterminal.com" target="_blank" rel="noopener" aria-label="Voir kmmterminal.com">
-        <div class="cw work-cw">
-          <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">kmmterminal.com</span></div>
-          <div class="cw-b">
-            <img src="case-kmmterminal.png" alt="Le Terminal KMM, tableau de bord d'analyse temps réel des futures Gold" loading="lazy">
-          </div>
-        </div>
-      </a>
-      <div class="work-info">
-        <span class="work-tag">Application SaaS + formation</span>
-        <h3>KMM Trade Hub</h3>
-        <p>Un terminal d'analyse temps réel des futures Gold (données CME) couplé à une formation et une communauté privée, pour apprendre à trader avec méthode.</p>
-        <div class="work-meta">
-          <div class="work-meta-item"><span class="work-meta-l">Client</span><span class="work-meta-v">Kevin</span></div>
-          <div class="work-meta-item"><span class="work-meta-l">Marché</span><span class="work-meta-v">Futures Gold</span></div>
-          <div class="work-meta-item"><span class="work-meta-l">Prestation</span><span class="work-meta-v">Terminal + formation</span></div>
-        </div>
-        <a class="work-link" href="https://kmmterminal.com" target="_blank" rel="noopener">
-          <span>Voir kmmterminal.com</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ TESTIMONIALS ══ -->
-<section id="testimonials">
-  <div class="wrap">
-    <div class="testi-head rv">
-      <span class="chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        Ce qu'ils en disent
-      </span>
-      <h2 class="sec-h">Des clients qui avancent,<br><em>des projets qui durent</em></h2>
-      <p class="sec-p">Quelques retours de fondateurs et gérants qui nous ont confié leurs outils digitaux.</p>
-    </div>
-    <div class="testi-marquee">
-      <!-- TRACK 1 → gauche -->
-      <div class="testi-track testi-track-1">
-        <!-- original -->
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">Paul a créé notre système de réservation en 3 semaines. Avant, on gérait tout par appel. Aujourd'hui 60 % des RDV arrivent sans qu'on décroche le téléphone.</p>
-          <div class="testi-author"><div class="testi-av">KB</div><div><div class="testi-name">Karim B.</div><div class="testi-role">Gérant, salon de coiffure · Paris</div></div><span class="testi-tag">Réservation en ligne</span></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">On voulait un espace client pour que nos membres réservent leurs séances. C'est exactement ce qu'on a eu — sans les fonctions inutiles des grosses plateformes.</p>
-          <div class="testi-author"><div class="testi-av">SM</div><div><div class="testi-name">Sophie M.</div><div class="testi-role">Co-fondatrice, studio pilates · Lyon</div></div><span class="testi-tag">App membres</span></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">Notre CRM sur mesure nous fait économiser 2h de saisie par jour. Le ROI a été immédiat dès le premier mois. Il fait exactement ce dont on a besoin — rien de plus.</p>
-          <div class="testi-author"><div class="testi-av">TR</div><div><div class="testi-name">Thomas R.</div><div class="testi-role">Directeur commercial, BTP · Bordeaux</div></div><span class="testi-tag">CRM sur mesure</span></div>
-        </div>
-        <!-- duplicate for seamless loop -->
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">Paul a créé notre système de réservation en 3 semaines. Avant, on gérait tout par appel. Aujourd'hui 60 % des RDV arrivent sans qu'on décroche le téléphone.</p>
-          <div class="testi-author"><div class="testi-av">KB</div><div><div class="testi-name">Karim B.</div><div class="testi-role">Gérant, salon de coiffure · Paris</div></div><span class="testi-tag">Réservation en ligne</span></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">On voulait un espace client pour que nos membres réservent leurs séances. C'est exactement ce qu'on a eu — sans les fonctions inutiles des grosses plateformes.</p>
-          <div class="testi-author"><div class="testi-av">SM</div><div><div class="testi-name">Sophie M.</div><div class="testi-role">Co-fondatrice, studio pilates · Lyon</div></div><span class="testi-tag">App membres</span></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">Notre CRM sur mesure nous fait économiser 2h de saisie par jour. Le ROI a été immédiat dès le premier mois. Il fait exactement ce dont on a besoin — rien de plus.</p>
-          <div class="testi-author"><div class="testi-av">TR</div><div><div class="testi-name">Thomas R.</div><div class="testi-role">Directeur commercial, BTP · Bordeaux</div></div><span class="testi-tag">CRM sur mesure</span></div>
-        </div>
-      </div>
-      <!-- TRACK 2 → droite -->
-      <div class="testi-track testi-track-2">
-        <!-- original -->
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">Site livré en 2 semaines, propre, rapide, et qui convertit vraiment. J'ai eu 4 prospects qualifiés dès la première semaine de mise en ligne. Zéro friction dans les échanges.</p>
-          <div class="testi-author"><div class="testi-av">AD</div><div><div class="testi-name">Amina D.</div><div class="testi-role">Consultante RH indépendante · Nantes</div></div><span class="testi-tag">Site vitrine</span></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">On avait essayé avec une autre agence — 6 mois de délai pour rien livré. Avec POLOW, 8 semaines et on avait une V1 en production avec nos 10 premiers clients. La différence est nette.</p>
-          <div class="testi-author"><div class="testi-av">JC</div><div><div class="testi-name">Julien C.</div><div class="testi-role">Co-fondateur, SaaS B2B · Paris</div></div><span class="testi-tag">Application SaaS</span></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">Le dashboard livré nous donne exactement les données dont on avait besoin pour piloter nos stocks et nos ventes. Fini les exports Excel manuels chaque lundi matin.</p>
-          <div class="testi-author"><div class="testi-av">ML</div><div><div class="testi-name">Marie-Laure P.</div><div class="testi-role">Gérante, e-commerce · Rennes</div></div><span class="testi-tag">Dashboard BI</span></div>
-        </div>
-        <!-- duplicate for seamless loop -->
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">Site livré en 2 semaines, propre, rapide, et qui convertit vraiment. J'ai eu 4 prospects qualifiés dès la première semaine de mise en ligne. Zéro friction dans les échanges.</p>
-          <div class="testi-author"><div class="testi-av">AD</div><div><div class="testi-name">Amina D.</div><div class="testi-role">Consultante RH indépendante · Nantes</div></div><span class="testi-tag">Site vitrine</span></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">On avait essayé avec une autre agence — 6 mois de délai pour rien livré. Avec POLOW, 8 semaines et on avait une V1 en production avec nos 10 premiers clients. La différence est nette.</p>
-          <div class="testi-author"><div class="testi-av">JC</div><div><div class="testi-name">Julien C.</div><div class="testi-role">Co-fondateur, SaaS B2B · Paris</div></div><span class="testi-tag">Application SaaS</span></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars"><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="testi-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <p class="testi-quote">Le dashboard livré nous donne exactement les données dont on avait besoin pour piloter nos stocks et nos ventes. Fini les exports Excel manuels chaque lundi matin.</p>
-          <div class="testi-author"><div class="testi-av">ML</div><div><div class="testi-name">Marie-Laure P.</div><div class="testi-role">Gérante, e-commerce · Rennes</div></div><span class="testi-tag">Dashboard BI</span></div>
-        </div>
       </div>
     </div>
   </div>
