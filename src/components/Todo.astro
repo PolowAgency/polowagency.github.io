@@ -1,7 +1,0 @@
----
-// Placeholder visible pour un contenu à fournir.
-interface Props { label?: string; inline?: boolean }
-const { label = '', inline = true } = Astro.props;
-const Tag = inline ? 'span' : 'div';
----
-<Tag class="todo">[À COMPLÉTER{label ? ` : ${label}` : ''}]</Tag>
