@@ -235,6 +235,9 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .work-cw{border-radius:1rem}
 .work-cw .cw-b{padding:0}
 .work-cw img{width:100%;display:block;aspect-ratio:16/10.5;object-fit:cover;object-position:top}
+.work-shot-duo{padding:0 0 18% 0}
+.work-cw-sub{position:absolute;right:-6%;bottom:0;width:58%;box-shadow:0 30px 70px rgba(0,0,0,.7);border-color:rgba(255,255,255,.12)}
+@media(max-width:768px){.work-cw-sub{right:0;width:62%}}
 .work-info{display:flex;flex-direction:column;align-items:flex-start;gap:.9rem}
 .work-tag{display:inline-flex;align-items:center;font-size:.62rem;color:var(--accent2);background:var(--accent-lo);border:1px solid var(--accent-md);padding:.28rem .75rem;border-radius:100px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .work-info h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.9rem;font-weight:800;letter-spacing:-.03em}
@@ -691,11 +694,17 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
       <p class="sec-p">Pas de maquette figée : des produits en production, chacun construit autour d'un problème métier précis.</p>
     </div>
     <div class="work-card rv d2">
-      <a class="work-shot" href="https://kmmterminal.com" target="_blank" rel="noopener" aria-label="Voir kmmterminal.com">
+      <a class="work-shot work-shot-duo" href="https://kmmterminal.com" target="_blank" rel="noopener" aria-label="Voir kmmterminal.com">
         <div class="cw work-cw">
           <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">kmmterminal.com</span></div>
           <div class="cw-b">
             <img src="case-kmmterminal.png" alt="Le terminal KMM, tableau de bord d'analyse en temps réel des futures Gold" loading="lazy">
+          </div>
+        </div>
+        <div class="cw work-cw work-cw-sub">
+          <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">KMM Academy</span></div>
+          <div class="cw-b">
+            <img src="case-kmmacademy.jpg" alt="Tableau de bord élève de la plateforme de formation KMM Academy" loading="lazy">
           </div>
         </div>
       </a>
