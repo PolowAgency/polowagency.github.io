@@ -234,6 +234,7 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .work-shot{position:relative}
 .work-cw{border-radius:1rem}
 .work-cw .cw-b{padding:0}
+.work-cw video{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top;background:#05050c}
 .work-cw img{width:100%;display:block;aspect-ratio:16/10.5;object-fit:cover;object-position:top}
 .work-shot-duo{padding:0 0 18% 0}
 .work-cw-sub{position:absolute;right:-6%;bottom:0;width:58%;box-shadow:0 30px 70px rgba(0,0,0,.7);border-color:rgba(255,255,255,.12)}
@@ -698,7 +699,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
         <div class="cw work-cw">
           <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">kmmterminal.com</span></div>
           <div class="cw-b">
-            <img src="case-kmmterminal.png" alt="Le terminal KMM, tableau de bord d'analyse en temps réel des futures Gold" loading="lazy">
+            <video class="work-video" poster="case-kmmterminal-poster.jpg" muted loop playsinline preload="none" aria-label="Le terminal KMM en mouvement : analyse en temps réel des futures Gold (données simulées)"><source data-src="case-kmmterminal.webm" type="video/webm"><source data-src="case-kmmterminal.mp4" type="video/mp4"></video>
           </div>
         </div>
         <div class="cw work-cw work-cw-sub">
@@ -1090,6 +1091,21 @@ document.getElementById('mnavBg').addEventListener('click',closeM)
 document.getElementById('mnavCta').addEventListener('click',()=>{closeM();setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),200)})
 document.querySelectorAll('#mnav a').forEach(a=>a.addEventListener('click',closeM))
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
+
+/* ── Vidéos des réalisations : chargées et lancées seulement quand elles sont visibles ── */
+;(function(){
+  const vids=document.querySelectorAll('video.work-video')
+  if(!vids.length)return
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const vio=new IntersectionObserver(entries=>{entries.forEach(e=>{
+    const v=e.target
+    if(e.isIntersecting){
+      if(!v.dataset.loaded){v.querySelectorAll('source[data-src]').forEach(s=>s.src=s.dataset.src);v.load();v.dataset.loaded='1'}
+      if(!reduce)v.play().catch(()=>{})
+    }else if(v.dataset.loaded){v.pause()}
+  })},{rootMargin:'200px 0px'})
+  vids.forEach(v=>vio.observe(v))
+})()
 
 /* ── Scroll reveal ── */
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.07})
