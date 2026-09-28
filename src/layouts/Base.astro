@@ -59,7 +59,7 @@ interface Props {
   document.querySelectorAll('.rv,.rv-l,.rv-r').forEach((el) => io.observe(el));
 
   /* Effet ripple sur les boutons */
-  document.querySelectorAll<HTMLElement>('.btn-hero,.btn-submit,.nav-cta').forEach((b) => {
+  document.querySelectorAll<HTMLElement>('.btn,.btn-submit,.nav-cta').forEach((b) => {
     b.addEventListener('click', function (e) {
       const r = document.createElement('span');
       r.className = 'rip';

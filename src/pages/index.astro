@@ -1,84 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
+import Hero from '../components/home/Hero.astro';
+import TrustBar from '../components/home/TrustBar.astro';
 import { Image } from 'astro:assets';
 import bisou from '../assets/realisations/bisou-vole-home.jpg';
 import kmm from '../assets/realisations/kmm-terminal.png';
 ---
 <Base>
-<!-- ══ HERO ══ -->
-<section id="hero">
-  <div class="wrap" style="position:relative;z-index:1">
-    <div class="hero-badge">
-      <span class="hero-badge-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6 2 2 6.5 2 12s4 10 10 10 10-4.5 10-10S18 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm3.5-11.5l-5 5-2-2-1.5 1.5 3.5 3.5 6.5-6.5-1.5-1.5z"/></svg>
-      </span>
-      Douai &amp; environs · Hauts-de-France
-    </div>
-    <h1 class="hero-h1" id="heroH1">On code ce que<br>vous avez en tête.</h1>
-    <p class="hero-sub">Sites, applications, logiciels métier : on construit sur-mesure ce qui vous manque, pour les indépendants et entreprises de Douai, Lens, Arras et toute la région.</p>
-    <div class="hero-acts">
-      <button class="btn-hero" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-        Parlons de votre projet
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </button>
-    </div>
-    <p class="hero-note">Premier échange gratuit · Réponse en 24h</p>
-
-    <!-- ANIMATED MOCKUP -->
-    <div class="hero-mock-wrap">
-      <div class="hero-mock">
-        <div class="hm-top">
-          <div class="hm-title" id="hmTitle">Un site qui déclenche l'action</div>
-          <div class="hm-bullets" id="hmBullets">
-            <span class="hm-bullet">Plus de demandes réellement qualifiées</span>
-            <span class="hm-bullet">Meilleure conversion à trafic égal</span>
-            <span class="hm-bullet">Moins de visiteurs qui repartent sans décider</span>
-          </div>
-        </div>
-        <div class="hm-win">
-          <div class="hm-win-bar">
-            <div class="hm-dots"><i></i><i></i><i></i></div>
-          </div>
-          <div class="hm-win-body">
-            <div class="hm-code-pane">
-              <div class="hm-gutter" id="hmGutter"></div>
-              <div class="hm-code-inner"><code id="hmCode"></code></div>
-            </div>
-            <div class="hm-preview-pane">
-              <div class="hm-preview-text" id="hmPreviewText">Site Web.</div>
-              <button class="hm-preview-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">→</button>
-            </div>
-          </div>
-        </div>
-        <div class="hm-tabs" id="hmTabs">
-          <button class="hm-tab act" data-idx="0">SITE VITRINE</button>
-          <button class="hm-tab" data-idx="1">APPLICATION / SAAS</button>
-          <button class="hm-tab" data-idx="2">SYSTÈMES / ERP</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <span>Découvrir</span>
-    <div class="hero-scroll-ln"></div>
-  </div>
-</section>
-
-<!-- ══ STATS ══ -->
-<div class="stats">
-  <div class="stats-track">
-    <!-- original -->
-    <div class="stat-item"><div class="stat-v"><span class="stat-num">10</span><span class="stat-sfx">+</span></div><div class="stat-l">projets livrés en production</div></div>
-    <div class="stat-item"><div class="stat-v"><span class="stat-num">1</span><span class="stat-sfx"> seul</span></div><div class="stat-l">interlocuteur du brief à la mise en ligne</div></div>
-    <div class="stat-item"><div class="stat-v"><span class="stat-num">24</span><span class="stat-sfx">h</span></div><div class="stat-l">de réponse garantie</div></div>
-    <div class="stat-item"><div class="stat-v"><span class="stat-num">0</span><span class="stat-sfx">€</span></div><div class="stat-l">de template — tout sur mesure</div></div>
-    <!-- duplicate for seamless loop -->
-    <div class="stat-item"><div class="stat-v"><span class="stat-num">10</span><span class="stat-sfx">+</span></div><div class="stat-l">projets livrés en production</div></div>
-    <div class="stat-item"><div class="stat-v"><span class="stat-num">1</span><span class="stat-sfx"> seul</span></div><div class="stat-l">interlocuteur du brief à la mise en ligne</div></div>
-    <div class="stat-item"><div class="stat-v"><span class="stat-num">24</span><span class="stat-sfx">h</span></div><div class="stat-l">de réponse garantie</div></div>
-    <div class="stat-item"><div class="stat-v"><span class="stat-num">0</span><span class="stat-sfx">€</span></div><div class="stat-l">de template — tout sur mesure</div></div>
-  </div>
-</div>
+<Hero />
+<TrustBar />
 
 <!-- ══ PROCESS ══ -->
 <section id="process">
@@ -165,7 +95,7 @@ import kmm from '../assets/realisations/kmm-terminal.png';
 </section>
 
 <!-- ══ RÉALISATIONS ══ -->
-<section id="work">
+<section id="realisations">
   <div class="wrap">
     <div class="work-head rv" style="text-align:center;max-width:600px;margin:0 auto 3.5rem">
       <span class="chip">
@@ -335,7 +265,7 @@ import kmm from '../assets/realisations/kmm-terminal.png';
 </section>
 
 <!-- ══ CONTACT ══ -->
-<section id="contact">
+<section id="rendez-vous">
   <div class="wrap">
     <div class="contact-inner">
       <div class="contact-head rv">
