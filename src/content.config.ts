@@ -19,13 +19,14 @@ const realisations = defineCollection({
       location: z.string().optional(),
       url: z.string().url().optional(),
       summary: z.string(), // 1 à 2 phrases, reprises sur les cartes et en meta description
+      highlight: z.string(), // résultat principal, une phrase courte affichée en grand sur les cartes
       cover: image().optional(),
       coverAlt: z.string().optional(),
       gallery: z
         .array(z.object({ src: image().optional(), alt: z.string(), caption: z.string().optional() }))
         .default([]),
       stack: z.array(z.string()).default([]),
-      results: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
+      results: z.array(z.object({ value: z.string().optional(), label: z.string() })).default([]),
       testimonial: z
         .object({ quote: z.string(), author: z.string(), role: z.string().optional() })
         .optional(),
