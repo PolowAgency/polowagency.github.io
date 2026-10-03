@@ -266,6 +266,21 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .pc-check svg{width:15px;height:15px}
 @media(max-width:420px){.pc{padding:1.2rem;border-radius:1.3rem}.pc-app{padding:.75rem}.pc-board{gap:.4rem}.pc-col{padding:.45rem}.pc-col-h{font-size:.56rem}}
 
+/* ── FILM ── */
+#film{background:var(--bg);padding:6rem 0 5.5rem;position:relative}
+.film-head{text-align:center;max-width:600px;margin:0 auto 2.6rem}
+.film-player{position:relative;max-width:1040px;margin:0 auto;aspect-ratio:16/9;border-radius:1.8rem;overflow:hidden;background:#000;border:1px solid var(--border2);box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px rgba(249,115,22,.06)}
+.film-player video{width:100%;height:100%;display:block;object-fit:cover;background:#000}
+.film-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;border:none;background:linear-gradient(180deg,rgba(6,6,10,.05) 0%,rgba(6,6,10,.45) 100%);color:#fff;cursor:pointer;transition:background .25s}
+.film-play:hover{background:linear-gradient(180deg,rgba(6,6,10,0) 0%,rgba(6,6,10,.3) 100%)}
+.film-play-ic{width:84px;height:84px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(249,115,22,.5);transition:transform .2s,background .2s}
+.film-play:hover .film-play-ic{transform:scale(1.08);background:var(--accent2)}
+.film-play-ic svg{width:30px;height:30px;fill:#000;margin-left:4px}
+.film-play-t{font-size:.8rem;font-weight:700;letter-spacing:.04em;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.15);padding:.42rem .95rem;border-radius:100px;backdrop-filter:blur(8px)}
+.film-player.playing .film-play{display:none}
+.film-play:focus-visible{outline:3px solid #fff;outline-offset:-6px;border-radius:1.8rem}
+@media(max-width:768px){#film{padding:4rem 0 3.5rem}.film-player{border-radius:1.2rem}.film-play-ic{width:64px;height:64px}.film-play-ic svg{width:24px;height:24px}.film-play-t{font-size:.72rem}}
+
 /* ── WORK ── */
 #work{background:var(--bg2);padding:7rem 0;position:relative;overflow:hidden}
 #work::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(249,115,22,.05),transparent 65%);pointer-events:none}
@@ -734,6 +749,30 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
   </div>
 </section>
 
+<!-- ══ FILM ══ -->
+<section id="film">
+  <div class="wrap">
+    <div class="film-head rv">
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+        Présentation
+      </span>
+      <h2 class="sec-h">En 40 secondes</h2>
+      <p class="sec-p">Ce que je construis, pour qui, et à quoi ça ressemble une fois en ligne.</p>
+    </div>
+    <div class="film-player rv d2">
+      <video id="filmVideo" preload="none" playsinline poster="polow-film-poster.jpg" aria-label="Présentation de POLOW Agency en 40 secondes">
+        <source src="polow-film.mp4" type="video/mp4">
+        <source src="polow-film.webm" type="video/webm">
+      </video>
+      <button type="button" class="film-play" id="filmPlay" aria-label="Lancer la vidéo de présentation (40 secondes, avec le son)">
+        <span class="film-play-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="8 5 19 12 8 19 8 5"/></svg></span>
+        <span class="film-play-t">Lancer la vidéo · 0:40</span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- ══ RÉALISATIONS ══ -->
 <section id="work">
   <div class="wrap">
@@ -1117,6 +1156,18 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()})
     }else if(v.dataset.loaded){v.pause()}
   })},{rootMargin:'200px 0px'})
   vids.forEach(v=>vio.observe(v))
+})()
+
+/* ── Vidéo de présentation : lecture au clic, avec le son ── */
+;(function(){
+  const v=document.getElementById('filmVideo'),btn=document.getElementById('filmPlay')
+  if(!v||!btn)return
+  btn.addEventListener('click',()=>{
+    v.controls=true
+    v.parentElement.classList.add('playing')
+    v.play().catch(()=>{})
+    v.focus()
+  })
 })()
 
 /* ── Scroll reveal ── */
