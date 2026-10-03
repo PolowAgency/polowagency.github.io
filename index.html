@@ -44,6 +44,12 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 #loader{position:fixed;inset:0;z-index:8000;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity .5s,visibility .5s}
 #loader.done{opacity:0;visibility:hidden;pointer-events:none}
 body.loading{overflow:hidden}
+.ld-brand{display:flex;align-items:center;gap:.7rem;font-family:'Bricolage Grotesque',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:-.02em;color:#fff;animation:fadeUp .4s .05s ease both}
+.ld-brand img{width:44px;height:44px;object-fit:contain;mix-blend-mode:screen}
+#loader{flex-direction:column;gap:1.2rem}
+.ld-bar{width:120px;height:3px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
+.ld-bar i{display:block;height:100%;width:100%;background:var(--accent);border-radius:3px;transform-origin:left;animation:ldfill .6s .1s cubic-bezier(.22,1,.36,1) both}
+@keyframes ldfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .ld-term{width:min(420px,86vw);background:#08081a;border:1px solid rgba(255,255,255,.1);border-radius:.8rem;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6);opacity:0;animation:fadeUp .4s .1s ease both}
 .ld-term-bar{display:flex;gap:.28rem;padding:.55rem .85rem;background:#0e0e1c;border-bottom:1px solid rgba(255,255,255,.05)}
 .ld-term-bar i{display:block;width:8px;height:8px;border-radius:50%}
@@ -161,6 +167,11 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .hm-dots i:nth-child(3){background:#28C840}
 .hm-win-body{display:grid;grid-template-columns:1fr .72fr}
 .hm-code-pane{background:#0a0a16;border-right:1px solid rgba(255,255,255,.05);overflow:hidden;display:flex}
+.hm-rows{flex:1;display:flex;flex-direction:column;gap:.55rem;padding:1.1rem 1.2rem;transition:opacity .18s}
+.hm-row{display:flex;align-items:baseline;gap:.9rem;text-align:left;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:.9rem;padding:.65rem .9rem}
+.hm-row-l{flex-shrink:0;width:5.6rem;font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2)}
+.hm-row-v{font-size:.82rem;font-weight:600;line-height:1.45;color:rgba(255,255,255,.88)}
+@media(max-width:520px){.hm-row{flex-direction:column;gap:.2rem}.hm-row-l{width:auto}}
 .hm-gutter{padding:1.1rem .6rem 1.1rem .9rem;user-select:none;flex-shrink:0;display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,.04)}
 .hm-gutter span{font-family:'JetBrains Mono',monospace;font-size:.68rem;line-height:1.9;color:rgba(255,255,255,.2);text-align:right;display:block}
 .hm-code-inner{padding:1.1rem 1.4rem;overflow:hidden;flex:1}
@@ -203,7 +214,7 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .proc-step:nth-child(odd) .ps-num{right:0;top:-2rem}
 .proc-step:nth-child(even) .ps-num{left:0;top:-2rem}
 .ps-t{position:relative;z-index:1}
-.ps-n{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--accent2);opacity:.7;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem;letter-spacing:.06em}
+.ps-n{font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;color:var(--accent2);margin-bottom:.85rem;display:flex;align-items:center;gap:.6rem;letter-spacing:.14em}
 .ps-n::after{content:'';flex:1;height:1px;background:var(--border2);max-width:40px}
 .ps-t h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.55rem;font-weight:800;line-height:1.15;margin-bottom:.75rem;letter-spacing:-.025em}
 .ps-t p{font-size:.87rem;color:var(--muted);line-height:1.78;max-width:380px}
@@ -221,6 +232,39 @@ body.ready .hero-mock-wrap{opacity:1;transform:translateY(0)}
 .cw-b code{display:block;white-space:pre}
 .kw{color:#38bdf8;font-weight:600}.fn{color:#7dd3fc}.st{color:#86efac}.op{color:rgba(255,255,255,.3)}.cm{color:rgba(255,255,255,.2);font-style:italic}.nm{color:#c4b5fd}.ky{color:rgba(255,255,255,.75)}.pu{color:rgba(255,255,255,.4)}
 .sec-p{color:var(--muted);font-size:.9rem;line-height:1.78}
+
+/* ── PROCESS : cartes visuelles ── */
+.pc{background:linear-gradient(180deg,#0e0e19 0%,#09090f 100%);border:1px solid rgba(255,255,255,.08);border-radius:1.6rem;padding:1.6rem;box-shadow:0 24px 60px rgba(0,0,0,.5);transition:border-color .3s}
+.pc:hover{border-color:rgba(249,115,22,.25)}
+.pc-label{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1.1rem}
+.pc ul,.pc ol{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.pc-pains li,.pc-checks li{display:flex;align-items:center;gap:.85rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:1rem;padding:.75rem .9rem;font-size:.9rem;font-weight:600;color:rgba(255,255,255,.88)}
+.pc-ic{width:34px;height:34px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
+.pc-ic svg{width:16px;height:16px}
+.pc-goal{margin-top:1rem;display:flex;align-items:center;gap:.8rem;background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.35);border-radius:1.1rem;padding:.9rem 1rem;font-size:.9rem;line-height:1.45;color:#fff}
+.pc-goal strong{color:var(--accent2)}
+.pc-goal-ic{width:34px;height:34px;flex-shrink:0;border-radius:50%;background:var(--accent);color:#000;display:flex;align-items:center;justify-content:center}
+.pc-goal-ic svg{width:17px;height:17px}
+.pc-steps{position:relative}
+.pc-steps li{position:relative;display:flex;align-items:center;gap:.9rem;padding:.85rem 1rem;border-radius:1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);font-size:.92rem;font-weight:600;color:rgba(255,255,255,.9)}
+.pc-steps li:not(:last-child)::after{content:'';position:absolute;left:calc(1rem + 15px);bottom:-.65rem;width:2px;height:.7rem;background:rgba(249,115,22,.45)}
+.pc-num{width:32px;height:32px;flex-shrink:0;border-radius:50%;background:var(--accent);color:#000;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.95rem;display:flex;align-items:center;justify-content:center}
+.pc-app{padding:1rem}
+.pc-app-bar{display:flex;align-items:center;gap:.6rem;padding:.2rem .3rem .9rem}
+.pc-app-logo{width:22px;height:22px;border-radius:7px;background:var(--accent)}
+.pc-app-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:.95rem}
+.pc-app-pill{margin-left:auto;font-size:.62rem;font-weight:700;color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);border-radius:100px;padding:.3rem .65rem}
+.pc-board{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+.pc-col{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:1rem;padding:.6rem;display:flex;flex-direction:column;gap:.45rem;min-width:0}
+.pc-col-h{display:flex;align-items:center;justify-content:space-between;gap:.3rem;font-size:.62rem;font-weight:700;color:rgba(255,255,255,.6);padding:.1rem .15rem .25rem;line-height:1.3}
+.pc-col-h b{flex-shrink:0;min-width:20px;height:20px;border-radius:100px;background:rgba(249,115,22,.16);color:var(--accent2);font-size:.62rem;display:flex;align-items:center;justify-content:center}
+.pc-card{background:#13131f;border:1px solid rgba(255,255,255,.07);border-radius:.75rem;padding:.55rem .6rem;display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.pc-card-t{font-size:.7rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc-card-s{font-size:.6rem;color:rgba(255,255,255,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc-card-ok{border-color:rgba(249,115,22,.35);background:rgba(249,115,22,.08)}
+.pc-check{width:28px;height:28px;flex-shrink:0;border-radius:50%;background:var(--accent);color:#000;display:flex;align-items:center;justify-content:center}
+.pc-check svg{width:15px;height:15px}
+@media(max-width:420px){.pc{padding:1.2rem;border-radius:1.3rem}.pc-app{padding:.75rem}.pc-board{gap:.4rem}.pc-col{padding:.45rem}.pc-col-h{font-size:.56rem}}
 
 /* ── WORK ── */
 #work{background:var(--bg2);padding:7rem 0;position:relative;overflow:hidden}
@@ -457,15 +501,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
 
 <!-- LOADER -->
 <div id="loader" aria-label="Chargement" role="status">
-  <div class="ld-term">
-    <div class="ld-term-bar"><i></i><i></i><i></i></div>
-    <div class="ld-term-body">
-      <div class="ld-line" id="ldLine1"></div>
-      <div class="ld-line" id="ldLine2"></div>
-      <div class="ld-line" id="ldLine3"></div>
-      <span class="ld-cursor">»</span>
-    </div>
+  <div class="ld-brand">
+    <img src="logo.png" alt="" width="44" height="44">
+    <span>POLOW.</span>
   </div>
+  <div class="ld-bar"><i></i></div>
 </div>
 
 <!-- NAV -->
@@ -562,8 +602,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
           </div>
           <div class="hm-win-body">
             <div class="hm-code-pane">
-              <div class="hm-gutter" id="hmGutter"></div>
-              <div class="hm-code-inner"><code id="hmCode"></code></div>
+              <div class="hm-rows" id="hmRows"></div>
             </div>
             <div class="hm-preview-pane">
               <div class="hm-preview-text" id="hmPreviewText">Site Web.</div>
@@ -612,72 +651,82 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
       <div class="proc-step">
         <span class="ps-num" aria-hidden="true">01</span>
         <div class="ps-t rv-l">
-          <div class="ps-n">» étape 01</div>
+          <div class="ps-n">Étape 01</div>
           <h3>Je cadre le vrai problème</h3>
           <p>Un échange direct avec moi, sans formulaire à rallonge ni chef de projet en relais : je cerne avec vous ce que l'outil doit résoudre, concrètement.</p>
         </div>
         <div class="ps-c rv-r">
-          <div class="cw">
-            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">brief-salon.md</span></div>
-            <div class="cw-b"><code><span class="cm"># Brief : salon de coiffure</span>
-<span class="ky">problème</span>   <span class="op">:</span> <span class="st">gestion 100% par téléphone</span>
-<span class="ky">objectif</span>   <span class="op">:</span> <span class="st">réservation en ligne, zéro appel</span>
-<span class="ky">contrainte</span> <span class="op">:</span> <span class="st">aucune formation nécessaire</span></code></div>
+          <div class="pc">
+            <div class="pc-label">Ce qui vous freine aujourd'hui</div>
+            <ul class="pc-pains">
+              <li><span class="pc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></span>Des fichiers Excel partout</li>
+              <li><span class="pc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Des infos clients éparpillées</li>
+              <li><span class="pc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Des heures perdues en ressaisie</li>
+            </ul>
+            <div class="pc-goal"><span class="pc-goal-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span><strong>Objectif :</strong> toute votre activité réunie dans un seul outil.</span></div>
           </div>
         </div>
       </div>
       <div class="proc-step">
         <span class="ps-num" aria-hidden="true">02</span>
         <div class="ps-t rv-r">
-          <div class="ps-n">» étape 02</div>
+          <div class="ps-n">Étape 02</div>
           <h3>Je pose les fondations</h3>
           <p>Architecture des données, choix techniques, parcours utilisateur : ce travail en amont évite les refontes en cours de route et vous fait gagner du temps et de l'argent.</p>
         </div>
         <div class="ps-c rv-l">
-          <div class="cw">
-            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">schema.sql</span></div>
-            <div class="cw-b"><code><span class="kw">create table</span> <span class="fn">reservations</span> <span class="pu">(</span>
-  <span class="ky">id</span><span class="pu">,</span>        <span class="nm">uuid</span> <span class="kw">primary key</span><span class="pu">,</span>
-  <span class="ky">client_id</span><span class="pu">,</span> <span class="nm">uuid</span> <span class="kw">references</span> <span class="fn">clients</span><span class="pu">,</span>
-  <span class="ky">creneau</span><span class="pu">,</span>   <span class="nm">timestamptz</span><span class="pu">,</span>
-  <span class="ky">statut</span><span class="pu">,</span>    <span class="nm">text</span> <span class="kw">default</span> <span class="st">'confirmé'</span>
-<span class="pu">);</span></code></div>
+          <div class="pc">
+            <div class="pc-label">Votre futur outil</div>
+            <ol class="pc-steps">
+              <li><span class="pc-num">1</span><span>Vos clients au même endroit</span></li>
+              <li><span class="pc-num">2</span><span>Devis et factures en un clic</span></li>
+              <li><span class="pc-num">3</span><span>Votre activité en temps réel</span></li>
+            </ol>
           </div>
         </div>
       </div>
       <div class="proc-step">
         <span class="ps-num" aria-hidden="true">03</span>
         <div class="ps-t rv-l">
-          <div class="ps-n">» étape 03</div>
+          <div class="ps-n">Étape 03</div>
           <h3>Je construis, sur mesure</h3>
-          <p>Chaque ligne de code existe pour votre cas précis : pas de template ajusté à la va-vite, pas de fonctionnalité superflue.</p>
+          <p>Chaque fonctionnalité existe pour votre cas précis : pas de template ajusté à la va-vite, pas de fonctionnalité superflue.</p>
         </div>
         <div class="ps-c rv-r">
-          <div class="cw">
-            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">ReservationGrid.tsx</span></div>
-            <div class="cw-b"><code><span class="kw">export default function</span> <span class="fn">ReservationGrid</span><span class="pu">() {</span>
-  <span class="kw">const</span> <span class="pu">{</span> <span class="fn">creneaux</span> <span class="pu">}</span> <span class="op">=</span> <span class="fn">useReservations</span><span class="pu">({</span>
-    <span class="ky">jour</span><span class="op">:</span> <span class="kw">today</span>
-  <span class="pu">})</span>
-  <span class="kw">return</span> <span class="op">&lt;</span><span class="fn">Planning</span> <span class="ky">creneaux</span><span class="op">=</span><span class="pu">{</span><span class="fn">creneaux</span><span class="pu">}</span> <span class="op">/&gt;</span>
-<span class="pu">}</span></code></div>
+          <div class="pc pc-app">
+            <div class="pc-app-bar"><span class="pc-app-logo"></span><span class="pc-app-name">Suivi commercial</span><span class="pc-app-pill">Cette semaine</span></div>
+            <div class="pc-board">
+              <div class="pc-col"><div class="pc-col-h"><span>Nouveaux contacts</span><b>3</b></div>
+                <div class="pc-card"><span class="pc-card-t">Atelier Martin</span><span class="pc-card-s">Demande de devis</span></div>
+                <div class="pc-card"><span class="pc-card-t">Cabinet Leroy</span><span class="pc-card-s">Rappel prévu</span></div>
+              </div>
+              <div class="pc-col"><div class="pc-col-h"><span>Devis envoyés</span><b>2</b></div>
+                <div class="pc-card"><span class="pc-card-t">Garage Petit</span><span class="pc-card-s">Envoyé hier</span></div>
+                <div class="pc-card"><span class="pc-card-t">Studio Noé</span><span class="pc-card-s">Relance auto</span></div>
+              </div>
+              <div class="pc-col"><div class="pc-col-h"><span>Signés</span><b>4</b></div>
+                <div class="pc-card pc-card-ok"><span class="pc-card-t">Boulangerie Roy</span><span class="pc-card-s">Facture envoyée</span></div>
+                <div class="pc-card pc-card-ok"><span class="pc-card-t">Agence Morel</span><span class="pc-card-s">Payée</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="proc-step">
         <span class="ps-num" aria-hidden="true">04</span>
         <div class="ps-t rv-r">
-          <div class="ps-n">» étape 04</div>
+          <div class="ps-n">Étape 04</div>
           <h3>Je livre, et je reste joignable</h3>
           <p>Mise en production, prise en main, maintenance dans la durée. Mon numéro direct après la livraison, pas un ticket de support.</p>
         </div>
         <div class="ps-c rv-l">
-          <div class="cw">
-            <div class="cw-bar"><div class="cw-d"><i></i><i></i><i></i></div><span class="cw-f">livraison.log</span></div>
-            <div class="cw-b"><code><span class="cm">✓ build terminé, 0 erreur</span>
-<span class="cm">✓ déployé sur polowagency.fr</span>
-<span class="cm">✓ formation client planifiée</span>
-<span class="fn">→</span> <span class="st">"Un contact direct, pas un ticket."</span></code></div>
+          <div class="pc">
+            <div class="pc-label">Livraison</div>
+            <ul class="pc-checks">
+              <li><span class="pc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>En ligne et sécurisé</li>
+              <li><span class="pc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Votre équipe formée</li>
+              <li><span class="pc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Un contact direct, pas un ticket</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -952,46 +1001,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4.5rem 0
 </a>
 
 <script>
-/* ── Loader : boot terminal ── */
+/* ── Loader : logo ── */
 ;(function(){
   document.body.classList.add('loading')
   const loader=document.getElementById('loader')
-  const lines=[
-    {el:document.getElementById('ldLine1'),text:'$ polow_agency --init'},
-    {el:document.getElementById('ldLine2'),text:'> assemblage du studio...'},
-    {el:document.getElementById('ldLine3'),text:'> prêt.'}
-  ]
-  const cursor=document.querySelector('.ld-cursor')
   const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches
   function finish(){
     loader.classList.add('done');document.body.classList.remove('loading');document.body.classList.add('ready');initBlurText()
   }
-  if(reduceMotion){
-    lines.forEach(l=>l.el.textContent=l.text)
-    setTimeout(finish,300)
-    return
-  }
-  let li=0
-  function typeLine(){
-    if(li>=lines.length){setTimeout(finish,420);return}
-    const {el,text}=lines[li]
-    if(li>0)el.parentNode.insertBefore(cursor,null)
-    let ci=0
-    el.appendChild(cursor)
-    const speed=text.startsWith('$')?38:26
-    ;(function type(){
-      if(ci<=text.length){
-        el.textContent=text.slice(0,ci)
-        el.appendChild(cursor)
-        ci++
-        setTimeout(type,speed)
-      }else{
-        li++
-        setTimeout(typeLine,220)
-      }
-    })()
-  }
-  setTimeout(typeLine,380)
+  setTimeout(finish,reduceMotion?150:750)
 })()
 
 /* ── Blur-text ── */
@@ -1019,40 +1037,30 @@ const hmData=[
     title:"Un site qui déclenche l'action",
     bullets:["Plus de demandes réellement qualifiées","Meilleure conversion à trafic égal","Moins de visiteurs qui repartent sans décider"],
     preview:"Site Web.",
-    code:`<span class="cm">// votre site, en clair</span>
-<span class="ky">objectif</span> <span class="op">:</span> <span class="st">"convertir les visiteurs en rendez-vous"</span>
-<span class="ky">action</span>   <span class="op">:</span> <span class="st">"répond en 5 secondes aux questions clés"</span>
-<span class="ky">résultat</span> <span class="op">:</span> <span class="st">"moins d'appels, plus de demandes qualifiées"</span>`
+    rows:[["Objectif","Convertir les visiteurs en rendez-vous"],["Comment","Répondre en 5 secondes aux questions clés"],["Résultat","Moins d'appels, plus de demandes qualifiées"]]
   },
   {
     title:"Un dashboard que votre équipe va adorer",
     bullets:["Données en temps réel, toujours accessibles","Accès multi-rôles et permissions fines","Déployé en semaines, pas en mois"],
     preview:"App / SaaS.",
-    code:`<span class="cm">// votre application, en clair</span>
-<span class="ky">objectif</span> <span class="op">:</span> <span class="st">"un outil que vos équipes ouvrent chaque jour"</span>
-<span class="ky">action</span>   <span class="op">:</span> <span class="st">"centralise vos données en temps réel"</span>
-<span class="ky">résultat</span> <span class="op">:</span> <span class="st">"zéro tableur, zéro double-saisie"</span>`
+    rows:[["Objectif","Un outil que vos équipes ouvrent chaque jour"],["Comment","Toutes vos données réunies en temps réel"],["Résultat","Zéro tableur, zéro double saisie"]]
   },
   {
     title:"Un logiciel taillé pour votre métier",
     bullets:["Adapté à vos flux, pas l'inverse","Intégrations sur mesure avec vos outils","Formation et support inclus"],
     preview:"ERP / Logiciel.",
-    code:`<span class="cm">// votre logiciel métier, en clair</span>
-<span class="ky">objectif</span> <span class="op">:</span> <span class="st">"suivre vos dossiers sans y penser"</span>
-<span class="ky">action</span>   <span class="op">:</span> <span class="st">"alerte automatiquement en cas de retard"</span>
-<span class="ky">résultat</span> <span class="op">:</span> <span class="st">"zéro appel pour un point d'avancement"</span>`
+    rows:[["Objectif","Suivre vos dossiers sans y penser"],["Comment","Une alerte automatique en cas de retard"],["Résultat","Plus besoin d'appeler pour un point d'avancement"]]
   }
 ]
-function setGutter(code){
-  const lines=code.split('\n').length
-  document.getElementById('hmGutter').innerHTML=Array.from({length:lines},(_,i)=>`<span>${i+1}</span>`).join('')
+function renderRows(rows){
+  document.getElementById('hmRows').innerHTML=rows.map(([l,v])=>`<div class="hm-row"><span class="hm-row-l">${l}</span><span class="hm-row-v">${v}</span></div>`).join('')
 }
 let hmIdx=0
 function switchHmTab(idx){
   const d=hmData[idx]
   const title=document.getElementById('hmTitle')
   const bullets=document.getElementById('hmBullets')
-  const code=document.getElementById('hmCode')
+  const code=document.getElementById('hmRows')
   const preview=document.getElementById('hmPreviewText')
   title.style.opacity='0';title.style.transform='translateY(6px)'
   bullets.style.opacity='0';code.style.opacity='0'
@@ -1060,8 +1068,7 @@ function switchHmTab(idx){
   setTimeout(()=>{
     title.textContent=d.title
     bullets.innerHTML=d.bullets.map(b=>`<span class="hm-bullet">${b}</span>`).join('')
-    code.innerHTML=d.code
-    setGutter(d.code)
+    renderRows(d.rows)
     preview.textContent=d.preview
     title.style.opacity='1';title.style.transform='none'
     bullets.style.opacity='1';code.style.opacity='1'
@@ -1070,8 +1077,7 @@ function switchHmTab(idx){
   document.querySelectorAll('.hm-tab').forEach((t,i)=>t.classList.toggle('act',i===idx))
   hmIdx=idx
 }
-document.getElementById('hmCode').innerHTML=hmData[0].code
-setGutter(hmData[0].code)
+renderRows(hmData[0].rows)
 document.getElementById('hmTabs').addEventListener('click',e=>{
   const tab=e.target.closest('.hm-tab')
   if(!tab)return
