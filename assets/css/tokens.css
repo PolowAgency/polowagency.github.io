@@ -1,0 +1,10 @@
+/* Tokens de design POLOW. Source unique des couleurs, rayons et easings. */
+:root{
+  --bg:#0a0a0a; --bg2:#131313; --bg3:#1c1c1c; --line:#2a2a2a;
+  --or:#ff6a1a; --or2:#ff9a52; --or3:#ffd2b0;
+  --tx:#f6f4f1; --mu:#8d8a86;
+  --r:28px; --rs:18px; --rl:40px; --rp:999px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --font:Poppins,system-ui,sans-serif;
+  --gutter:clamp(16px,4vw,40px);
+}
