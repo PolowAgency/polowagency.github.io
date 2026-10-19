@@ -6,6 +6,8 @@
 <title>Politique de confidentialité · POLOW Agency</title>
 <meta name="description" content="Comment POLOW Agency collecte et utilise vos données personnelles, et comment exercer vos droits.">
 <link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/svg+xml" href="polow-icone.svg">
+<link rel="apple-touch-icon" href="favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -39,7 +41,7 @@ button{font-family:'Manrope',sans-serif;cursor:pointer}
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:.85rem 3.5rem;background:rgba(6,6,10,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
 .nav-logo{display:flex;align-items:center;gap:.5rem}
-.nav-logo img{width:26px;height:26px;object-fit:contain;mix-blend-mode:screen}
+.nav-logo img{height:44px;width:auto;display:block}
 .nav-brand{font-family:'Bricolage Grotesque',sans-serif;font-size:.95rem;font-weight:800}
 .nav-links{display:flex;gap:2rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%);align-items:center}
 .nav-links a{font-size:.83rem;color:rgba(255,255,255,.65);font-weight:500;transition:color .18s}
@@ -71,7 +73,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .mnav-bg{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px)}
 .mnav-panel{position:absolute;top:0;right:0;bottom:0;width:82%;max-width:340px;background:#0a0a0f;border-left:1px solid rgba(255,255,255,.07)}
 .mnav-hd{position:absolute;top:0;left:0;right:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid rgba(255,255,255,.06)}
-.mnav-hd img{height:20px;width:auto}
+.mnav-hd img{height:34px;width:auto}
 .mnav-close{background:none;border:1px solid rgba(255,255,255,.13);border-radius:8px;color:rgba(255,255,255,.6);font-size:14px;width:36px;height:36px;line-height:1;cursor:pointer}
 .mnav-links{position:absolute;top:56px;left:0;right:0;bottom:78px;display:flex;flex-direction:column;justify-content:center;padding:0 24px;gap:2px}
 .mnav-links a{display:block;padding:10px 0;font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:700;color:rgba(255,255,255,.38);letter-spacing:-.02em;border-bottom:1px solid rgba(255,255,255,.05);transition:color .12s}
@@ -165,7 +167,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1.5rem}
 .foot-g{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:2.5rem;margin-bottom:2.5rem}
 .foot-brand{display:flex;align-items:center;gap:.48rem;margin-bottom:.65rem}
-.foot-logo{width:22px;height:22px;object-fit:contain;mix-blend-mode:screen;opacity:.7}
+.foot-logo{height:36px;width:auto;display:block;opacity:.85}
 .foot-name{font-family:'Bricolage Grotesque',sans-serif;font-size:.88rem;font-weight:800;letter-spacing:.08em}
 .foot-tag{font-size:.75rem;color:var(--muted);line-height:1.65;max-width:210px;margin-bottom:.6rem}
 .foot-siren{font-family:'JetBrains Mono',monospace;font-size:.57rem;color:var(--muted2)}
@@ -226,7 +228,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
 <body>
 
 <nav id="nav">
-  <a href="index.html" class="nav-logo"><img src="logo.png" alt="POLOW Agency"><span class="nav-brand">POLOW.</span></a>
+  <a href="index.html" class="nav-logo"><img src="polow-logo-blanc.svg" alt="POLOW Agency" width="141" height="44"></a>
   <ul class="nav-links">
     <li><a href="index.html">Accueil</a></li>
     <li class="nav-has-drop">
@@ -252,7 +254,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
   <div class="mnav-bg" id="mnavBg"></div>
   <div class="mnav-panel">
     <div class="mnav-hd">
-      <img src="logo.png" alt="POLOW">
+      <img src="polow-logo-blanc.svg" alt="POLOW" width="96" height="30">
       <button class="mnav-close" id="mnavClose">✕</button>
     </div>
     <div class="mnav-links">
@@ -326,7 +328,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 0 1
 <footer>
   <div class="wrap">
     <div class="foot-g">
-      <div><div class="foot-brand"><img src="logo.png" alt="POLOW" class="foot-logo"><span class="foot-name">POLOW</span></div><p class="foot-tag">Logiciels et outils sur mesure pour les PME, fondateurs et startups, depuis Douai.</p><p class="foot-siren">SIREN 101 540 243 · France</p></div>
+      <div><div class="foot-brand"><img src="polow-logo-blanc.svg" alt="POLOW" class="foot-logo" width="116" height="36"></div><p class="foot-tag">Logiciels et outils sur mesure pour les PME, fondateurs et startups, depuis Douai.</p><p class="foot-siren">SIREN 101 540 243 · France</p></div>
       <div><div class="foot-col-h">Services</div><ul class="foot-links"><li><a href="services.html#site-web">Site web</a></li><li><a href="services.html#saas">Application & SaaS</a></li><li><a href="services.html#crm">CRM & Logiciel</a></li></ul></div>
       <div><div class="foot-col-h">Agence</div><ul class="foot-links"><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div><div class="foot-col-h">Contact</div><ul class="foot-links"><li><a href="tel:+33781754719">07 81 75 47 19</a></li><li><a href="mailto:contact@polowagency.fr">contact@polowagency.fr</a></li></ul></div>
