@@ -413,3 +413,6 @@ body.inner .snd{bottom:20px}
 }
 .ft-top .fh{font-size:13px;color:var(--mu);font-weight:500;margin-bottom:14px}
 .pcard h2{font-size:28px;font-weight:600;letter-spacing:-.02em}
+.fcard.has-img .shot{background:#0a0a0a}
+.fcard.has-img .bd{display:block;padding:0;background:var(--img) center top/cover}
+.fcard.has-img .bd>*{display:none}
