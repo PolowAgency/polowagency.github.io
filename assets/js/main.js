@@ -1,41 +1,8 @@
-import {clamp,lerp,ease,easeIO,reducedMotion,useScrollProgress as prog,onFrame} from './scroll.js';
-import {snd,setSound,toggleSound,onSoundChange,armFirstGesture} from './sound.js';
+import {clamp,lerp,ease,easeIO,useScrollProgress as prog,onFrame} from './scroll.js';
+import {snd} from './sound.js';
+import {$,$$,RM,initCommon} from './common.js';
 
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const RM=reducedMotion();
-if(RM) document.documentElement.classList.add('rm');
-
-/* ================= SON ================= */
-const sndBtn=$('#snd'), sndTxt=$('#sndTxt'), ear=$('#ear'), earTap=$('#earTap');
-onSoundChange(v=>{
-  sndBtn.classList.toggle('on',v); ear.setAttribute('aria-pressed',v);
-  sndTxt.textContent=v?'Son activé':'Son coupé';
-  earTap.textContent=v?'Son activé ✓':'Clique pour activer le son';
-});
-sndBtn.addEventListener('click',toggleSound);
-ear.addEventListener('click',toggleSound);
-ear.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleSound(); } });
-armFirstGesture();
-
-/* ================= CURSEUR ================= */
-const cur=$('#cur'); let mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
-addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
-$$('[data-hover], a, button').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{snd.blip(); cur.classList.add('big')});
-  el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
-  el.addEventListener('click',()=>snd.pop());
-});
-
-/* ================= MENU ================= */
-const burger=$('#burger');
-function setMenu(open){
-  document.body.classList.toggle('menu-open',open);
-  burger.setAttribute('aria-expanded',open); burger.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
-  if(open) snd.whoosh(.6);
-}
-burger.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
-$$('.menu a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
-addEventListener('keydown',e=>{ if(e.key==='Escape') setMenu(false); });
+initCommon();
 
 /* ================= HERO : titre tapé ================= */
 const words=['on la construit.','on la met en ligne.','on la fait grandir.'];
@@ -83,9 +50,6 @@ $$('.rvid').forEach(v=>{
   if(!RM) rvio.observe(v);
 });
 
-/* ================= REVELATIONS ================= */
-const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.18});
-$$('.rv, #exp, #steps').forEach(el=>io.observe(el));
 if(!RM){
   const wio=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) snd.whoosh(.8); }),{threshold:.05});
   $$('#pixel,#vision,#designs,#reals').forEach(el=>wio.observe(el));
@@ -100,33 +64,21 @@ const manifW=$$('#manifT span'), visW=$$('#visionT span');
 const rollUl=$('#rollUl'), rollN=rollUl.children.length; let ri=0;
 if(!RM) setInterval(()=>{ ri=(ri+1)%rollN; rollUl.style.transform=`translateY(${-ri*1.15}em)`; if(ri===rollN-1) snd.pop(); else snd.tick(); },1800);
 
-/* ================= HALO DES SERVICES ================= */
-$$('.sv').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(); c.style.setProperty('--mx',e.clientX-r.left+'px'); c.style.setProperty('--my',e.clientY-r.top+'px');}));
-
-/* ================= FAQ ================= */
-$$('.q button').forEach(b=>b.addEventListener('click',()=>{
-  const q=b.parentElement, o=q.classList.contains('open');
-  $$('.q').forEach(x=>{ x.classList.remove('open'); x.querySelector('button').setAttribute('aria-expanded','false'); });
-  if(!o){ q.classList.add('open'); b.setAttribute('aria-expanded','true'); }
-}));
-
 /* ================= ANIMATIONS AU SCROLL ================= */
 if(!RM){
   const secV=$('#video'), secP=$('#pixel'), secC=$('#vision'), secM=$('#manif'), secD=$('#designs'), secR=$('#reals');
   const lines=$$('#lines i'), pdot=$('#pdot'), ptitle=$('#ptitle'), pgrid=$('#pgrid'), ring=$('#ring');
   const cards=$$('.fcard').map(el=>({el,x:+el.dataset.x,y:+el.dataset.y,r:+el.dataset.r,d:+el.dataset.d}));
-  const designsT=$('#designsT'), htrack=$('#htrack'), hd=$('#hd');
-  let pmx=0,pmy=0,lastPixelStage=0,lastY=0,trackMax=0;
+  const designsT=$('#designsT'), htrack=$('#htrack');
+  let pmx=0,pmy=0,lastPixelStage=0,trackMax=0,mx=innerWidth/2,my=innerHeight/2;
+  addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
   const measure=()=>{ trackMax=Math.max(htrack.scrollWidth-innerWidth,0); };
   measure(); addEventListener('resize',measure); addEventListener('load',measure);
   /* une section n'est calculée que lorsqu'elle est proche de l'écran */
   const near=el=>{ const r=el.getBoundingClientRect(); return r.bottom>-200&&r.top<innerHeight+200; };
 
   onFrame(()=>{
-    cx=lerp(cx,mx,.2); cy=lerp(cy,my,.2); cur.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;
     pmx=lerp(pmx,(mx/innerWidth-.5),.06); pmy=lerp(pmy,(my/innerHeight-.5),.06);
-
-    const y=scrollY; hd.classList.toggle('hide',y>lastY&&y>200&&!document.body.classList.contains('menu-open')); lastY=y;
 
     if(near(secV)){ const p=prog(secV), e=ease(clamp(p*2.2)); vcard.style.transform=`scale(${lerp(.78,1,e)}) translateY(${lerp(80,0,e)}px)`; vcard.style.borderRadius=lerp(48,24,e)+'px'; }
 

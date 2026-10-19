@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="rm">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.remove('rm')</script>
 <title>POLOW Agency · Sites, logiciels métier et SaaS sur mesure à Douai</title>
 <meta name="description" content="POLOW Agency conçoit des sites, logiciels métier, CRM, ERP et SaaS sur mesure pour les PME, depuis Douai et partout en France. Du premier appel à la mise en ligne.">
 <meta name="robots" content="index, follow">
@@ -14,7 +15,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://polowagency.fr/">
 <meta property="og:site_name" content="POLOW Agency">
-<meta property="og:image" content="https://polowagency.fr/videos/polow-video_poster.jpg">
+<meta property="og:image" content="https://polowagency.fr/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.ico">
 <link rel="icon" type="image/svg+xml" href="polow-icone.svg">
@@ -25,6 +26,7 @@
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"POLOW Agency","founder":{"@type":"Person","name":"Paul PIOT"},"areaServed":["Douai","Lens","Arras","Valenciennes","Lille","Hauts-de-France"],"address":{"@type":"PostalAddress","addressLocality":"Douai","addressRegion":"Hauts-de-France","addressCountry":"FR"},"telephone":"+33781754719","email":"contact@polowagency.fr","url":"https://polowagency.fr","sameAs":["https://instagram.com/polowagency"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un projet sur mesure ?","acceptedAnswer":{"@type":"Answer","text":"Chaque projet est chiffré au cas par cas, selon le périmètre et les fonctionnalités. Après notre premier appel, vous recevez une proposition écrite avec un prix ferme."}},{"@type":"Question","name":"Quels sont les délais ?","acceptedAnswer":{"@type":"Answer","text":"Un site vitrine se construit en quelques semaines. Un logiciel métier ou un SaaS dépend de son périmètre : le délai est fixé dans la proposition et vous suivez l'avancement chaque semaine."}},{"@type":"Question","name":"Le code m'appartient-il ?","acceptedAnswer":{"@type":"Answer","text":"Oui. À la livraison, le code et les accès sont à vous."}},{"@type":"Question","name":"Vous travaillez avec quel type d'entreprise ?","acceptedAnswer":{"@type":"Answer","text":"Principalement des PME, des indépendants et des entrepreneurs qui veulent un outil qui leur ressemble : commerces, formateurs, cabinets, entreprises de services."}},{"@type":"Question","name":"Et après la mise en ligne ?","acceptedAnswer":{"@type":"Answer","text":"On peut assurer la maintenance, l'hébergement et les évolutions. Votre outil continue de grandir avec votre activité."}}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Aller au contenu</a>
@@ -37,7 +39,7 @@
     <a class="ico" href="https://wa.me/33781754719" target="_blank" rel="noopener" aria-label="WhatsApp" data-hover>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .8c-1-.4-2.2-1.6-2.7-2.7l.8-1-1-2z" fill="currentColor" stroke="none"/></svg>
     </a>
-    <a class="btn" href="#contact" data-hover>J'ai un projet</a>
+    <a class="btn" href="contact.html" data-hover>J'ai un projet</a>
     <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu" data-hover><div><span></span><span></span></div></button>
   </div>
 </header>
@@ -45,10 +47,10 @@
 <nav class="menu" id="menu" aria-label="Menu principal">
   <div class="blob" aria-hidden="true"></div>
   <a class="big" href="#reals">Réalisations</a>
-  <a class="big" href="#services">Services</a>
+  <a class="big" href="services.html">Services</a>
   <a class="big" href="#process">Méthode</a>
-  <a class="big" href="#about">L'agence</a>
-  <a class="big" href="#contact">Contact</a>
+  <a class="big" href="a-propos.html">L'agence</a>
+  <a class="big" href="contact.html">Contact</a>
   <div class="foot"><a href="mailto:contact@polowagency.fr">contact@polowagency.fr</a><a href="tel:+33781754719">07 81 75 47 19</a><a href="https://instagram.com/polowagency" target="_blank" rel="noopener">@polowagency</a></div>
 </nav>
 
@@ -250,7 +252,7 @@
     <div class="cta rv">
       <h2>Un appel avec Paul.<br>Pas un commercial.</h2>
       <p>Un créneau en visio pour parler de votre projet. Vous repartez avec un plan, qu'on travaille ensemble ou non.</p>
-      <a class="btn lg" href="mailto:contact@polowagency.fr?subject=Projet%20POLOW" data-hover>Réserver un appel</a>
+      <div class="cta-row"><a class="btn lg" href="mailto:contact@polowagency.fr?subject=Projet%20POLOW" data-hover>Réserver un appel</a><a class="btn lg ghost" href="https://wa.me/33781754719" target="_blank" rel="noopener" data-hover>WhatsApp</a></div>
     </div>
   </div>
 </section>
@@ -275,8 +277,8 @@
   <div class="ft-top">
     <div><a class="logo" href="#top">POLOW<i></i></a><p style="color:var(--mu);margin-top:12px;max-width:300px;font-size:14px;line-height:1.6">Sites, logiciels métier et SaaS sur mesure. Hauts-de-France.</p></div>
     <div style="display:flex;gap:60px;flex-wrap:wrap">
-      <div><h3>Agence</h3><a href="#reals">Réalisations</a><a href="#services">Services</a><a href="#process">Méthode</a><a href="services.html">Services en détail</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a></div>
-      <div><h3>Contact</h3><a href="mailto:contact@polowagency.fr">E-mail</a><a href="https://wa.me/33781754719" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/polowagency" target="_blank" rel="noopener">Instagram</a></div>
+      <div><p class="fh">Agence</p><a href="#reals">Réalisations</a><a href="#services">Services</a><a href="#process">Méthode</a><a href="services.html">Services en détail</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a></div>
+      <div><p class="fh">Contact</p><a href="mailto:contact@polowagency.fr">E-mail</a><a href="https://wa.me/33781754719" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/polowagency" target="_blank" rel="noopener">Instagram</a></div>
     </div>
   </div>
   <div class="giant" aria-hidden="true">POLOW<i>.</i></div>
