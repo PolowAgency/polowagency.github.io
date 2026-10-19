@@ -429,3 +429,10 @@ body.inner .snd{bottom:20px}
   .rcard h3{font-size:22px}
   .rcard .vis{padding:0 5%}
 }
+
+/* ---------- logo : icône + mot ---------- */
+.logo{align-items:center;gap:10px}
+.logo img{width:34px;height:34px;border-radius:10px;flex:0 0 auto}
+.logo .lw{display:flex;align-items:baseline}
+@media (max-width:820px){.logo{font-size:22px}.logo img{width:30px;height:30px}}
+.ft-top a.logo{display:flex;padding:0;font-size:24px}
