@@ -481,3 +481,15 @@ body.inner .snd{bottom:20px}
 @media (max-width:1199px){.eng{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:820px){.subs{grid-template-columns:1fr}}
 @media (max-width:700px){.offers,.eng{grid-template-columns:1fr}}
+
+/* ---------- sélecteur de langue FR | EN ---------- */
+.lang{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.04em;margin-right:4px}
+.lang a{position:relative;color:var(--mu);padding:6px 2px;transition:color .3s}
+.lang a:hover,.lang a.on{color:var(--tx)}
+.lang a.on:after{content:"";position:absolute;left:0;right:0;bottom:1px;height:2px;border-radius:2px;background:var(--or)}
+.lang span{color:#ffffff33}
+.lang-m{display:none}
+@media (max-width:820px){.hd .lang{display:none}.menu .lang-m{display:flex;margin-top:34px;font-size:18px;gap:14px}}
+.o-price b span.eur{margin:0 .08em 0 0;vertical-align:.38em}
+html[lang="en"] .offer.feat:before{content:"Recommended"}
+.tr-note{font-size:13px;line-height:1.6;color:var(--or2);background:#ff6a1a14;border:1px solid #ff6a1a44;border-radius:14px;padding:12px 16px;margin-bottom:28px!important}

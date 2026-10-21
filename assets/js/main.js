@@ -1,20 +1,21 @@
 import {clamp,lerp,ease,easeIO,useScrollProgress as prog,onFrame} from './scroll.js';
 import {snd} from './sound.js';
+import {T} from './i18n.js';
 import {$,$$,RM,initCommon} from './common.js';
 
 initCommon();
 
 /* ================= HERO : titre tapé ================= */
-const words=['on la construit.','on la met en ligne.','on la fait grandir.'];
+const words=T.words;
 const typed=$('#typed');
 if(RM) typed.textContent=words[0];
 else (async()=>{
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   let wi=0; await sleep(900);
   while(true){ const w=words[wi%words.length];
-    for(let i=1;i<=w.length;i++){ typed.textContent=w.slice(0,i); if(w[i-1]!==' ') snd.tick(); await sleep(55+Math.random()*60); }
+    for(let i=1;i<=w.length;i++){ typed.textContent=w.slice(0,i)+'\u2060'; if(w[i-1]!==' ') snd.tick(); await sleep(55+Math.random()*60); }
     await sleep(2200);
-    for(let i=w.length;i>=0;i--){ typed.textContent=w.slice(0,i); await sleep(26); }
+    for(let i=w.length;i>=0;i--){ typed.textContent=w.slice(0,i)+'\u2060'; await sleep(26); }
     await sleep(350); wi++; }
 })();
 
@@ -32,7 +33,7 @@ vid.addEventListener('timeupdate',()=>{
 const setPlayIco=()=>$('#vplayIco').setAttribute('d',vid.paused?'M2 1l9 5-9 5z':'M2 1h3v10H2zM7 1h3v10H7z');
 $('#vplay').addEventListener('click',()=>{ vid.paused?vid.play().catch(()=>{}):vid.pause(); });
 vid.addEventListener('play',setPlayIco); vid.addEventListener('pause',setPlayIco);
-$('#vmute').addEventListener('click',()=>{ vid.muted=!vid.muted; $('#vmuteX').style.display=vid.muted?'':'none'; $('#vmute').setAttribute('aria-label',vid.muted?'Activer le son de la vidéo':'Couper le son de la vidéo'); });
+$('#vmute').addEventListener('click',()=>{ vid.muted=!vid.muted; $('#vmuteX').style.display=vid.muted?'':'none'; $('#vmute').setAttribute('aria-label',vid.muted?T.vmuteOn:T.vmuteOff); });
 const seek=x=>{ const r=vbar.getBoundingClientRect(); if(vid.duration) vid.currentTime=clamp((x-r.left)/r.width)*vid.duration; };
 vbar.addEventListener('click',e=>seek(e.clientX));
 vbar.addEventListener('keydown',e=>{ if(!vid.duration) return;

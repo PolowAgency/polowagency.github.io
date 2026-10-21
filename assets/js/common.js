@@ -1,5 +1,6 @@
 import {lerp,reducedMotion,onFrame} from './scroll.js';
 import {snd,toggleSound,onSoundChange,armFirstGesture} from './sound.js';
+import {T} from './i18n.js';
 
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 export {$,$$};
@@ -10,8 +11,8 @@ export function initCommon(){
   /* ---------- son ---------- */
   const sndBtn=$('#snd'), sndTxt=$('#sndTxt'), ear=$('#ear'), earTap=$('#earTap');
   onSoundChange(v=>{
-    sndBtn.classList.toggle('on',v); sndTxt.textContent=v?'Son activé':'Son coupé';
-    if(ear){ ear.setAttribute('aria-pressed',v); earTap.textContent=v?'Son activé ✓':'Clique pour activer le son'; }
+    sndBtn.classList.toggle('on',v); sndTxt.textContent=v?T.soundOn:T.soundOff;
+    if(ear){ ear.setAttribute('aria-pressed',v); earTap.textContent=v?T.earDone:T.earTap; }
   });
   sndBtn.addEventListener('click',toggleSound);
   if(ear){
@@ -33,7 +34,7 @@ export function initCommon(){
   const burger=$('#burger');
   const setMenu=open=>{
     document.body.classList.toggle('menu-open',open);
-    burger.setAttribute('aria-expanded',open); burger.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
+    burger.setAttribute('aria-expanded',open); burger.setAttribute('aria-label',open?T.menuClose:T.menuOpen);
     if(open) snd.whoosh(.6);
   };
   burger.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
@@ -49,6 +50,9 @@ export function initCommon(){
   };
   head(); addEventListener('scroll',head,{passive:true});
   if(!RM) onFrame(()=>{ cx=lerp(cx,mx,.2); cy=lerp(cy,my,.2); cur.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`; });
+
+  /* ---------- langue : on mémorise le choix, sans jamais rediriger ---------- */
+  $$('.lang a').forEach(a=>a.addEventListener('click',()=>{ try{ localStorage.setItem('polow-lang',a.getAttribute('lang')); }catch{} }));
 
   /* ---------- révélations, halo, FAQ ---------- */
   const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.15});
