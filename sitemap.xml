@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://polowagency.fr/</loc></url>
-  <url><loc>https://polowagency.fr/services.html</loc></url>
-  <url><loc>https://polowagency.fr/a-propos.html</loc></url>
-  <url><loc>https://polowagency.fr/contact.html</loc></url>
-  <url><loc>https://polowagency.fr/mentions-legales.html</loc></url>
-  <url><loc>https://polowagency.fr/confidentialite.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://polowagency.fr/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/services.html"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/en/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/services.html"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/a-propos.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/a-propos.html"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/en/a-propos.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/a-propos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/a-propos.html"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/contact.html"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/contact.html"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/mentions-legales.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/mentions-legales.html"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/en/mentions-legales.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/mentions-legales.html"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/confidentialite.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/confidentialite.html"/>
+  </url>
+  <url>
+    <loc>https://polowagency.fr/en/confidentialite.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://polowagency.fr/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polowagency.fr/en/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polowagency.fr/confidentialite.html"/>
+  </url>
 </urlset>

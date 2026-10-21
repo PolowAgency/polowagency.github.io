@@ -5,14 +5,18 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.remove('rm')</script>
 <title>Contact · Parlons de votre projet | POLOW Agency</title>
-<meta name="description" content="Contactez POLOW Agency à Douai : décrivez votre projet de site, logiciel ou SaaS sur mesure et recevez une réponse sous 24 h.">
+<meta name="description" content="Contactez POLOW Agency, basée en France : décrivez votre projet de site, logiciel ou SaaS sur mesure et recevez une réponse sous 24 h.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="canonical" href="https://polowagency.fr/contact.html">
+<link rel="alternate" hreflang="fr" href="https://polowagency.fr/contact.html">
+<link rel="alternate" hreflang="en" href="https://polowagency.fr/en/contact.html">
+<link rel="alternate" hreflang="x-default" href="https://polowagency.fr/contact.html">
 <meta property="og:title" content="Contact · Parlons de votre projet | POLOW Agency">
-<meta property="og:description" content="Contactez POLOW Agency à Douai : décrivez votre projet de site, logiciel ou SaaS sur mesure et recevez une réponse sous 24 h.">
+<meta property="og:description" content="Contactez POLOW Agency, basée en France : décrivez votre projet de site, logiciel ou SaaS sur mesure et recevez une réponse sous 24 h.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://polowagency.fr/contact.html">
 <meta property="og:site_name" content="POLOW Agency">
 <meta property="og:image" content="https://polowagency.fr/og-image.png">
@@ -32,6 +36,10 @@
 <header class="hd" id="hd">
   <a href="index.html" class="logo" aria-label="POLOW, accueil"><img src="polow-icone.svg" alt="" width="34" height="34"><span class="lw">POLOW<i></i></span></a>
   <div class="hd-r">
+    <div class="lang" role="group" aria-label="Langue"><a href="contact.html" lang="fr" hreflang="fr" class="on" aria-current="true">FR</a><span aria-hidden="true">|</span><a href="en/contact.html" lang="en" hreflang="en">EN</a></div>
+    
+    
+    
     <a class="ico" href="https://wa.me/33781754719" target="_blank" rel="noopener" aria-label="WhatsApp" data-hover>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .8c-1-.4-2.2-1.6-2.7-2.7l.8-1-1-2z" fill="currentColor" stroke="none"/></svg>
     </a>
@@ -47,6 +55,10 @@
   <a class="big" href="index.html#process">Méthode</a>
   <a class="big" href="a-propos.html">L'agence</a>
   <a class="big" href="contact.html">Contact</a>
+  
+  
+  
+  <div class="lang lang-m" role="group" aria-label="Langue"><a href="contact.html" lang="fr" hreflang="fr" class="on" aria-current="true">FR</a><span aria-hidden="true">|</span><a href="en/contact.html" lang="en" hreflang="en">EN</a></div>
   <div class="foot"><a href="mailto:contact@polowagency.fr">contact@polowagency.fr</a><a href="tel:+33781754719">07 81 75 47 19</a><a href="https://instagram.com/polowagency" target="_blank" rel="noopener">@polowagency</a></div>
 </nav>
 
@@ -67,7 +79,7 @@
       <a class="cc" href="https://wa.me/33781754719" target="_blank" rel="noopener" data-hover><b>WhatsApp</b><span>Message direct</span></a>
       <a class="cc" href="mailto:contact@polowagency.fr" data-hover><b>E-mail</b><span>contact@polowagency.fr</span></a>
       <a class="cc" href="tel:+33781754719" data-hover><b>Téléphone</b><span>07 81 75 47 19</span></a>
-      <p class="cnote"><i aria-hidden="true"></i>Disponible, Douai et à distance.</p>
+      <p class="cnote"><i aria-hidden="true"></i>Disponible, en France et à l'international.</p>
     </aside>
     <form class="cform rv" id="cform" action="https://formspree.io/f/xykqonqo" method="post">
       <div class="two">
@@ -83,8 +95,9 @@
       <fieldset class="fld"><legend>Pour quand ?</legend><div class="chips"><label class="chip"><input type="radio" name="delai" value="rapide"><span>Dès que possible</span></label><label class="chip"><input type="radio" name="delai" value="mois"><span>Dans le mois</span></label><label class="chip"><input type="radio" name="delai" value="trimestre"><span>Dans 3 mois</span></label><label class="chip"><input type="radio" name="delai" value="libre"><span>Pas de date</span></label></div></fieldset>
       <div class="fld"><label for="message">Votre projet</label><textarea id="message" name="message" rows="5" required placeholder="Quel est votre besoin, et à quoi doit servir l'outil ?"></textarea></div>
       <fieldset class="fld"><legend>Comment préférez-vous être contacté ?</legend><div class="chips"><label class="chip"><input type="radio" name="contact_pref" value="appel" checked><span>Par téléphone</span></label><label class="chip"><input type="radio" name="contact_pref" value="message"><span>Par message uniquement</span></label></div></fieldset>
+      <input type="hidden" name="langue" value="fr">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-      <button class="btn lg" type="submit" id="send" data-hover><span>Envoyer ma demande</span></button>
+      <button class="btn lg" type="submit" id="send" data-label="Envoyer ma demande" data-sending="Envoi en cours" data-hover><span>Envoyer ma demande</span></button>
       <p class="fnote">Vos informations servent uniquement à répondre à votre demande. <a href="confidentialite.html">Politique de confidentialité</a></p>
       <p class="fmsg ok" id="ok" role="status" hidden>Message envoyé. Je reviens vers vous très vite.</p>
       <p class="fmsg ko" id="err" role="alert" hidden>Une erreur est survenue. Écrivez-moi à <a href="mailto:contact@polowagency.fr">contact@polowagency.fr</a> ou sur WhatsApp.</p>
@@ -94,7 +107,7 @@
 </main>
 <footer class="ft">
   <div class="ft-top">
-    <div><a class="logo" href="index.html" aria-label="POLOW, accueil"><img src="polow-icone.svg" alt="" width="34" height="34"><span class="lw">POLOW<i></i></span></a><p style="margin-top:12px;max-width:300px;font-size:14px;line-height:1.6">Sites, logiciels métier et SaaS sur mesure. Douai et Hauts-de-France.</p></div>
+    <div><a class="logo" href="index.html" aria-label="POLOW, accueil"><img src="polow-icone.svg" alt="" width="34" height="34"><span class="lw">POLOW<i></i></span></a><p style="margin-top:12px;max-width:300px;font-size:14px;line-height:1.6">Sites, logiciels métier et SaaS sur mesure. Basé en France, clients en France et à l'international.</p></div>
     <div style="display:flex;gap:60px;flex-wrap:wrap">
       <div><p class="fh">Agence</p><a href="index.html#reals">Réalisations</a><a href="services.html">Services</a><a href="index.html#process">Méthode</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a></div>
       <div><p class="fh">Contact</p><a href="mailto:contact@polowagency.fr">E-mail</a><a href="https://wa.me/33781754719" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/polowagency" target="_blank" rel="noopener">Instagram</a></div>
