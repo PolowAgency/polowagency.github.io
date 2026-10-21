@@ -73,8 +73,8 @@ body.menu-open .menu a.big{opacity:1;transform:none}
 
 /* ---------- video ---------- */
 #video{height:230vh}
-.vcard{position:relative;width:min(92vw,1400px);aspect-ratio:16/9;max-height:86svh;border-radius:40px;overflow:hidden;background:#111;transform-origin:center;will-change:transform}
-.vcard video{width:100%;height:100%;object-fit:cover}
+.vcard{position:relative;width:min(92vw,1400px,calc(86svh * 16 / 9));aspect-ratio:16/9;border-radius:40px;overflow:hidden;background:#111;transform-origin:center;will-change:transform}
+.vcard video{width:100%;height:100%;object-fit:contain;background:#fff}
 .vfallback{position:absolute;inset:0;display:none;background:radial-gradient(120% 120% at 0% 0%,var(--or) 0,#ff8a3d 25%,#2a1206 60%,#0a0a0a 100%)}
 .vcard.novideo .vfallback{display:block}
 .vcard.novideo video{display:none}
@@ -275,7 +275,7 @@ body.menu-open .menu a.big{opacity:1;transform:none}
   .hd .btn{display:none}
   .st{min-height:360px}
   .fcard{width:44vw;border-radius:22px}
-  .vcard{border-radius:24px;aspect-ratio:9/12}
+  .vcard{border-radius:18px;aspect-ratio:16/9;width:94vw}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
