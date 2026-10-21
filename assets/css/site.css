@@ -80,6 +80,7 @@ body.menu-open .menu a.big{opacity:1;transform:none}
 .vcard.novideo video{display:none}
 .vmarq{position:absolute;left:0;right:0;top:12%;white-space:nowrap;font-size:clamp(36px,6vw,90px);font-weight:600;letter-spacing:-.03em;color:#fff;mix-blend-mode:overlay;opacity:.9;pointer-events:none}
 .vmarq span{display:inline-block;animation:marq 22s linear infinite;padding-right:60px}
+.vcard:not(.novideo) .vmarq{display:none}
 @keyframes marq{to{transform:translateX(-100%)}}
 .vlabel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;font-size:14px;color:#ffffffcc;display:none}
 .vcard.novideo .vlabel{display:block}
