@@ -496,3 +496,10 @@ html[lang="en"] .offer.feat:before{content:"Recommended"}
 
 /* ---------- ancres du menu : le titre de la section atterrit avec de l'air au-dessus ---------- */
 #process,#about,#contact{scroll-margin-top:clamp(70px,9vw,110px)}
+
+/* ---------- offre de lancement sur les sites ---------- */
+.launch{width:max-content;max-width:100%;margin:26px auto 0;text-align:center;font-size:14px;color:#ffe6d6;background:#ff6a1a1f;border:1px solid #ff6a1a66;padding:10px 20px;border-radius:99px}
+.launch b{color:var(--or2);font-weight:600}
+.o-promo{display:inline-block;background:var(--or);color:#0a0a0a;font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;margin-bottom:12px}
+.o-price small s{color:var(--mu);text-decoration-thickness:1.5px;font-size:15px}
+@media (min-width:1200px){.offer:not(.promo) .o-price{padding-top:41px}}
