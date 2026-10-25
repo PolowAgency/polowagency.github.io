@@ -25,8 +25,19 @@ Toutes se coupent seules en mouvement réduit. Voir `assets/kit/demo/index.html`
 | 18 | Sons + pastille | `sound-pill.js`, `core/sound.js` | tick, blip, pop, whoosh, chime (Web Audio, aucun fichier) ; premier clic active le son | `text`, état mémorisé |
 | 19 | Mouvement réduit | CSS `html.k-rm` | tout le contenu lisible, sans animation de scroll | classe `k-rm` |
 
+| 20 | Ouverture à volets | `intro-shutters.js` | logo, trait lumineux orange, deux volets qui s'ouvrent haut et bas ; 1 fois par session | `html key lineAt openAt endAt` |
+| 21 | Lettres qui défilent | `letter-roll.js` | au survol, chaque lettre du bouton monte et laisse place à sa copie (décalage de lettre en lettre) | `stagger` |
+| 22 | Bouton à ressort | `spring-button.js` + `core/spring.js` | suit le pointeur, s'étire, s'écrase au clic, rebondit | `pull k c` |
+| 23 | Titre lettre par lettre | `letter-reveal.js` | mots entiers, lettres qui montent en se précisant à l'entrée dans l'écran | `stagger maxDelay` |
+| 24 | Compteur | `count-up.js` | un entier monte de 0 à sa valeur (garde « 1 750 » ou « 1,750 » et le « € ») | `duration` |
+| 25 | Mot qui change | `word-swap.js` | « Un site pour [un salon → un restaurant…] », l'ancien monte en se floutant | `interval onSwap` |
+| 26 | Zoom dans un mot | `mask-zoom.js` + `.k-mz` | un mot géant sert de masque au fond ; on s'enfonce dans une lettre jusqu'au plein écran, puis le contenu arrive | `text focal stem start span endMul showAt` |
+| 27 | Étapes au scroll | `scroll-stages.js` | une section épinglée en N étapes : visuel, texte et barre d'index synchronisés | `stages index onStage` |
+| 28 | Nuage de mots | `word-cloud.js` | mots qui flottent autour du titre et apparaissent un à un | `count seed avoid` |
+| 29 | Bandeau à vitesse variable | `velocity-marquee.js` | défile en boucle et accélère avec la vitesse du scroll | `base boost max` |
+
 ## Noyau (`core/scroll.js`)
-`clamp lerp ease easeIO progress(section) near(section) onFrame(fn) mouse trackMouse reducedMotion`.
+`clamp lerp ease easeIO progress(section) near(section) onFrame(fn) mouse trackMouse reducedMotion`, et `core/spring.js` : `spring(état, cible, dt, raideur, amortissement)` pour tout mouvement qui rebondit.
 **Une seule boucle `requestAnimationFrame`** pour tout le site ; `near()` évite de calculer ce qui est hors écran.
 
 ## Recette : section épinglée
@@ -45,6 +56,15 @@ Toutes se coupent seules en mouvement réduit. Voir `assets/kit/demo/index.html`
 - Les ancres de menu : `scroll-margin-top` sur la section visée, sinon le titre arrive collé en haut.
 - Les sections épinglées ont une hauteur en `vh` : les mesurer en `svh` sur mobile si la barre d'adresse bouge.
 - Une vidéo `.mp4` doit être en H.264 pour lire partout ; le navigateur de test sans écran ne lit pas le H.264.
+
+- `mask-zoom` : le masque est un SVG utilisé comme image, il ne charge pas les polices de la page : utiliser une police système (Helvetica Neue, Arial). Viser le fût d'une lettre pleine (L, I, T), pas un O. Un aplat de même fond s'estompe sous le masque pour éviter tout à-coup à l'arrivée.
+- `mask-zoom` et ancre de menu : poser l'ancre (`<i class="anchor">`) en bas de la section haute (`top:calc(100% - 100svh)`), sinon un clic de menu arrive sur le mot géant et pas sur le contenu.
+- `letter-reveal` : retirer la classe de fondu (`.rv`) du titre avant de le découper, sinon deux animations s'additionnent.
+- `spring-button` utilise les propriétés CSS `translate` et `scale` : elles se combinent avec le `transform:` du survol, sans conflit (annuler le `transform` du survol pour ne pas grossir deux fois).
+- Parcours de modules ES : chaque niveau d'import ajoute un aller-retour réseau. Garder la chaîne courte sur mobile.
+
+## Autres techniques observées sur letmy.fr
+Voir `references/letmy.md` : fiche de chaque animation du site, ce qui est déjà dans le kit et ce qui demande WebGL.
 
 ## Ajouter une animation au kit
 1. `assets/kit/anims/<nom>.js` : une fonction exportée, `onFrame` pour l'animation, `reducedMotion()` pour couper, renvoie la fonction d'arrêt.

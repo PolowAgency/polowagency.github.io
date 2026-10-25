@@ -2,8 +2,15 @@ import {clamp,lerp,ease,easeIO,useScrollProgress as prog,onFrame} from './scroll
 import {snd} from './sound.js';
 import {T} from './i18n.js';
 import {$,$$,RM,initCommon} from './common.js';
+import {introShutters} from './mix/intro-shutters.js';
+import {maskZoom} from './mix/mask-zoom.js';
 
 initCommon();
+
+/* ================= OUVERTURE A VOLETS (1 fois par session) + ZOOM FINAL ================= */
+{ const logo=$('.hd .logo img');
+  introShutters({key:'polow-intro',html:logo?`<img src="${logo.src}" alt="">`:'',lineAt:500,openAt:850,endAt:1500}); }
+maskZoom($('#final'),{text:'POLOW',focal:2});
 
 /* ================= HERO : titre tapé ================= */
 const words=T.words;

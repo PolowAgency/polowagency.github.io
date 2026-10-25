@@ -1,6 +1,7 @@
 import {lerp,reducedMotion,onFrame} from './scroll.js';
 import {snd,toggleSound,onSoundChange,armFirstGesture} from './sound.js';
 import {T} from './i18n.js';
+import {initMix} from './mix/index.js';
 
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 export {$,$$};
@@ -63,4 +64,6 @@ export function initCommon(){
     $$('.q').forEach(x=>{ x.classList.remove('open'); x.querySelector('button').setAttribute('aria-expanded','false'); });
     if(!o){ q.classList.add('open'); b.setAttribute('aria-expanded','true'); }
   }));
+
+  initMix();
 }

@@ -185,3 +185,81 @@ html.k-rm .k-draw svg path,html.k-rm .k-draw svg circle{stroke-dashoffset:0}
 html.k-rm .k-htrack{width:100%;max-width:100%}
 html.k-rm .k-fly,html.k-rm .k-sticky{max-width:100%}
 html.k-rm .k-sticky{flex-direction:column;gap:32px}
+
+/* ============================================================
+   Ajouts inspirés de letmy.fr (réécrits) : sections 20 à 29
+   20 ouverture à volets  21 lettres qui défilent  22 bouton à ressort  23 titre lettre par lettre
+   24 mot qui change  25 zoom dans un mot  26 étapes au scroll  27 nuage de mots  28 bandeau à vitesse
+   ============================================================ */
+
+/* ---------- 20. ouverture à volets (intro-shutters.js) ---------- */
+.k-intro{position:fixed;inset:0;z-index:1000;pointer-events:all}
+.k-vol{position:absolute;left:0;right:0;height:50.5%;background:var(--k-bg);transition:transform .85s var(--k-ease)}
+.k-vol-top{top:0}.k-vol-bot{bottom:0}
+.k-intro.k-open .k-vol-top{transform:translateY(-101%)}
+.k-intro.k-open .k-vol-bot{transform:translateY(101%)}
+.k-intro-mark{position:absolute;inset:0;display:grid;place-items:center;opacity:0;animation:k-im .7s var(--k-ease) .1s forwards;transition:opacity .3s}
+.k-intro-mark img,.k-intro-mark svg{width:clamp(56px,9vw,96px);height:auto}
+.k-intro.k-open .k-intro-mark{opacity:0!important}
+@keyframes k-im{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+.k-intro-line{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:var(--k-accent);box-shadow:0 0 24px 4px rgba(var(--k-accent-rgb),.6);transform:scaleX(0);opacity:0;transition:transform .4s var(--k-ease),opacity .2s}
+.k-intro.k-line .k-intro-line{transform:scaleX(1);opacity:1}
+.k-intro.k-open .k-intro-line{opacity:0;transition:opacity .3s .1s}
+html.k-intro-on{overflow:hidden}
+
+/* ---------- 21. lettres qui défilent au survol (letter-roll.js) ---------- */
+.k-roll-txt{display:inline-flex;overflow:hidden;line-height:1.25;height:1.25em;white-space:pre}
+.k-roll-txt i{position:relative;display:block;font-style:normal;transition:transform .5s var(--k-ease) var(--k)}
+.k-roll-txt i::after{content:attr(data-c);position:absolute;left:0;top:100%}
+a:hover>.k-roll-txt i,button:hover>.k-roll-txt i,a:focus-visible>.k-roll-txt i,button:focus-visible>.k-roll-txt i{transform:translateY(-100%)}
+
+/* ---------- 22. bouton à ressort (spring-button.js) : translate et scale sont pilotés en JS ---------- */
+.k-btn[data-spring]:hover,[data-spring].k-btn:hover{transform:none}
+[data-spring]{will-change:translate,scale}
+
+/* ---------- 23. titre lettre par lettre (letter-reveal.js) ---------- */
+.k-lr-w{display:inline-block;white-space:nowrap}
+.k-lr-l{display:inline-block;opacity:0;transform:translateY(.55em);filter:blur(6px);transition:opacity .7s var(--k-ease) var(--d),transform .8s var(--k-ease) var(--d),filter .7s var(--k-ease) var(--d)}
+.k-lr.k-in .k-lr-l{opacity:1;transform:none;filter:none}
+.k-lr.k-rv{opacity:1;transform:none}
+
+/* ---------- 24. mot qui change (word-swap.js) ---------- */
+.k-swap-w{display:inline-block;transition:transform .42s var(--k-ease),opacity .42s,filter .42s}
+.k-swap-w.k-out{transform:translateY(-.6em);opacity:0;filter:blur(6px)}
+.k-swap-w.k-in-pre{transform:translateY(.6em);opacity:0;filter:blur(6px);transition:none}
+
+/* ---------- 25. zoom dans un mot géant (mask-zoom.js) ---------- */
+.k-mz{position:relative;background:var(--k-bg)}
+.k-mz-sticky{position:sticky;top:0;height:100svh;overflow:hidden}
+.k-mz-layer,.k-mz-fill{position:absolute;inset:0;background:radial-gradient(70% 90% at 30% 20%,var(--k-accent2) 0,var(--k-accent) 40%,#7a2a05 100%)}
+.k-mz-layer{-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.k-mz-fill{opacity:0}
+.k-mz-after{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center;padding:0 clamp(16px,4vw,40px);color:#0a0a0a;opacity:0;transform:translateY(24px);transition:opacity .7s var(--k-ease),transform .7s var(--k-ease);pointer-events:none}
+.k-mz-after.k-on{opacity:1;transform:none;pointer-events:auto}
+html.k-rm .k-mz{height:auto!important}
+html.k-rm .k-mz-sticky{position:static;height:auto;overflow:visible}
+html.k-rm .k-mz-layer,html.k-rm .k-mz-fill{display:none}
+html.k-rm .k-mz-after{position:static;opacity:1;transform:none;pointer-events:auto;background:var(--k-accent);border-radius:var(--k-radius-lg);padding:clamp(40px,7vw,90px) clamp(20px,5vw,60px)}
+
+/* ---------- 26. étapes pilotées par le scroll (scroll-stages.js) ---------- */
+.k-stage{opacity:0;transform:translateY(24px);transition:opacity .6s var(--k-ease),transform .6s var(--k-ease);pointer-events:none}
+.k-stage.k-active{opacity:1;transform:none;pointer-events:auto}
+.k-stage.k-past{opacity:0;transform:translateY(-24px)}
+.k-stage-index li{--p:0;position:relative;opacity:.4;transition:opacity .4s}
+.k-stage-index li.k-here{opacity:1}
+.k-stage-index li i{display:block;height:2px;margin-top:8px;background:linear-gradient(90deg,var(--k-accent) calc(var(--p)*100%),#ffffff22 0)}
+html.k-rm .k-stage{opacity:1;transform:none;pointer-events:auto}
+
+/* ---------- 27. nuage de mots (word-cloud.js) ---------- */
+.k-wc-cloud{position:absolute;inset:0;pointer-events:none}
+.k-wc-cloud span{position:absolute;color:var(--k-fg);opacity:0;transform:translate(-50%,-50%) scale(.8);transition:opacity 1s var(--k-ease),transform 1s var(--k-ease);animation:k-wcf 9s ease-in-out var(--d) infinite alternate;white-space:nowrap}
+.k-wc-cloud span.k-on{opacity:var(--o);transform:translate(-50%,-50%)}
+@keyframes k-wcf{to{margin-left:var(--dx);margin-top:var(--dy)}}
+html.k-rm .k-wc-cloud span{opacity:var(--o);transform:translate(-50%,-50%);animation:none}
+
+/* ---------- 28. bandeau à vitesse variable (velocity-marquee.js) ---------- */
+.k-vm{overflow:hidden;white-space:nowrap;padding:18px 0;border-block:1px solid var(--k-line)}
+.k-vm-track{display:inline-flex;align-items:center;gap:36px;font-size:clamp(28px,5vw,64px);font-weight:700;letter-spacing:-.03em;will-change:transform}
+.k-vm-track b{color:var(--k-accent);font-weight:700}
+
+@media (prefers-reduced-motion:reduce){.k-intro{display:none}.k-roll-txt i{transition:none}.k-lr-l{opacity:1;transform:none;filter:none;transition:none}.k-wc-cloud span{animation:none}}

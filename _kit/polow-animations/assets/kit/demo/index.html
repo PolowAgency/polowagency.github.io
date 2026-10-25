@@ -94,6 +94,30 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;backgroun
     <div class="k-q"><button aria-expanded="false" aria-controls="a1" data-hover>Une première question ?<i aria-hidden="true">+</i></button><div class="k-a" id="a1"><div><p>Une réponse qui se déplie en douceur.</p></div></div></div>
     <div class="k-q"><button aria-expanded="false" aria-controls="a2" data-hover>Une seconde question ?<i aria-hidden="true">+</i></button><div class="k-a" id="a2"><div><p>Un seul volet reste ouvert à la fois.</p></div></div></div>
   </div></div></section>
+
+<!-- ===== Ajouts inspirés de letmy.fr ===== -->
+<section class="sec"><div class="wrap" style="text-align:center"><span class="tag">letter-reveal + word-swap + letter-roll + spring-button</span>
+  <h2 class="h2" id="lr">Un titre qui se compose <span class="k-accent">lettre</span> par lettre.</h2>
+  <p style="font-size:clamp(22px,3vw,40px);margin-top:36px;font-weight:600;letter-spacing:-.03em">Un site pour <b class="k-accent" id="swap">un salon</b></p>
+  <div style="display:flex;gap:16px;justify-content:center;margin-top:44px;flex-wrap:wrap"><a class="k-btn lg" data-spring data-roll href="#top">Survolez ce bouton</a><a class="k-btn lg ghost" data-spring data-roll href="#top">Et celui-ci</a></div>
+  <p style="margin-top:60px;font-size:clamp(40px,7vw,96px);font-weight:700;letter-spacing:-.04em"><span data-count>1 750</span> <span style="font-size:.4em;color:var(--k-muted)">€ (count-up)</span></p></div></section>
+
+<section class="sec" style="padding-inline:0"><span class="tag">velocity-marquee : accélère avec le scroll</span>
+  <div class="k-vm"><div class="k-vm-track" id="vm"><span>Être trouvé</span><b>/</b><span>Être choisi</span><b>/</b><span>Être appelé</span><b>/</b><span>Être trouvé</span><b>/</b><span>Être choisi</span><b>/</b><span>Être appelé</span><b>/</b></div></div></section>
+
+<section class="k-sticky-sec" id="stages" style="height:300vh"><span class="tag">scroll-stages : 3 étapes pilotées par le scroll</span>
+  <div class="k-sticky"><div style="display:grid;gap:32px;max-width:900px;width:100%;padding:0 20px">
+    <div style="position:relative;min-height:150px"><div class="k-stage" style="position:absolute;inset:0"><h3 style="font-size:clamp(32px,5vw,64px);letter-spacing:-.03em">Être trouvé</h3><p style="color:var(--k-muted);margin-top:12px">Étape 1 : le texte arrive.</p></div>
+      <div class="k-stage" style="position:absolute;inset:0"><h3 style="font-size:clamp(32px,5vw,64px);letter-spacing:-.03em">Être choisi</h3><p style="color:var(--k-muted);margin-top:12px">Étape 2 : le précédent s'efface vers le haut.</p></div>
+      <div class="k-stage" style="position:absolute;inset:0"><h3 style="font-size:clamp(32px,5vw,64px);letter-spacing:-.03em">Être appelé</h3><p style="color:var(--k-muted);margin-top:12px">Étape 3 : la barre d'index se remplit.</p></div></div>
+    <ol class="k-stage-index" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none"><li>Trouvé<i></i></li><li>Choisi<i></i></li><li>Appelé<i></i></li></ol></div></div></section>
+
+<section class="k-sticky-sec" id="cloud" style="height:260vh"><span class="tag">word-cloud : mots flottants révélés au scroll</span>
+  <div class="k-sticky"><h2 class="h2" style="position:relative;z-index:2">Design, clarté<br>et <span class="k-accent">détail</span>.</h2><div class="k-wc-cloud"></div></div></section>
+
+<section class="k-mz" id="mz" style="height:280vh"><span class="tag" style="z-index:6">mask-zoom : on s'enfonce dans le L de POLOW</span>
+  <div class="k-mz-sticky"><div class="k-mz-layer"></div>
+    <div class="k-mz-after"><h2 class="h2" style="color:#0a0a0a">Un appel avec Paul.</h2><a class="k-btn lg" style="background:#0a0a0a;color:#fff" href="#top" data-spring data-roll>Réserver un appel</a></div></div></section>
 </main>
 
 <script type="module">
@@ -113,6 +137,16 @@ import {smartHeader} from '../anims/smart-header.js';
 import {revealOnScroll} from '../anims/reveal.js';
 import {accordion} from '../anims/faq.js';
 import {soundPill,snd} from '../anims/sound-pill.js';
+import {letterReveal} from '../anims/letter-reveal.js';
+import {wordSwap} from '../anims/word-swap.js';
+import {letterRoll} from '../anims/letter-roll.js';
+import {springButtons} from '../anims/spring-button.js';
+import {countUp} from '../anims/count-up.js';
+import {velocityMarquee} from '../anims/velocity-marquee.js';
+import {scrollStages} from '../anims/scroll-stages.js';
+import {wordCloud} from '../anims/word-cloud.js';
+import {maskZoom} from '../anims/mask-zoom.js';
+import {introShutters} from '../anims/intro-shutters.js';
 import {reducedMotion} from '../core/scroll.js';
 if(reducedMotion()) document.documentElement.classList.add('k-rm');
 
@@ -131,6 +165,16 @@ horizontalScroll($('#reals'),$('#track'));
 spotlight($$('.k-spot'));
 revealOnScroll('.k-rv, .k-draw');
 accordion($('#faqs'));
+letterReveal([$('#lr')]);
+wordSwap($('#swap'),['un salon','un restaurant','un artisan','un cabinet']);
+letterRoll($$('[data-roll]'));
+springButtons($$('[data-spring]'));
+countUp($$('[data-count]'));
+velocityMarquee($('#vm'));
+scrollStages($('#stages'),{stages:$$('#stages .k-stage'),index:$$('#stages .k-stage-index li')});
+wordCloud($('#cloud'),['design','clarté','pixel','silence','rythme','lumière','détail','élégance','confiance','mesure','écoute','vision','geste','matière']);
+maskZoom($('#mz'),{text:'POLOW',focal:2});
+if(location.search.includes('intro')) introShutters({key:'k-demo-intro',html:'<b style="font-size:40px">KIT</b>'});
 </script>
 </body>
 </html>
