@@ -24,3 +24,7 @@ export function onFrame(fn){
   if(!raf) raf=requestAnimationFrame(tick);
   return ()=>subs.delete(fn);
 }
+
+/* Alias partagés avec le kit d'animations (_kit) : même nom, même comportement. */
+export const progress=useScrollProgress;
+export const near=(el,margin=200)=>{ const r=el.getBoundingClientRect(); return r.bottom>-margin&&r.top<innerHeight+margin; };

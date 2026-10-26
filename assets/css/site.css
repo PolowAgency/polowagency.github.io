@@ -503,3 +503,63 @@ html[lang="en"] .offer.feat:before{content:"Recommended"}
 .o-promo{display:inline-block;background:var(--or);color:#0a0a0a;font-size:12px;font-weight:600;padding:4px 12px;border-radius:99px;margin-bottom:12px}
 .o-price small s{color:var(--mu);text-decoration-thickness:1.5px;font-size:15px}
 @media (min-width:1200px){.offer:not(.promo) .o-price{padding-top:41px}}
+
+
+/* ============================================================
+   MIXTE : animations de la bibliothèque _kit (ouverture à volets, lettres qui défilent, bouton à ressort,
+   titres lettre par lettre, zoom dans POLOW). Les classes k-* viennent du kit ; les variables sont reliées au site.
+   ============================================================ */
+:root{--k-bg:var(--bg);--k-accent:var(--or);--k-accent2:var(--or2);--k-accent-rgb:255,106,26;--k-ease:var(--ease);--k-line:var(--line);--k-fg:var(--tx);--k-radius-lg:var(--rl)}
+/* ---------- 20. ouverture à volets (intro-shutters.js) ---------- */
+.k-intro{position:fixed;inset:0;z-index:1000;pointer-events:all}
+.k-vol{position:absolute;left:0;right:0;height:50.5%;background:var(--k-bg);transition:transform .85s var(--k-ease)}
+.k-vol-top{top:0}.k-vol-bot{bottom:0}
+.k-intro.k-open .k-vol-top{transform:translateY(-101%)}
+.k-intro.k-open .k-vol-bot{transform:translateY(101%)}
+.k-intro-mark{position:absolute;inset:0;display:grid;place-items:center;opacity:0;animation:k-im .7s var(--k-ease) .1s forwards;transition:opacity .3s}
+.k-intro-mark img,.k-intro-mark svg{width:clamp(56px,9vw,96px);height:auto}
+.k-intro.k-open .k-intro-mark{opacity:0!important}
+@keyframes k-im{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+.k-intro-line{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:var(--k-accent);box-shadow:0 0 24px 4px rgba(var(--k-accent-rgb),.6);transform:scaleX(0);opacity:0;transition:transform .4s var(--k-ease),opacity .2s}
+.k-intro.k-line .k-intro-line{transform:scaleX(1);opacity:1}
+.k-intro.k-open .k-intro-line{opacity:0;transition:opacity .3s .1s}
+html.k-intro-on{overflow:hidden}
+
+/* ---------- 21. lettres qui défilent au survol (letter-roll.js) ---------- */
+.k-roll-txt{display:inline-flex;overflow:hidden;line-height:1.25;height:1.25em;white-space:pre}
+.k-roll-txt i{position:relative;display:block;font-style:normal;transition:transform .5s var(--k-ease) var(--k)}
+.k-roll-txt i::after{content:attr(data-c);position:absolute;left:0;top:100%}
+a:hover>.k-roll-txt i,button:hover>.k-roll-txt i,a:focus-visible>.k-roll-txt i,button:focus-visible>.k-roll-txt i{transform:translateY(-100%)}
+
+/* ---------- 22. bouton à ressort (spring-button.js) : translate et scale sont pilotés en JS ---------- */
+.btn[data-spring]:hover{transform:none}
+[data-spring]{will-change:translate,scale}
+
+/* ---------- 23. titre lettre par lettre (letter-reveal.js) ---------- */
+.k-lr-w{display:inline-block;white-space:nowrap}
+.k-lr-l{display:inline-block;opacity:0;transform:translateY(.55em);filter:blur(6px);transition:opacity .7s var(--k-ease) var(--d),transform .8s var(--k-ease) var(--d),filter .7s var(--k-ease) var(--d)}
+.k-lr.k-in .k-lr-l{opacity:1;transform:none;filter:none}
+
+/* ---------- 25. zoom dans un mot géant (mask-zoom.js) ---------- */
+.k-mz{position:relative;background:var(--k-bg)}
+.k-mz-sticky{position:sticky;top:0;height:100svh;overflow:hidden}
+.k-mz-layer,.k-mz-fill{position:absolute;inset:0;background:radial-gradient(70% 90% at 30% 20%,var(--k-accent2) 0,var(--k-accent) 40%,#7a2a05 100%)}
+.k-mz-layer{-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.k-mz-fill{opacity:0}
+.k-mz-after{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center;padding:0 clamp(16px,4vw,40px);color:#0a0a0a;opacity:0;transform:translateY(24px);transition:opacity .7s var(--k-ease),transform .7s var(--k-ease);pointer-events:none}
+.k-mz-after.k-on{opacity:1;transform:none;pointer-events:auto}
+html.rm .k-mz{height:auto!important}
+html.rm .k-mz-sticky{position:static;height:auto;overflow:visible}
+html.rm .k-mz-layer,html.rm .k-mz-fill{display:none}
+html.rm .k-mz-after{position:static;opacity:1;transform:none;pointer-events:auto;background:var(--k-accent);border-radius:var(--k-radius-lg);padding:clamp(40px,7vw,90px) clamp(20px,5vw,60px)}
+
+
+/* section finale : on s'enfonce dans le L de POLOW, l'appel à l'action apparaît sur le fond orange */
+.final{position:relative;background:var(--bg)}
+.final .anchor{scroll-margin-top:0}
+html:not(.rm) .final{height:260vh;padding:0}
+html:not(.rm) .final .anchor{top:calc(100% - 100svh + 2px)}
+html:not(.rm) .final .cta{background:none;border-radius:0;padding:0;overflow:visible}
+.final .k-mz-layer,.final .k-mz-fill{background:radial-gradient(90% 140% at 50% 0%,#ff6a1a 0,#c94a0c 38%,#1a0c05 80%)}
+.final .k-mz-after{color:var(--tx)}
+html.rm .final .k-mz-after{background:none;padding:0;border-radius:0}
