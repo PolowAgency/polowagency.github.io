@@ -563,3 +563,13 @@ html:not(.rm) .final .cta{background:none;border-radius:0;padding:0;overflow:vis
 .final .k-mz-layer,.final .k-mz-fill{background:radial-gradient(90% 140% at 50% 0%,#ff6a1a 0,#c94a0c 38%,#1a0c05 80%)}
 .final .k-mz-after{color:var(--tx)}
 html.rm .final .k-mz-after{background:none;padding:0;border-radius:0}
+
+/* ---------- nouvelle offre : 3 cartes, un seul abonnement, témoignages ---------- */
+@media (min-width:1200px){.offers.o3{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:701px) and (max-width:1199px){.offers.o3{grid-template-columns:repeat(2,1fr)}.offers.o3 .offer:last-child{grid-column:1/-1}}
+.subs.one{grid-template-columns:minmax(0,560px);justify-content:center}
+.testi{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:40px}
+.tcard{background:var(--bg2);border:1px solid #ffffff0d;border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:20px;margin:0}
+.tcard blockquote{font-size:16px;line-height:1.6;margin:0}
+.tcard figcaption{display:flex;flex-direction:column;gap:2px;font-size:14px}
+.tcard figcaption span{color:var(--mu)}
