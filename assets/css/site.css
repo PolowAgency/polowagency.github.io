@@ -56,7 +56,7 @@ body.menu-open .menu a.big{opacity:1;transform:none}
   filter:blur(50px);animation:beam 14s ease-in-out infinite alternate;opacity:1}
 @keyframes beam{to{transform:rotate(14deg) translateX(4%)}}
 .dots{position:absolute;inset:0;background-image:radial-gradient(#ffffff26 1px,transparent 1.2px);background-size:22px 22px;mask-image:radial-gradient(ellipse at 50% 40%,#000 0,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 0,transparent 70%)}
-.hero h1{position:relative;font-size:clamp(44px,8.2vw,112px);font-weight:600;letter-spacing:-.045em;line-height:1.02;max-width:12ch;background:linear-gradient(180deg,#fff 30%,#ffd9c2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1{position:relative;min-height:3.06em;font-size:clamp(44px,8.2vw,112px);font-weight:600;letter-spacing:-.045em;line-height:1.02;max-width:12ch;background:linear-gradient(180deg,#fff 30%,#ffd9c2);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1 .typed{color:var(--tx);-webkit-text-fill-color:var(--tx)}
 .caret{display:inline-block;width:.42em;height:.82em;background:var(--or);border-radius:6px;vertical-align:-.06em;margin-left:.06em;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
